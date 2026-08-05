@@ -31,7 +31,6 @@
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
     ['estude-no-exterior.html', 'Estude no Exterior', 'Processos e fontes oficiais'],
     ['sobre-nos.html', 'Nossa História', 'Os criadores e a origem do projeto'],
-    ['painel-controle.html', 'Painel da equipe', 'Atualizações e tarefas'],
     ['privacidade.html', 'Aviso de privacidade', 'Como protegemos os dados']
   ];
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
