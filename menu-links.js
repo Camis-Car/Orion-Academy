@@ -17,6 +17,7 @@
 (() => {
   const entries = [
     ['index.html', 'Início', 'Teste vocacional e apresentação'],
+    ['minha-jornada.html', 'Minha jornada', 'Seu espaço pessoal no Projeto Aquiles'],
     ['cadastro.html', 'Criar cadastro', 'Comece sua jornada'],
     ['minhas-escolhas.html', 'Minhas escolhas', 'Até três cursos e instituições'],
     ['plano-estudos.html', 'Plano de estudos', 'Prioridades para cada objetivo'],
