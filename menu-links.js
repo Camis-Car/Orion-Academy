@@ -1,4 +1,4 @@
-// Medição agregada de acessos do Projeto Aquiles — não envia dados do cadastro.
+// Medição agregada de acessos do Orion — não envia dados do cadastro.
 (() => {
   const measurementId = 'G-NKRC7R3XJ5';
   window.dataLayer = window.dataLayer || [];
@@ -19,7 +19,7 @@
     ['index.html', 'Início', 'Teste vocacional e apresentação'],
     ['guia-enem.html', 'Guia ENEM', 'Conteúdos por disciplina e fontes oficiais'],
     ['questoes-enem.html', 'Questões Oficiais do ENEM', 'Cadernos do Inep e correção por gabarito oficial'],
-    ['minha-jornada.html', 'Minha jornada', 'Seu espaço pessoal no Projeto Aquiles'],
+    ['minha-jornada.html', 'Minha jornada', 'Seu espaço pessoal no Orion'],
     ['cadastro.html', 'Criar cadastro', 'Comece sua jornada'],
     ['minhas-escolhas.html', 'Minhas escolhas', 'Até três cursos e instituições'],
     ['plano-estudos.html', 'Plano de estudos', 'Prioridades para cada objetivo'],
