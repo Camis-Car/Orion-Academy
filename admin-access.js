@@ -23,7 +23,7 @@
     <div class="access-card">
       <span class="eyebrow" style="color:#a77a34">Área restrita</span>
       <h1 id="accessTitle">Verificando acesso…</h1>
-      <p id="accessText">Aguarde enquanto confirmamos sua conta do Orion Academy.</p>
+      <p id="accessText">Aguarde enquanto confirmamos sua conta na Orion Academy.</p>
       <form class="access-form" id="accessForm" hidden>
         <input id="accessEmail" type="email" autocomplete="email" placeholder="Seu e-mail" required aria-label="Seu e-mail" />
         <input id="accessPassword" type="password" autocomplete="current-password" placeholder="Sua senha" required aria-label="Sua senha" />
@@ -92,14 +92,14 @@
 
     if (!user) {
       title.textContent = 'Entre na administração.';
-      text.textContent = 'Esta área é restrita à conta autorizada do Orion Academy.';
+      text.textContent = 'Esta área é restrita à conta autorizada na Orion Academy.';
       form.hidden = false;
       return;
     }
 
     if (String(user.email || '').toLowerCase() !== adminEmail) {
       title.textContent = 'Acesso não autorizado.';
-      text.textContent = 'Esta área é restrita à administração do Projeto Aquiles.';
+      text.textContent = 'Esta área é restrita à administração da Orion Academy.';
       accessSignOut.hidden = false;
       return;
     }

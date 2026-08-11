@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Crie ou redefina sua senha de acesso ao Orion Academy." />
+  <meta name="description" content="Crie ou redefina sua senha de acesso à Orion Academy." />
   <title>Criar ou redefinir senha — Orion Academy</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -27,7 +27,7 @@
       const ready=typeof window.supabase!=="undefined"&&/^https:\/\//.test(config.url||"")&&typeof config.anonKey==="string"&&config.anonKey.trim().length>20;
       const requestForm=document.getElementById("requestForm"),changeForm=document.getElementById("changeForm"),message=document.getElementById("message"),title=document.getElementById("pageTitle"),text=document.getElementById("pageText");
       const show=(content,good=false)=>{message.textContent=content;message.className=`message${good?" success":""}`};
-      const changeMode=()=>{requestForm.classList.add("hidden");changeForm.classList.remove("hidden");title.textContent="Escolha sua nova senha";text.textContent="Crie uma senha forte para acessar sua jornada do Orion Academy.";show("",false)};
+      const changeMode=()=>{requestForm.classList.add("hidden");changeForm.classList.remove("hidden");title.textContent="Escolha sua nova senha";text.textContent="Crie uma senha forte para acessar sua jornada na Orion Academy.";show("",false)};
       if(!ready){show("A conexão com o acesso ainda não está disponível.");return}
       if(location.protocol!=="https:"&&location.protocol!=="http:"){show("Abra esta página pelo site publicado para receber links de recuperação.");return}
       const client=window.supabase.createClient(config.url,config.anonKey);
