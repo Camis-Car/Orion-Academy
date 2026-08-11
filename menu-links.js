@@ -18,7 +18,6 @@
   const entries = [
     ['index.html', 'Início', 'Teste vocacional e apresentação'],
     ['guia-enem.html', 'Guia ENEM', 'Conteúdos por disciplina e fontes oficiais'],
-    ['questoes-enem.html', 'Questões Oficiais do ENEM', 'Cadernos do Inep e correção por gabarito oficial'],
     ['minha-jornada.html', 'Minha jornada', 'Seu espaço pessoal na Orion Academy'],
     ['cadastro.html', 'Criar cadastro', 'Comece sua jornada'],
     ['minhas-escolhas.html', 'Minhas escolhas', 'Até três cursos e instituições'],
