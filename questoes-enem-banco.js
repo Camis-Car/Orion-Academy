@@ -1,5 +1,5 @@
 /* Referências oficiais do Inep. Os enunciados permanecem nos PDFs oficiais
-   exibidos pela página; o Orion não reproduz os cadernos. */
+   exibidos pela página; o Orion Academy não reproduz os cadernos. */
 (() => {
   const regularDay1 = 'A A E D C C E A A C B A E B B E D A C D B A A D A D D E B B E B A A A D E A C A A A D B B D A B C B D D D A E D B E C E C B B E D E B D E E C B C C C B A C D C C A D E B D E C D D'.split(' ');
   const regularDay2 = 'D D B A C B D D D E C D A E D C C C E D B D D C B D D C A A E C E D D A C C B A E D C D * D A B C C A E D B B C C C A B C A C C B D * C C C B E E E D B B A C C D A C B A E B A E C'.split(' ');

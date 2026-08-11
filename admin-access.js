@@ -10,9 +10,9 @@
     .access-gate{min-height:100vh;display:grid;place-items:center;padding:48px 24px;background:radial-gradient(circle at 82% 10%,rgba(98,132,168,.34),transparent 28%),linear-gradient(135deg,#0b192d,#173a5e);color:#fff}
     .access-card{width:min(560px,100%);padding:35px;background:#fff;color:#17243a;border:1px solid rgba(217,174,99,.65);box-shadow:0 20px 50px rgba(5,15,29,.25)}
     .access-card h1{margin:10px 0;color:#0d1d35;font:500 39px/1.12 "Playfair Display",Georgia,serif;letter-spacing:-.04em}.access-card p{color:#667085;font-size:13px;line-height:1.65}
-    .access-form{display:flex;gap:10px;margin-top:20px}.access-form input{flex:1;min-width:0;height:44px;padding:0 12px;border:1px solid #ccd5de;border-radius:4px;outline:0}.access-form input:focus{border-color:#a67b36;box-shadow:0 0 0 3px rgba(217,174,99,.14)}
+    .access-form{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;margin-top:20px}.access-form input{flex:1;min-width:0;height:44px;padding:0 12px;border:1px solid #ccd5de;border-radius:4px;outline:0}.access-form input:focus{border-color:#a67b36;box-shadow:0 0 0 3px rgba(217,174,99,.14)}
     .access-button{display:inline-grid;place-items:center;min-height:43px;padding:0 14px;border:0;border-radius:4px;background:#d9ae63;color:#19263a;font-size:12px;font-weight:700;cursor:pointer}.access-status{min-height:19px;margin:13px 0 0;color:#a33630;font-size:12px;line-height:1.5}.access-status.success{color:#28735a}.access-site{display:inline-block;margin-top:19px;color:#76551d;font-size:12px;font-weight:700;text-decoration:underline;text-underline-offset:4px}.admin-logout{margin-right:14px;padding:8px 11px;border:1px solid rgba(217,174,99,.55);border-radius:4px;background:transparent;color:#f0c77f;font-size:11px;font-weight:700;cursor:pointer}
-    @media(max-width:560px){.access-card{padding:26px}.access-form{flex-direction:column}.access-form .access-button{width:100%}}
+    @media(max-width:620px){.access-card{padding:26px}.access-form{grid-template-columns:1fr}.access-form .access-button{width:100%}}
   `;
   document.head.append(style);
 
@@ -23,10 +23,11 @@
     <div class="access-card">
       <span class="eyebrow" style="color:#a77a34">Área restrita</span>
       <h1 id="accessTitle">Verificando acesso…</h1>
-      <p id="accessText">Aguarde enquanto confirmamos sua conta do Projeto Aquiles.</p>
+      <p id="accessText">Aguarde enquanto confirmamos sua conta do Orion Academy.</p>
       <form class="access-form" id="accessForm" hidden>
         <input id="accessEmail" type="email" autocomplete="email" placeholder="Seu e-mail" required aria-label="Seu e-mail" />
-        <button class="access-button" type="submit">Enviar link de acesso</button>
+        <input id="accessPassword" type="password" autocomplete="current-password" placeholder="Sua senha" required aria-label="Sua senha" />
+        <button class="access-button" type="submit">Entrar</button>
       </form>
       <p class="access-status" id="accessStatus" aria-live="polite"></p>
       <button class="access-button" id="accessSignOut" type="button" hidden>Sair desta conta</button>
@@ -38,6 +39,7 @@
   const text = document.getElementById('accessText');
   const form = document.getElementById('accessForm');
   const email = document.getElementById('accessEmail');
+  const password = document.getElementById('accessPassword');
   const status = document.getElementById('accessStatus');
   const accessSignOut = document.getElementById('accessSignOut');
   const topSignOut = document.getElementById('adminLogout');
@@ -65,25 +67,22 @@
     if (email.value.trim().toLowerCase() !== adminEmail) { status.textContent = 'Use o e-mail administrativo autorizado.'; return; }
     const button = form.querySelector('button');
     button.disabled = true;
-    button.textContent = 'Enviando…';
+    button.textContent = 'Entrando…';
     status.textContent = '';
     try {
-      const { error } = await client.auth.signInWithOtp({
+      const { error } = await client.auth.signInWithPassword({
         email: email.value.trim(),
-        options: {
-          emailRedirectTo: location.origin + location.pathname,
-          shouldCreateUser: true
-        }
+        password: password.value
       });
       if (error) throw error;
-      status.textContent = 'Enviamos um link de acesso. Abra-o neste mesmo navegador.';
+      status.textContent = 'Acesso confirmado. Abrindo o painel…';
       status.className = 'access-status success';
+      window.setTimeout(() => location.reload(), 300);
     } catch (error) {
-      status.textContent = error.message || 'Não foi possível enviar o link agora.';
+      status.textContent = error.message || 'E-mail ou senha não conferem.';
       status.className = 'access-status';
-    } finally {
       button.disabled = false;
-      button.textContent = 'Enviar link de acesso';
+      button.textContent = 'Entrar';
     }
   });
 
@@ -93,7 +92,7 @@
 
     if (!user) {
       title.textContent = 'Entre na administração.';
-      text.textContent = 'Esta área é restrita à conta autorizada do Projeto Aquiles.';
+      text.textContent = 'Esta área é restrita à conta autorizada do Orion Academy.';
       form.hidden = false;
       return;
     }
