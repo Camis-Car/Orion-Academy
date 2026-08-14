@@ -17,7 +17,19 @@
   </style>
   <script>document.documentElement.classList.add('access-checking');</script>
   <style>html.access-checking body{visibility:hidden}</style>
-  <script src="analytics.js" defer></script>
+  <script>
+    (() => {
+      if (location.protocol !== "https:") return;
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function gtag(){ window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", "G-NKRC7R3XJ5", { allow_google_signals: false, allow_ad_personalization_signals: false });
+      const googleAnalyticsTag = document.createElement("script");
+      googleAnalyticsTag.async = true;
+      googleAnalyticsTag.src = "https://www.googletagmanager.com/gtag/js?id=G-NKRC7R3XJ5";
+      document.head.appendChild(googleAnalyticsTag);
+    })();
+  </script>
 </head>
 <body>
   <button class="aq-menu-toggle" id="aqMenuToggle" type="button" aria-label="Abrir menu" aria-controls="aqSiteMenu" aria-expanded="false"><span></span><span></span><span></span></button>
