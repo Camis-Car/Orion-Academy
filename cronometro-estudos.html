@@ -12,6 +12,9 @@
   <style>
     :root{--navy:#0d1d35;--blue:#173a5e;--gold:#d9ae63;--cream:#fbfaf7;--ink:#17243a;--muted:#667085;--line:#e1e6eb;--pale:#f7eedb;--green:#29725a;--green-pale:#e8f3ee;--red:#a54b45;--red-pale:#fff0ed;--teal:#2b6f77}*{box-sizing:border-box}html{scroll-behavior:smooth}html.access-checking body{visibility:hidden}body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(1120px,calc(100% - 48px));margin:0 auto}.brand{display:flex;align-items:center;gap:10px;color:#fff;font-family:"Playfair Display",Georgia,serif;font-size:20px;font-weight:600;letter-spacing:-.025em}.mark{width:34px;height:39px;display:grid;place-items:center;color:var(--gold);border:1px solid rgba(217,174,99,.75);clip-path:polygon(50% 0,100% 18%,89% 100%,11% 100%,0 18%)}header{background:var(--navy);color:#fff}.nav{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:78px}.back{color:rgba(255,255,255,.78);font-size:13px;font-weight:700}.back:hover{color:#fff}.hero{padding:66px 0 74px;color:#fff;background:radial-gradient(circle at 82% 5%,rgba(47,129,135,.64),transparent 28%),linear-gradient(120deg,#0b192d,#173a5e)}.eyebrow{display:inline-flex;align-items:center;gap:8px;color:#e5bf7e;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}.eyebrow:before{content:"";width:24px;height:1px;background:currentColor}h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:"Playfair Display",Georgia,serif;font-weight:500}h1{max-width:760px;margin:16px 0 13px;font-size:clamp(42px,5vw,64px);line-height:1.07;letter-spacing:-.045em}.hero p{max-width:690px;margin:0;color:rgba(255,255,255,.77);font-size:16px;line-height:1.7}.hero-details{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.hero-details span{padding:8px 11px;border:1px solid rgba(255,255,255,.18);border-radius:999px;color:rgba(255,255,255,.78);font-size:12px}.page{padding:40px 0 88px}.notice{display:grid;grid-template-columns:auto 1fr;gap:15px;margin-bottom:29px;padding:19px 21px;border:1px solid #d1e5e6;background:#f2fafb;color:#526f73;font-size:13px;line-height:1.6}.notice-icon{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;color:#286872;background:#d9f0f0;font-weight:700}.notice strong{color:var(--ink)}.focus-layout{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:18px;align-items:start}.timer-card{position:relative;overflow:hidden;padding:38px;background:linear-gradient(135deg,#f5fbfb,#fff);border:1px solid #d3e6e7}.timer-card:after{content:"";position:absolute;right:-100px;bottom:-135px;width:330px;height:330px;border:1px solid rgba(43,111,119,.25);border-radius:50%}.timer-card>*{position:relative;z-index:1}.timer-card h2{margin:8px 0 12px;color:var(--navy);font-size:37px;letter-spacing:-.035em}.timer-card>p{max-width:580px;margin:0;color:var(--muted);font-size:13px;line-height:1.65}.timer{display:flex;align-items:center;gap:29px;margin-top:30px}.timer-ring{--value:0deg;display:grid;place-items:center;flex:0 0 206px;width:206px;height:206px;border-radius:50%;background:conic-gradient(var(--teal) var(--value),#e9f0f1 0);position:relative}.timer-ring:before{content:"";position:absolute;inset:10px;border-radius:50%;background:#fff}.timer-value{position:relative;z-index:1;text-align:center}.timer-value strong{display:block;color:var(--navy);font-family:"Playfair Display",Georgia,serif;font-size:48px;font-weight:500;letter-spacing:-.045em}.timer-value span{display:block;margin-top:2px;color:#70858a;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.timer-info{display:grid;gap:12px}.info-row{padding-bottom:12px;border-bottom:1px solid #dce7e8}.info-row span{display:block;color:#7d9094;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.info-row strong{display:block;margin-top:4px;color:#34585e;font-size:14px}.timer-actions{display:flex;gap:9px;margin-top:5px}.button{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 15px;border:1px solid #c8d5d8;color:#3a5960;background:#fff;font-size:12px;font-weight:700;cursor:pointer}.button.primary{border-color:var(--teal);color:#fff;background:var(--teal)}.button:hover{filter:brightness(.98)}.control-card,.history-card{padding:25px;background:#fff;border:1px solid var(--line)}.control-card h2,.history-card h2{margin:8px 0 11px;color:var(--navy);font-size:30px;letter-spacing:-.03em}.control-card>p,.history-card>p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.controls{display:grid;gap:12px;margin-top:20px}.control label{display:block;margin-bottom:7px;color:#607286;font-size:11px;font-weight:700}.field{width:100%;height:42px;padding:0 11px;border:1px solid #d4dde4;border-radius:3px;color:var(--ink);background:#fff;font-size:12px}.field:focus{outline:3px solid rgba(43,111,119,.14);border-color:#4e8890}.quick-times{display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:2px}.quick{min-height:36px;border:1px solid #cfdcdf;color:#3a5d63;background:#fff;font-size:11px;font-weight:700;cursor:pointer}.quick.active,.quick:hover{border-color:#4e858c;color:#fff;background:#34737b}.time-now{margin-top:19px;padding:13px;border:1px solid #d7e8e9;background:#f4fbfb;color:#587075;font-size:11px;line-height:1.55}.time-now strong{display:block;color:#2b6870;font-size:17px;font-weight:700}.stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:18px;border:1px solid var(--line);background:var(--line)}.stat{padding:18px;background:#fff}.stat strong{display:block;color:var(--navy);font-family:"Playfair Display",Georgia,serif;font-size:31px;font-weight:500}.stat span{display:block;margin-top:3px;color:var(--muted);font-size:10px;line-height:1.4}.history-card{margin-top:18px}.session-list{display:grid;gap:0;margin-top:16px;border-top:1px solid var(--line)}.session{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}.session strong{display:block;color:#3c505f;font-size:12px}.session small{display:block;margin-top:3px;color:#7d8c9b;font-size:10px}.session span{color:#2c6f76;font-size:12px;font-weight:700;white-space:nowrap}.empty{padding:23px 0 5px;color:#7a8998;font-size:12px;line-height:1.6}.method{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:45px}.method article{min-height:165px;padding:22px;border:1px solid var(--line);background:#fff}.method strong{color:#a77a34;font-family:"Playfair Display",Georgia,serif;font-size:22px}.method h3{margin:8px 0 7px;color:var(--navy);font-family:"DM Sans",Arial,sans-serif;font-size:15px;font-weight:700}.method p{margin:0;color:var(--muted);font-size:12px;line-height:1.58}footer{background:#081526;color:#7f8b9a}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:74px;font-size:11px}.footer a{color:#d8b16c}.aq-menu-toggle{position:fixed;z-index:1002;top:16px;right:18px;width:46px;height:46px;display:grid;place-content:center;gap:5px;padding:0;border:1px solid rgba(217,174,99,.72);border-radius:6px;color:#fff;background:#0d1d35;box-shadow:0 8px 20px rgba(8,21,38,.24);cursor:pointer}.aq-menu-toggle span{display:block;width:17px;height:2px;background:currentColor}.aq-menu-backdrop{position:fixed;z-index:1001;inset:0;display:grid;justify-content:end;background:rgba(5,15,29,.54);opacity:0;visibility:hidden;transition:.2s}.aq-menu-backdrop.open{opacity:1;visibility:visible}.aq-menu-panel{width:min(360px,calc(100% - 42px));height:100%;overflow-y:auto;padding:28px 26px;background:#fbfaf7;box-shadow:-18px 0 40px rgba(5,15,29,.18);transform:translateX(100%);transition:transform .24s ease}.aq-menu-backdrop.open .aq-menu-panel{transform:translateX(0)}.aq-menu-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:19px;border-bottom:1px solid var(--line)}.aq-menu-title{color:var(--navy);font:500 21px "Playfair Display",Georgia,serif}.aq-menu-close{width:35px;height:35px;border:1px solid var(--line);background:#fff;color:var(--navy);font-size:21px;cursor:pointer}.aq-menu-links{display:grid;gap:5px;margin-top:20px}.aq-menu-links a{padding:12px 13px;border-radius:5px;color:#173a5e;font-size:13px;font-weight:700}.aq-menu-links a:hover,.aq-menu-links a[aria-current="page"]{background:#f4ead7}.aq-menu-links small{display:block;margin-top:3px;color:#778596;font-size:10px;font-weight:500}.aq-menu-note{margin:20px 0 0;padding-top:18px;border-top:1px solid var(--line);color:#738094;font-size:11px;line-height:1.6}@media(max-width:880px){.focus-layout{grid-template-columns:1fr}.control-card{display:grid;grid-template-columns:1fr 1fr;gap:20px}.control-card>div:first-of-type{grid-column:1/-1}.control-card .time-now{margin-top:0}.history-card{margin-top:0}.method{grid-template-columns:1fr 1fr}}@media(max-width:600px){.wrap{width:min(100% - 34px,600px)}.nav{min-height:68px}.hero{padding:52px 0 58px}.page{padding-top:28px}.timer-card{padding:25px}.timer{align-items:center;flex-direction:column;gap:23px}.timer-ring{flex-basis:178px;width:178px;height:178px}.timer-value strong{font-size:42px}.timer-info{width:100%}.control-card{display:block}.control-card .time-now{margin-top:19px}.method{grid-template-columns:1fr}.footer{align-items:flex-start;flex-direction:column;padding:19px 0;gap:8px}.aq-menu-toggle{top:12px;right:12px}.aq-menu-panel{padding:24px 20px}}
   </style>
+  <style>
+    .mode-picker{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 4px}.mode-choice{min-height:74px;padding:12px;border:1px solid #ccdce0;background:#fff;color:#315b63;text-align:left;cursor:pointer}.mode-choice strong{display:block;font-size:13px}.mode-choice small{display:block;margin-top:4px;color:#6d8389;font-size:10px;line-height:1.4}.mode-choice.active{border-color:#34737b;background:#eaf6f6;box-shadow:inset 0 0 0 1px #34737b}.mode-choice.active strong{color:#175e68}.pomodoro-panel{margin-top:14px;padding:15px;border:1px solid #bcdfe1;background:#eef9f9}.pomodoro-panel[hidden]{display:none}.pomodoro-panel strong{display:block;color:#1d6068;font-size:14px}.pomodoro-panel p{margin:5px 0 0;color:#517276;font-size:11px;line-height:1.55}.pomodoro-progress{display:flex;align-items:center;gap:6px;margin-top:12px}.pomodoro-progress span{display:grid;place-items:center;width:23px;height:23px;border:1px solid #8fbfc3;border-radius:50%;color:#5d8084;background:#fff;font-size:10px;font-weight:700}.pomodoro-progress span.done{border-color:#2b6f77;color:#fff;background:#2b6f77}.pomodoro-progress b{margin-left:4px;color:#35676d;font-size:10px}.quick-times.disabled{opacity:.48;pointer-events:none}.constellation-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;align-items:center;margin-top:36px;padding:30px;border:1px solid #233f5c;background:linear-gradient(135deg,#09182c,#123858);color:#fff;overflow:hidden}.constellation-copy h2{margin:9px 0 11px;font-size:34px;letter-spacing:-.035em}.constellation-copy>p{margin:0;color:rgba(255,255,255,.77);font-size:13px;line-height:1.7}.constellation-stats{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px}.constellation-stats strong{display:block;color:#f0ca86;font-family:"Playfair Display",Georgia,serif;font-size:27px;font-weight:500}.constellation-stats span{display:block;margin-top:2px;color:rgba(255,255,255,.7);font-size:10px}.constellation-sky{position:relative;min-height:260px;overflow:hidden;border:1px solid rgba(221,194,138,.35);background:radial-gradient(circle at 78% 20%,rgba(68,132,151,.34),transparent 28%),radial-gradient(circle at 18% 76%,rgba(217,174,99,.17),transparent 23%),#071426}.constellation-sky:before{content:"";position:absolute;inset:0;opacity:.44;background-image:radial-gradient(circle,#c9d9e9 1px,transparent 1.5px),radial-gradient(circle,#d9ae63 1px,transparent 1.6px);background-position:12px 18px,47px 59px;background-size:71px 71px,109px 109px}.constellation-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.constellation-lines polyline{fill:none;stroke:rgba(229,191,126,.55);stroke-width:.45;stroke-dasharray:2 2}.constellation-star{position:absolute;z-index:1;width:10px;height:10px;margin:-5px 0 0 -5px;border:1px solid rgba(229,239,248,.48);border-radius:50%;background:#304d66;box-shadow:0 0 0 0 rgba(240,202,134,0);transition:background .35s,box-shadow .35s,transform .35s}.constellation-star.lit{border-color:#fff1c8;background:#f0ca86;box-shadow:0 0 0 4px rgba(240,202,134,.12),0 0 16px rgba(240,202,134,.85);transform:scale(1.16)}.constellation-star.lit:after{content:"";position:absolute;inset:-6px;background:linear-gradient(90deg,transparent 46%,rgba(255,249,223,.8) 47% 53%,transparent 54%),linear-gradient(0deg,transparent 46%,rgba(255,249,223,.8) 47% 53%,transparent 54%)}.constellation-note{position:absolute;z-index:2;right:15px;bottom:13px;left:15px;margin:0;color:#d9e8f0;font-size:11px;line-height:1.5;text-align:center}.pomodoro-guide{margin-top:44px;padding:31px;border:1px solid #d0e3e4;background:#f4fbfb}.pomodoro-guide h2{margin:9px 0 11px;color:var(--navy);font-size:35px;letter-spacing:-.035em}.pomodoro-guide>p{max-width:820px;margin:0;color:#506e73;font-size:13px;line-height:1.7}.pomodoro-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:23px}.pomodoro-step{padding:19px;background:#fff;border:1px solid #d6e5e6}.pomodoro-step strong{display:block;color:#24666e;font-family:"Playfair Display",Georgia,serif;font-size:25px;font-weight:500}.pomodoro-step h3{margin:7px 0 6px;color:#183b4b;font-family:"DM Sans",Arial,sans-serif;font-size:14px;font-weight:700}.pomodoro-step p{margin:0;color:#5a7478;font-size:11px;line-height:1.58}@media(max-width:880px){.constellation-card{grid-template-columns:1fr}.constellation-sky{min-height:235px}}@media(max-width:600px){.mode-picker,.pomodoro-steps{grid-template-columns:1fr}.constellation-card{padding:24px}.constellation-copy h2,.pomodoro-guide h2{font-size:31px}.constellation-sky{min-height:220px}.pomodoro-guide{padding:24px}}
+  </style>
   <script>
     (() => {
       if (location.protocol !== "https:") return;
@@ -30,11 +33,13 @@
   <button class="aq-menu-toggle" id="aqMenuToggle" type="button" aria-label="Abrir menu" aria-controls="aqSiteMenu" aria-expanded="false"><span></span><span></span><span></span></button>
   <div class="aq-menu-backdrop" id="aqSiteMenu" aria-hidden="true"><nav class="aq-menu-panel" aria-label="Navegação principal"><div class="aq-menu-top"><span class="aq-menu-title">Orion Academy</span><button class="aq-menu-close" id="aqMenuClose" type="button" aria-label="Fechar menu">×</button></div><div class="aq-menu-links"><a href="minha-jornada.html">Minha jornada<small>Central do estudante</small></a></div><p class="aq-menu-note">O registro de sessões é salvo apenas neste navegador.</p></nav></div>
   <header><div class="wrap nav"><a class="brand" href="minha-jornada.html"><span class="mark" role="img" aria-label="Bispo de xadrez"><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" style="display:block;width:100%;height:100%" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 9-7.7 9-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></span>Orion Academy</a><a class="back" href="minha-jornada.html">← Voltar à minha jornada</a></div></header>
-  <section class="hero"><div class="wrap"><span class="eyebrow">Sessão de foco</span><h1>Seu tempo de estudo, protegido.</h1><p>Defina uma matéria, escolha a duração e estude com um cronômetro simples. Ao concluir, sua sessão entra no histórico deste navegador.</p><div class="hero-details"><span>Tempo de foco</span><span>Horário planejado</span><span>Histórico do dia</span></div></div></section>
+  <section class="hero"><div class="wrap"><span class="eyebrow">Sessão de foco</span><h1>Seu tempo de estudo, protegido.</h1><p>Use um cronômetro livre ou o método Pomodoro. Cada bloco de foco concluído entra no seu histórico e acende uma estrela na sua constelação de progresso.</p><div class="hero-details"><span>Tempo de foco</span><span>Método Pomodoro</span><span>Constelação de progresso</span></div></div></section>
   <main class="wrap page">
     <section class="notice"><span class="notice-icon">i</span><div><strong>Uma sessão por vez.</strong> Comece com uma meta possível, como 25 ou 50 minutos. Você pode pausar e continuar depois; ao terminar, o tempo concluído entra no seu histórico local.</div></section>
-    <section class="focus-layout"><article class="timer-card"><span class="eyebrow" style="color:#397780">Sua sessão</span><h2 id="focusTitle">Pronta para começar.</h2><p id="focusText">Escolha uma matéria e uma duração ao lado. Quando estiver pronta, aperte iniciar.</p><div class="timer"><div class="timer-ring" id="timerRing"><div class="timer-value"><strong id="timerValue">50:00</strong><span>tempo restante</span></div></div><div class="timer-info"><div class="info-row"><span>Matéria</span><strong id="currentSubject">—</strong></div><div class="info-row"><span>Horário planejado</span><strong id="currentTime">—</strong></div><div class="info-row"><span>Objetivo</span><strong id="currentDuration">50 minutos</strong></div><div class="timer-actions"><button class="button primary" id="startPause" type="button">Iniciar</button><button class="button" id="reset" type="button">Recomeçar</button></div></div></div></article><aside><section class="control-card"><div><span class="eyebrow" style="color:#397780">Configurar</span><h2>Sua próxima sessão.</h2><p>Defina o que vai estudar e o horário que você deseja começar.</p></div><div class="controls"><div class="control"><label for="subject">Matéria ou objetivo</label><input class="field" id="subject" maxlength="70" value="Revisão geral" placeholder="Ex.: Matemática — funções" /></div><div class="control"><label for="duration">Duração em minutos</label><input class="field" id="duration" type="number" min="1" max="180" value="50" /></div><div class="quick-times"><button class="quick" type="button" data-minutes="25">25 min</button><button class="quick active" type="button" data-minutes="50">50 min</button><button class="quick" type="button" data-minutes="90">90 min</button></div><div class="control"><label for="plannedTime">Horário para estudar</label><input class="field" id="plannedTime" type="time" /></div></div><div class="time-now"><span>Agora são</span><strong id="clock">00:00</strong><span>Você pode planejar para outro horário ou começar quando estiver pronta.</span></div></section><section class="stats"><div class="stat"><strong id="todayMinutes">0 min</strong><span>concluídos hoje</span></div><div class="stat"><strong id="todaySessions">0</strong><span>sessões hoje</span></div></section><section class="history-card"><span class="eyebrow" style="color:#397780">Histórico</span><h2>Suas últimas sessões.</h2><p>Uma pequena evidência da rotina que você está construindo.</p><div class="session-list" id="sessionList"></div></section></aside></section>
+    <section class="focus-layout"><article class="timer-card"><span class="eyebrow" style="color:#397780">Sua sessão</span><h2 id="focusTitle">Pronta para começar.</h2><p id="focusText">Escolha uma matéria e uma duração ao lado. Quando estiver pronta, aperte iniciar.</p><div class="timer"><div class="timer-ring" id="timerRing"><div class="timer-value"><strong id="timerValue">50:00</strong><span>tempo restante</span></div></div><div class="timer-info"><div class="info-row"><span>Matéria</span><strong id="currentSubject">—</strong></div><div class="info-row"><span>Horário planejado</span><strong id="currentTime">—</strong></div><div class="info-row"><span>Objetivo</span><strong id="currentDuration">50 minutos</strong></div><div class="info-row"><span>Ritmo</span><strong id="currentRhythm">Cronômetro livre</strong></div><div class="timer-actions"><button class="button primary" id="startPause" type="button">Iniciar</button><button class="button" id="reset" type="button">Recomeçar</button></div></div></div></article><aside><section class="control-card"><div><span class="eyebrow" style="color:#397780">Configurar</span><h2>Sua próxima sessão.</h2><p>Escolha o seu ritmo de estudo e defina o que vai fazer.</p></div><div class="mode-picker" role="group" aria-label="Modo do cronômetro"><button class="mode-choice active" id="freeMode" type="button" data-mode="free" aria-pressed="true"><strong>Cronômetro livre</strong><small>Você escolhe qualquer duração.</small></button><button class="mode-choice" id="pomodoroMode" type="button" data-mode="pomodoro" aria-pressed="false"><strong>Método Pomodoro</strong><small>25 min de foco + pausas guiadas.</small></button></div><div class="pomodoro-panel" id="pomodoroPanel" hidden><strong id="pomodoroStage">Próximo bloco: foco de 25 minutos</strong><p id="pomodoroDescription">Depois do foco, você fará uma pausa curta. A cada quatro focos, ganha uma pausa longa.</p><div class="pomodoro-progress" aria-label="Ciclos Pomodoro concluídos"><span id="pomodoroDot1">1</span><span id="pomodoroDot2">2</span><span id="pomodoroDot3">3</span><span id="pomodoroDot4">4</span><b id="pomodoroCount">0 ciclos concluídos</b></div></div><div class="controls"><div class="control"><label for="subject">Matéria ou objetivo</label><input class="field" id="subject" maxlength="70" value="Revisão geral" placeholder="Ex.: Matemática — funções" /></div><div class="control"><label id="durationLabel" for="duration">Duração em minutos</label><input class="field" id="duration" type="number" min="1" max="180" value="50" /></div><div class="quick-times" id="quickTimes"><button class="quick" type="button" data-minutes="25">25 min</button><button class="quick active" type="button" data-minutes="50">50 min</button><button class="quick" type="button" data-minutes="90">90 min</button></div><div class="control"><label for="plannedTime">Horário para estudar</label><input class="field" id="plannedTime" type="time" /></div></div><div class="time-now"><span>Agora são</span><strong id="clock">00:00</strong><span>Você pode planejar para outro horário ou começar quando estiver pronta.</span></div></section><section class="stats"><div class="stat"><strong id="todayMinutes">0 min</strong><span>concluídos hoje</span></div><div class="stat"><strong id="todaySessions">0</strong><span>sessões de foco hoje</span></div></section><section class="history-card"><span class="eyebrow" style="color:#397780">Histórico</span><h2>Suas últimas sessões.</h2><p>Uma pequena evidência da rotina que você está construindo.</p><div class="session-list" id="sessionList"></div></section></aside></section>
+    <section class="constellation-card" aria-labelledby="constellationTitle"><div class="constellation-copy"><span class="eyebrow">Seu céu de estudos</span><h2 id="constellationTitle">Constelação de progresso.</h2><p>Cada bloco de foco que você conclui acende uma estrela. Não é sobre fazer tudo de uma vez: é sobre construir constância, sessão por sessão.</p><div class="constellation-stats"><div><strong id="constellationStars">0</strong><span>estrelas acesas</span></div><div><strong id="constellationFocusMinutes">0 min</strong><span>minutos de foco registrados</span></div></div></div><div class="constellation-sky" id="constellationSky" aria-live="polite"></div></section>
     <section class="method"><article><strong>01</strong><h3>Antes de iniciar</h3><p>Separe o material, silencie notificações e escreva uma meta específica: “resolver 12 questões”, por exemplo.</p></article><article><strong>02</strong><h3>Durante o foco</h3><p>Se aparecer uma dúvida, anote-a rapidamente e continue. Você pode resolvê-la no intervalo sem perder a sessão inteira.</p></article><article><strong>03</strong><h3>Depois do tempo</h3><p>Faça uma pausa curta, registre o que conseguiu estudar e só então decida se é hora de começar outra sessão.</p></article></section>
+    <section class="pomodoro-guide" aria-labelledby="pomodoroGuideTitle"><span class="eyebrow" style="color:#397780">Estude com ritmo</span><h2 id="pomodoroGuideTitle">O que é o método Pomodoro?</h2><p>É uma técnica para estudar em blocos curtos e intencionais. Em vez de tentar se concentrar por horas sem parar, você alterna foco e pausas para reduzir a distração e preservar a energia.</p><div class="pomodoro-steps"><article class="pomodoro-step"><strong>25 min</strong><h3>Foco total</h3><p>Escolha uma tarefa concreta e deixe notificações de lado. Este é um Pomodoro.</p></article><article class="pomodoro-step"><strong>5 min</strong><h3>Pausa curta</h3><p>Levante, beba água ou respire. Evite começar uma atividade que prenda sua atenção.</p></article><article class="pomodoro-step"><strong>15 min</strong><h3>Pausa longa</h3><p>Depois de quatro blocos de foco, faça uma pausa maior e comece um novo ciclo quando estiver pronta.</p></article></div></section>
   </main>
   <footer><div class="wrap footer"><span>© 2026 Orion Academy. Todos os direitos reservados.</span><a href="privacidade.html">Privacidade e seus dados</a></div></footer>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -44,60 +49,162 @@
   </script>
   <script>
     (() => {
-      const stateKey = 'orion-cronometro-estudos-v1', historyKey = 'orion-cronometro-historico-v1';
+      const stateKey = 'orion-cronometro-estudos-v2', historyKey = 'orion-cronometro-historico-v1';
+      const phases = {
+        focus: { minutes: 25, label: 'Foco de 25 minutos', text: 'Concentre-se em uma tarefa concreta. Esta é a parte que acende uma estrela.' },
+        short: { minutes: 5, label: 'Pausa curta de 5 minutos', text: 'Respire, beba água e descanse os olhos antes do próximo foco.' },
+        long: { minutes: 15, label: 'Pausa longa de 15 minutos', text: 'Você concluiu quatro focos. Recupere a energia antes de iniciar outro ciclo.' }
+      };
+      const starPoints = [[15,70],[23,40],[33,58],[43,25],[54,47],[65,29],[77,53],[87,35],[74,78],[53,73],[37,83],[21,88]];
       const $ = (selector) => document.querySelector(selector);
       const getJSON = (key, fallback) => { try { const value = JSON.parse(localStorage.getItem(key) || ''); return value && typeof value === 'object' ? value : fallback; } catch { return fallback; } };
       const nowTime = () => new Intl.DateTimeFormat('pt-BR', { hour:'2-digit', minute:'2-digit' }).format(new Date());
       const todayKey = () => { const date = new Date(); return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`; };
       const format = (seconds) => `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`;
-      let state = getJSON(stateKey, { subject:'Revisão geral', duration:3000, remaining:3000, plannedTime:'', running:false, endAt:null, recorded:false });
+      const escapeHTML = (value) => String(value || '').replace(/[&<>"']/g, (character) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;' })[character]);
+      const defaultState = { subject:'Revisão geral', duration:3000, remaining:3000, plannedTime:'', running:false, endAt:null, recorded:false, mode:'free', pomodoroPhase:'focus', pomodoroCycles:0, justCompleted:'' };
+      let state = getJSON(stateKey, getJSON('orion-cronometro-estudos-v1', defaultState));
+      if (!['free', 'pomodoro'].includes(state.mode)) state.mode = 'free';
+      if (!phases[state.pomodoroPhase]) state.pomodoroPhase = 'focus';
+      state.pomodoroCycles = Math.max(0, Number(state.pomodoroCycles) || 0);
       let history = getJSON(historyKey, []); if (!Array.isArray(history)) history = [];
-      let ticker = null;
+      let ticker = null, constellationSignature = '';
       const saveState = () => localStorage.setItem(stateKey, JSON.stringify(state));
       const saveHistory = () => localStorage.setItem(historyKey, JSON.stringify(history.slice(0, 30)));
-      const subjectInput = $('#subject'), durationInput = $('#duration'), plannedInput = $('#plannedTime');
+      const subjectInput = $('#subject'), durationInput = $('#duration'), plannedInput = $('#plannedTime'), quickTimes = $('#quickTimes');
+      const isPomodoro = () => state.mode === 'pomodoro';
+      const phase = () => phases[state.pomodoroPhase] || phases.focus;
       const syncRemaining = () => { if (state.running && state.endAt) state.remaining = Math.max(0, Math.ceil((state.endAt - Date.now()) / 1000)); };
       function showClock() { $('#clock').textContent = nowTime(); }
-      function setInputs() { subjectInput.value = state.subject || 'Revisão geral'; durationInput.value = Math.max(1, Math.round((state.duration || 3000) / 60)); plannedInput.value = state.plannedTime || nowTime(); }
+      function setInputs() {
+        subjectInput.value = state.subject || 'Revisão geral';
+        durationInput.value = Math.max(1, Math.round((state.duration || 3000) / 60));
+        plannedInput.value = state.plannedTime || nowTime();
+      }
+      function renderMode() {
+        const pomodoro = isPomodoro(), currentPhase = phase();
+        document.querySelectorAll('.mode-choice').forEach((button) => {
+          const active = button.dataset.mode === state.mode;
+          button.classList.toggle('active', active);
+          button.setAttribute('aria-pressed', String(active));
+        });
+        $('#pomodoroPanel').hidden = !pomodoro;
+        durationInput.disabled = pomodoro;
+        quickTimes.classList.toggle('disabled', pomodoro);
+        $('#durationLabel').textContent = pomodoro ? 'Duração desta etapa' : 'Duração em minutos';
+        if (!pomodoro) return;
+        durationInput.value = currentPhase.minutes;
+        $('#pomodoroStage').textContent = `Agora: ${currentPhase.label}`;
+        $('#pomodoroDescription').textContent = currentPhase.text;
+        const completedInCycle = state.pomodoroCycles % 4 || (state.pomodoroCycles ? 4 : 0);
+        [1,2,3,4].forEach((number) => $('#pomodoroDot' + number).classList.toggle('done', number <= completedInCycle));
+        $('#pomodoroCount').textContent = `${state.pomodoroCycles} ${state.pomodoroCycles === 1 ? 'foco concluído' : 'focos concluídos'}`;
+      }
       function renderHistory() {
         const today = todayKey(), completed = history.filter((entry) => entry.date === today);
-        const minutes = completed.reduce((sum, entry) => sum + entry.minutes, 0);
+        const minutes = completed.reduce((sum, entry) => sum + Number(entry.minutes || 0), 0);
         $('#todayMinutes').textContent = `${minutes} min`; $('#todaySessions').textContent = completed.length;
-        $('#sessionList').innerHTML = history.length ? history.slice(0, 5).map((entry) => `<div class="session"><div><strong>${String(entry.subject || '').replace(/[&<>"']/g, '')}</strong><small>${entry.date.split('-').reverse().join('/')} · ${entry.time}</small></div><span>${entry.minutes} min</span></div>`).join('') : '<p class="empty">Quando terminar uma sessão, ela aparecerá aqui.</p>';
+        $('#sessionList').innerHTML = history.length ? history.slice(0, 5).map((entry) => `<div class="session"><div><strong>${escapeHTML(entry.subject || 'Revisão geral')}</strong><small>${entry.date.split('-').reverse().join('/')} · ${escapeHTML(entry.time)}${entry.mode === 'Pomodoro' ? ' · Pomodoro' : ''}</small></div><span>${entry.minutes} min</span></div>`).join('') : '<p class="empty">Quando terminar um bloco de foco, ele aparecerá aqui.</p>';
+      }
+      function renderConstellation() {
+        const totalSessions = history.length, totalMinutes = history.reduce((sum, entry) => sum + Number(entry.minutes || 0), 0);
+        const active = Math.min(totalSessions, starPoints.length), signature = `${active}-${totalMinutes}`;
+        if (signature === constellationSignature) return;
+        constellationSignature = signature;
+        $('#constellationStars').textContent = active;
+        $('#constellationFocusMinutes').textContent = `${totalMinutes} min`;
+        const linePoints = starPoints.slice(0, active).map(([x, y]) => `${x},${y}`).join(' ');
+        const stars = starPoints.map(([x, y], index) => `<span class="constellation-star${index < active ? ' lit' : ''}" style="left:${x}%;top:${y}%" aria-label="${index < active ? `Estrela ${index + 1} acesa` : `Estrela ${index + 1} ainda não acesa`}"></span>`).join('');
+        const note = totalSessions ? `Você já acendeu ${totalSessions} ${totalSessions === 1 ? 'estrela' : 'estrelas'}. Conclua outro bloco de foco para continuar.` : 'Conclua seu primeiro bloco de foco para acender a primeira estrela.';
+        $('#constellationSky').innerHTML = `<svg class="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${active > 1 ? `<polyline points="${linePoints}"></polyline>` : ''}</svg>${stars}<p class="constellation-note">${note}</p>`;
       }
       function render() {
         syncRemaining();
-        const safeDuration = Math.max(60, Number(state.duration) || 3000), remaining = Math.max(0, Number(state.remaining) || 0);
+        const safeDuration = Math.max(60, Number(state.duration) || 3000), remaining = Math.max(0, Number(state.remaining) || 0), pomodoro = isPomodoro(), currentPhase = phase();
         $('#timerValue').textContent = format(remaining);
         $('#timerRing').style.setProperty('--value', `${Math.max(0, Math.min(360, Math.round((1 - remaining / safeDuration) * 360)))}deg`);
-        $('#currentSubject').textContent = state.subject || 'Revisão geral';
+        $('#currentSubject').textContent = pomodoro && state.pomodoroPhase !== 'focus' ? 'Pausa de recuperação' : (state.subject || 'Revisão geral');
         $('#currentTime').textContent = state.plannedTime || 'Agora';
-        $('#currentDuration').textContent = `${Math.round(safeDuration / 60)} minutos`;
-        $('#startPause').textContent = state.running ? 'Pausar' : (remaining === 0 ? 'Nova sessão' : 'Iniciar');
-        $('#focusTitle').textContent = state.running ? 'Foco em andamento.' : (remaining === 0 ? 'Sessão concluída.' : 'Pronta para começar.');
-        $('#focusText').textContent = state.running ? 'Continue com uma tarefa de cada vez. O cronômetro continuará mesmo se você atualizar a página.' : (remaining === 0 ? 'Muito bem. Faça uma pausa curta ou configure uma nova meta.' : 'Escolha uma matéria e uma duração ao lado. Quando estiver pronta, aperte iniciar.');
-        renderHistory();
+        $('#currentDuration').textContent = `${Math.round(safeDuration / 60)} minutos${pomodoro ? ` · ${currentPhase.label.toLowerCase()}` : ''}`;
+        $('#currentRhythm').textContent = pomodoro ? 'Método Pomodoro' : 'Cronômetro livre';
+        $('#startPause').textContent = state.running ? 'Pausar' : (pomodoro ? (state.pomodoroPhase === 'focus' ? 'Começar foco' : 'Começar pausa') : (remaining === 0 ? 'Nova sessão' : 'Iniciar'));
+        if (state.running) {
+          $('#focusTitle').textContent = pomodoro && state.pomodoroPhase !== 'focus' ? 'Pausa em andamento.' : 'Foco em andamento.';
+          $('#focusText').textContent = 'Continue com uma tarefa de cada vez. O cronômetro continuará mesmo se você atualizar a página.';
+        } else if (state.justCompleted) {
+          $('#focusTitle').textContent = state.justCompleted === 'focus' ? 'Bloco de foco concluído.' : (state.justCompleted === 'free' ? 'Sessão concluída.' : 'Pausa concluída.');
+          $('#focusText').textContent = state.justCompleted === 'focus' ? `Muito bem. Sua ${state.pomodoroPhase === 'long' ? 'pausa longa' : 'pausa curta'} está pronta quando você quiser.` : (state.justCompleted === 'free' ? 'Muito bem. Faça uma pausa curta ou configure uma nova meta.' : 'Quando estiver pronta, comece um novo bloco de foco.');
+        } else if (pomodoro) {
+          $('#focusTitle').textContent = state.pomodoroPhase === 'focus' ? 'Pronta para um Pomodoro.' : 'Pausa pronta.';
+          $('#focusText').textContent = currentPhase.text;
+        } else {
+          $('#focusTitle').textContent = 'Pronta para começar.';
+          $('#focusText').textContent = 'Escolha uma matéria e uma duração ao lado. Quando estiver pronta, aperte iniciar.';
+        }
+        renderMode(); renderHistory(); renderConstellation();
+      }
+      function recordFocusSession() {
+        const minutes = Math.max(1, Math.round((Number(state.duration) || 0) / 60));
+        history.unshift({ subject: state.subject || 'Revisão geral', minutes, date:todayKey(), time:nowTime(), mode:isPomodoro() ? 'Pomodoro' : 'Livre' });
+        saveHistory();
       }
       function finish() {
         if (state.recorded) return;
-        const minutes = Math.round((Number(state.duration) || 0) / 60);
-        history.unshift({ subject: state.subject || 'Revisão geral', minutes, date:todayKey(), time:nowTime() });
-        state.running = false; state.remaining = 0; state.endAt = null; state.recorded = true; saveState(); saveHistory(); clearInterval(ticker); ticker = null; render();
+        const completedPhase = state.pomodoroPhase;
+        if (isPomodoro()) {
+          if (completedPhase === 'focus') {
+            recordFocusSession();
+            state.pomodoroCycles += 1;
+            state.pomodoroPhase = state.pomodoroCycles % 4 === 0 ? 'long' : 'short';
+          } else {
+            state.pomodoroPhase = 'focus';
+          }
+          state.duration = phase().minutes * 60;
+          state.remaining = state.duration;
+          state.justCompleted = completedPhase;
+          state.recorded = false;
+        } else {
+          recordFocusSession();
+          state.remaining = 0;
+          state.justCompleted = 'free';
+          state.recorded = true;
+        }
+        state.running = false; state.endAt = null; saveState(); clearInterval(ticker); ticker = null; render();
       }
       function tick() { syncRemaining(); if (state.running && state.remaining <= 0) { finish(); return; } saveState(); render(); }
       function startTicker() { clearInterval(ticker); ticker = setInterval(tick, 1000); }
       function applySettings() {
-        const minutes = Math.max(1, Math.min(180, Number(durationInput.value) || 50));
-        state.subject = subjectInput.value.trim() || 'Revisão geral'; state.duration = minutes * 60; state.remaining = state.duration; state.plannedTime = plannedInput.value || nowTime(); state.running = false; state.endAt = null; state.recorded = false; saveState(); clearInterval(ticker); ticker = null; render();
+        state.subject = subjectInput.value.trim() || 'Revisão geral';
+        state.plannedTime = plannedInput.value || nowTime();
+        if (isPomodoro()) {
+          state.duration = phase().minutes * 60;
+        } else {
+          const minutes = Math.max(1, Math.min(180, Number(durationInput.value) || 50));
+          state.duration = minutes * 60;
+        }
+        state.remaining = state.duration; state.running = false; state.endAt = null; state.recorded = false; state.justCompleted = ''; saveState(); clearInterval(ticker); ticker = null; render();
+      }
+      function changeMode(mode) {
+        if (state.running || mode === state.mode) return;
+        state.mode = mode;
+        state.pomodoroPhase = 'focus';
+        state.pomodoroCycles = 0;
+        state.justCompleted = '';
+        if (mode === 'pomodoro') state.duration = phases.focus.minutes * 60;
+        else state.duration = Math.max(1, Math.min(180, Number(durationInput.value) || 50)) * 60;
+        state.remaining = state.duration; state.recorded = false; state.endAt = null; saveState(); setInputs(); render();
       }
       $('#startPause').addEventListener('click', () => {
-        if (state.remaining <= 0) { applySettings(); }
         if (state.running) { syncRemaining(); state.running = false; state.endAt = null; clearInterval(ticker); ticker = null; saveState(); render(); return; }
-        state.subject = subjectInput.value.trim() || state.subject || 'Revisão geral'; state.plannedTime = plannedInput.value || state.plannedTime || nowTime(); state.running = true; state.recorded = false; state.endAt = Date.now() + state.remaining * 1000; saveState(); startTicker(); render();
+        if (!isPomodoro() && state.remaining <= 0) applySettings();
+        state.subject = subjectInput.value.trim() || state.subject || 'Revisão geral';
+        state.plannedTime = plannedInput.value || state.plannedTime || nowTime();
+        state.justCompleted = ''; state.running = true; state.recorded = false; state.endAt = Date.now() + state.remaining * 1000; saveState(); startTicker(); render();
       });
-      $('#reset').addEventListener('click', () => { applySettings(); });
+      $('#reset').addEventListener('click', applySettings);
+      document.querySelector('.mode-picker').addEventListener('click', (event) => { const button = event.target.closest('[data-mode]'); if (button) changeMode(button.dataset.mode); });
       [subjectInput, durationInput, plannedInput].forEach((input) => input.addEventListener('change', () => { if (!state.running) applySettings(); }));
-      document.querySelector('.quick-times').addEventListener('click', (event) => { const minutes = event.target.dataset.minutes; if (!minutes) return; durationInput.value = minutes; document.querySelectorAll('.quick').forEach((button) => button.classList.toggle('active', button === event.target)); if (!state.running) applySettings(); });
+      quickTimes.addEventListener('click', (event) => { const button = event.target.closest('[data-minutes]'); if (!button || isPomodoro()) return; durationInput.value = button.dataset.minutes; document.querySelectorAll('.quick').forEach((item) => item.classList.toggle('active', item === button)); if (!state.running) applySettings(); });
       setInputs(); showClock(); setInterval(showClock, 1000); if (state.running) { syncRemaining(); if (state.remaining <= 0) finish(); else startTicker(); } render();
     })();
   </script>
