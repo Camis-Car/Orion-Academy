@@ -4,10 +4,11 @@
 create table if not exists public.perfis (
   id uuid primary key references auth.users(id) on delete cascade,
   nome text not null check (char_length(trim(nome)) between 2 and 80),
-  faixa_etaria text not null check (faixa_etaria in ('Até 12 anos','13 a 15 anos','16 a 17 anos','18 anos ou mais')),
+  faixa_etaria text not null check (faixa_etaria in ('14 anos','15 anos','16 anos','17 anos','18 anos','19 anos','20 anos','21 anos','22 anos','22 anos ou mais')),
   etapa_escolar text not null check (char_length(trim(etapa_escolar)) between 2 and 100),
   uf char(2),
   cidade text check (cidade is null or char_length(cidade) <= 100),
+  modalidade_cota text not null default 'AC' check (modalidade_cota in ('AC','LI_EP','LI_PCD','LI_Q','LI_PPI','LB_EP','LB_PCD','LB_Q','LB_PPI','V1')),
   consentimento_responsavel boolean not null default false,
   versao_privacidade text not null default '2026-08-01',
   consentiu_em timestamptz not null default now(),
