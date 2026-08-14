@@ -104,4 +104,11 @@
       pagesDropdown.append(link);
     });
   }
+
+  if (!document.querySelector('script[src="pwa.js"]')) {
+    const pwa = document.createElement('script');
+    pwa.src = 'pwa.js';
+    pwa.async = true;
+    document.head.append(pwa);
+  }
 })();

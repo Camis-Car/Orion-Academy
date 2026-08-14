@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Orion Academy">
+  <rect width="512" height="512" rx="116" fill="#0d1d35"/>
+  <circle cx="256" cy="256" r="186" fill="none" stroke="#d9ae63" stroke-width="4" opacity=".72"/>
+  <circle cx="114" cy="145" r="8" fill="#f0ca86"/>
+  <circle cx="390" cy="172" r="6" fill="#f0ca86"/>
+  <circle cx="364" cy="365" r="8" fill="#f0ca86"/>
+  <circle cx="137" cy="363" r="5" fill="#f0ca86"/>
+  <path d="M256 101 157 219c0 49 44 92 81 118l-57 79h150l-57-79c37-26 81-69 81-118L256 101Zm35 49-89 95 36 27 82-92-29-30Z" fill="#f0ca86"/>
+  <path d="M152 431h208v22H152zm-34 35h276v22H118z" fill="#d9ae63"/>
+</svg>
