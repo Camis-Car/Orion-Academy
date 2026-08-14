@@ -2,32 +2,43 @@
   <rect width="512" height="512" rx="116" fill="#0d1d35"/>
   <circle cx="256" cy="256" r="190" fill="none" stroke="#d9ae63" stroke-width="3" opacity=".26"/>
   <circle cx="256" cy="256" r="164" fill="none" stroke="#d9ae63" stroke-width="1.5" stroke-dasharray="3 12" opacity=".32"/>
+  <!-- Órion: cabeça, ombros, as três estrelas do Cinturão, espada e pés. -->
   <g fill="none" stroke="#d9ae63" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M143 142 205 250 256 264 308 278 368 161M143 142 175 374 256 264 350 389 368 161" stroke-width="3" opacity=".62"/>
-    <path d="m205 250 51 14 52 14" stroke-width="5" opacity=".9"/>
-    <path d="m256 264-11 61m11-61 16 72" stroke-width="2.5" opacity=".48"/>
+    <!-- Meissa, Betelgeuse e Bellatrix -->
+    <path d="M256 100 142 178M256 100 369 174" stroke-width="2.5" opacity=".45"/>
+    <!-- Ombros e Cinturão de Órion: Mintaka, Alnilam e Alnitak -->
+    <path d="M142 178 196 255 256 270 316 285 369 174" stroke-width="3" opacity=".66"/>
+    <path d="M196 255 256 270 316 285" stroke-width="6" opacity=".96"/>
+    <!-- Quadril, Saiph e Rigel -->
+    <path d="M142 178 166 386M369 174 360 390M196 255 166 386M316 285 360 390" stroke-width="3" opacity=".58"/>
+    <!-- Espada abaixo do Cinturão -->
+    <path d="m256 270-7 54 17 51" stroke-width="2.5" opacity=".7"/>
   </g>
   <g fill="#f4d594">
-    <circle cx="143" cy="142" r="13"/>
-    <circle cx="368" cy="161" r="10"/>
-    <circle cx="205" cy="250" r="10"/>
-    <circle cx="256" cy="264" r="12"/>
-    <circle cx="308" cy="278" r="10"/>
-    <circle cx="175" cy="374" r="10"/>
-    <circle cx="350" cy="389" r="14"/>
-    <circle cx="245" cy="325" r="5"/>
-    <circle cx="272" cy="336" r="5"/>
+    <!-- Meissa (cabeça) -->
+    <circle cx="256" cy="100" r="8"/>
+    <!-- Betelgeuse e Bellatrix (ombros) -->
+    <circle cx="142" cy="178" r="14"/>
+    <circle cx="369" cy="174" r="11"/>
+    <!-- Mintaka, Alnilam e Alnitak: o Cinturão -->
+    <circle cx="196" cy="255" r="10"/>
+    <circle cx="256" cy="270" r="12"/>
+    <circle cx="316" cy="285" r="10"/>
+    <!-- Saiph e Rigel (pés) -->
+    <circle cx="166" cy="386" r="10"/>
+    <circle cx="360" cy="390" r="14"/>
+    <!-- estrelas da espada -->
+    <circle cx="249" cy="324" r="6"/>
+    <circle cx="266" cy="375" r="7"/>
   </g>
   <g fill="#fff5d8">
-    <circle cx="143" cy="142" r="5"/>
-    <circle cx="368" cy="161" r="4"/>
-    <circle cx="205" cy="250" r="4"/>
-    <circle cx="256" cy="264" r="5"/>
-    <circle cx="308" cy="278" r="4"/>
-    <circle cx="175" cy="374" r="4"/>
-    <circle cx="350" cy="389" r="5"/>
-  </g>
-  <g stroke="#f7dfaa" stroke-linecap="round" opacity=".95">
-    <path d="M143 116v52m-26-26h52M350 359v60m-30-30h60M256 238v52m-26-26h52" stroke-width="3"/>
+    <circle cx="256" cy="100" r="3"/>
+    <circle cx="142" cy="178" r="5"/>
+    <circle cx="369" cy="174" r="4"/>
+    <circle cx="196" cy="255" r="4"/>
+    <circle cx="256" cy="270" r="5"/>
+    <circle cx="316" cy="285" r="4"/>
+    <circle cx="166" cy="386" r="4"/>
+    <circle cx="360" cy="390" r="5"/>
   </g>
 </svg>
