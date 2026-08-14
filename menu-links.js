@@ -29,8 +29,49 @@
     if (document.getElementById('orionMenuNavigationStyles')) return;
     const style = document.createElement('style');
     style.id = 'orionMenuNavigationStyles';
-    style.textContent = '.aq-menu-links .aq-menu-index{margin:0 2px 5px;color:#8a662b;font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}.aq-menu-links a:focus-visible{outline:3px solid rgba(217,174,99,.55);outline-offset:2px}.aq-menu-links a{min-height:47px;display:block}';
+    style.textContent = `
+      /* Leitura confortável em telas grandes, projetores e celulares. */
+      html.orion-readable body{
+        text-rendering:optimizeLegibility;
+        -webkit-font-smoothing:antialiased;
+        line-height:1.65;
+      }
+      html.orion-readable :is(h1,h2,h3){
+        font-weight:600!important;
+        text-wrap:balance;
+      }
+      html.orion-readable :is(p,li,td,th,blockquote,figcaption,.lead,.description,.subtitle,.helper,.notice,.guide-item span){
+        font-size:clamp(.875rem,1.05vw,1.05rem)!important;
+        line-height:1.7!important;
+        letter-spacing:.003em;
+      }
+      html.orion-readable small{
+        font-size:clamp(.75rem,.85vw,.88rem)!important;
+        line-height:1.55!important;
+      }
+      html.orion-readable :is(label,button,input,select,textarea,.button,.aq-menu-links a){
+        font-size:clamp(.8125rem,.95vw,.95rem)!important;
+      }
+      html.orion-readable :is(button,input,select,textarea,.button){min-height:44px}
+      html.orion-readable :is(.hero p,.top p,.guide p,.alert p,.cta p,.compare p,.footer-text){
+        color:rgba(255,255,255,.88)!important;
+      }
+      html.orion-readable :is(.muted,.lead,.helper,.field small,.notice p,.source,.section-head p,.card>p,.subject p,.method p,.offer span,.university span){
+        color:#4e6075!important;
+      }
+      html.orion-readable :is(a,button,input,select,textarea):focus-visible{
+        outline:3px solid rgba(217,174,99,.72)!important;
+        outline-offset:3px;
+      }
+      .aq-menu-links .aq-menu-index{margin:0 2px 5px;color:#8a662b;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+      .aq-menu-links a{min-height:50px;display:block}
+      .aq-menu-links a:focus-visible{outline:3px solid rgba(217,174,99,.55);outline-offset:2px}
+      @media (max-width:700px){
+        html.orion-readable :is(p,li,td,th,blockquote,figcaption,.lead,.description,.subtitle,.helper,.notice,.guide-item span){font-size:.875rem!important;line-height:1.68!important}
+      }
+    `;
     document.head.append(style);
+    document.documentElement.classList.add('orion-readable');
   };
 
   injectMenuStyles();
