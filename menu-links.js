@@ -1,19 +1,3 @@
-// Medição agregada de acessos da Orion Academy — não envia dados do cadastro.
-(() => {
-  const measurementId = 'G-NKRC7R3XJ5';
-  window.dataLayer = window.dataLayer || [];
-  window.gtag = window.gtag || function gtag() {
-    window.dataLayer.push(arguments);
-  };
-  window.gtag('js', new Date());
-  window.gtag('config', measurementId);
-
-  const tag = document.createElement('script');
-  tag.async = true;
-  tag.src = `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-  document.head.append(tag);
-})();
-
 (() => {
   const entries = [
     ['index.html', 'Início', 'Teste vocacional e apresentação'],
