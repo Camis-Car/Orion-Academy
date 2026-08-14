@@ -66,8 +66,16 @@
       .aq-menu-links .aq-menu-index{margin:0 2px 5px;color:#8a662b;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
       .aq-menu-links a{min-height:50px;display:block}
       .aq-menu-links a:focus-visible{outline:3px solid rgba(217,174,99,.55);outline-offset:2px}
+      .aq-mobile-login{display:none}
       @media (max-width:700px){
         html.orion-readable :is(p,li,td,th,blockquote,figcaption,.lead,.description,.subtitle,.helper,.notice,.guide-item span){font-size:.875rem!important;line-height:1.68!important}
+        /* Acesso direto à conta, sempre ao lado do menu no topo. */
+        .aq-mobile-login{position:fixed;z-index:1002;top:12px;right:68px;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 14px;border:1px solid rgba(255,244,213,.72);border-radius:6px;color:#10213a!important;background:#d9ae63;font-size:.78rem!important;font-weight:800;letter-spacing:.015em;box-shadow:0 8px 20px rgba(8,21,38,.2)}
+        .aq-mobile-login:hover{color:#10213a!important;background:#edcd90}
+        .aq-mobile-login:focus-visible{outline:3px solid rgba(255,255,255,.82)!important;outline-offset:2px}
+      }
+      @media (max-width:370px){
+        .aq-mobile-login{right:64px;padding:0 10px;font-size:.72rem!important}
       }
     `;
     document.head.append(style);
@@ -75,6 +83,14 @@
   };
 
   injectMenuStyles();
+  if (!document.querySelector('.aq-mobile-login')) {
+    const login = document.createElement('a');
+    login.className = 'aq-mobile-login';
+    login.href = 'minha-jornada.html';
+    login.textContent = 'Log in';
+    login.setAttribute('aria-label', 'Entrar na sua área do estudante');
+    document.body.append(login);
+  }
   document.querySelectorAll('.aq-menu-links').forEach((links) => {
     links.replaceChildren();
     const heading = document.createElement('p');
