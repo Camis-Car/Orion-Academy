@@ -138,6 +138,18 @@
       document.head.appendChild(googleAnalyticsTag);
     })();
   </script>
+  <style id="orion-vocational-test-style">
+    .quiz-map { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 24px; }
+    .quiz-map span { min-height: 68px; display: grid; align-content: center; gap: 3px; padding: 10px; color: rgba(255,255,255,.88); border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.07); font-size: 11px; line-height: 1.25; }
+    .quiz-map b { color: #e4bf7e; font-size: 10px; letter-spacing: .12em; }
+    .question-dimension { display: inline-flex; margin-bottom: 16px; padding: 6px 9px; color: #8e682c; background: var(--gold-pale); font-size: 11px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .result-insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin: 28px 0; }
+    .result-insight { padding: 18px; border: 1px solid #e2e7eb; background: #fbfcfd; }
+    .result-insight b { display: block; margin-bottom: 6px; color: var(--navy); font-size: 13px; }
+    .result-insight p { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.55; }
+    .result-note { margin: 22px 0 0; color: #6c7888; font-size: 12px; line-height: 1.6; }
+    @media (max-width: 560px) { .quiz-map, .result-insights { grid-template-columns: repeat(2, 1fr); } }
+  </style>
 </head>
   <body><button class="aq-menu-toggle" id="aqMenuToggle" type="button" aria-label="Abrir menu do site" aria-controls="aqSiteMenu" aria-expanded="false"><span></span><span></span><span></span></button><div class="aq-menu-backdrop" id="aqSiteMenu" aria-hidden="true"><nav class="aq-menu-panel" aria-label="Navegação principal"><div class="aq-menu-top"><span class="aq-menu-title">Orion Academy</span><button class="aq-menu-close" id="aqMenuClose" type="button" aria-label="Fechar menu">×</button></div><div class="aq-menu-links"><a href="index.html">Início<small>Teste vocacional e apresentação</small></a><a href="sobre-nos.html">Sobre Nós<small>Os criadores e a origem do projeto</small></a><a href="carreiras.html">Profissões<small>Explore áreas e cursos</small></a><a href="carreiras-militares.html">Carreiras militares<small>Formas de ingresso e caminhos</small></a><a href="calendario-vestibulando.html">Calendário do Vestibulando<small>Datas, provas e segundas fases</small></a><a href="plano-estudos.html">Plano de estudos<small>Prioridades para cada objetivo</small></a><a href="faculdades-publicas.html">Faculdades públicas<small>Instituições em todo o Brasil</small></a><a href="comparar-faculdades.html">Comparar faculdades<small>Ofertas, campi e vagas</small></a><a href="plano-sisu.html">Seu plano de candidatura<small>Vagas e modalidades do Sisu</small></a><a href="comparar-notas.html">Compare suas notas<small>Compare com referências do Sisu</small></a><a href="listas-espera-rj.html">Listas de espera<small>Chamadas e processos de ingresso</small></a><a href="painel-controle.html">Painel da equipe<small>Atualizações e tarefas</small></a><a href="cadastro.html">Criar cadastro<small>Comece sua jornada</small></a></div><p class="aq-menu-note">Confirme sempre datas, editais e convocações nos canais oficiais das instituições.</p></nav></div>
     <header>
@@ -180,7 +192,7 @@
     </main>
     <footer><div class="wrap footer-top"><div><a class="brand" href="#inicio"><span class="brand-mark" role="img" aria-label="Bispo de xadrez" style="width:34px;height:39px"><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" style="display:block;width:100%;height:100%" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 9-7.7 9-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></span>Orion Academy</a><p class="footer-text">Autoconhecimento e direção para quem está construindo o próprio futuro.</p></div><div class="footer-links"><div><b>Projeto</b><a href="#sobre">Sobre nós</a><a href="#como-funciona">Como funciona</a><a href="#caminhos">Caminhos</a></div><div><b>Suporte</b><a href="#faq">Dúvidas frequentes</a><a href="mailto:projeto.aquiless@gmail.com">Contato</a><a href="privacidade.html">Privacidade</a></div><div><b>Acompanhe</b><a href="https://www.instagram.com/projetoaquiles_/" target="_blank" rel="noopener noreferrer">◎ @projetoaquiles_</a><a href="mailto:projeto.aquiless@gmail.com" aria-label="Enviar e-mail para a Orion Academy">✉ projeto.aquiless@gmail.com</a></div></div></div><div class="wrap footer-bottom"><span>© 2026 Orion Academy. Todos os direitos reservados.</span><span>Feito para escolhas com propósito.</span></div></footer>
 
-    <section class="quiz-layer" id="quizLayer" aria-modal="true" role="dialog" aria-label="Teste vocacional"><div class="wrap quiz-top"><a class="brand" style="color:var(--navy)" href="#inicio" onclick="closeQuiz()"><span class="brand-mark" role="img" aria-label="Bispo de xadrez" style="width:34px;height:39px"><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" style="display:block;width:100%;height:100%" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 9-7.7 9-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></span>Orion Academy</a><button class="exit-quiz" onclick="closeQuiz()">← Voltar ao site</button></div><div class="quiz-shell"><div class="quiz-intro" id="quizIntro"><span class="eyebrow" style="color:#e4bf7e">Teste vocacional</span><h1>Vamos descobrir seus pontos de afinidade.</h1><p>Responda com sinceridade. Ao final, você terá uma primeira direção sobre áreas e carreiras para explorar.</p><div class="student-fields"><input id="studentName" type="text" autocomplete="given-name" placeholder="Como podemos chamar você?" aria-label="Seu nome"><select id="studentAge" aria-label="Sua idade"><option value="">Sua idade</option><option>14 a 15 anos</option><option>16 a 17 anos</option><option>18 a 20 anos</option><option>Mais de 20 anos</option></select><select id="studentStage" aria-label="Seu momento de estudo"><option value="">Em que momento você está?</option><option>Ensino Médio</option><option>Vestibulando(a)</option><option>Transição de carreira</option><option>Outro momento</option></select></div><p class="quiz-error" id="quizError" aria-live="polite"></p><button class="button button-gold quiz-start" onclick="startQuiz()">Começar teste <span class="arrow">→</span></button><p class="quiz-note">Nesta versão, suas respostas ficam apenas neste dispositivo.</p></div><div id="questions"></div><div class="result" id="result"></div></div></section>
+    <section class="quiz-layer" id="quizLayer" aria-modal="true" role="dialog" aria-label="Teste vocacional"><div class="wrap quiz-top"><a class="brand" style="color:var(--navy)" href="#inicio" onclick="closeQuiz()"><span class="brand-mark" role="img" aria-label="Bispo de xadrez" style="width:34px;height:39px"><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" style="display:block;width:100%;height:100%" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 9-7.7 9-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></span>Orion Academy</a><button class="exit-quiz" onclick="closeQuiz()">← Voltar ao site</button></div><div class="quiz-shell"><div class="quiz-intro" id="quizIntro"><span class="eyebrow" style="color:#e4bf7e">Teste vocacional</span><h1>Vamos descobrir seus pontos de afinidade.</h1><p>São 32 perguntas sobre interesses, habilidades, rotina e valores. Ao final, você verá áreas para explorar — não uma profissão definida para você.</p><div class="quiz-map" aria-label="Dimensões avaliadas no teste"><span><b>01</b>Interesses e temas</span><span><b>02</b>Habilidades</span><span><b>03</b>Rotina e estilo</span><span><b>04</b>Valores de trabalho</span></div><div class="student-fields"><input id="studentName" type="text" autocomplete="given-name" placeholder="Como podemos chamar você?" aria-label="Seu nome"><select id="studentAge" aria-label="Sua idade"><option value="">Sua idade</option><option>14 a 15 anos</option><option>16 a 17 anos</option><option>18 a 20 anos</option><option>Mais de 20 anos</option></select><select id="studentStage" aria-label="Seu momento de estudo"><option value="">Em que momento você está?</option><option>Ensino Médio</option><option>Vestibulando(a)</option><option>Transição de carreira</option><option>Outro momento</option></select></div><p class="quiz-error" id="quizError" aria-live="polite"></p><button class="button button-gold quiz-start" onclick="startQuiz()">Começar teste <span class="arrow">→</span></button><p class="quiz-note">Nesta versão, suas respostas ficam apenas neste dispositivo.</p></div><div id="questions"></div><div class="result" id="result"></div></div></section>
     <script>
       const profiles = {
         humanas: { title: 'Humano e comunicador', text: 'Você demonstra interesse em compreender pessoas, ideias e relações. Comunicação, escuta e impacto social aparecem com força no seu perfil.', careers: 'Psicologia, Direito, Jornalismo e Relações Internacionais', plan: 'Priorize redação, atualidades e repertório cultural. Explore projetos em que você possa comunicar, mediar e criar junto com pessoas.' },
@@ -220,6 +232,144 @@
       function nextQuestion(){ const value=selectedValue(); if(!value)return; responses[current]=value; current++; if(current===questions.length) showResult(); else showQuestion(); }
       function previousQuestion(){ if(current===0)return; current--; showQuestion(); }
       function showResult(){ Object.keys(scores).forEach(k=>scores[k]=0); responses.forEach((value,index)=>scores[questions[index][1]]+=value); const ordered=Object.entries(scores).sort((a,b)=>b[1]-a[1]); const top=ordered[0][0]; const second=ordered[1][0]; const profile=profiles[top]; const max=50; const labels={humanas:'Humanas',biologicas:'Biológicas',tecnologicas:'Tecnológicas',cientificas:'Científicas'}; const result=document.getElementById('result'); document.getElementById('questions').innerHTML=''; result.innerHTML=`<span class="eyebrow">Seu perfil predominante</span><h1>${student.name}, seu perfil é ${profile.title.toLowerCase()}.</h1><span class="profile-badge">Afinidade principal: ${labels[top]}</span><p class="result-lead">${profile.text}</p><div class="result-bars">${ordered.map(([key,value])=>`<div><div class="result-bar-head"><span>${labels[key]}</span><span>${Math.round((value/max)*100)}%</span></div><div class="result-track"><i style="width:${Math.max(10,(value/max)*100)}%"></i></div></div>`).join('')}</div><div class="result-plan"><h3>Seu próximo passo</h3><p><b>Caminhos para explorar:</b> ${profile.careers}.<br><br>${profile.plan}</p></div><div class="quiz-actions"><button class="button button-light" onclick="resetQuiz()">Refazer avaliação</button><button class="button button-gold" onclick="window.location.href='carreiras.html?areas=${top},${second}'">Explorar profissões →</button></div>`; result.className='result show'; }
+    </script>
+    <script id="orion-vocational-test-logic">
+      const vocationalDimensions = {
+        interesses: { title: 'Interesses e temas', result: 'os assuntos que mais despertam sua curiosidade' },
+        habilidades: { title: 'Habilidades', result: 'as capacidades que você gosta de usar' },
+        rotina: { title: 'Rotina e estilo', result: 'o tipo de dia a dia em que você parece se sentir bem' },
+        valores: { title: 'Valores de trabalho', result: 'o impacto e os princípios que você procura em uma carreira' }
+      };
+      const vocationalLabels = { humanas: 'Humanas', biologicas: 'Biológicas', tecnologicas: 'Tecnológicas', cientificas: 'Científicas' };
+      const enhancedQuestions = [
+        { text: 'Gosto de entender pessoas e relações.', area: 'humanas', dimension: 'interesses' },
+        { text: 'História, sociedade e cultura me interessam.', area: 'humanas', dimension: 'interesses' },
+        { text: 'Consigo explicar ideias com clareza.', area: 'humanas', dimension: 'habilidades' },
+        { text: 'Percebo emoções e necessidades das pessoas.', area: 'humanas', dimension: 'habilidades' },
+        { text: 'Me imagino em conversas, debates ou atendimentos.', area: 'humanas', dimension: 'rotina' },
+        { text: 'Gosto de ler, escrever, argumentar ou apresentar.', area: 'humanas', dimension: 'rotina' },
+        { text: 'Quero contribuir para pessoas ou comunidades.', area: 'humanas', dimension: 'valores' },
+        { text: 'Ouvir bem e criar pontes entre pessoas é importante para mim.', area: 'humanas', dimension: 'valores' },
+
+        { text: 'Tenho curiosidade sobre corpo, vida ou ambiente.', area: 'biologicas', dimension: 'interesses' },
+        { text: 'Temas de saúde e bem-estar prendem minha atenção.', area: 'biologicas', dimension: 'interesses' },
+        { text: 'Tenho paciência para observar detalhes e procedimentos.', area: 'biologicas', dimension: 'habilidades' },
+        { text: 'Consigo ligar biologia e química a casos reais.', area: 'biologicas', dimension: 'habilidades' },
+        { text: 'Me imagino estudando casos ou realizando práticas.', area: 'biologicas', dimension: 'rotina' },
+        { text: 'Aprendo bem observando, investigando e praticando.', area: 'biologicas', dimension: 'rotina' },
+        { text: 'Quero cuidar da saúde, da vida ou do meio ambiente.', area: 'biologicas', dimension: 'valores' },
+        { text: 'Responsabilidade é essencial no meu trabalho ideal.', area: 'biologicas', dimension: 'valores' },
+
+        { text: 'Tenho curiosidade sobre sistemas e tecnologias.', area: 'tecnologicas', dimension: 'interesses' },
+        { text: 'Gosto de saber como aplicativos e máquinas funcionam.', area: 'tecnologicas', dimension: 'interesses' },
+        { text: 'Gosto de resolver problemas com lógica.', area: 'tecnologicas', dimension: 'habilidades' },
+        { text: 'Quando algo falha, tento descobrir a solução.', area: 'tecnologicas', dimension: 'habilidades' },
+        { text: 'Me imagino planejando ou melhorando soluções.', area: 'tecnologicas', dimension: 'rotina' },
+        { text: 'Gosto de desafios que pedem organização e tentativas.', area: 'tecnologicas', dimension: 'rotina' },
+        { text: 'Quero criar algo útil para as pessoas.', area: 'tecnologicas', dimension: 'valores' },
+        { text: 'Valorizo autonomia para transformar ideias em projetos.', area: 'tecnologicas', dimension: 'valores' },
+
+        { text: 'Descobertas e perguntas sobre o universo me atraem.', area: 'cientificas', dimension: 'interesses' },
+        { text: 'Quero entender o porquê, não só decorar respostas.', area: 'cientificas', dimension: 'interesses' },
+        { text: 'Comparo evidências antes de concluir algo.', area: 'cientificas', dimension: 'habilidades' },
+        { text: 'Gosto de dados e medições para explicar problemas.', area: 'cientificas', dimension: 'habilidades' },
+        { text: 'Me imagino pesquisando e testando hipóteses.', area: 'cientificas', dimension: 'rotina' },
+        { text: 'Tenho paciência para investigar uma pergunta.', area: 'cientificas', dimension: 'rotina' },
+        { text: 'Decisões devem se apoiar em evidências confiáveis.', area: 'cientificas', dimension: 'valores' },
+        { text: 'Quero ajudar a criar conhecimento novo.', area: 'cientificas', dimension: 'valores' }
+      ];
+      const vocationalDimensionScores = {};
+
+      baseQuestions.splice(0, baseQuestions.length, ...enhancedQuestions);
+
+      function shuffleQuestions(){
+        let mixed = [...baseQuestions];
+        let signature = '';
+        for(let attempt = 0; attempt < 4; attempt++){
+          mixed = [...baseQuestions];
+          for(let index = mixed.length - 1; index > 0; index--){
+            const randomIndex = Math.floor(Math.random() * (index + 1));
+            [mixed[index], mixed[randomIndex]] = [mixed[randomIndex], mixed[index]];
+          }
+          signature = mixed.map(item => item.text).join('|');
+          if(signature !== lastQuestionOrder) break;
+        }
+        lastQuestionOrder = signature;
+        return mixed;
+      }
+
+      function resetVocationalScores(){
+        Object.keys(profiles).forEach(area => {
+          scores[area] = 0;
+          vocationalDimensionScores[area] = {};
+          Object.keys(vocationalDimensions).forEach(dimension => vocationalDimensionScores[area][dimension] = 0);
+        });
+      }
+
+      function resetQuiz(){
+        questions = shuffleQuestions();
+        current = 0;
+        responses = [];
+        student = {};
+        resetVocationalScores();
+        document.getElementById('quizIntro').style.display = 'block';
+        document.getElementById('questions').innerHTML = '';
+        document.getElementById('result').className = 'result';
+        document.getElementById('quizError').textContent = '';
+        document.getElementById('studentName').value = '';
+        document.getElementById('studentAge').value = '';
+        document.getElementById('studentStage').value = '';
+      }
+
+      function showQuestion(){
+        const question = questions[current];
+        const total = questions.length;
+        const saved = responses[current];
+        const card = document.getElementById('questions');
+        card.innerHTML = '<article class="question-card active">' +
+          '<div class="quiz-progress"><span>Pergunta ' + (current + 1) + ' de ' + total + ' · ' + vocationalDimensions[question.dimension].title + '</span><span class="progress-track"><i class="progress-fill" style="width:' + ((current / total) * 100) + '%"></i></span></div>' +
+          '<span class="question-dimension">' + vocationalDimensions[question.dimension].title + '</span>' +
+          '<h2>' + question.text + '</h2><div class="answers">' +
+          answers.map((answer, index) => '<label class="answer ' + (saved === index + 1 ? 'selected' : '') + '"><input type="radio" name="answer" value="' + (index + 1) + '" ' + (saved === index + 1 ? 'checked' : '') + '><span>' + answer + '</span></label>').join('') +
+          '</div><div class="quiz-actions"><button class="button button-light" ' + (current === 0 ? 'disabled' : '') + ' onclick="previousQuestion()">← Anterior</button><button class="button button-dark" id="nextButton" ' + (saved ? '' : 'disabled') + ' onclick="nextQuestion()">' + (current === total - 1 ? 'Ver meu resultado' : 'Continuar →') + '</button></div></article>';
+        card.querySelectorAll('input').forEach(input => input.addEventListener('change', event => {
+          card.querySelectorAll('.answer').forEach(answer => answer.classList.remove('selected'));
+          event.target.closest('.answer').classList.add('selected');
+          document.getElementById('nextButton').disabled = false;
+        }));
+      }
+
+      function escapeVocationalHtml(value){
+        return String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[character]));
+      }
+
+      function showResult(){
+        resetVocationalScores();
+        responses.forEach((value, index) => {
+          const question = questions[index];
+          scores[question.area] += value;
+          vocationalDimensionScores[question.area][question.dimension] += value;
+        });
+        const ordered = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+        const top = ordered[0][0];
+        const second = ordered[1][0];
+        const profile = profiles[top];
+        const strongestDimension = Object.entries(vocationalDimensionScores[top]).sort((a, b) => b[1] - a[1])[0][0];
+        const maxAreaScore = baseQuestions.filter(question => question.area === top).length * 5;
+        const result = document.getElementById('result');
+        const safeName = escapeVocationalHtml(student.name);
+        document.getElementById('questions').innerHTML = '';
+        result.innerHTML = '<span class="eyebrow">Seu mapa de afinidades</span>' +
+          '<h1>' + safeName + ', há uma forte afinidade com o perfil ' + profile.title.toLowerCase() + '.</h1>' +
+          '<span class="profile-badge">Combinação para explorar: ' + vocationalLabels[top] + ' + ' + vocationalLabels[second] + '</span>' +
+          '<p class="result-lead">' + profile.text + '</p>' +
+          '<div class="result-insights"><div class="result-insight"><b>O que mais apareceu</b><p>Na área de ' + vocationalLabels[top] + ', destacam-se ' + vocationalDimensions[strongestDimension].result + '.</p></div><div class="result-insight"><b>Como usar este resultado</b><p>Explore cursos, projetos e conversas com profissionais que unam as duas áreas com maior afinidade.</p></div></div>' +
+          '<div class="result-bars">' + ordered.map(([area, value]) => '<div><div class="result-bar-head"><span>' + vocationalLabels[area] + '</span><span>' + Math.round((value / maxAreaScore) * 100) + '%</span></div><div class="result-track"><i style="width:' + Math.max(10, (value / maxAreaScore) * 100) + '%"></i></div></div>').join('') + '</div>' +
+          '<div class="result-plan"><h3>Seu próximo passo</h3><p><b>Caminhos para explorar:</b> ' + profile.careers + '.<br><br>' + profile.plan + '</p></div>' +
+          '<p class="result-note">Este teste é uma ferramenta de autoconhecimento: ele não é diagnóstico e não determina qual profissão você deve seguir.</p>' +
+          '<div class="quiz-actions"><button class="button button-light" onclick="resetQuiz()">Refazer avaliação</button><button class="button button-gold" onclick="window.location.href=\'carreiras.html?areas=' + top + ',' + second + '\'">Explorar profissões →</button></div>';
+        result.className = 'result show';
+      }
     </script>
   <script id="aq-global-menu-script">(()=>{const toggle=document.getElementById('aqMenuToggle'),menu=document.getElementById('aqSiteMenu'),closeButton=document.getElementById('aqMenuClose');if(!toggle||!menu||!closeButton)return;const close=()=>{menu.classList.remove('open');menu.setAttribute('aria-hidden','true');toggle.setAttribute('aria-expanded','false');document.body.classList.remove('aq-menu-open')};const open=()=>{menu.classList.add('open');menu.setAttribute('aria-hidden','false');toggle.setAttribute('aria-expanded','true');document.body.classList.add('aq-menu-open');closeButton.focus()};toggle.addEventListener('click',()=>menu.classList.contains('open')?close():open());closeButton.addEventListener('click',close);menu.addEventListener('click',event=>{if(event.target===menu)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape')close()});})();</script><script src="menu-links.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="cadastro-config.js"></script><script>(()=>{const config=window.PROJETO_AQUILES_SUPABASE||{};const ready=typeof window.supabase!=="undefined"&&/^https:\/\//.test(config.url||"")&&typeof config.anonKey==="string"&&config.anonKey.trim().length>20;if(!ready||new URLSearchParams(location.search).has("public"))return;window.supabase.createClient(config.url,config.anonKey).auth.getSession().then(({data:{session}})=>{if(session?.user)location.replace("minha-jornada.html")}).catch(()=>{});})();</script></body>
 </html>
