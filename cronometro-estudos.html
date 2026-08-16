@@ -78,8 +78,9 @@
       const liveClock = document.createElement('div');
       liveClock.className = 'study-now';
       liveClock.setAttribute('aria-label', 'Data e horário atuais');
-      liveClock.innerHTML = '<span class="study-now-label">Agora</span><strong class="study-now-time" id="liveClockTime">--:--:--</strong><span class="study-now-date" id="liveClockDate">--</span>';
+      liveClock.innerHTML = '<div class="study-now-current"><span class="study-now-label">Agora:</span><strong class="study-now-time" id="liveClockTime">--:--:--</strong></div><span class="study-now-date" id="liveClockDate">--</span>';
       $('#timerRing').insertAdjacentElement('afterend', liveClock);
+      $('#currentTime').previousElementSibling.textContent = 'Horário de término';
       const isPomodoro = () => state.mode === 'pomodoro';
       const phase = () => phases[state.pomodoroPhase] || phases.focus;
       const syncRemaining = () => { if (state.running && state.endAt) state.remaining = Math.max(0, Math.ceil((state.endAt - Date.now()) / 1000)); };
@@ -87,7 +88,9 @@
         const current = new Date();
         $('#clock').textContent = nowTime();
         $('#liveClockTime').textContent = new Intl.DateTimeFormat('pt-BR', { hour:'2-digit', minute:'2-digit', second:'2-digit' }).format(current);
-        $('#liveClockDate').textContent = new Intl.DateTimeFormat('pt-BR', { day:'2-digit', month:'long' }).format(current);
+        const weekday = new Intl.DateTimeFormat('pt-BR', { weekday:'long' }).format(current);
+        const date = new Intl.DateTimeFormat('pt-BR', { day:'2-digit', month:'2-digit', year:'numeric' }).format(current);
+        $('#liveClockDate').textContent = `${weekday.charAt(0).toUpperCase()}${weekday.slice(1)}, ${date}`;
       }
       function setInputs() {
         subjectInput.value = state.subject || 'Revisão geral';
@@ -131,13 +134,20 @@
         const note = totalSessions ? `Você já acendeu ${totalSessions} ${totalSessions === 1 ? 'estrela' : 'estrelas'}. Conclua outro bloco de foco para continuar.` : 'Conclua seu primeiro bloco de foco para acender a primeira estrela.';
         $('#constellationSky').innerHTML = `<svg class="constellation-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">${active > 1 ? `<polyline points="${linePoints}"></polyline>` : ''}</svg>${stars}<p class="constellation-note">${note}</p>`;
       }
+      function formatEndTime(safeDuration) {
+        if (state.running && state.endAt) return new Intl.DateTimeFormat('pt-BR', { hour:'2-digit', minute:'2-digit' }).format(new Date(state.endAt));
+        const [hours, minutes] = String(state.plannedTime || nowTime()).split(':').map(Number);
+        const end = new Date();
+        end.setHours(Number.isFinite(hours) ? hours : 0, (Number.isFinite(minutes) ? minutes : 0) + Math.round(safeDuration / 60), 0, 0);
+        return new Intl.DateTimeFormat('pt-BR', { hour:'2-digit', minute:'2-digit' }).format(end);
+      }
       function render() {
         syncRemaining();
         const safeDuration = Math.max(60, Number(state.duration) || 3000), remaining = Math.max(0, Number(state.remaining) || 0), pomodoro = isPomodoro(), currentPhase = phase();
         $('#timerValue').textContent = format(remaining);
         $('#timerRing').style.setProperty('--value', `${Math.max(0, Math.min(360, Math.round((1 - remaining / safeDuration) * 360)))}deg`);
         $('#currentSubject').textContent = pomodoro && state.pomodoroPhase !== 'focus' ? 'Pausa de recuperação' : (state.subject || 'Revisão geral');
-        $('#currentTime').textContent = state.plannedTime || 'Agora';
+        $('#currentTime').textContent = formatEndTime(safeDuration);
         $('#currentDuration').textContent = `${Math.round(safeDuration / 60)} minutos${pomodoro ? ` · ${currentPhase.label.toLowerCase()}` : ''}`;
         $('#currentRhythm').textContent = pomodoro ? 'Método Pomodoro' : 'Cronômetro livre';
         $('#startPause').textContent = state.running ? 'Pausar' : (pomodoro ? (state.pomodoroPhase === 'focus' ? 'Começar foco' : 'Começar pausa') : (remaining === 0 ? 'Nova sessão' : 'Iniciar'));
