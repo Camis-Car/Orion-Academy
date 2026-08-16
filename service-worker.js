@@ -1,4 +1,4 @@
-const CACHE_NAME = 'orion-academy-pwa-v2';
+const CACHE_NAME = 'orion-academy-pwa-v3';
 const CORE_FILES = [
   './',
   './index.html',
