@@ -24,6 +24,81 @@
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' }));
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
+  const themeStorageKey = 'orion-theme';
+
+  const readTheme = () => {
+    try {
+      return localStorage.getItem(themeStorageKey) === 'dark' ? 'dark' : 'light';
+    } catch {
+      return 'light';
+    }
+  };
+
+  const updateThemeControls = (theme) => {
+    const dark = theme === 'dark';
+    document.querySelectorAll('.orion-theme-toggle').forEach((button) => {
+      button.setAttribute('aria-pressed', String(dark));
+      button.innerHTML = dark
+        ? '<span aria-hidden="true">☀</span><span>Modo claro</span>'
+        : '<span aria-hidden="true">☾</span><span>Modo escuro</span>';
+    });
+  };
+
+  const applyTheme = (theme, save = false) => {
+    const dark = theme === 'dark';
+    document.documentElement.dataset.orionTheme = dark ? 'dark' : 'light';
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    if (themeColor) themeColor.content = dark ? '#081526' : '#0d1d35';
+    if (save) {
+      try {
+        localStorage.setItem(themeStorageKey, dark ? 'dark' : 'light');
+      } catch {}
+    }
+    updateThemeControls(dark ? 'dark' : 'light');
+  };
+
+  const injectThemeStyles = () => {
+    if (document.getElementById('orionThemeStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'orionThemeStyles';
+    style.textContent = [
+      'html[data-orion-theme="dark"]{color-scheme:dark;}',
+      'html[data-orion-theme="dark"] body{background:#081526!important;color:#eaf0f8!important;}',
+      'html[data-orion-theme="dark"] :is(main>section:not(.hero),.page,.content,.quiz-layer,.result,.question-card,[class*="card"],[class*="panel"],[class*="tool"],[class*="subject"],[class*="university"],[class*="country"],[class*="step"],[class*="summary"],[class*="field"],[class*="filter"],[class*="offer"],[class*="calendar"],[class*="guide"],[class*="route"],[class*="principle"],[class*="benefit"],[class*="career"],[class*="quote"],[class*="faq"],[class*="modal"],[class*="form"],[class*="empty"]){background-color:#10213a!important;border-color:rgba(166,188,214,.22)!important;}',
+      'html[data-orion-theme="dark"] :is(h1,h2,h3,h4,h5,h6,strong,b,th,.brand,.aq-menu-title){color:#f7f9fd!important;}',
+      'html[data-orion-theme="dark"] :is(p,li,td,label,small,.lead,.muted,.helper,.description,.subtitle,.notice,.source,.section-head p,.card>p,.subject p,.method p,.offer span,.university span,.footer-text,.aq-menu-note){color:#c9d5e4!important;}',
+      'html[data-orion-theme="dark"] :is(a:not(.button),.aq-menu-links a,.pages-dropdown a){color:#f0cc8a!important;}',
+      'html[data-orion-theme="dark"] :is(input,select,textarea){background:#0a182b!important;border-color:#39516e!important;color:#f5f8fc!important;}',
+      'html[data-orion-theme="dark"] :is(input,textarea)::placeholder{color:#9dafc4!important;}',
+      'html[data-orion-theme="dark"] :is(table,tr,td,th){border-color:#344b67!important;}',
+      'html[data-orion-theme="dark"] :is(.aq-menu-panel,.pages-dropdown,.aq-menu-close){background:#10213a!important;color:#f6f8fb!important;border-color:#39516e!important;}',
+      'html[data-orion-theme="dark"] :is(.aq-menu-links a:hover,.pages-dropdown a:hover){background:#1b3554!important;color:#ffe1a6!important;}',
+      'html[data-orion-theme="dark"] :is(.button-light,.button-outline){background:#152a45!important;border-color:#d9ae63!important;color:#f6d69b!important;}',
+      'html[data-orion-theme="dark"] :is(.result-track,.progress-track){background:#263b56!important;}',
+      '.orion-theme-toggle{width:100%;display:flex;align-items:center;justify-content:center;gap:9px;min-height:44px;margin:17px 0 3px;padding:0 12px;border:1px solid #b9893d;border-radius:5px;color:#1a2c43;background:#f6dfb0;font:700 12px "DM Sans",Arial,sans-serif;cursor:pointer;}',
+      '.orion-theme-toggle:hover{filter:brightness(1.03);}',
+      '.orion-theme-toggle span:first-child{font-size:17px;line-height:1;}',
+      'html[data-orion-theme="dark"] .orion-theme-toggle{color:#f7deb0;background:#193452;border-color:#d9ae63;}',
+      '.orion-theme-toggle:focus-visible{outline:3px solid rgba(217,174,99,.72);outline-offset:3px;}'
+    ].join('');
+    document.head.append(style);
+  };
+
+  const addThemeControl = () => {
+    document.querySelectorAll('.aq-menu-panel').forEach((panel) => {
+      if (panel.querySelector('.orion-theme-toggle')) return;
+      const button = document.createElement('button');
+      button.className = 'orion-theme-toggle';
+      button.type = 'button';
+      button.addEventListener('click', () => {
+        const nextTheme = document.documentElement.dataset.orionTheme === 'dark' ? 'light' : 'dark';
+        applyTheme(nextTheme, true);
+      });
+      const links = panel.querySelector('.aq-menu-links');
+      panel.insertBefore(button, links || null);
+    });
+    updateThemeControls(document.documentElement.dataset.orionTheme || 'light');
+  };
 
   const injectMenuStyles = () => {
     if (document.getElementById('orionMenuNavigationStyles')) return;
@@ -95,6 +170,9 @@
   };
 
   injectMenuStyles();
+  injectThemeStyles();
+  applyTheme(readTheme());
+  addThemeControl();
   if (!document.querySelector('.aq-mobile-login')) {
     const login = document.createElement('a');
     login.className = 'aq-mobile-login';
