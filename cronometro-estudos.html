@@ -16,7 +16,7 @@
     .mode-picker{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:20px 0 4px}.mode-choice{min-height:74px;padding:12px;border:1px solid #ccdce0;background:#fff;color:#315b63;text-align:left;cursor:pointer}.mode-choice strong{display:block;font-size:13px}.mode-choice small{display:block;margin-top:4px;color:#6d8389;font-size:10px;line-height:1.4}.mode-choice.active{border-color:#34737b;background:#eaf6f6;box-shadow:inset 0 0 0 1px #34737b}.mode-choice.active strong{color:#175e68}.pomodoro-panel{margin-top:14px;padding:15px;border:1px solid #bcdfe1;background:#eef9f9}.pomodoro-panel[hidden]{display:none}.pomodoro-panel strong{display:block;color:#1d6068;font-size:14px}.pomodoro-panel p{margin:5px 0 0;color:#517276;font-size:11px;line-height:1.55}.pomodoro-progress{display:flex;align-items:center;gap:6px;margin-top:12px}.pomodoro-progress span{display:grid;place-items:center;width:23px;height:23px;border:1px solid #8fbfc3;border-radius:50%;color:#5d8084;background:#fff;font-size:10px;font-weight:700}.pomodoro-progress span.done{border-color:#2b6f77;color:#fff;background:#2b6f77}.pomodoro-progress b{margin-left:4px;color:#35676d;font-size:10px}.quick-times.disabled{opacity:.48;pointer-events:none}.constellation-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:24px;align-items:center;margin-top:36px;padding:30px;border:1px solid #233f5c;background:linear-gradient(135deg,#09182c,#123858);color:#fff;overflow:hidden}.constellation-copy h2{margin:9px 0 11px;font-size:34px;letter-spacing:-.035em}.constellation-copy>p{margin:0;color:rgba(255,255,255,.77);font-size:13px;line-height:1.7}.constellation-stats{display:flex;gap:20px;flex-wrap:wrap;margin-top:22px}.constellation-stats strong{display:block;color:#f0ca86;font-family:"Playfair Display",Georgia,serif;font-size:27px;font-weight:500}.constellation-stats span{display:block;margin-top:2px;color:rgba(255,255,255,.7);font-size:10px}.constellation-sky{position:relative;min-height:260px;overflow:hidden;border:1px solid rgba(221,194,138,.35);background:radial-gradient(circle at 78% 20%,rgba(68,132,151,.34),transparent 28%),radial-gradient(circle at 18% 76%,rgba(217,174,99,.17),transparent 23%),#071426}.constellation-sky:before{content:"";position:absolute;inset:0;opacity:.44;background-image:radial-gradient(circle,#c9d9e9 1px,transparent 1.5px),radial-gradient(circle,#d9ae63 1px,transparent 1.6px);background-position:12px 18px,47px 59px;background-size:71px 71px,109px 109px}.constellation-lines{position:absolute;inset:0;width:100%;height:100%;overflow:visible}.constellation-lines polyline{fill:none;stroke:rgba(229,191,126,.55);stroke-width:.45;stroke-dasharray:2 2}.constellation-star{position:absolute;z-index:1;width:10px;height:10px;margin:-5px 0 0 -5px;border:1px solid rgba(229,239,248,.48);border-radius:50%;background:#304d66;box-shadow:0 0 0 0 rgba(240,202,134,0);transition:background .35s,box-shadow .35s,transform .35s}.constellation-star.lit{border-color:#fff1c8;background:#f0ca86;box-shadow:0 0 0 4px rgba(240,202,134,.12),0 0 16px rgba(240,202,134,.85);transform:scale(1.16)}.constellation-star.lit:after{content:"";position:absolute;inset:-6px;background:linear-gradient(90deg,transparent 46%,rgba(255,249,223,.8) 47% 53%,transparent 54%),linear-gradient(0deg,transparent 46%,rgba(255,249,223,.8) 47% 53%,transparent 54%)}.constellation-note{position:absolute;z-index:2;right:15px;bottom:13px;left:15px;margin:0;color:#d9e8f0;font-size:11px;line-height:1.5;text-align:center}.pomodoro-guide{margin-top:44px;padding:31px;border:1px solid #d0e3e4;background:#f4fbfb}.pomodoro-guide h2{margin:9px 0 11px;color:var(--navy);font-size:35px;letter-spacing:-.035em}.pomodoro-guide>p{max-width:820px;margin:0;color:#506e73;font-size:13px;line-height:1.7}.pomodoro-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:23px}.pomodoro-step{padding:19px;background:#fff;border:1px solid #d6e5e6}.pomodoro-step strong{display:block;color:#24666e;font-family:"Playfair Display",Georgia,serif;font-size:25px;font-weight:500}.pomodoro-step h3{margin:7px 0 6px;color:#183b4b;font-family:"DM Sans",Arial,sans-serif;font-size:14px;font-weight:700}.pomodoro-step p{margin:0;color:#5a7478;font-size:11px;line-height:1.58}@media(max-width:880px){.constellation-card{grid-template-columns:1fr}.constellation-sky{min-height:235px}}@media(max-width:600px){.mode-picker,.pomodoro-steps{grid-template-columns:1fr}.constellation-card{padding:24px}.constellation-copy h2,.pomodoro-guide h2{font-size:31px}.constellation-sky{min-height:220px}.pomodoro-guide{padding:24px}}
   </style>
   <style>
-    .spotify-card{margin-top:18px;padding:23px;border:1px solid var(--line);background:#fff}.spotify-card h2{margin:8px 0 8px;color:var(--navy);font-size:27px;letter-spacing:-.03em}.spotify-card>p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.spotify-status{min-height:43px;margin:16px 0 0;padding:11px 12px;border:1px solid #d7e3ea;background:#f6fafc;color:#486379;font-size:11px;line-height:1.5}.spotify-status[data-tone="success"]{border-color:#b9ddc6;background:#f0faf3;color:#24613d}.spotify-status[data-tone="error"]{border-color:#edc5bd;background:#fff5f2;color:#8c3e36}.spotify-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.spotify-button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 11px;border:1px solid #b8c9d9;background:#fff;color:#173a5e;font-size:11px;font-weight:700;cursor:pointer}.spotify-button.primary{border-color:#1db954;background:#1db954;color:#fff}.spotify-button:disabled{cursor:not-allowed;opacity:.48}.spotify-track{display:grid;grid-template-columns:40px 1fr;gap:10px;align-items:center;margin-top:13px;padding:10px;border:1px solid #d9e4ed;background:#fbfdff}.spotify-art{display:grid;place-items:center;width:40px;height:40px;background:#dce9f3;color:#173a5e;font-size:16px}.spotify-track strong{display:block;overflow:hidden;color:#173a5e;font-size:11px;text-overflow:ellipsis;white-space:nowrap}.spotify-track span{display:block;overflow:hidden;margin-top:3px;color:#647a91;font-size:10px;text-overflow:ellipsis;white-space:nowrap}.spotify-controls{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:6px;margin-top:9px}.classical-tip{margin-top:18px;padding:18px;border:1px solid #d8e1ea;background:#fbfcff}.classical-tip h3{margin:8px 0 7px;color:#173a5e;font-family:"DM Sans",Arial,sans-serif;font-size:14px;font-weight:700}.classical-tip p{margin:0;color:#4b6078;font-size:11px;line-height:1.6}.classical-tip a{display:inline-flex;margin-top:11px;color:#245f92;font-size:11px;font-weight:700;text-decoration:underline;text-underline-offset:3px}.classical-tip small{display:block;margin-top:10px;color:#687d92;font-size:10px;line-height:1.5}.classical-tip small .source-link{display:inline;margin:0;font-size:inherit;font-weight:700}@media(max-width:600px){.spotify-card,.classical-tip{padding:20px}}
+    .spotify-card{grid-column:1;margin-top:18px;padding:23px;border:1px solid var(--line);background:#fff}.spotify-card h2{margin:8px 0 8px;color:var(--navy);font-size:27px;letter-spacing:-.03em}.spotify-card>p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.spotify-status{min-height:43px;margin:16px 0 0;padding:11px 12px;border:1px solid #d7e3ea;background:#f6fafc;color:#486379;font-size:11px;line-height:1.5}.spotify-status[data-tone="success"]{border-color:#b9ddc6;background:#f0faf3;color:#24613d}.spotify-status[data-tone="error"]{border-color:#edc5bd;background:#fff5f2;color:#8c3e36}.spotify-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.spotify-button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 11px;border:1px solid #b8c9d9;background:#fff;color:#173a5e;font-size:11px;font-weight:700;cursor:pointer}.spotify-button.primary{border-color:#1db954;background:#1db954;color:#fff}.spotify-button:disabled{cursor:not-allowed;opacity:.48}.spotify-track{display:grid;grid-template-columns:52px 1fr;gap:11px;align-items:center;margin-top:13px;padding:10px;border:1px solid #d9e4ed;background:#fbfdff}.spotify-art{display:grid;place-items:center;width:52px;height:52px;overflow:hidden;background:#dce9f3;color:#173a5e;font-size:17px}.spotify-art img{display:block;width:100%;height:100%;object-fit:cover}.spotify-track strong{display:block;overflow:hidden;color:#173a5e;font-size:12px;text-overflow:ellipsis;white-space:nowrap}.spotify-track span{display:block;overflow:hidden;margin-top:3px;color:#647a91;font-size:10px;text-overflow:ellipsis;white-space:nowrap}.spotify-track small{display:block;overflow:hidden;margin-top:4px;color:#32745d;font-size:10px;font-weight:700;text-overflow:ellipsis;white-space:nowrap}.spotify-progress{margin-top:10px}.spotify-progress-meta{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px;color:#647a91;font-size:10px;font-variant-numeric:tabular-nums}.spotify-progress-line{height:5px;overflow:hidden;border-radius:999px;background:#dce8ef}.spotify-progress-line span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#1db954,#63d584);transition:width .3s linear}.spotify-controls{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:6px;margin-top:9px}.classical-tip{margin-top:18px;padding:18px;border:1px solid #d8e1ea;background:#fbfcff}.classical-tip h3{margin:8px 0 7px;color:#173a5e;font-family:"DM Sans",Arial,sans-serif;font-size:14px;font-weight:700}.classical-tip p{margin:0;color:#4b6078;font-size:11px;line-height:1.6}.classical-tip a{display:inline-flex;margin-top:11px;color:#245f92;font-size:11px;font-weight:700;text-decoration:underline;text-underline-offset:3px}.classical-tip small{display:block;margin-top:10px;color:#687d92;font-size:10px;line-height:1.5}.classical-tip small .source-link{display:inline;margin:0;font-size:inherit;font-weight:700}@media(max-width:600px){.spotify-card,.classical-tip{padding:20px}}
   </style>
   <script>
     (() => {
@@ -214,40 +214,55 @@
   <script src="spotify-config.js"></script>
   <script>
     (() => {
-      const sidebar = document.querySelector('.focus-layout aside');
-      if (!sidebar) return;
+      const focusLayout = document.querySelector('.focus-layout');
+      const timerCard = focusLayout && focusLayout.querySelector('.timer-card');
+      if (!focusLayout || !timerCard) return;
 
       const card = document.createElement('section');
       card.className = 'spotify-card';
       card.innerHTML = [
         '<span class="eyebrow" style="color:#1b8a4a">Som para foco</span>',
         '<h2>Spotify no seu ritmo.</h2>',
-        '<p>Conecte sua conta para ver a música atual e avançar ou voltar faixas no Spotify que estiver aberto.</p>',
-        '<p class="spotify-status" id="spotifyStatus" aria-live="polite">Conecte sua conta para controlar a reprodução.</p>',
-        '<div class="spotify-actions"><button class="spotify-button primary" id="spotifyConnect" type="button">Conectar Spotify</button><button class="spotify-button" id="spotifyRefresh" type="button" hidden>Atualizar música</button><button class="spotify-button" id="spotifyDisconnect" type="button" hidden>Desconectar</button></div>',
-        '<div class="spotify-track" id="spotifyTrack" hidden><div class="spotify-art" id="spotifyArt" aria-hidden="true">♫</div><div><strong id="spotifyTrackName">Nenhuma música em reprodução</strong><span id="spotifyTrackArtist">Abra o Spotify e escolha uma faixa.</span></div></div>',
+        '<p>Conecte sua conta para ouvir uma playlist de foco aqui na página ou controlar a reprodução em outro dispositivo.</p>',
+        '<p class="spotify-status" id="spotifyStatus" aria-live="polite">Conecte sua conta para ouvir aqui ou controlar o Spotify.</p>',
+        '<div class="spotify-actions"><button class="spotify-button primary" id="spotifyConnect" type="button">Conectar Spotify</button><button class="spotify-button primary" id="spotifyListen" type="button" hidden>Ouvir aqui</button><button class="spotify-button" id="spotifyRefresh" type="button" hidden>Atualizar música</button><button class="spotify-button" id="spotifyDisconnect" type="button" hidden>Desconectar</button></div>',
+        '<div class="spotify-track" id="spotifyTrack" hidden><div class="spotify-art" id="spotifyArt" aria-hidden="true">♫</div><div><strong id="spotifyTrackName">Nenhuma música em reprodução</strong><span id="spotifyTrackArtist">Clique em “Ouvir aqui” para começar.</span><small id="spotifyDevice">Player Orion Academy</small></div></div>',
+        '<div class="spotify-progress" id="spotifyProgress" hidden><div class="spotify-progress-meta"><span id="spotifyProgressCurrent">0:00</span><span id="spotifyProgressTotal">0:00</span></div><div class="spotify-progress-line" role="progressbar" id="spotifyProgressLine" aria-label="Progresso da música" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="spotifyProgressFill"></span></div></div>',
         '<div class="spotify-controls" id="spotifyControls" hidden><button class="spotify-button" id="spotifyPrevious" type="button" aria-label="Faixa anterior">← Anterior</button><button class="spotify-button primary" id="spotifyPlayPause" type="button">Pausar</button><button class="spotify-button" id="spotifyNext" type="button" aria-label="Próxima faixa">Próxima →</button></div>',
         '<section class="classical-tip"><span class="eyebrow" style="color:#397780">Recomendação</span><h3>Clássica instrumental para começar.</h3><p>Para algumas pessoas, música sem letra e em volume baixo ajuda a criar uma rotina e a disfarçar ruídos. Não é uma regra: se atrapalhar leitura, memória ou resolução de questões, prefira silêncio.</p><a href="https://open.spotify.com/playlist/6rtLAwHvK7YSX08Y16EjLG" target="_blank" rel="noopener noreferrer">Abrir playlist de música clássica ↗</a><small>As evidências sobre música e desempenho são mistas; ela não substitui descanso, método e concentração. <a class="source-link" href="https://journals.sagepub.com/doi/pdf/10.1177/20592043221134392" target="_blank" rel="noopener noreferrer">Ver revisão científica.</a></small></section>'
       ].join('');
-      sidebar.append(card);
+      timerCard.insertAdjacentElement('afterend', card);
 
       const config = window.ORION_SPOTIFY_CONFIG || {};
       const clientId = String(config.clientId || '').trim();
       const redirectUri = String(config.redirectUri || '').trim() || (location.origin + location.pathname);
-      const scopes = 'user-read-playback-state user-read-currently-playing user-modify-playback-state';
-      const authStorageKey = 'orion-spotify-auth-v1';
+      const scopes = 'streaming user-read-email user-read-private user-read-playback-state user-read-currently-playing user-modify-playback-state';
+      const authStorageKey = 'orion-spotify-auth-v2';
       const verifierStorageKey = 'orion-spotify-verifier-v1';
       const stateStorageKey = 'orion-spotify-state-v1';
+      const playerName = 'Orion Academy — Cronômetro';
+      const defaultPlaylistUri = 'spotify:playlist:6rtLAwHvK7YSX08Y16EjLG';
       let playback = null;
+      let webPlayer = null;
+      let webPlayerDeviceId = '';
+      let sdkPromise = null;
+      let progressState = { position: 0, duration: 0, playing: false, updatedAt: Date.now() };
 
       const status = document.getElementById('spotifyStatus');
       const connectButton = document.getElementById('spotifyConnect');
+      const listenButton = document.getElementById('spotifyListen');
       const refreshButton = document.getElementById('spotifyRefresh');
       const disconnectButton = document.getElementById('spotifyDisconnect');
       const trackBox = document.getElementById('spotifyTrack');
       const controls = document.getElementById('spotifyControls');
       const trackName = document.getElementById('spotifyTrackName');
       const trackArtist = document.getElementById('spotifyTrackArtist');
+      const deviceText = document.getElementById('spotifyDevice');
+      const progressBox = document.getElementById('spotifyProgress');
+      const progressCurrent = document.getElementById('spotifyProgressCurrent');
+      const progressTotal = document.getElementById('spotifyProgressTotal');
+      const progressLine = document.getElementById('spotifyProgressLine');
+      const progressFill = document.getElementById('spotifyProgressFill');
       const artwork = document.getElementById('spotifyArt');
       const playPause = document.getElementById('spotifyPlayPause');
 
@@ -294,6 +309,7 @@
       const updateConnectionUI = () => {
         const connected = Boolean(readAuth());
         connectButton.hidden = connected;
+        listenButton.hidden = !connected;
         refreshButton.hidden = !connected;
         disconnectButton.hidden = !connected;
         trackBox.hidden = !connected;
@@ -359,26 +375,165 @@
         return data;
       };
 
-      const showTrack = (data) => {
+      const loadWebPlaybackSdk = () => {
+        if (window.Spotify && window.Spotify.Player) return Promise.resolve();
+        if (sdkPromise) return sdkPromise;
+        sdkPromise = new Promise((resolve, reject) => {
+          const previousReady = window.onSpotifyWebPlaybackSDKReady;
+          const timeout = window.setTimeout(() => reject(new Error('O player do Spotify demorou para carregar. Tente novamente.')), 12000);
+          window.onSpotifyWebPlaybackSDKReady = () => {
+            window.clearTimeout(timeout);
+            if (typeof previousReady === 'function') previousReady();
+            resolve();
+          };
+          const script = document.createElement('script');
+          script.src = 'https://sdk.scdn.co/spotify-player.js';
+          script.async = true;
+          script.onerror = () => { window.clearTimeout(timeout); reject(new Error('Não foi possível carregar o player do Spotify.')); };
+          document.head.appendChild(script);
+        });
+        return sdkPromise;
+      };
+
+      const setArtwork = (url, label) => {
+        artwork.replaceChildren();
+        if (url) {
+          const image = document.createElement('img');
+          image.src = url;
+          image.alt = label ? `Capa de ${label}` : 'Capa do álbum';
+          artwork.append(image);
+          return;
+        }
+        artwork.textContent = '♫';
+      };
+
+      const formatTrackTime = (milliseconds) => {
+        const seconds = Math.max(0, Math.floor((Number(milliseconds) || 0) / 1000));
+        return `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, '0')}`;
+      };
+
+      const renderTrackProgress = () => {
+        const elapsed = progressState.playing ? Math.max(0, Date.now() - progressState.updatedAt) : 0;
+        const position = Math.min(progressState.duration, Math.max(0, progressState.position + elapsed));
+        const percentage = progressState.duration ? Math.round((position / progressState.duration) * 100) : 0;
+        progressCurrent.textContent = formatTrackTime(position);
+        progressTotal.textContent = formatTrackTime(progressState.duration);
+        progressFill.style.width = `${percentage}%`;
+        progressLine.setAttribute('aria-valuenow', String(percentage));
+        progressLine.setAttribute('aria-valuetext', `${formatTrackTime(position)} de ${formatTrackTime(progressState.duration)}`);
+      };
+
+      const setTrackProgress = (position, duration, playing) => {
+        progressState = {
+          position: Math.max(0, Number(position) || 0),
+          duration: Math.max(0, Number(duration) || 0),
+          playing: Boolean(playing),
+          updatedAt: Date.now()
+        };
+        progressBox.hidden = !progressState.duration;
+        renderTrackProgress();
+      };
+
+      const showTrack = (data, quiet = false) => {
         playback = data;
         if (!data || !data.item) {
           trackName.textContent = 'Nenhuma música em reprodução';
-          trackArtist.textContent = 'Abra o Spotify em um celular, computador ou outro dispositivo e comece uma faixa.';
-          artwork.textContent = '♫';
+          trackArtist.textContent = 'Clique em “Ouvir aqui” para começar uma playlist de foco na página.';
+          deviceText.textContent = webPlayerDeviceId ? playerName : 'Nenhum dispositivo selecionado';
+          setArtwork('', '');
+          setTrackProgress(0, 0, false);
           playPause.textContent = 'Reproduzir';
-          setStatus('Conta conectada. Escolha uma música em um dispositivo Spotify e toque em atualizar.', 'success');
+          if (!quiet) setStatus('Conta conectada. Você pode iniciar a música aqui mesmo ou escolher outro dispositivo no Spotify.', 'success');
           return;
         }
         const item = data.item;
         const artists = Array.isArray(item.artists) ? item.artists.map((artist) => artist.name).join(', ') : 'Spotify';
+        const image = item.album && Array.isArray(item.album.images) ? (item.album.images[1] || item.album.images[0] || {}).url : '';
         trackName.textContent = item.name || 'Música em reprodução';
         trackArtist.textContent = artists;
-        artwork.textContent = data.is_playing ? '♫' : 'Ⅱ';
+        deviceText.textContent = data.device && data.device.name ? data.device.name : (webPlayerDeviceId ? playerName : 'Spotify');
+        setArtwork(image, item.name || 'música em reprodução');
+        setTrackProgress(data.progress_ms, data.duration_ms || item.duration_ms, data.is_playing);
         playPause.textContent = data.is_playing ? 'Pausar' : 'Reproduzir';
-        setStatus('Conectada ao dispositivo ' + (data.device && data.device.name ? data.device.name : 'ativo') + '.', 'success');
+        if (!quiet) setStatus('Conectada ao dispositivo ' + (data.device && data.device.name ? data.device.name : 'ativo') + '.', 'success');
       };
 
-      const readPlayback = async () => {
+      const showWebPlayerState = (state, quiet = false) => {
+        if (!state || !state.track_window || !state.track_window.current_track) {
+          showTrack(null, quiet);
+          return;
+        }
+        const track = state.track_window.current_track;
+        showTrack({
+          item: {
+            name: track.name,
+            artists: track.artists || [],
+            album: { images: track.album && track.album.images ? track.album.images : [] }
+          },
+          progress_ms: state.position,
+          duration_ms: state.duration,
+          is_playing: !state.paused,
+          device: { name: playerName }
+        }, quiet);
+      };
+
+      const waitForWebPlayer = async () => {
+        const deadline = Date.now() + 9000;
+        while (!webPlayerDeviceId && Date.now() < deadline) await new Promise((resolve) => window.setTimeout(resolve, 150));
+        if (!webPlayerDeviceId) throw new Error('O player do navegador não ficou pronto. Tente novamente.');
+      };
+
+      const prepareWebPlayer = async () => {
+        if (webPlayer && webPlayerDeviceId) return webPlayer;
+        await loadWebPlaybackSdk();
+        if (!window.Spotify || !window.Spotify.Player) throw new Error('O player do Spotify não está disponível neste navegador.');
+        webPlayer = new window.Spotify.Player({
+          name: playerName,
+          getOAuthToken: async (callback) => {
+            try { callback(await accessToken()); }
+            catch (error) { setStatus(error.message || 'A conexão com o Spotify expirou. Conecte novamente.', 'error'); }
+          },
+          volume: 0.45
+        });
+        webPlayer.addListener('ready', ({ device_id: deviceId }) => { webPlayerDeviceId = deviceId; setStatus('Player Orion Academy pronto. Iniciando a playlist…'); });
+        webPlayer.addListener('not_ready', () => { webPlayerDeviceId = ''; });
+        webPlayer.addListener('player_state_changed', showWebPlayerState);
+        webPlayer.addListener('initialization_error', ({ message }) => setStatus(message || 'Não foi possível iniciar o player do Spotify.', 'error'));
+        webPlayer.addListener('authentication_error', ({ message }) => { clearAuth(); updateConnectionUI(); setStatus(message || 'Conecte o Spotify novamente.', 'error'); });
+        webPlayer.addListener('account_error', () => setStatus('Para ouvir dentro da Orion Academy, é necessário ter Spotify Premium.', 'error'));
+        webPlayer.addListener('playback_error', ({ message }) => setStatus(message || 'O Spotify não conseguiu tocar esta música.', 'error'));
+        const connected = await webPlayer.connect();
+        if (!connected) throw new Error('Não foi possível conectar o player do Spotify.');
+        await waitForWebPlayer();
+        return webPlayer;
+      };
+
+      const listenHere = async () => {
+        listenButton.disabled = true;
+        try {
+          const player = await prepareWebPlayer();
+          await player.activateElement();
+          await spotifyRequest('/me/player', {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ device_ids: [webPlayerDeviceId], play: false })
+          });
+          await spotifyRequest('/me/player/play?device_id=' + encodeURIComponent(webPlayerDeviceId), {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ context_uri: defaultPlaylistUri })
+          });
+          setStatus('Tocando no navegador. Você pode pausar, avançar ou voltar sem abrir o Spotify.', 'success');
+          window.setTimeout(readPlayback, 650);
+        } catch (error) {
+          if (error.status === 403) setStatus('Para ouvir aqui, use uma conta Spotify Premium autorizada para o aplicativo.', 'error');
+          else setStatus(error.message || 'Não foi possível iniciar a música nesta página.', 'error');
+        } finally {
+          listenButton.disabled = false;
+        }
+      };
+
+      const readPlayback = async (quiet = false) => {
         if (!hasConfiguration()) {
           setStatus('Para ligar o Spotify, a equipe Orion precisa inserir o Client ID do aplicativo Spotify.', 'error');
           return;
@@ -387,13 +542,17 @@
           updateConnectionUI();
           return;
         }
-        setStatus('Atualizando a música em reprodução…');
+        if (!quiet) setStatus('Atualizando a música em reprodução…');
         try {
           const data = await spotifyRequest('/me/player');
-          showTrack(data);
+          if (data) showTrack(data, quiet);
+          else if (webPlayer) showWebPlayerState(await webPlayer.getCurrentState(), quiet);
+          else showTrack(null, quiet);
         } catch (error) {
-          if (error.status === 403) setStatus('O controle de músicas exige Spotify Premium e um dispositivo ativo.', 'error');
-          else setStatus(error.message || 'Não foi possível consultar o Spotify agora.', 'error');
+          if (!quiet) {
+            if (error.status === 403) setStatus('O controle de músicas exige Spotify Premium e um dispositivo ativo.', 'error');
+            else setStatus(error.message || 'Não foi possível consultar o Spotify agora.', 'error');
+          }
         }
       };
 
@@ -481,10 +640,15 @@
       };
 
       connectButton.addEventListener('click', beginConnection);
+      listenButton.addEventListener('click', listenHere);
       refreshButton.addEventListener('click', readPlayback);
       disconnectButton.addEventListener('click', () => {
         clearAuth();
+        if (webPlayer) webPlayer.disconnect();
+        webPlayer = null;
+        webPlayerDeviceId = '';
         playback = null;
+        setTrackProgress(0, 0, false);
         updateConnectionUI();
         setStatus('Conta Spotify desconectada deste aparelho.');
       });
@@ -494,6 +658,8 @@
 
       updateConnectionUI();
       finishConnection().then(readPlayback);
+      window.setInterval(renderTrackProgress, 1000);
+      window.setInterval(() => { if (readAuth()) readPlayback(true); }, 12000);
     })();
   </script>
   <script src="menu-links.js"></script>
