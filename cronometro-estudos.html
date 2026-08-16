@@ -75,10 +75,20 @@
       const saveState = () => localStorage.setItem(stateKey, JSON.stringify(state));
       const saveHistory = () => localStorage.setItem(historyKey, JSON.stringify(history.slice(0, 30)));
       const subjectInput = $('#subject'), durationInput = $('#duration'), plannedInput = $('#plannedTime'), quickTimes = $('#quickTimes');
+      const liveClock = document.createElement('div');
+      liveClock.className = 'study-now';
+      liveClock.setAttribute('aria-label', 'Data e horário atuais');
+      liveClock.innerHTML = '<span class="study-now-label">Agora</span><strong class="study-now-time" id="liveClockTime">--:--:--</strong><span class="study-now-date" id="liveClockDate">--</span>';
+      $('#timerRing').insertAdjacentElement('afterend', liveClock);
       const isPomodoro = () => state.mode === 'pomodoro';
       const phase = () => phases[state.pomodoroPhase] || phases.focus;
       const syncRemaining = () => { if (state.running && state.endAt) state.remaining = Math.max(0, Math.ceil((state.endAt - Date.now()) / 1000)); };
-      function showClock() { $('#clock').textContent = nowTime(); }
+      function showClock() {
+        const current = new Date();
+        $('#clock').textContent = nowTime();
+        $('#liveClockTime').textContent = new Intl.DateTimeFormat('pt-BR', { hour:'2-digit', minute:'2-digit', second:'2-digit' }).format(current);
+        $('#liveClockDate').textContent = new Intl.DateTimeFormat('pt-BR', { day:'2-digit', month:'long' }).format(current);
+      }
       function setInputs() {
         subjectInput.value = state.subject || 'Revisão geral';
         durationInput.value = Math.max(1, Math.round((state.duration || 3000) / 60));
