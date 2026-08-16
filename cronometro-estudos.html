@@ -18,6 +18,19 @@
   <style>
     .spotify-card{grid-column:1;margin-top:18px;padding:23px;border:1px solid var(--line);background:#fff}.spotify-card h2{margin:8px 0 8px;color:var(--navy);font-size:27px;letter-spacing:-.03em}.spotify-card>p{margin:0;color:var(--muted);font-size:12px;line-height:1.6}.spotify-status{min-height:43px;margin:16px 0 0;padding:11px 12px;border:1px solid #d7e3ea;background:#f6fafc;color:#486379;font-size:11px;line-height:1.5}.spotify-status[data-tone="success"]{border-color:#b9ddc6;background:#f0faf3;color:#24613d}.spotify-status[data-tone="error"]{border-color:#edc5bd;background:#fff5f2;color:#8c3e36}.spotify-actions{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:12px}.spotify-button{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 11px;border:1px solid #b8c9d9;background:#fff;color:#173a5e;font-size:11px;font-weight:700;cursor:pointer}.spotify-button.primary{border-color:#1db954;background:#1db954;color:#fff}.spotify-button:disabled{cursor:not-allowed;opacity:.48}.spotify-track{display:flex;flex-direction:column;align-items:center;gap:13px;margin-top:16px;padding:23px 16px;text-align:center;border:1px solid #d9e4ed;background:#fbfdff}.spotify-art{display:grid;place-items:center;width:198px;height:198px;overflow:hidden;border:1px solid #c4d7e6;border-radius:5px;background:#dce9f3;color:#173a5e;font-size:38px;box-shadow:0 12px 26px rgba(23,58,94,.15)}.spotify-art img{display:block;width:100%;height:100%;object-fit:cover}.spotify-track>div:last-child{max-width:100%;min-width:0}.spotify-track strong{display:block;overflow:hidden;color:#173a5e;font-size:15px;text-overflow:ellipsis;white-space:nowrap}.spotify-track span{display:block;overflow:hidden;margin-top:5px;color:#647a91;font-size:12px;text-overflow:ellipsis;white-space:nowrap}.spotify-track small{display:block;overflow:hidden;margin-top:6px;color:#32745d;font-size:10px;font-weight:700;text-overflow:ellipsis;white-space:nowrap}.spotify-progress{margin:13px 3px 0}.spotify-progress-meta{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px;color:#647a91;font-size:10px;font-variant-numeric:tabular-nums}.spotify-progress-line{height:5px;overflow:hidden;border-radius:999px;background:#dce8ef}.spotify-progress-line span{display:block;width:0;height:100%;border-radius:inherit;background:linear-gradient(90deg,#1db954,#63d584);transition:width .3s linear}.spotify-controls{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:6px;margin-top:12px}.classical-tip{margin-top:18px;padding:18px;border:1px solid #d8e1ea;background:#fbfcff}.classical-tip h3{margin:8px 0 7px;color:#173a5e;font-family:"DM Sans",Arial,sans-serif;font-size:14px;font-weight:700}.classical-tip p{margin:0;color:#4b6078;font-size:11px;line-height:1.6}.classical-tip a{display:inline-flex;margin-top:11px;color:#245f92;font-size:11px;font-weight:700;text-decoration:underline;text-underline-offset:3px}.classical-tip small{display:block;margin-top:10px;color:#687d92;font-size:10px;line-height:1.5}.classical-tip small .source-link{display:inline;margin:0;font-size:inherit;font-weight:700}@media(max-width:600px){.spotify-card,.classical-tip{padding:20px}.spotify-art{width:164px;height:164px}}
   </style>
+  <style>
+    /* Mantém a configuração alinhada ao topo do cronômetro, com Spotify abaixo da sessão. */
+    @media (min-width:881px){
+      .focus-layout>.timer-card{grid-column:1;grid-row:1}
+      .focus-layout>.spotify-card{grid-column:1;grid-row:2;margin-top:0}
+      .focus-layout>aside{grid-column:2;grid-row:1 / span 2;align-self:start}
+    }
+    @media (max-width:880px){
+      .focus-layout>.timer-card{grid-column:1;grid-row:1}
+      .focus-layout>aside{grid-column:1;grid-row:2}
+      .focus-layout>.spotify-card{grid-column:1;grid-row:3;margin-top:0}
+    }
+  </style>
   <script>
     (() => {
       if (location.protocol !== "https:") return;
