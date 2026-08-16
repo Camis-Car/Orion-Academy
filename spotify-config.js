@@ -3,6 +3,6 @@
   https://developer.spotify.com/dashboard. Nunca coloque Client Secret neste site.
 */
 window.ORION_SPOTIFY_CONFIG = {
-  clientId: '',
+  clientId: '918614bb66684a3ca99d85a0496063e2',
   redirectUri: ''
 };
