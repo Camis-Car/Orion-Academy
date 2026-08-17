@@ -1,6 +1,20 @@
 -- Orion Academy — Cadernos de anotações
 -- Execute uma única vez no SQL Editor do Supabase.
 
+-- A função fica neste próprio arquivo para que os cadernos funcionem
+-- mesmo se o esquema principal tiver sido executado em outro momento.
+create or replace function public.atualizar_updated_at()
+returns trigger
+language plpgsql
+security invoker
+set search_path = public
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
 create table if not exists public.cadernos_estudo (
   id uuid primary key default gen_random_uuid(),
   perfil_id uuid not null references public.perfis(id) on delete cascade,
