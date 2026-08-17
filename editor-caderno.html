@@ -1,278 +1,254 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Editor de caderno — Orion Academy</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#173e73" />
+  <title>Caderno — Orion Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@500;600&amp;display=swap" rel="stylesheet" />
   <script>document.documentElement.classList.add('access-checking');</script>
   <style>
-    :root{--navy:#0b1830;--blue:#183d64;--gold:#d8ad62;--ink:#152944;--muted:#6b7b90;--line:#dce4ec;--paper:#fffef9;--red:#a74c48}*{box-sizing:border-box}html.access-checking body{visibility:hidden}body{margin:0;background:#edf1f5;color:var(--ink);font-family:"DM Sans",Arial,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}.appbar{position:sticky;z-index:8;top:0;display:flex;align-items:center;gap:16px;min-height:67px;padding:0 max(18px,calc((100vw - 1360px)/2));border-bottom:1px solid #27486a;background:var(--navy);color:#fff}.back{display:inline-flex;align-items:center;gap:7px;color:#ffffffd4;font-size:12px;font-weight:700}.brand{display:flex;align-items:center;gap:8px;margin-right:auto;font-family:"Playfair Display",Georgia,serif;font-size:18px}.brand i{display:grid;place-items:center;width:25px;height:30px;border:1px solid var(--gold);color:var(--gold);clip-path:polygon(50% 0,100% 18%,89% 100%,11% 100%,0 18%);font:700 17px Georgia;font-style:normal}.save{min-height:33px;padding:0 12px;border:1px solid var(--gold);border-radius:5px;color:#17243a;background:var(--gold);font-size:10px;font-weight:700}.save:disabled{opacity:.7}.shell{width:min(1360px,calc(100% - 34px));margin:20px auto 70px}.status{margin-bottom:13px;padding:14px 16px;border:1px solid #ebcdca;border-radius:7px;background:#fff5f4;color:#82463f;font-size:12px;line-height:1.55}.status[hidden]{display:none}.editor{overflow:hidden;border:1px solid var(--line);border-radius:10px;background:#fff;box-shadow:0 12px 28px #0d1d3510}.titlebar{display:flex;align-items:center;gap:13px;padding:14px 18px;border-bottom:1px solid var(--line)}.book-mark{width:12px;height:36px;border-radius:99px;background:var(--book-color,#183d64)}.title{min-width:0;flex:1;padding:3px 0;border:0;border-bottom:1px solid transparent;outline:0;color:var(--navy);background:transparent;font-family:"Playfair Display",Georgia,serif;font-size:25px}.title:focus{border-bottom-color:var(--gold)}.colors{display:flex;gap:6px}.color{width:18px;height:18px;padding:0;border:2px solid #fff;border-radius:50%;outline:1px solid #bcc9d4;background:var(--book-color)}.color.active{outline:2px solid var(--gold);transform:scale(1.1)}.toolstrip{display:flex;align-items:center;gap:8px;min-height:57px;padding:10px 17px;border-bottom:1px solid var(--line);background:#f5f7fa}.modes,.tools{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.mode,.tool{min-height:32px;padding:0 10px;border:1px solid #cad5df;border-radius:5px;color:#29435c;background:#fff;font-size:10px;font-weight:700}.mode.active{border-color:var(--blue);color:#fff;background:var(--blue)}.tool.active{border-color:#a77a34;color:#76551d;background:#fff8e9}.tool.eraser{border-color:#b6524a;color:#7f3732;background:#fff4f2}.tools[hidden]{display:none}.dot{width:25px;height:25px;padding:0;border:3px solid #fff;border-radius:50%;outline:1px solid #c7d2dc;background:var(--pen)}.dot.active{outline:2px solid var(--gold)}.size{display:inline-flex;align-items:center;gap:5px;color:#53677d;font-size:10px;font-weight:700}.size input{width:66px;accent-color:var(--blue)}.pen-only{margin-left:auto}.paper-wrap{padding:21px;background:#f1f4f7}.paper{position:relative;min-height:calc(100vh - 250px);overflow:hidden;border:1px solid #d5dde5;border-radius:3px;background:repeating-linear-gradient(to bottom,var(--paper) 0,var(--paper) 31px,#d5e2ec 32px);box-shadow:0 9px 20px #0d1d3512}.writing{position:absolute;z-index:2;inset:0;resize:none;width:100%;height:100%;padding:25px 28px;border:0;outline:0;color:#18304a;background:transparent;font-size:15px;line-height:32px}.canvas{position:absolute;z-index:3;inset:0;width:100%;height:100%;touch-action:none}.paper[data-mode="type"] .canvas{pointer-events:none}.paper[data-mode="draw"] .writing{pointer-events:none;caret-color:transparent}.hint{margin:0;padding:11px 18px 13px;color:#6c7b8d;background:#f5f7fa;font-size:10px;line-height:1.5}.hint b{color:#235e49}@media(max-width:760px){.appbar{padding:0 14px;gap:10px}.brand{display:none}.shell{width:min(100% - 20px,680px);margin:10px auto 50px}.titlebar{padding:12px}.title{font-size:22px}.toolstrip{align-items:flex-start;flex-direction:column;padding:10px}.tools{width:100%}.size{width:calc(50% - 5px);justify-content:space-between}.size input{width:calc(100% - 71px)}.pen-only{margin-left:0;width:100%}.paper-wrap{padding:10px}.paper{min-height:calc(100vh - 310px)}.writing{padding:18px 16px;font-size:14px}.colors{margin-left:auto}}
-  </style>
-  <style>.brand i svg{display:block;width:100%;height:100%}</style>
-  <style>
-    /* Editor em azul e folha pautada: inspirado na organização de apps de notas. */
-    .appbar{min-height:77px;border:0;background:linear-gradient(120deg,#173e73,#2c68aa)}
-    .toolstrip{min-height:68px;padding:13px 18px;background:#2d629d;border-color:#5f88bb}
-    .mode,.tool{border-color:#ffffff50;color:#173553;background:#fff}.mode.active{border-color:#dceeff;color:#173e73;background:#dbeeff}.tool.active{border-color:#f5d590;background:#fff9e9}.tools .dot{outline-color:#ffffff9c}.paper-wrap{padding:18px 22px 28px;background:#e8eef4}.editor{border-color:#cbd7e2;box-shadow:0 15px 32px #0d1d3512}.titlebar{padding:17px 20px;background:#fff}.paper{box-shadow:0 10px 22px #0d1d3520}.hint{padding:12px 20px;background:#eef3f8}.save{background:#fff;color:#1c5d9a;border-color:#fff}
-    @media(max-width:760px){.appbar{min-height:62px}.toolstrip{padding:10px}.paper-wrap{padding:10px}.tools .dot{width:27px;height:27px}}
-  </style>
-  <style>
-    /* Barra de escrita original da Orion: direta, leve e própria para toque. */
-    .toolstrip{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 18px;background:#fff;border-bottom:1px solid #dce5ee}
-    .modes{flex:0 0 auto;gap:3px;padding:4px;border-radius:14px;background:#edf2f7}
-    .mode{display:inline-flex;align-items:center;gap:6px;min-height:35px;padding:0 12px;border:0;border-radius:10px;color:#50647b;background:transparent;font-size:11px}
-    .mode.active{color:#fff;background:#173e73;box-shadow:0 3px 7px #173e7333}
-    .tools{flex:1;gap:9px;min-width:0;flex-wrap:nowrap}
-    .tool-group{display:flex;align-items:center;gap:6px;padding-right:9px;border-right:1px solid #e2e8ef}
-    .tool-group:last-child{padding-right:0;border-right:0}
-    .tool{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:35px;padding:0 10px;border:1px solid #dce4ed;border-radius:10px;color:#38526d;background:#fff;font-size:10px;font-weight:700;white-space:nowrap;box-shadow:none}
-    .tool:hover{border-color:#9cb5cf;background:#f7fbff}.tool.active{border-color:#8db3dc;color:#123e73;background:#eaf4ff}.tool.eraser{border-color:#dce4ed;color:#38526d;background:#fff}.tool.eraser.active{border-color:#e3aaa3;color:#9a423c;background:#fff2f0}.tool.highlighter.active{border-color:#e2c16f;color:#7b5a10;background:#fff9df}
-    .tool.icon-only{width:35px;padding:0;font-size:18px}.tool.clear{color:#a54943;border-color:#efd4d0;background:#fffafa}.tool.pencil-lock{color:#215b48;border-color:#cce5d9;background:#f3fbf6}.tool.pencil-lock.active{color:#fff;border-color:#24644d;background:#29725a}
-    .palette{display:flex;align-items:center;gap:7px}.dot{width:25px;height:25px;border:3px solid #fff;outline:1px solid #c5d0db;box-shadow:none}.dot.active{outline:2px solid #173e73;transform:scale(1.08)}
-    .size-control{display:flex;align-items:center;gap:7px;min-width:150px;color:#53677d;font-size:10px;font-weight:700}.size-control input{width:92px;accent-color:#173e73}.size-control[hidden]{display:none}
-    .paper-wrap{padding:18px 22px 28px;background:#edf2f6}.paper{background:repeating-linear-gradient(to bottom,#fffef9 0,#fffef9 31px,#d7e3ed 32px);box-shadow:0 10px 22px #0d1d3518}.canvas{touch-action:auto}.paper[data-mode="draw"] .canvas{touch-action:none}.paper[data-mode="draw"].pen-only .canvas{touch-action:pan-y}.hint{display:flex;align-items:center;min-height:42px;padding:11px 20px;color:#5d7187;background:#f6f9fc;font-size:11px}.hint b{color:#1d5e48}
-    @media(max-width:920px){.toolstrip{align-items:flex-start;flex-direction:column}.tools{width:100%;overflow-x:auto;padding:1px 1px 5px}.tool-group{flex:0 0 auto}.size-control{min-width:132px}.size-control input{width:72px}}
-    @media(max-width:600px){.toolstrip{gap:8px;padding:9px 10px}.mode{min-height:34px;padding:0 10px}.tool{min-height:34px}.tool.clear{padding:0 9px}.hint{padding:10px 14px}.paper-wrap{padding:9px}.paper{min-height:calc(100vh - 295px)}}
+    :root{--navy:#0b1830;--blue:#173e73;--blue-soft:#eaf3ff;--gold:#d8ad62;--ink:#14283f;--muted:#6f7f91;--line:#dce5ee;--paper:#fffef9;--danger:#b74542;--safe:#247454}*{box-sizing:border-box}html.access-checking body{visibility:hidden}body{margin:0;background:#eaf0f5;color:var(--ink);font-family:"DM Sans",Arial,sans-serif}button,input,textarea{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,[contenteditable]:focus-visible{outline:3px solid #0a84ff55;outline-offset:2px}a{color:inherit;text-decoration:none}
+    .appbar{position:sticky;z-index:30;top:0;display:flex;align-items:center;gap:12px;min-height:64px;padding:0 max(15px,calc((100vw - 1360px)/2));border-bottom:1px solid #264b75;background:linear-gradient(110deg,#0b1830,#173e73);color:#fff}.back,.brand{display:inline-flex;align-items:center;gap:8px}.back{font-size:12px;font-weight:700;color:#ffffffd4}.brand{min-width:0;margin-right:auto;font-family:"Playfair Display",Georgia,serif;font-size:18px}.brand i{display:grid;place-items:center;width:25px;height:31px;color:var(--gold);font-style:normal}.brand svg{display:block;width:100%;height:100%;fill:currentColor}.book-name{max-width:clamp(90px,24vw,260px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.save-state,.page-state{display:inline-grid;place-items:center;min-width:34px;height:34px;padding:0 9px;border:1px solid #ffffff42;border-radius:10px;color:#fff;background:#ffffff12;font-size:12px;font-weight:700}.page-state{min-width:auto;color:#eff7ff;font-size:10px}.shell{width:min(1390px,calc(100% - 28px));margin:18px auto 60px}.status{margin-bottom:12px;padding:13px 15px;border:1px solid #ebcdca;border-radius:10px;background:#fff5f4;color:#82463f;font-size:12px;line-height:1.5}.status[hidden]{display:none}
+    .editor{overflow:hidden;border:1px solid #d4dfe8;border-radius:18px;background:#fff;box-shadow:0 16px 42px #0d1d3515}.toolbar{display:flex;align-items:center;gap:10px;min-height:67px;padding:10px 14px;border-bottom:1px solid var(--line);background:#fff}.tool-group{display:flex;align-items:center;gap:5px;padding-right:10px;border-right:1px solid #e1e8ef}.tool-group:last-child{margin-left:auto;padding-right:0;border-right:0}.tool,.mode,.color-dot,.size-dot,.paper-type,.eraser-type{display:inline-grid;place-items:center;flex:0 0 auto;width:38px;height:38px;padding:0;border:1px solid #dbe4ec;border-radius:12px;color:#405873;background:#fff;font-size:18px;line-height:1;transition:.16s}.tool:hover,.mode:hover,.paper-type:hover,.eraser-type:hover{border-color:#9ab7d3;background:#f6faff}.tool.active,.mode.active{border-color:#0a84ff;color:#0759aa;background:var(--blue-soft);box-shadow:0 2px 5px #0a84ff18}.tool.danger{color:var(--danger)}.mode{width:auto;min-width:70px;padding:0 11px;gap:6px;font-size:11px;font-weight:700}.mode-strip{display:flex;gap:3px;padding:4px;border-radius:14px;background:#eef3f8}.palette{display:flex;align-items:center;gap:7px}.color-dot{width:25px;height:25px;border:3px solid #fff;border-radius:50%;outline:1px solid #c2cfda;background:var(--color)}.color-dot.active{outline:3px solid #0a84ff;transform:scale(1.08)}.sizes{display:flex;align-items:center;gap:5px}.size-dot{width:31px;height:31px;border-radius:50%;font-size:0}.size-dot:before{content:"";display:block;border-radius:50%;background:currentColor;width:var(--dot);height:var(--dot)}.size-dot.active{border-color:#0a84ff;color:#0a84ff;background:#eaf3ff}.eraser-options{display:none;align-items:center;gap:5px}.eraser-options.show{display:flex}.eraser-type{width:34px;height:34px;font-size:16px}.eraser-type.active{border-color:#ff9f0a;color:#a75d00;background:#fff5dc}.paper-options{display:flex;align-items:center;gap:4px}.paper-type{width:32px;height:32px;border-radius:9px;font-size:16px}.paper-type.active{border-color:#0a84ff;color:#0759aa;background:#eaf3ff}.file-input{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap}
+    .paper-wrap{padding:20px;background:#edf2f6}.paper{position:relative;min-height:calc(100vh - 226px);overflow:hidden;border:1px solid #d2dde7;border-radius:5px;background:var(--paper);box-shadow:0 13px 28px #0d1d351d;touch-action:pan-y}.paper[data-paper="lined"]{background:repeating-linear-gradient(to bottom,var(--paper) 0,var(--paper) 31px,#d7e3ed 32px)}.paper[data-paper="dotted"]{background-color:var(--paper);background-image:radial-gradient(#b8c7d5 1px,transparent 1.3px);background-size:18px 18px}.paper[data-paper="grid"]{background-color:var(--paper);background-image:linear-gradient(#d7e3ed 1px,transparent 1px),linear-gradient(90deg,#d7e3ed 1px,transparent 1px);background-size:28px 28px}.paper[data-paper="blank"]{background:var(--paper)}.writing{position:absolute;z-index:2;inset:0;resize:none;width:100%;height:100%;padding:26px 29px;border:0;outline:0;color:#152b44;background:transparent;font-size:16px;line-height:32px}.canvas{position:absolute;z-index:3;inset:0;width:100%;height:100%;touch-action:pan-y}.paper[data-mode="type"] .canvas{pointer-events:none}.paper[data-mode="draw"] .writing{pointer-events:none;caret-color:transparent}.textbox-layer{position:absolute;z-index:5;inset:0;pointer-events:none}.text-box{position:absolute;min-width:120px;max-width:min(560px,72%);padding:5px 25px 6px 8px;border:1px dashed transparent;border-radius:8px;color:#132a45;background:#ffffff08;pointer-events:auto}.text-box:focus-within,.text-box:hover{border-color:#0a84ff75;background:#ffffffc9}.text-box-content{min-width:90px;min-height:26px;outline:0;font-size:22px;font-weight:600;line-height:1.25;white-space:pre-wrap}.box-grip,.box-remove{position:absolute;display:none;place-items:center;width:20px;height:20px;padding:0;border:0;border-radius:6px;color:#fff;background:#0a84ff;font-size:12px}.box-grip{top:-10px;left:-10px;cursor:grab}.box-remove{top:-10px;right:-10px;background:#c44d48}.text-box:focus-within .box-grip,.text-box:focus-within .box-remove,.text-box:hover .box-grip,.text-box:hover .box-remove{display:grid}.laser-dot{position:absolute;z-index:8;display:none;width:25px;height:25px;border:3px solid #ff453a;border-radius:50%;box-shadow:0 0 0 4px #ff453a30,0 0 15px #ff453aaa;pointer-events:none;transform:translate(-50%,-50%)}.laser-dot.show{display:block}.guide{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:11px 17px;color:#64778a;background:#f7fafc;font-size:11px;line-height:1.5}.guide b{color:#23604c}.import-progress{display:none;align-items:center;gap:8px;color:#23604c}.import-progress.show{display:flex}.page-shadow{position:absolute;z-index:0;right:-13px;bottom:-10px;left:13px;height:13px;border-radius:0 0 5px 5px;background:#d7e0e9;box-shadow:0 7px 0 #c8d4df}
+    @media(max-width:1060px){.toolbar{align-items:flex-start;flex-wrap:wrap}.tool-group{padding-right:8px}.tool-group:last-child{margin-left:0}.paper-wrap{padding:12px}.paper{min-height:calc(100vh - 286px)}}@media(max-width:680px){.appbar{gap:8px;min-height:59px;padding:0 11px}.brand{font-size:16px}.back span{display:none}.book-name{max-width:90px}.page-state{display:none}.shell{width:min(100% - 12px,680px);margin:8px auto 40px}.editor{border-radius:12px}.toolbar{gap:7px;padding:8px;overflow-x:auto;flex-wrap:nowrap;align-items:center}.tool-group{flex:0 0 auto;padding-right:7px}.tool-group:last-child{margin-left:0}.mode{min-width:56px;padding:0 8px}.mode span{display:none}.paper-wrap{padding:7px}.paper{min-height:calc(100vh - 220px)}.writing{padding:19px 16px;font-size:15px}.guide{padding:10px 13px}.guide span:last-child{display:none}.paper-options{display:none}.color-dot{width:23px;height:23px}}
   </style>
 </head>
 <body>
-  <header class="appbar"><a class="back" href="cadernos.html">← Cadernos</a><span class="brand"><i><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 7-9.7 7-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></i> Orion Academy</span><button class="save" id="saveNow" type="button">Salvo</button></header>
+  <header class="appbar">
+    <a class="back" href="cadernos.html" aria-label="Voltar aos cadernos">← <span>Cadernos</span></a>
+    <span class="brand"><i aria-hidden="true"><svg viewBox="0 0 40 48" focusable="false"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 7-9.7 7-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></i><span class="book-name" id="bookName">Caderno</span></span>
+    <span class="page-state" id="pageState" aria-live="polite">Folha 1</span>
+    <button class="save-state" id="saveNow" type="button" aria-label="Salvar agora" title="Salvo automaticamente">✓</button>
+  </header>
   <main class="shell">
     <section class="status" id="status" hidden aria-live="polite"></section>
     <section class="editor" id="editor" hidden>
-      <div class="titlebar"><span class="book-mark" id="bookMark"></span><input class="title" id="title" maxlength="80" aria-label="Nome do caderno" /><div class="colors" aria-label="Cor do caderno"><button class="color" style="--book-color:#173a5e" data-color="#173a5e"></button><button class="color" style="--book-color:#29725a" data-color="#29725a"></button><button class="color" style="--book-color:#8a662b" data-color="#8a662b"></button><button class="color" style="--book-color:#a54b45" data-color="#a54b45"></button><button class="color" style="--book-color:#624b85" data-color="#624b85"></button></div></div>
-      <div class="toolstrip" aria-label="Ferramentas do caderno">
-        <div class="modes" role="group" aria-label="Modo de anotação"><button class="mode active" data-mode="type" type="button">⌨ Texto</button><button class="mode" data-mode="draw" type="button">✎ Escrever</button></div>
-        <div class="tools" id="tools" hidden>
-          <div class="tool-group"><button class="tool active" id="penTool" type="button" aria-pressed="true">✎ Caneta</button><button class="tool highlighter" id="highlighter" type="button" aria-pressed="false">▰ Marca-texto</button><button class="tool eraser" id="eraser" type="button" aria-pressed="false">⌫ Borracha</button></div>
-          <div class="tool-group"><div class="palette" aria-label="Cor da escrita"><button class="dot active" style="--pen:#173a5e" data-pen="#173a5e" type="button" aria-label="Azul marinho"></button><button class="dot" style="--pen:#29725a" data-pen="#29725a" type="button" aria-label="Verde"></button><button class="dot" style="--pen:#a54b45" data-pen="#a54b45" type="button" aria-label="Vermelho"></button><button class="dot" style="--pen:#a77a34" data-pen="#a77a34" type="button" aria-label="Dourado"></button></div></div>
-          <div class="tool-group"><label class="size-control" id="penSizeControl">Traço <input id="penSize" type="range" min="2" max="16" value="4" aria-label="Espessura da caneta" /></label><label class="size-control" id="eraserSizeControl" hidden>Apagar <input id="eraserSize" type="range" min="6" max="44" value="20" aria-label="Tamanho da borracha" /></label></div>
-          <div class="tool-group"><button class="tool icon-only" id="undo" type="button" aria-label="Desfazer último traço" title="Desfazer">↶</button><button class="tool clear" id="clearInk" type="button">Apagar tudo</button><button class="tool pencil-lock active" id="penOnly" type="button" aria-pressed="true">✦ Só Apple Pencil</button></div>
+      <div class="toolbar" aria-label="Ferramentas de anotação">
+        <div class="tool-group"><div class="mode-strip" role="group" aria-label="Modo"><button class="mode active" data-mode="type" type="button" title="Digitar"><span>⌨</span> Texto</button><button class="mode" data-mode="draw" type="button" title="Escrever à mão"><span>✎</span> Escrever</button></div></div>
+        <div class="tool-group" id="inkTools" hidden>
+          <button class="tool active" id="penTool" type="button" aria-label="Caneta" title="Caneta">✎</button>
+          <button class="tool" id="fountainTool" type="button" aria-label="Caneta tinteira" title="Caneta tinteira">🖋</button>
+          <button class="tool" id="highlighter" type="button" aria-label="Marca-texto" title="Marca-texto">▰</button>
+          <button class="tool" id="eraser" type="button" aria-label="Borracha" title="Borracha">⌫</button>
+          <button class="tool" id="laserTool" type="button" aria-label="Laser para explicação" title="Laser para explicação">◎</button>
+          <button class="tool" id="textTool" type="button" aria-label="Adicionar caixa de texto" title="Adicionar caixa de texto">T</button>
         </div>
+        <div class="tool-group palette" id="colorTools" hidden aria-label="Cores Apple">
+          <button class="color-dot active" style="--color:#1c1c1e" data-pen="#1c1c1e" type="button" title="Preto" aria-label="Preto"></button><button class="color-dot" style="--color:#0a84ff" data-pen="#0a84ff" type="button" title="Azul" aria-label="Azul"></button><button class="color-dot" style="--color:#30d158" data-pen="#30d158" type="button" title="Verde" aria-label="Verde"></button><button class="color-dot" style="--color:#ff9f0a" data-pen="#ff9f0a" type="button" title="Laranja" aria-label="Laranja"></button><button class="color-dot" style="--color:#ff453a" data-pen="#ff453a" type="button" title="Vermelho" aria-label="Vermelho"></button><button class="color-dot" style="--color:#bf5af2" data-pen="#bf5af2" type="button" title="Roxo" aria-label="Roxo"></button>
+        </div>
+        <div class="tool-group sizes" id="sizeTools" hidden aria-label="Tamanho da ponta">
+          <button class="size-dot active" style="--dot:4px" data-size="3" type="button" title="Ponta fina" aria-label="Ponta fina"></button><button class="size-dot" style="--dot:7px" data-size="5" type="button" title="Ponta média" aria-label="Ponta média"></button><button class="size-dot" style="--dot:11px" data-size="8" type="button" title="Ponta grossa" aria-label="Ponta grossa"></button><button class="size-dot" style="--dot:15px" data-size="12" type="button" title="Ponta extra grossa" aria-label="Ponta extra grossa"></button>
+        </div>
+        <div class="tool-group eraser-options" id="eraserOptions" aria-label="Modo da borracha">
+          <button class="eraser-type active" data-eraser="normal" type="button" title="Borracha normal: apaga partes do traço" aria-label="Borracha normal">◌</button><button class="eraser-type" data-eraser="object" type="button" title="Borracha por objeto: apaga o traço inteiro" aria-label="Borracha por objeto">⌫</button>
+        </div>
+        <div class="tool-group paper-options" id="paperTools" aria-label="Tipo de folha">
+          <button class="paper-type active" data-paper="lined" type="button" title="Folha pautada" aria-label="Folha pautada">≡</button><button class="paper-type" data-paper="dotted" type="button" title="Folha pontilhada" aria-label="Folha pontilhada">⠿</button><button class="paper-type" data-paper="grid" type="button" title="Folha quadriculada" aria-label="Folha quadriculada">▦</button><button class="paper-type" data-paper="blank" type="button" title="Folha sem pauta" aria-label="Folha sem pauta">□</button>
+        </div>
+        <div class="tool-group"><button class="tool" id="importFile" type="button" aria-label="Importar PDF ou imagem" title="Importar PDF ou imagem">⇧</button><input class="file-input" id="filePicker" type="file" accept="application/pdf,image/png,image/jpeg,image/webp" multiple /><button class="tool" id="undo" type="button" aria-label="Desfazer" title="Desfazer">↶</button><button class="tool danger" id="clearPage" type="button" aria-label="Apagar tudo da folha" title="Apagar tudo da folha">⌧</button></div>
       </div>
-      <div class="paper-wrap"><div class="paper" id="paper" data-mode="type"><textarea class="writing" id="writing" placeholder="Digite aqui as suas anotações..."></textarea><canvas class="canvas" id="canvas" width="1400" height="1900" aria-label="Área de escrita à mão"></canvas></div></div>
-      <p class="hint" id="hint">Modo texto ativo. Suas anotações são salvas automaticamente.</p>
+      <div class="paper-wrap"><div class="paper" id="paper" data-mode="type" data-paper="lined"><div class="page-shadow" aria-hidden="true"></div><textarea class="writing" id="writing" placeholder="Digite suas anotações aqui..."></textarea><canvas class="canvas" id="canvas" width="1400" height="1900" aria-label="Área de escrita à mão"></canvas><div class="textbox-layer" id="textboxes" aria-label="Caixas de texto livres"></div><div class="laser-dot" id="laserDot" aria-hidden="true"></div></div></div>
+      <div class="guide" id="guide"><span><b>Salvo automaticamente.</b> Deslize a folha para a esquerda para avançar ou criar outra.</span><span class="import-progress" id="importProgress">⌛ Importando...</span></div>
     </section>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="cadastro-config.js"></script>
-  <script>
-  if (false) { // implementação anterior preservada apenas como histórico local
-  (()=>{const cfg=window.PROJETO_AQUILES_SUPABASE||{},ready=window.supabase&&/^https:\/\//.test(cfg.url||'')&&String(cfg.anonKey||'').length>20,$=s=>document.querySelector(s),canvas=$('#canvas'),ctx=canvas.getContext('2d'),status=$('#status');let client,user,book,mode='type',pen='#173a5e',penSize=4,eraserSize=20,tool='pen',penOnly=true,drawing=false,stroke=null,history=[],timer;
-  const uid=()=>crypto.randomUUID?crypto.randomUUID():`stroke-${Date.now()}-${Math.random().toString(16).slice(2)}`,clone=v=>JSON.parse(JSON.stringify(v)),message=(a,b)=>{status.hidden=false;status.innerHTML=`<b>${a}</b><br>${b}`},sheet=()=>book?.paginas?.[0];const normalize=b=>{const p=Array.isArray(b.paginas)&&b.paginas.length?b.paginas:[{id:uid(),titulo:'Folha livre',texto:'',desenho:'',tracos:[]}];p[0].texto=typeof p[0].texto==='string'?p[0].texto:'';p[0].desenho=typeof p[0].desenho==='string'?p[0].desenho:'';p[0].tracos=Array.isArray(p[0].tracos)?p[0].tracos:[];return{...b,paginas:p}};
-  function label(t,b=false){$('#saveNow').textContent=t;$('#saveNow').disabled=b}function snap(){history.push(clone(sheet().tracos));if(history.length>32)history.shift()}function renderStroke(c,s){const p=s?.pontos||[];if(!p.length)return;c.save();c.lineCap='round';c.lineJoin='round';c.lineWidth=s.ferramenta==='highlight'?Number(s.tamanho)*4:Number(s.tamanho);c.globalAlpha=s.ferramenta==='highlight'?.25:1;c.strokeStyle=s.cor;c.beginPath();c.moveTo(p[0].x,p[0].y);if(p.length===1)c.lineTo(p[0].x+.1,p[0].y+.1);else p.slice(1).forEach(x=>c.lineTo(x.x,x.y));c.stroke();c.restore()}function paint(){const s=sheet();ctx.clearRect(0,0,canvas.width,canvas.height);const traces=()=>s.tracos.forEach(x=>renderStroke(ctx,x));if(!s.desenho){traces();return}const i=new Image();i.onload=()=>{ctx.drawImage(i,0,0,canvas.width,canvas.height);traces()};i.onerror=traces;i.src=s.desenho}function point(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height}}function distance(p,a,b){const dx=b.x-a.x,dy=b.y-a.y,l=dx*dx+dy*dy||1,t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/l));return Math.hypot(p.x-(a.x+t*dx),p.y-(a.y+t*dy))}
-  function changed(){clearTimeout(timer);label('Alterações pendentes');timer=setTimeout(()=>save(),1500)}async function save(force=false){if(!book)return;clearTimeout(timer);book.updated_at=new Date().toISOString();label('Salvando…',true);const{error}=await client.from('cadernos_estudo').upsert({id:book.id,perfil_id:user.id,titulo:book.titulo||'Caderno sem título',cor:book.cor,paginas:book.paginas,updated_at:book.updated_at},{onConflict:'id'});if(error){message('Não foi possível salvar.',error.message||'Tente novamente.');label('Salvar agora');return}label(force?'Salvo agora':'Salvo')}function erase(p){const s=sheet();for(let i=s.tracos.length-1;i>=0;i--){const t=s.tracos[i],pts=t.pontos||[],r=eraserSize*2.4+Number(t.tamanho||4)/2;if(pts.some((x,n)=>n?distance(p,pts[n-1],x)<=r:Math.hypot(p.x-x.x,p.y-x.y)<=r)){snap();s.tracos.splice(i,1);paint();changed();return}}}
-  function setMode(n){mode=n;$('#paper').dataset.mode=n;document.querySelectorAll('[data-mode]').forEach(b=>b.classList.toggle('active',b.dataset.mode===n));$('#tools').hidden=n!=='draw';$('#hint').innerHTML=n==='draw'?`<b>${penOnly?'Só a ponta da caneta está ativa.':'Caneta, toque e mouse estão ativos.'}</b> A borracha remove o traço inteiro ao tocá-lo.`:'Modo digitação ativo. O texto é salvo automaticamente após uma breve pausa.'}function render(){document.documentElement.classList.remove('access-checking');$('#editor').hidden=false;$('#title').value=book.titulo||'';$('#writing').value=sheet().texto||'';$('#bookMark').style.setProperty('--book-color',book.cor);document.querySelectorAll('[data-color]').forEach(x=>x.classList.toggle('active',x.dataset.color===book.cor));paint();setMode(mode)}
-  const accepts=e=>!penOnly||e.pointerType==='pen';canvas.addEventListener('pointerdown',e=>{if(mode!=='draw'||!accepts(e))return;e.preventDefault();const p=point(e);if(tool==='eraser'){erase(p);drawing=true;canvas.setPointerCapture?.(e.pointerId);return}snap();drawing=true;stroke={id:uid(),ferramenta:tool==='highlighter'?'highlight':'pen',cor:pen,tamanho:penSize,pontos:[p]};sheet().tracos.push(stroke);canvas.setPointerCapture?.(e.pointerId);renderStroke(ctx,stroke)});canvas.addEventListener('pointermove',e=>{if(!drawing||mode!=='draw'||!accepts(e))return;e.preventDefault();const p=point(e);if(tool==='eraser'){erase(p);return}const last=stroke.pontos.at(-1);stroke.pontos.push(p);renderStroke(ctx,{...stroke,pontos:[last,p]})});const stop=()=>{if(!drawing)return;drawing=false;stroke=null;if(tool!=='eraser')changed()};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('pointerleave',e=>{if(e.buttons===0)stop()});
-  $('#writing').oninput=e=>{sheet().texto=e.target.value;changed()};$('#title').oninput=e=>{book.titulo=e.target.value||'Caderno sem título';changed()};$('#saveNow').onclick=()=>save(true);document.querySelectorAll('[data-mode]').forEach(x=>x.onclick=()=>setMode(x.dataset.mode));document.querySelectorAll('[data-pen]').forEach(x=>x.onclick=()=>{pen=x.dataset.pen;tool='pen';$('#eraser').classList.remove('active','eraser');$('#highlighter').classList.remove('active');document.querySelectorAll('[data-pen]').forEach(y=>y.classList.toggle('active',x===y))});document.querySelectorAll('[data-color]').forEach(x=>x.onclick=()=>{book.cor=x.dataset.color;$('#bookMark').style.setProperty('--book-color',book.cor);document.querySelectorAll('[data-color]').forEach(y=>y.classList.toggle('active',x===y));changed()});$('#penSize').oninput=e=>penSize=Number(e.target.value);$('#eraserSize').oninput=e=>eraserSize=Number(e.target.value);$('#highlighter').onclick=()=>{tool=tool==='highlighter'?'pen':'highlighter';$('#highlighter').classList.toggle('active',tool==='highlighter');$('#eraser').classList.remove('active','eraser')};$('#eraser').onclick=()=>{tool=tool==='eraser'?'pen':'eraser';$('#eraser').classList.toggle('active',tool==='eraser');$('#eraser').classList.toggle('eraser',tool==='eraser');$('#highlighter').classList.remove('active')};$('#undo').onclick=()=>{const last=history.pop();if(!last)return;sheet().tracos=last;paint();changed()};$('#clearInk').onclick=()=>{if(!sheet().tracos.length||!confirm('Limpar toda a escrita à mão? O texto digitado será mantido.'))return;snap();sheet().tracos=[];sheet().desenho='';paint();changed()};$('#penOnly').onclick=()=>{penOnly=!penOnly;const b=$('#penOnly');b.classList.toggle('active',penOnly);b.textContent=penOnly?'✦ Só caneta':'⌘ Caneta, toque e mouse';b.setAttribute('aria-pressed',String(penOnly));setMode(mode)};document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'){e.preventDefault();save(true)}if(mode==='draw'&&(e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'){e.preventDefault();$('#undo').click()}});
-  async function start(){if(!ready){document.documentElement.classList.remove('access-checking');message('A conexão não está disponível.','Volte à sua jornada e tente novamente.');return}const id=new URLSearchParams(location.search).get('id');if(!id){location.replace('cadernos.html');return}client=window.supabase.createClient(cfg.url,cfg.anonKey);const{data:{session},error}=await client.auth.getSession();if(error||!session?.user){location.replace('minha-jornada.html');return}user=session.user;const{data,error:loadError}=await client.from('cadernos_estudo').select('id,perfil_id,titulo,cor,paginas,updated_at').eq('id',id).eq('perfil_id',user.id).maybeSingle();if(loadError||!data){document.documentElement.classList.remove('access-checking');message('Não foi possível abrir este caderno.',loadError?.message||'Volte à sua biblioteca e tente novamente.');return}book=normalize(data);render()}start().catch(e=>{document.documentElement.classList.remove('access-checking');message('Não foi possível abrir este caderno.',e.message||'Tente novamente.')})})();
-  }
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="cadastro-config.js"></script>
   <script>
   (() => {
     const cfg = window.PROJETO_AQUILES_SUPABASE || {};
     const ready = window.supabase && /^https:\/\//.test(cfg.url || '') && String(cfg.anonKey || '').length > 20;
     const $ = selector => document.querySelector(selector);
-    const canvas = $('#canvas'), ctx = canvas.getContext('2d'), status = $('#status');
-    let client, user, book, mode = 'type', tool = 'pen', pen = '#173a5e', penSize = 4, eraserSize = 20;
-    let penOnly = true, drawing = false, stroke = null, lastErasePoint = null, history = [], timer, revision = 0, saving = false;
+    const canvas = $('#canvas'), ctx = canvas.getContext('2d'), paper = $('#paper'), status = $('#status');
+    const sheetTypes = ['lined', 'dotted', 'grid', 'blank'];
+    const sizeChoices = [3, 5, 8, 12];
+    let client, user, book, pageIndex = 0, mode = 'type', tool = 'pen', ink = '#1c1c1e', tipSize = 3, eraserMode = 'normal';
+    let penOnly = true, drawing = false, stroke = null, history = [], saveTimer, revision = 0, saving = false, frame = 0, pendingPoint = null, lastPaintedPoint = null, laserPoint = null, swipeStart = null, dragBox = null;
 
-    const uid = () => crypto.randomUUID ? crypto.randomUUID() : `stroke-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-    const sheet = () => book?.paginas?.[0];
+    const uid = () => crypto.randomUUID ? crypto.randomUUID() : `item-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    const current = () => book?.paginas?.[pageIndex];
     const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
-    const message = (title, text) => {
-      status.hidden = false;
-      status.replaceChildren();
-      const strong = document.createElement('strong');
-      strong.textContent = title;
-      status.append(strong, document.createElement('br'), document.createTextNode(text));
-    };
-    const normalize = item => {
-      const pages = Array.isArray(item.paginas) && item.paginas.length ? item.paginas : [{ id: uid(), titulo: 'Folha livre', texto: '', desenho: '', tracos: [] }];
-      pages[0].texto = typeof pages[0].texto === 'string' ? pages[0].texto : '';
-      pages[0].desenho = typeof pages[0].desenho === 'string' ? pages[0].desenho : '';
-      pages[0].tracos = Array.isArray(pages[0].tracos) ? pages[0].tracos : [];
-      return { ...item, cor: item.cor || '#173a5e', paginas: pages };
-    };
-    const label = (text, disabled = false) => { $('#saveNow').textContent = text; $('#saveNow').disabled = disabled; };
-    const remember = item => { history.push(item); if (history.length > 60) history.shift(); };
+    const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
+    const makePage = (paperType = 'lined', image = '') => ({ id: uid(), titulo: 'Folha livre', texto: '', desenho: image, tracos: [], caixasTexto: [], tipoFolha: paperType });
+    const label = (text, title = text) => { const button = $('#saveNow'); button.textContent = text; button.title = title; button.setAttribute('aria-label', title); };
+    const message = (title, text) => { status.hidden = false; status.replaceChildren(); const strong = document.createElement('strong'); strong.textContent = title; status.append(strong, document.createElement('br'), document.createTextNode(text)); };
+    const hideMessage = () => { status.hidden = true; status.textContent = ''; };
 
-    function penStyle(item) {
-      return { width: item.ferramenta === 'highlight' ? Number(item.tamanho) * 4 : Number(item.tamanho), alpha: item.ferramenta === 'highlight' ? .25 : 1 };
+    function normalize(item) {
+      const pages = Array.isArray(item.paginas) && item.paginas.length ? item.paginas : [makePage()];
+      pages.forEach(page => {
+        page.id = page.id || uid(); page.titulo = typeof page.titulo === 'string' ? page.titulo : 'Folha livre';
+        page.texto = typeof page.texto === 'string' ? page.texto : ''; page.desenho = typeof page.desenho === 'string' ? page.desenho : '';
+        page.tracos = Array.isArray(page.tracos) ? page.tracos : []; page.caixasTexto = Array.isArray(page.caixasTexto) ? page.caixasTexto : [];
+        page.tipoFolha = sheetTypes.includes(page.tipoFolha) ? page.tipoFolha : 'lined';
+      });
+      return { ...item, paginas: pages };
     }
-    function drawSegment(from, to, item) {
-      const style = penStyle(item);
-      ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = style.width; ctx.globalAlpha = style.alpha; ctx.strokeStyle = item.cor;
-      ctx.beginPath(); ctx.moveTo(from.x, from.y); ctx.lineTo(to.x, to.y); ctx.stroke(); ctx.restore();
+    function remember(action) { history.push(action); if (history.length > 50) history.shift(); }
+    function scalePoint(event) { const rect = canvas.getBoundingClientRect(); return { x: (event.clientX - rect.left) * canvas.width / rect.width, y: (event.clientY - rect.top) * canvas.height / rect.height }; }
+    function styleFor(item) {
+      if (item.ferramenta === 'highlight') return { width: Number(item.tamanho) * 3.6, alpha: .28 };
+      if (item.ferramenta === 'fountain') return { width: Number(item.tamanho) * 1.15, alpha: .94 };
+      return { width: Number(item.tamanho), alpha: 1 };
+    }
+    function drawSegment(first, second, item) {
+      const style = styleFor(item); ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = style.width; ctx.globalAlpha = style.alpha; ctx.strokeStyle = item.cor;
+      ctx.beginPath(); ctx.moveTo(first.x, first.y); ctx.lineTo(second.x, second.y); ctx.stroke(); ctx.restore();
     }
     function drawStroke(item) {
-      const points = item?.pontos || [];
-      if (!points.length) return;
+      const points = item?.pontos || []; if (!points.length) return;
       if (points.length === 1) { drawSegment(points[0], { x: points[0].x + .1, y: points[0].y + .1 }, item); return; }
-      const style = penStyle(item);
-      ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = style.width; ctx.globalAlpha = style.alpha; ctx.strokeStyle = item.cor;
-      ctx.beginPath(); ctx.moveTo(points[0].x, points[0].y);
-      for (let index = 1; index < points.length; index += 1) ctx.lineTo(points[index].x, points[index].y);
-      ctx.stroke(); ctx.restore();
+      const style = styleFor(item); ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = style.width; ctx.globalAlpha = style.alpha; ctx.strokeStyle = item.cor;
+      ctx.beginPath(); ctx.moveTo(points[0].x, points[0].y); for (let index = 1; index < points.length; index += 1) ctx.lineTo(points[index].x, points[index].y); ctx.stroke(); ctx.restore();
+    }
+    function drawBackground(image) {
+      const ratio = Math.min(canvas.width / image.width, canvas.height / image.height); const width = image.width * ratio, height = image.height * ratio;
+      ctx.fillStyle = '#fff'; ctx.fillRect(0, 0, canvas.width, canvas.height); ctx.drawImage(image, (canvas.width - width) / 2, (canvas.height - height) / 2, width, height);
     }
     function paint() {
-      const current = sheet();
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const traces = () => current.tracos.forEach(drawStroke);
-      if (!current.desenho) { traces(); return; }
-      const image = new Image();
-      image.onload = () => { ctx.drawImage(image, 0, 0, canvas.width, canvas.height); traces(); };
-      image.onerror = traces; image.src = current.desenho;
+      const page = current(); if (!page) return; ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const traces = () => page.tracos.forEach(drawStroke);
+      if (!page.desenho) { traces(); return; }
+      const image = new Image(); image.onload = () => { drawBackground(image); traces(); }; image.onerror = traces; image.src = page.desenho;
     }
-    function point(event) {
-      const rect = canvas.getBoundingClientRect();
-      return { x: (event.clientX - rect.left) * canvas.width / rect.width, y: (event.clientY - rect.top) * canvas.height / rect.height };
-    }
-    function pointToSegment(pointToTest, first, second) {
-      const dx = second.x - first.x, dy = second.y - first.y, length = dx * dx + dy * dy || 1;
-      const ratio = Math.max(0, Math.min(1, ((pointToTest.x - first.x) * dx + (pointToTest.y - first.y) * dy) / length));
-      return Math.hypot(pointToTest.x - (first.x + ratio * dx), pointToTest.y - (first.y + ratio * dy));
-    }
-
-    function changed(delay = 900) {
-      revision += 1; clearTimeout(timer); label('Salva automaticamente…');
-      timer = setTimeout(() => save(revision), delay);
-    }
-    async function save(targetRevision = revision, forced = false) {
-      if (!book) return;
-      clearTimeout(timer);
-      if (saving) { timer = setTimeout(() => save(revision, forced), 280); return; }
-      saving = true; book.updated_at = new Date().toISOString(); label('Salvando…', true);
-      const { error } = await client.from('cadernos_estudo').upsert({ id: book.id, perfil_id: user.id, titulo: book.titulo || 'Caderno sem título', cor: book.cor, paginas: book.paginas, updated_at: book.updated_at }, { onConflict: 'id' });
-      saving = false;
-      if (error) { message('Não foi possível salvar.', error.message || 'Tente novamente.'); label('Salvar agora'); return; }
-      if (revision > targetRevision) { label('Alterações pendentes'); timer = setTimeout(() => save(revision), 280); return; }
-      label(forced ? '✓ Salvo agora' : '✓ Salvo');
-    }
-
-    function updateHint() {
-      const hint = $('#hint');
-      if (mode === 'type') { hint.textContent = 'Modo texto ativo. Suas anotações são salvas automaticamente.'; return; }
-      if (tool === 'eraser') { hint.textContent = 'Borracha ativa. Toque em um traço para apagá-lo por inteiro.'; return; }
-      if (tool === 'highlighter') { hint.textContent = 'Marca-texto ativo. Escolha uma cor e destaque sem pesar a página.'; return; }
-      hint.textContent = penOnly ? 'Caneta ativa. Só o Apple Pencil escreve; a mão pode apoiar e rolar a página.' : 'Caneta ativa. Caneta, toque e mouse podem escrever.';
-    }
-    function setTool(nextTool) {
-      tool = nextTool;
-      [['penTool', 'pen'], ['highlighter', 'highlighter'], ['eraser', 'eraser']].forEach(([id, name]) => {
-        const button = $(`#${id}`), active = tool === name;
-        button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+    function queueInk(point) {
+      pendingPoint = point; if (frame) return;
+      frame = requestAnimationFrame(() => { frame = 0; if (!stroke || !pendingPoint) return; const next = pendingPoint; pendingPoint = null; const previous = lastPaintedPoint || stroke.pontos[stroke.pontos.length - 1];
+        if (distance(previous, next) < Math.max(4.5, Number(stroke.tamanho) * .8)) return;
+        stroke.pontos.push(next); drawSegment(previous, next, stroke); lastPaintedPoint = next;
       });
-      $('#eraser').classList.toggle('eraser', tool === 'eraser');
-      $('#penSizeControl').hidden = tool === 'eraser';
-      $('#eraserSizeControl').hidden = tool !== 'eraser';
-      updateHint();
     }
-    function setMode(nextMode) {
-      mode = nextMode;
-      const paper = $('#paper');
-      paper.dataset.mode = mode;
-      paper.classList.toggle('pen-only', mode === 'draw' && penOnly);
-      canvas.style.touchAction = mode === 'draw' ? (penOnly ? 'pan-y' : 'none') : 'auto';
-      document.querySelectorAll('[data-mode]').forEach(button => button.classList.toggle('active', button.dataset.mode === mode));
-      $('#tools').hidden = mode !== 'draw';
-      updateHint();
+    function pointToSegment(test, first, second) { const dx = second.x - first.x, dy = second.y - first.y, length = dx * dx + dy * dy || 1; const ratio = clamp(((test.x - first.x) * dx + (test.y - first.y) * dy) / length, 0, 1); return Math.hypot(test.x - (first.x + ratio * dx), test.y - (first.y + ratio * dy)); }
+
+    function changed(delay = 1300) { revision += 1; clearTimeout(saveTimer); label('•', 'Alterações pendentes — salvamento automático'); saveTimer = setTimeout(() => save(revision), delay); }
+    async function save(targetRevision = revision, forced = false) {
+      if (!book) return; clearTimeout(saveTimer);
+      if (saving) { saveTimer = setTimeout(() => save(revision, forced), 350); return; }
+      saving = true; label('…', 'Salvando alterações'); book.updated_at = new Date().toISOString();
+      const { error } = await client.from('cadernos_estudo').upsert({ id: book.id, perfil_id: user.id, titulo: book.titulo || 'Caderno sem título', cor: book.cor || '#173a5e', paginas: book.paginas, updated_at: book.updated_at }, { onConflict: 'id' });
+      saving = false;
+      if (error) { message('Não foi possível salvar.', error.message || 'Tente novamente.'); label('!', 'Erro ao salvar — tente novamente'); return; }
+      hideMessage(); if (revision > targetRevision) { label('•', 'Alterações pendentes — salvamento automático'); saveTimer = setTimeout(() => save(revision), 350); return; } label('✓', forced ? 'Salvo agora' : 'Salvo automaticamente');
     }
-    function render() {
-      document.documentElement.classList.remove('access-checking'); $('#editor').hidden = false;
-      $('#title').value = book.titulo || ''; $('#writing').value = sheet().texto || '';
-      $('#bookMark').style.setProperty('--book-color', book.cor);
-      document.querySelectorAll('[data-color]').forEach(button => button.classList.toggle('active', button.dataset.color === book.cor));
-      paint(); setTool('pen'); setMode(mode);
+    function updateGuide() {
+      const text = $('#guide').firstElementChild;
+      if (mode === 'type') text.innerHTML = '<b>Modo texto.</b> Deslize a folha para a esquerda para avançar ou criar outra.';
+      else if (tool === 'eraser') text.innerHTML = `<b>Borracha ${eraserMode === 'normal' ? 'normal' : 'por objeto'}.</b> Deslize para esquerda para mudar de folha.`;
+      else if (tool === 'text') text.innerHTML = '<b>Caixa de texto.</b> Toque no T para criar outra e arraste o pequeno botão para movê-la.';
+      else if (tool === 'laser') text.innerHTML = '<b>Laser.</b> Ele aponta durante a explicação e não fica salvo na folha.';
+      else text.innerHTML = '<b>Escreva com o Apple Pencil.</b> A mão pode apoiar e rolar a página sem criar traços.';
+    }
+    function updateControls() {
+      const inkOn = mode === 'draw'; $('#inkTools').hidden = !inkOn; $('#colorTools').hidden = !inkOn || ['eraser', 'text', 'laser'].includes(tool); $('#sizeTools').hidden = !inkOn || ['text', 'laser'].includes(tool); $('#eraserOptions').classList.toggle('show', inkOn && tool === 'eraser');
+      [['penTool','pen'],['fountainTool','fountain'],['highlighter','highlight'],['eraser','eraser'],['laserTool','laser'],['textTool','text']].forEach(([id,name]) => $(`#${id}`).classList.toggle('active', tool === name));
+      document.querySelectorAll('[data-eraser]').forEach(button => button.classList.toggle('active', button.dataset.eraser === eraserMode));
+      document.querySelectorAll('[data-size]').forEach(button => button.classList.toggle('active', Number(button.dataset.size) === tipSize));
+      updateGuide();
+    }
+    function applyPage() {
+      const page = current(); if (!page) return; $('#writing').value = page.texto; paper.dataset.paper = page.tipoFolha; $('#pageState').textContent = `Folha ${pageIndex + 1}`; paper.dataset.mode = mode;
+      document.querySelectorAll('[data-paper]').forEach(button => button.classList.toggle('active', button.dataset.paper === page.tipoFolha)); renderTextboxes(); paint(); updateControls();
+    }
+    function setMode(nextMode) { mode = nextMode; paper.dataset.mode = mode; document.querySelectorAll('[data-mode]').forEach(button => button.classList.toggle('active', button.dataset.mode === mode)); updateControls(); }
+    function setTool(nextTool) { tool = nextTool; if (tool === 'text') createTextBox(); updateControls(); }
+    function movePage(nextIndex, createWhenNeeded = false) {
+      if (nextIndex < 0) return; if (nextIndex >= book.paginas.length) { if (!createWhenNeeded) return; book.paginas.push(makePage(current()?.tipoFolha || 'lined')); }
+      pageIndex = clamp(nextIndex, 0, book.paginas.length - 1); applyPage(); changed(180);
     }
 
-    const accepts = event => !penOnly || event.pointerType === 'pen';
-    function eraseAt(currentPoint) {
-      const current = sheet(), radius = eraserSize * 2.4;
-      for (let index = current.tracos.length - 1; index >= 0; index -= 1) {
-        const candidate = current.tracos[index], points = candidate.pontos || [];
-        const hit = points.some((item, pointIndex) => pointIndex ? pointToSegment(currentPoint, points[pointIndex - 1], item) <= radius + Number(candidate.tamanho || 4) / 2 : distance(currentPoint, item) <= radius);
-        if (!hit) continue;
-        current.tracos.splice(index, 1); remember({ type: 'remove', stroke: candidate, index }); paint(); changed(); return;
-      }
+    function renderTextboxes() {
+      const layer = $('#textboxes'); layer.replaceChildren(); const page = current();
+      page.caixasTexto.forEach(box => {
+        const shell = document.createElement('div'); shell.className = 'text-box'; shell.dataset.id = box.id; shell.style.left = `${(Number(box.x || 86) / canvas.width) * 100}%`; shell.style.top = `${(Number(box.y || 58) / canvas.height) * 100}%`; shell.style.color = box.cor || '#1c1c1e';
+        const grip = document.createElement('button'); grip.type = 'button'; grip.className = 'box-grip'; grip.textContent = '⠿'; grip.title = 'Mover caixa de texto'; grip.setAttribute('aria-label','Mover caixa de texto');
+        const content = document.createElement('div'); content.className = 'text-box-content'; content.contentEditable = 'true'; content.spellcheck = true; content.textContent = box.texto || ''; content.style.fontSize = `${Number(box.tamanho || 22)}px`;
+        const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'box-remove'; remove.textContent = '×'; remove.title = 'Excluir caixa de texto'; remove.setAttribute('aria-label','Excluir caixa de texto');
+        content.addEventListener('input', () => { box.texto = content.textContent; changed(); });
+        grip.addEventListener('pointerdown', event => { event.preventDefault(); event.stopPropagation(); dragBox = { box, shell, pointerId: event.pointerId }; grip.setPointerCapture?.(event.pointerId); });
+        grip.addEventListener('pointermove', event => { if (!dragBox || dragBox.pointerId !== event.pointerId) return; event.preventDefault(); const point = scalePoint(event); box.x = clamp(point.x, 8, canvas.width - 130); box.y = clamp(point.y, 8, canvas.height - 35); shell.style.left = `${box.x / canvas.width * 100}%`; shell.style.top = `${box.y / canvas.height * 100}%`; });
+        const stopDrag = event => { if (dragBox?.pointerId !== event.pointerId) return; dragBox = null; changed(); }; grip.addEventListener('pointerup', stopDrag); grip.addEventListener('pointercancel', stopDrag);
+        remove.addEventListener('click', () => { const index = page.caixasTexto.findIndex(item => item.id === box.id); if (index < 0) return; remember({ type: 'box-remove', box, index, pageId: page.id }); page.caixasTexto.splice(index, 1); renderTextboxes(); changed(); });
+        shell.append(grip, content, remove); layer.append(shell);
+      });
     }
+    function createTextBox() {
+      const page = current(); if (!page) return; const box = { id: uid(), x: 86, y: 58, texto: '', cor: ink, tamanho: 22 }; page.caixasTexto.push(box); remember({ type: 'box-add', id: box.id, pageId: page.id }); renderTextboxes(); changed();
+      requestAnimationFrame(() => { const element = document.querySelector(`.text-box[data-id="${box.id}"] .text-box-content`); element?.focus(); });
+    }
+    function eraseObject(point) { const page = current(), radius = tipSize * 3.1; for (let index = page.tracos.length - 1; index >= 0; index -= 1) { const candidate = page.tracos[index], points = candidate.pontos || []; const hit = points.some((item, pointIndex) => pointIndex ? pointToSegment(point, points[pointIndex - 1], item) <= radius + Number(candidate.tamanho || 4) / 2 : distance(point, item) <= radius); if (!hit) continue; page.tracos.splice(index, 1); remember({ type:'replace-stroke', before:[candidate], after:[], index, pageId:page.id }); paint(); changed(); return; } }
+    function erasePart(point) { const page = current(), radius = tipSize * 3.1; for (let index = page.tracos.length - 1; index >= 0; index -= 1) { const candidate = page.tracos[index], points = candidate.pontos || []; if (!points.length) continue; const pieces = [], fragment = []; let hit = false; points.forEach((item, pointIndex) => { const touches = pointIndex ? pointToSegment(point, points[pointIndex - 1], item) <= radius + Number(candidate.tamanho || 4) / 2 : distance(point, item) <= radius; if (touches) { hit = true; if (fragment.length > 1) pieces.push(fragment.splice(0)); else fragment.length = 0; } else fragment.push(item); }); if (fragment.length > 1) pieces.push(fragment); if (!hit) continue; const replacements = pieces.map(pointsPart => ({ ...candidate, id: uid(), pontos: pointsPart })); page.tracos.splice(index, 1, ...replacements); remember({ type:'replace-stroke', before:[candidate], after:replacements, index, pageId:page.id }); paint(); changed(); return; } }
+    function eraseAt(point) { if (eraserMode === 'object') eraseObject(point); else erasePart(point); }
+    function showLaser(point) { const rect = canvas.getBoundingClientRect(); const dot = $('#laserDot'); dot.style.left = `${point.x / canvas.width * rect.width}px`; dot.style.top = `${point.y / canvas.height * rect.height}px`; dot.classList.add('show'); }
+    function stopLaser() { $('#laserDot').classList.remove('show'); laserPoint = null; }
+    const acceptsInk = event => !penOnly || event.pointerType === 'pen';
     canvas.addEventListener('pointerdown', event => {
-      if (mode !== 'draw' || !accepts(event)) return;
-      event.preventDefault();
-      const currentPoint = point(event); drawing = true; canvas.setPointerCapture?.(event.pointerId);
-      if (tool === 'eraser') { lastErasePoint = currentPoint; eraseAt(currentPoint); return; }
-      stroke = { id: uid(), ferramenta: tool === 'highlighter' ? 'highlight' : 'pen', cor: pen, tamanho: penSize, pontos: [currentPoint] };
-      sheet().tracos.push(stroke); drawStroke(stroke);
+      if (mode !== 'draw') return; if (tool === 'text') return; if (!acceptsInk(event)) return;
+      event.preventDefault(); const point = scalePoint(event); drawing = true; canvas.setPointerCapture?.(event.pointerId);
+      if (tool === 'laser') { laserPoint = point; showLaser(point); return; }
+      if (tool === 'eraser') { eraseAt(point); return; }
+      stroke = { id:uid(), ferramenta: tool === 'highlight' ? 'highlight' : tool === 'fountain' ? 'fountain' : 'pen', cor:ink, tamanho:tipSize, pontos:[point] }; current().tracos.push(stroke); lastPaintedPoint = point; drawStroke(stroke);
     });
     canvas.addEventListener('pointermove', event => {
-      if (!drawing || mode !== 'draw' || !accepts(event)) return;
-      event.preventDefault(); const currentPoint = point(event);
-      if (tool === 'eraser') {
-        if (!lastErasePoint || distance(lastErasePoint, currentPoint) >= Math.max(6, eraserSize / 2)) { lastErasePoint = currentPoint; eraseAt(currentPoint); }
-        return;
-      }
-      if (!stroke) return;
-      const previousPoint = stroke.pontos[stroke.pontos.length - 1];
-      if (distance(previousPoint, currentPoint) < Math.max(2.5, Number(stroke.tamanho) * .45)) return;
-      stroke.pontos.push(currentPoint); drawSegment(previousPoint, currentPoint, stroke);
+      if (!drawing || mode !== 'draw' || !acceptsInk(event)) return; event.preventDefault(); const point = scalePoint(event);
+      if (tool === 'laser') { laserPoint = point; showLaser(point); return; }
+      if (tool === 'eraser') { if (!laserPoint || distance(laserPoint, point) >= Math.max(9, tipSize * 1.5)) { laserPoint = point; eraseAt(point); } return; }
+      if (stroke) queueInk(point);
     });
-    function stopDrawing() {
-      if (!drawing) return;
-      drawing = false; lastErasePoint = null;
-      if (stroke) { remember({ type: 'add', id: stroke.id }); stroke = null; changed(); }
+    function stopDrawing() { if (!drawing) return; drawing = false; if (frame) { cancelAnimationFrame(frame); frame = 0; } if (stroke && pendingPoint && distance(stroke.pontos[stroke.pontos.length - 1], pendingPoint) >= 2) { stroke.pontos.push(pendingPoint); drawSegment(lastPaintedPoint || stroke.pontos[stroke.pontos.length - 2], pendingPoint, stroke); } if (stroke) { remember({ type:'add-stroke', id:stroke.id, pageId:current().id }); changed(); } stroke = null; pendingPoint = null; lastPaintedPoint = null; stopLaser(); }
+    canvas.addEventListener('pointerup', stopDrawing); canvas.addEventListener('pointercancel', stopDrawing); canvas.addEventListener('pointerleave', event => { if (event.buttons === 0) stopDrawing(); });
+
+    paper.addEventListener('pointerdown', event => { if (event.pointerType !== 'touch' || event.target.closest('.text-box')) return; swipeStart = { x:event.clientX, y:event.clientY, time:Date.now() }; });
+    paper.addEventListener('pointerup', event => { if (!swipeStart || event.pointerType !== 'touch') return; const dx = event.clientX - swipeStart.x, dy = event.clientY - swipeStart.y; swipeStart = null; if (Math.abs(dx) < 72 || Math.abs(dx) < Math.abs(dy) * 1.35) return; if (dx < 0) movePage(pageIndex + 1, true); else if (pageIndex > 0) movePage(pageIndex - 1); });
+    paper.addEventListener('pointercancel', () => { swipeStart = null; });
+
+    async function fileToDataUrl(file) { return new Promise((resolve, reject) => { const reader = new FileReader(); reader.onload = () => resolve(reader.result); reader.onerror = () => reject(new Error('Não foi possível ler o arquivo.')); reader.readAsDataURL(file); }); }
+    async function pdfPages(file) {
+      if (!window.pdfjsLib) throw new Error('O leitor de PDF ainda não carregou. Tente novamente em instantes.');
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      const pdf = await window.pdfjsLib.getDocument({ data: await file.arrayBuffer() }).promise, pages = [];
+      for (let number = 1; number <= pdf.numPages; number += 1) { const pdfPage = await pdf.getPage(number); const raw = pdfPage.getViewport({ scale: 1 }); const scale = Math.min(1.35, 1100 / raw.width); const viewport = pdfPage.getViewport({ scale }); const work = document.createElement('canvas'); work.width = Math.ceil(viewport.width); work.height = Math.ceil(viewport.height); await pdfPage.render({ canvasContext: work.getContext('2d'), viewport }).promise; pages.push(work.toDataURL('image/jpeg', .8)); }
+      return pages;
+    }
+    async function importFiles(files) {
+      if (!files.length) return; const progress = $('#importProgress'); progress.classList.add('show');
+      try { const inserted = []; for (const file of files) { const images = file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf') ? await pdfPages(file) : [await fileToDataUrl(file)]; images.forEach(image => inserted.push(makePage('blank', image))); }
+        if (!inserted.length) return; book.paginas.splice(pageIndex + 1, 0, ...inserted); pageIndex += 1; applyPage(); changed(120); }
+      catch (error) { message('Não foi possível importar este arquivo.', error.message || 'Escolha um PDF ou uma imagem e tente novamente.'); }
+      finally { progress.classList.remove('show'); $('#filePicker').value = ''; }
     }
     function undo() {
-      const action = history.pop(); if (!action) return;
-      const current = sheet();
-      if (action.type === 'add') current.tracos = current.tracos.filter(item => item.id !== action.id);
-      if (action.type === 'remove') current.tracos.splice(action.index, 0, action.stroke);
-      if (action.type === 'clear') { current.tracos = action.tracos; current.texto = action.texto; current.desenho = action.desenho; $('#writing').value = current.texto; }
-      paint(); changed();
+      const action = history.pop(); if (!action) return; const page = book.paginas.find(item => item.id === action.pageId) || current(); if (!page) return;
+      if (action.type === 'add-stroke') page.tracos = page.tracos.filter(item => item.id !== action.id);
+      if (action.type === 'replace-stroke') page.tracos.splice(action.index, action.after.length, ...action.before);
+      if (action.type === 'box-add') page.caixasTexto = page.caixasTexto.filter(item => item.id !== action.id);
+      if (action.type === 'box-remove') page.caixasTexto.splice(action.index, 0, action.box);
+      if (action.type === 'clear') { page.texto = action.texto; page.tracos = action.tracos; page.caixasTexto = action.caixasTexto; page.desenho = action.desenho; page.tipoFolha = action.tipoFolha; }
+      applyPage(); changed();
     }
+    function clearCurrent() { const page = current(); if (!page.texto && !page.tracos.length && !page.caixasTexto.length && !page.desenho) return; if (!confirm('Apagar tudo desta folha? A ação pode ser desfeita logo em seguida.')) return; remember({ type:'clear', texto:page.texto, tracos:page.tracos, caixasTexto:page.caixasTexto, desenho:page.desenho, tipoFolha:page.tipoFolha, pageId:page.id }); page.texto = ''; page.tracos = []; page.caixasTexto = []; page.desenho = ''; applyPage(); changed(); }
 
-    $('#writing').addEventListener('input', event => { sheet().texto = event.target.value; changed(); });
-    $('#title').addEventListener('input', event => { book.titulo = event.target.value || 'Caderno sem título'; changed(); });
+    $('#writing').addEventListener('input', event => { current().texto = event.target.value; changed(); });
     $('#saveNow').addEventListener('click', () => save(revision, true));
     document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => setMode(button.dataset.mode)));
-    $('#penTool').addEventListener('click', () => setTool('pen'));
-    $('#highlighter').addEventListener('click', () => setTool('highlighter'));
-    $('#eraser').addEventListener('click', () => setTool('eraser'));
-    document.querySelectorAll('[data-pen]').forEach(button => button.addEventListener('click', () => { pen = button.dataset.pen; document.querySelectorAll('[data-pen]').forEach(item => item.classList.toggle('active', item === button)); updateHint(); }));
-    document.querySelectorAll('[data-color]').forEach(button => button.addEventListener('click', () => { book.cor = button.dataset.color; $('#bookMark').style.setProperty('--book-color', book.cor); document.querySelectorAll('[data-color]').forEach(item => item.classList.toggle('active', item === button)); changed(); }));
-    $('#penSize').addEventListener('input', event => { penSize = Number(event.target.value); });
-    $('#eraserSize').addEventListener('input', event => { eraserSize = Number(event.target.value); });
-    $('#undo').addEventListener('click', undo);
-    $('#clearInk').addEventListener('click', () => {
-      const current = sheet();
-      if (!current.texto && !current.tracos.length && !current.desenho) return;
-      if (!confirm('Limpar toda a página? O texto e a escrita à mão serão apagados.')) return;
-      remember({ type: 'clear', tracos: current.tracos, texto: current.texto, desenho: current.desenho });
-      current.tracos = []; current.texto = ''; current.desenho = ''; $('#writing').value = ''; paint(); changed();
-    });
-    $('#penOnly').addEventListener('click', () => {
-      penOnly = !penOnly;
-      const button = $('#penOnly'); button.classList.toggle('active', penOnly); button.textContent = penOnly ? '✦ Só Apple Pencil' : '✦ Caneta, toque e mouse'; button.setAttribute('aria-pressed', String(penOnly));
-      setMode(mode);
-    });
-    canvas.addEventListener('pointerup', stopDrawing);
-    canvas.addEventListener('pointercancel', stopDrawing);
-    canvas.addEventListener('pointerleave', event => { if (event.buttons === 0) stopDrawing(); });
-    document.addEventListener('keydown', event => {
-      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') { event.preventDefault(); save(revision, true); }
-      if (mode === 'draw' && (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'z') { event.preventDefault(); undo(); }
-    });
+    $('#penTool').addEventListener('click', () => setTool('pen')); $('#fountainTool').addEventListener('click', () => setTool('fountain')); $('#highlighter').addEventListener('click', () => setTool('highlight')); $('#eraser').addEventListener('click', () => setTool('eraser')); $('#laserTool').addEventListener('click', () => setTool('laser')); $('#textTool').addEventListener('click', () => setTool('text'));
+    document.querySelectorAll('[data-pen]').forEach(button => button.addEventListener('click', () => { ink = button.dataset.pen; document.querySelectorAll('[data-pen]').forEach(item => item.classList.toggle('active', item === button)); }));
+    document.querySelectorAll('[data-size]').forEach(button => button.addEventListener('click', () => { tipSize = Number(button.dataset.size); updateControls(); }));
+    document.querySelectorAll('[data-eraser]').forEach(button => button.addEventListener('click', () => { eraserMode = button.dataset.eraser; updateControls(); }));
+    document.querySelectorAll('[data-paper]').forEach(button => button.addEventListener('click', () => { current().tipoFolha = button.dataset.paper; document.querySelectorAll('[data-paper]').forEach(item => item.classList.toggle('active', item === button)); applyPage(); changed(); }));
+    $('#importFile').addEventListener('click', () => $('#filePicker').click()); $('#filePicker').addEventListener('change', event => importFiles([...event.target.files])); $('#undo').addEventListener('click', undo); $('#clearPage').addEventListener('click', clearCurrent);
+    document.addEventListener('keydown', event => { if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') { event.preventDefault(); save(revision, true); } if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'z') { event.preventDefault(); undo(); } });
 
     async function start() {
       if (!ready) { document.documentElement.classList.remove('access-checking'); message('A conexão não está disponível.', 'Volte à sua jornada e tente novamente.'); return; }
-      const id = new URLSearchParams(location.search).get('id');
-      if (!id) { location.replace('cadernos.html'); return; }
-      client = window.supabase.createClient(cfg.url, cfg.anonKey);
-      const { data: { session }, error } = await client.auth.getSession();
-      if (error || !session?.user) { location.replace('minha-jornada.html'); return; }
-      user = session.user;
-      const { data, error: loadError } = await client.from('cadernos_estudo').select('id,perfil_id,titulo,cor,paginas,updated_at').eq('id', id).eq('perfil_id', user.id).maybeSingle();
+      const id = new URLSearchParams(location.search).get('id'); if (!id) { location.replace('cadernos.html'); return; }
+      client = window.supabase.createClient(cfg.url, cfg.anonKey); const { data:{ session }, error } = await client.auth.getSession(); if (error || !session?.user) { location.replace('minha-jornada.html'); return; }
+      user = session.user; const { data, error:loadError } = await client.from('cadernos_estudo').select('id,perfil_id,titulo,cor,paginas,updated_at').eq('id', id).eq('perfil_id', user.id).maybeSingle();
       if (loadError || !data) { document.documentElement.classList.remove('access-checking'); message('Não foi possível abrir este caderno.', loadError?.message || 'Volte à sua biblioteca e tente novamente.'); return; }
-      book = normalize(data); render();
+      book = normalize(data); $('#bookName').textContent = book.titulo || 'Caderno'; document.documentElement.classList.remove('access-checking'); $('#editor').hidden = false; applyPage(); label('✓', 'Salvo automaticamente');
     }
     start().catch(error => { document.documentElement.classList.remove('access-checking'); message('Não foi possível abrir este caderno.', error.message || 'Tente novamente.'); });
   })();
