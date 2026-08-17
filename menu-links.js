@@ -259,6 +259,17 @@
         body.orion-mobile-actions header .nav-actions .button{right:128px;padding:0 7px!important;font-size:.63rem!important}
         .aq-mobile-login{right:58px;padding:0 8px;font-size:.68rem!important}
       }
+      /* O menu fica sempre centralizado no cabeçalho, independente do título ou de outros botões. */
+      .aq-menu-toggle{
+        position:fixed!important;
+        z-index:1002!important;
+        top:12px!important;
+        right:auto!important;
+        left:50%!important;
+        width:44px!important;
+        height:44px!important;
+        transform:translateX(-50%)!important;
+      }
     `;
     document.head.append(style);
     document.documentElement.classList.add('orion-readable');
