@@ -112,6 +112,11 @@
         choicesRooms.insertAdjacentHTML("afterbegin", '<a class="tool" href="minhas-escolhas.html"><span class="tool-icon">⌁</span><h3>Minhas escolhas</h3><p>Salve até três cursos e instituições que você quer conhecer melhor.</p></a>');
       }
 
+      const organizerRooms = rooms.querySelector(".organizer-rooms");
+      if (organizerRooms) {
+        organizerRooms.insertAdjacentHTML("beforeend", '<a class="tool" href="cadernos.html"><span class="tool-icon">✎</span><h3>Cadernos de anotações</h3><p>Digite, escreva com caneta e organize páginas por matéria.</p></a>');
+      }
+
       if (opportunityRooms) {
         opportunityRooms.insertAdjacentHTML("beforeend", '<a class="tool" href="privacidade.html"><span class="tool-icon">⌘</span><h3>Privacidade e dados</h3><p>Veja como suas informações são protegidas dentro da Orion Academy.</p></a>');
       }

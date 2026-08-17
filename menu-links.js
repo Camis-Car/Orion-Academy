@@ -7,6 +7,7 @@
     ['questoes-enem.html', 'Questões oficiais do ENEM', 'Treine com provas e gabaritos'],
     ['plano-estudos.html', 'Plano de estudos', 'Prioridades para cada objetivo'],
     ['caderno-erros.html', 'Caderno de erros', 'Revise erros e dificuldades'],
+    ['cadernos.html', 'Cadernos de anotações', 'Escreva, digite e organize suas matérias'],
     ['cronometro-estudos.html', 'Cronômetro de estudos', 'Organize sessões de foco'],
     ['calendario-pessoal.html', 'Meu calendário', 'Planeje sua rotina pessoal'],
     ['minhas-escolhas.html', 'Minhas escolhas', 'Até três cursos e instituições'],
