@@ -259,9 +259,9 @@
         body.orion-mobile-actions header .nav-actions .button{right:128px;padding:0 7px!important;font-size:.63rem!important}
         .aq-mobile-login{right:58px;padding:0 8px;font-size:.68rem!important}
       }
-      /* O menu fica sempre centralizado no cabeçalho, independente do título ou de outros botões. */
+      /* Menu no centro do cabeçalho: acompanha a página ao rolar. */
       .aq-menu-toggle{
-        position:fixed!important;
+        position:absolute!important;
         z-index:1002!important;
         top:12px!important;
         right:auto!important;
@@ -269,6 +269,12 @@
         width:44px!important;
         height:44px!important;
         transform:translateX(-50%)!important;
+      }
+      @media(max-width:700px){
+        .aq-menu-toggle{
+          width:42px!important;
+          height:42px!important;
+        }
       }
     `;
     document.head.append(style);
