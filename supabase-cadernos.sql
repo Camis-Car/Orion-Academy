@@ -52,3 +52,7 @@ drop trigger if exists cadernos_estudo_updated_at on public.cadernos_estudo;
 create trigger cadernos_estudo_updated_at
 before update on public.cadernos_estudo
 for each row execute function public.atualizar_updated_at();
+
+-- Atualiza imediatamente o PostgREST/Supabase para que o site encontre a
+-- nova tabela, sem depender do tempo de renovação automática do cache.
+notify pgrst, 'reload schema';

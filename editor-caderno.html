@@ -17,12 +17,47 @@
     .mode,.tool{border-color:#ffffff50;color:#173553;background:#fff}.mode.active{border-color:#dceeff;color:#173e73;background:#dbeeff}.tool.active{border-color:#f5d590;background:#fff9e9}.tools .dot{outline-color:#ffffff9c}.paper-wrap{padding:18px 22px 28px;background:#e8eef4}.editor{border-color:#cbd7e2;box-shadow:0 15px 32px #0d1d3512}.titlebar{padding:17px 20px;background:#fff}.paper{box-shadow:0 10px 22px #0d1d3520}.hint{padding:12px 20px;background:#eef3f8}.save{background:#fff;color:#1c5d9a;border-color:#fff}
     @media(max-width:760px){.appbar{min-height:62px}.toolstrip{padding:10px}.paper-wrap{padding:10px}.tools .dot{width:27px;height:27px}}
   </style>
+  <style>
+    /* Barra de escrita original da Orion: direta, leve e própria para toque. */
+    .toolstrip{display:flex;align-items:center;gap:12px;min-height:64px;padding:10px 18px;background:#fff;border-bottom:1px solid #dce5ee}
+    .modes{flex:0 0 auto;gap:3px;padding:4px;border-radius:14px;background:#edf2f7}
+    .mode{display:inline-flex;align-items:center;gap:6px;min-height:35px;padding:0 12px;border:0;border-radius:10px;color:#50647b;background:transparent;font-size:11px}
+    .mode.active{color:#fff;background:#173e73;box-shadow:0 3px 7px #173e7333}
+    .tools{flex:1;gap:9px;min-width:0;flex-wrap:nowrap}
+    .tool-group{display:flex;align-items:center;gap:6px;padding-right:9px;border-right:1px solid #e2e8ef}
+    .tool-group:last-child{padding-right:0;border-right:0}
+    .tool{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:35px;padding:0 10px;border:1px solid #dce4ed;border-radius:10px;color:#38526d;background:#fff;font-size:10px;font-weight:700;white-space:nowrap;box-shadow:none}
+    .tool:hover{border-color:#9cb5cf;background:#f7fbff}.tool.active{border-color:#8db3dc;color:#123e73;background:#eaf4ff}.tool.eraser{border-color:#dce4ed;color:#38526d;background:#fff}.tool.eraser.active{border-color:#e3aaa3;color:#9a423c;background:#fff2f0}.tool.highlighter.active{border-color:#e2c16f;color:#7b5a10;background:#fff9df}
+    .tool.icon-only{width:35px;padding:0;font-size:18px}.tool.clear{color:#a54943;border-color:#efd4d0;background:#fffafa}.tool.pencil-lock{color:#215b48;border-color:#cce5d9;background:#f3fbf6}.tool.pencil-lock.active{color:#fff;border-color:#24644d;background:#29725a}
+    .palette{display:flex;align-items:center;gap:7px}.dot{width:25px;height:25px;border:3px solid #fff;outline:1px solid #c5d0db;box-shadow:none}.dot.active{outline:2px solid #173e73;transform:scale(1.08)}
+    .size-control{display:flex;align-items:center;gap:7px;min-width:150px;color:#53677d;font-size:10px;font-weight:700}.size-control input{width:92px;accent-color:#173e73}.size-control[hidden]{display:none}
+    .paper-wrap{padding:18px 22px 28px;background:#edf2f6}.paper{background:repeating-linear-gradient(to bottom,#fffef9 0,#fffef9 31px,#d7e3ed 32px);box-shadow:0 10px 22px #0d1d3518}.canvas{touch-action:auto}.paper[data-mode="draw"] .canvas{touch-action:none}.paper[data-mode="draw"].pen-only .canvas{touch-action:pan-y}.hint{display:flex;align-items:center;min-height:42px;padding:11px 20px;color:#5d7187;background:#f6f9fc;font-size:11px}.hint b{color:#1d5e48}
+    @media(max-width:920px){.toolstrip{align-items:flex-start;flex-direction:column}.tools{width:100%;overflow-x:auto;padding:1px 1px 5px}.tool-group{flex:0 0 auto}.size-control{min-width:132px}.size-control input{width:72px}}
+    @media(max-width:600px){.toolstrip{gap:8px;padding:9px 10px}.mode{min-height:34px;padding:0 10px}.tool{min-height:34px}.tool.clear{padding:0 9px}.hint{padding:10px 14px}.paper-wrap{padding:9px}.paper{min-height:calc(100vh - 295px)}}
+  </style>
 </head>
 <body>
   <header class="appbar"><a class="back" href="cadernos.html">← Cadernos</a><span class="brand"><i><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 7-9.7 7-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></i> Orion Academy</span><button class="save" id="saveNow" type="button">Salvo</button></header>
-  <main class="shell"><section class="status" id="status" hidden aria-live="polite"></section><section class="editor" id="editor" hidden><div class="titlebar"><span class="book-mark" id="bookMark"></span><input class="title" id="title" maxlength="80" aria-label="Nome do caderno" /><div class="colors" aria-label="Cor do caderno"><button class="color" style="--book-color:#173a5e" data-color="#173a5e"></button><button class="color" style="--book-color:#29725a" data-color="#29725a"></button><button class="color" style="--book-color:#8a662b" data-color="#8a662b"></button><button class="color" style="--book-color:#a54b45" data-color="#a54b45"></button><button class="color" style="--book-color:#624b85" data-color="#624b85"></button></div></div><div class="toolstrip"><div class="modes"><button class="mode active" data-mode="type" type="button">⌨ Digitar</button><button class="mode" data-mode="draw" type="button">✎ Escrever</button></div><div class="tools" id="tools" hidden><button class="dot active" style="--pen:#173a5e" data-pen="#173a5e" type="button" aria-label="Azul"></button><button class="dot" style="--pen:#29725a" data-pen="#29725a" type="button" aria-label="Verde"></button><button class="dot" style="--pen:#a54b45" data-pen="#a54b45" type="button" aria-label="Vermelho"></button><button class="dot" style="--pen:#a77a34" data-pen="#a77a34" type="button" aria-label="Dourado"></button><label class="size">Caneta <input id="penSize" type="range" min="2" max="16" value="4" /></label><label class="size">Borracha <input id="eraserSize" type="range" min="6" max="44" value="20" /></label><button class="tool" id="highlighter" type="button">Marca-texto</button><button class="tool" id="eraser" type="button">Borracha por traço</button><button class="tool" id="undo" type="button">Desfazer</button><button class="tool" id="clearInk" type="button">Limpar escrita</button><button class="tool pen-only active" id="penOnly" type="button" aria-pressed="true">✦ Só caneta</button></div></div><div class="paper-wrap"><div class="paper" id="paper" data-mode="type"><textarea class="writing" id="writing" placeholder="Digite aqui as suas anotações..."></textarea><canvas class="canvas" id="canvas" width="1400" height="1900" aria-label="Área de escrita à mão"></canvas></div></div><p class="hint" id="hint">Modo digitação ativo. O texto é salvo automaticamente após uma breve pausa.</p></section></main>
+  <main class="shell">
+    <section class="status" id="status" hidden aria-live="polite"></section>
+    <section class="editor" id="editor" hidden>
+      <div class="titlebar"><span class="book-mark" id="bookMark"></span><input class="title" id="title" maxlength="80" aria-label="Nome do caderno" /><div class="colors" aria-label="Cor do caderno"><button class="color" style="--book-color:#173a5e" data-color="#173a5e"></button><button class="color" style="--book-color:#29725a" data-color="#29725a"></button><button class="color" style="--book-color:#8a662b" data-color="#8a662b"></button><button class="color" style="--book-color:#a54b45" data-color="#a54b45"></button><button class="color" style="--book-color:#624b85" data-color="#624b85"></button></div></div>
+      <div class="toolstrip" aria-label="Ferramentas do caderno">
+        <div class="modes" role="group" aria-label="Modo de anotação"><button class="mode active" data-mode="type" type="button">⌨ Texto</button><button class="mode" data-mode="draw" type="button">✎ Escrever</button></div>
+        <div class="tools" id="tools" hidden>
+          <div class="tool-group"><button class="tool active" id="penTool" type="button" aria-pressed="true">✎ Caneta</button><button class="tool highlighter" id="highlighter" type="button" aria-pressed="false">▰ Marca-texto</button><button class="tool eraser" id="eraser" type="button" aria-pressed="false">⌫ Borracha</button></div>
+          <div class="tool-group"><div class="palette" aria-label="Cor da escrita"><button class="dot active" style="--pen:#173a5e" data-pen="#173a5e" type="button" aria-label="Azul marinho"></button><button class="dot" style="--pen:#29725a" data-pen="#29725a" type="button" aria-label="Verde"></button><button class="dot" style="--pen:#a54b45" data-pen="#a54b45" type="button" aria-label="Vermelho"></button><button class="dot" style="--pen:#a77a34" data-pen="#a77a34" type="button" aria-label="Dourado"></button></div></div>
+          <div class="tool-group"><label class="size-control" id="penSizeControl">Traço <input id="penSize" type="range" min="2" max="16" value="4" aria-label="Espessura da caneta" /></label><label class="size-control" id="eraserSizeControl" hidden>Apagar <input id="eraserSize" type="range" min="6" max="44" value="20" aria-label="Tamanho da borracha" /></label></div>
+          <div class="tool-group"><button class="tool icon-only" id="undo" type="button" aria-label="Desfazer último traço" title="Desfazer">↶</button><button class="tool clear" id="clearInk" type="button">Apagar tudo</button><button class="tool pencil-lock active" id="penOnly" type="button" aria-pressed="true">✦ Só Apple Pencil</button></div>
+        </div>
+      </div>
+      <div class="paper-wrap"><div class="paper" id="paper" data-mode="type"><textarea class="writing" id="writing" placeholder="Digite aqui as suas anotações..."></textarea><canvas class="canvas" id="canvas" width="1400" height="1900" aria-label="Área de escrita à mão"></canvas></div></div>
+      <p class="hint" id="hint">Modo texto ativo. Suas anotações são salvas automaticamente.</p>
+    </section>
+  </main>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="cadastro-config.js"></script>
   <script>
+  if (false) { // implementação anterior preservada apenas como histórico local
   (()=>{const cfg=window.PROJETO_AQUILES_SUPABASE||{},ready=window.supabase&&/^https:\/\//.test(cfg.url||'')&&String(cfg.anonKey||'').length>20,$=s=>document.querySelector(s),canvas=$('#canvas'),ctx=canvas.getContext('2d'),status=$('#status');let client,user,book,mode='type',pen='#173a5e',penSize=4,eraserSize=20,tool='pen',penOnly=true,drawing=false,stroke=null,history=[],timer;
   const uid=()=>crypto.randomUUID?crypto.randomUUID():`stroke-${Date.now()}-${Math.random().toString(16).slice(2)}`,clone=v=>JSON.parse(JSON.stringify(v)),message=(a,b)=>{status.hidden=false;status.innerHTML=`<b>${a}</b><br>${b}`},sheet=()=>book?.paginas?.[0];const normalize=b=>{const p=Array.isArray(b.paginas)&&b.paginas.length?b.paginas:[{id:uid(),titulo:'Folha livre',texto:'',desenho:'',tracos:[]}];p[0].texto=typeof p[0].texto==='string'?p[0].texto:'';p[0].desenho=typeof p[0].desenho==='string'?p[0].desenho:'';p[0].tracos=Array.isArray(p[0].tracos)?p[0].tracos:[];return{...b,paginas:p}};
   function label(t,b=false){$('#saveNow').textContent=t;$('#saveNow').disabled=b}function snap(){history.push(clone(sheet().tracos));if(history.length>32)history.shift()}function renderStroke(c,s){const p=s?.pontos||[];if(!p.length)return;c.save();c.lineCap='round';c.lineJoin='round';c.lineWidth=s.ferramenta==='highlight'?Number(s.tamanho)*4:Number(s.tamanho);c.globalAlpha=s.ferramenta==='highlight'?.25:1;c.strokeStyle=s.cor;c.beginPath();c.moveTo(p[0].x,p[0].y);if(p.length===1)c.lineTo(p[0].x+.1,p[0].y+.1);else p.slice(1).forEach(x=>c.lineTo(x.x,x.y));c.stroke();c.restore()}function paint(){const s=sheet();ctx.clearRect(0,0,canvas.width,canvas.height);const traces=()=>s.tracos.forEach(x=>renderStroke(ctx,x));if(!s.desenho){traces();return}const i=new Image();i.onload=()=>{ctx.drawImage(i,0,0,canvas.width,canvas.height);traces()};i.onerror=traces;i.src=s.desenho}function point(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*canvas.width/r.width,y:(e.clientY-r.top)*canvas.height/r.height}}function distance(p,a,b){const dx=b.x-a.x,dy=b.y-a.y,l=dx*dx+dy*dy||1,t=Math.max(0,Math.min(1,((p.x-a.x)*dx+(p.y-a.y)*dy)/l));return Math.hypot(p.x-(a.x+t*dx),p.y-(a.y+t*dy))}
@@ -31,6 +66,216 @@
   const accepts=e=>!penOnly||e.pointerType==='pen';canvas.addEventListener('pointerdown',e=>{if(mode!=='draw'||!accepts(e))return;e.preventDefault();const p=point(e);if(tool==='eraser'){erase(p);drawing=true;canvas.setPointerCapture?.(e.pointerId);return}snap();drawing=true;stroke={id:uid(),ferramenta:tool==='highlighter'?'highlight':'pen',cor:pen,tamanho:penSize,pontos:[p]};sheet().tracos.push(stroke);canvas.setPointerCapture?.(e.pointerId);renderStroke(ctx,stroke)});canvas.addEventListener('pointermove',e=>{if(!drawing||mode!=='draw'||!accepts(e))return;e.preventDefault();const p=point(e);if(tool==='eraser'){erase(p);return}const last=stroke.pontos.at(-1);stroke.pontos.push(p);renderStroke(ctx,{...stroke,pontos:[last,p]})});const stop=()=>{if(!drawing)return;drawing=false;stroke=null;if(tool!=='eraser')changed()};canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('pointerleave',e=>{if(e.buttons===0)stop()});
   $('#writing').oninput=e=>{sheet().texto=e.target.value;changed()};$('#title').oninput=e=>{book.titulo=e.target.value||'Caderno sem título';changed()};$('#saveNow').onclick=()=>save(true);document.querySelectorAll('[data-mode]').forEach(x=>x.onclick=()=>setMode(x.dataset.mode));document.querySelectorAll('[data-pen]').forEach(x=>x.onclick=()=>{pen=x.dataset.pen;tool='pen';$('#eraser').classList.remove('active','eraser');$('#highlighter').classList.remove('active');document.querySelectorAll('[data-pen]').forEach(y=>y.classList.toggle('active',x===y))});document.querySelectorAll('[data-color]').forEach(x=>x.onclick=()=>{book.cor=x.dataset.color;$('#bookMark').style.setProperty('--book-color',book.cor);document.querySelectorAll('[data-color]').forEach(y=>y.classList.toggle('active',x===y));changed()});$('#penSize').oninput=e=>penSize=Number(e.target.value);$('#eraserSize').oninput=e=>eraserSize=Number(e.target.value);$('#highlighter').onclick=()=>{tool=tool==='highlighter'?'pen':'highlighter';$('#highlighter').classList.toggle('active',tool==='highlighter');$('#eraser').classList.remove('active','eraser')};$('#eraser').onclick=()=>{tool=tool==='eraser'?'pen':'eraser';$('#eraser').classList.toggle('active',tool==='eraser');$('#eraser').classList.toggle('eraser',tool==='eraser');$('#highlighter').classList.remove('active')};$('#undo').onclick=()=>{const last=history.pop();if(!last)return;sheet().tracos=last;paint();changed()};$('#clearInk').onclick=()=>{if(!sheet().tracos.length||!confirm('Limpar toda a escrita à mão? O texto digitado será mantido.'))return;snap();sheet().tracos=[];sheet().desenho='';paint();changed()};$('#penOnly').onclick=()=>{penOnly=!penOnly;const b=$('#penOnly');b.classList.toggle('active',penOnly);b.textContent=penOnly?'✦ Só caneta':'⌘ Caneta, toque e mouse';b.setAttribute('aria-pressed',String(penOnly));setMode(mode)};document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='s'){e.preventDefault();save(true)}if(mode==='draw'&&(e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='z'){e.preventDefault();$('#undo').click()}});
   async function start(){if(!ready){document.documentElement.classList.remove('access-checking');message('A conexão não está disponível.','Volte à sua jornada e tente novamente.');return}const id=new URLSearchParams(location.search).get('id');if(!id){location.replace('cadernos.html');return}client=window.supabase.createClient(cfg.url,cfg.anonKey);const{data:{session},error}=await client.auth.getSession();if(error||!session?.user){location.replace('minha-jornada.html');return}user=session.user;const{data,error:loadError}=await client.from('cadernos_estudo').select('id,perfil_id,titulo,cor,paginas,updated_at').eq('id',id).eq('perfil_id',user.id).maybeSingle();if(loadError||!data){document.documentElement.classList.remove('access-checking');message('Não foi possível abrir este caderno.',loadError?.message||'Volte à sua biblioteca e tente novamente.');return}book=normalize(data);render()}start().catch(e=>{document.documentElement.classList.remove('access-checking');message('Não foi possível abrir este caderno.',e.message||'Tente novamente.')})})();
+  }
+  </script>
+  <script>
+  (() => {
+    const cfg = window.PROJETO_AQUILES_SUPABASE || {};
+    const ready = window.supabase && /^https:\/\//.test(cfg.url || '') && String(cfg.anonKey || '').length > 20;
+    const $ = selector => document.querySelector(selector);
+    const canvas = $('#canvas'), ctx = canvas.getContext('2d'), status = $('#status');
+    let client, user, book, mode = 'type', tool = 'pen', pen = '#173a5e', penSize = 4, eraserSize = 20;
+    let penOnly = true, drawing = false, stroke = null, lastErasePoint = null, history = [], timer, revision = 0, saving = false;
+
+    const uid = () => crypto.randomUUID ? crypto.randomUUID() : `stroke-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+    const sheet = () => book?.paginas?.[0];
+    const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
+    const message = (title, text) => {
+      status.hidden = false;
+      status.replaceChildren();
+      const strong = document.createElement('strong');
+      strong.textContent = title;
+      status.append(strong, document.createElement('br'), document.createTextNode(text));
+    };
+    const normalize = item => {
+      const pages = Array.isArray(item.paginas) && item.paginas.length ? item.paginas : [{ id: uid(), titulo: 'Folha livre', texto: '', desenho: '', tracos: [] }];
+      pages[0].texto = typeof pages[0].texto === 'string' ? pages[0].texto : '';
+      pages[0].desenho = typeof pages[0].desenho === 'string' ? pages[0].desenho : '';
+      pages[0].tracos = Array.isArray(pages[0].tracos) ? pages[0].tracos : [];
+      return { ...item, cor: item.cor || '#173a5e', paginas: pages };
+    };
+    const label = (text, disabled = false) => { $('#saveNow').textContent = text; $('#saveNow').disabled = disabled; };
+    const remember = item => { history.push(item); if (history.length > 60) history.shift(); };
+
+    function penStyle(item) {
+      return { width: item.ferramenta === 'highlight' ? Number(item.tamanho) * 4 : Number(item.tamanho), alpha: item.ferramenta === 'highlight' ? .25 : 1 };
+    }
+    function drawSegment(from, to, item) {
+      const style = penStyle(item);
+      ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = style.width; ctx.globalAlpha = style.alpha; ctx.strokeStyle = item.cor;
+      ctx.beginPath(); ctx.moveTo(from.x, from.y); ctx.lineTo(to.x, to.y); ctx.stroke(); ctx.restore();
+    }
+    function drawStroke(item) {
+      const points = item?.pontos || [];
+      if (!points.length) return;
+      if (points.length === 1) { drawSegment(points[0], { x: points[0].x + .1, y: points[0].y + .1 }, item); return; }
+      const style = penStyle(item);
+      ctx.save(); ctx.lineCap = 'round'; ctx.lineJoin = 'round'; ctx.lineWidth = style.width; ctx.globalAlpha = style.alpha; ctx.strokeStyle = item.cor;
+      ctx.beginPath(); ctx.moveTo(points[0].x, points[0].y);
+      for (let index = 1; index < points.length; index += 1) ctx.lineTo(points[index].x, points[index].y);
+      ctx.stroke(); ctx.restore();
+    }
+    function paint() {
+      const current = sheet();
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const traces = () => current.tracos.forEach(drawStroke);
+      if (!current.desenho) { traces(); return; }
+      const image = new Image();
+      image.onload = () => { ctx.drawImage(image, 0, 0, canvas.width, canvas.height); traces(); };
+      image.onerror = traces; image.src = current.desenho;
+    }
+    function point(event) {
+      const rect = canvas.getBoundingClientRect();
+      return { x: (event.clientX - rect.left) * canvas.width / rect.width, y: (event.clientY - rect.top) * canvas.height / rect.height };
+    }
+    function pointToSegment(pointToTest, first, second) {
+      const dx = second.x - first.x, dy = second.y - first.y, length = dx * dx + dy * dy || 1;
+      const ratio = Math.max(0, Math.min(1, ((pointToTest.x - first.x) * dx + (pointToTest.y - first.y) * dy) / length));
+      return Math.hypot(pointToTest.x - (first.x + ratio * dx), pointToTest.y - (first.y + ratio * dy));
+    }
+
+    function changed(delay = 900) {
+      revision += 1; clearTimeout(timer); label('Salva automaticamente…');
+      timer = setTimeout(() => save(revision), delay);
+    }
+    async function save(targetRevision = revision, forced = false) {
+      if (!book) return;
+      clearTimeout(timer);
+      if (saving) { timer = setTimeout(() => save(revision, forced), 280); return; }
+      saving = true; book.updated_at = new Date().toISOString(); label('Salvando…', true);
+      const { error } = await client.from('cadernos_estudo').upsert({ id: book.id, perfil_id: user.id, titulo: book.titulo || 'Caderno sem título', cor: book.cor, paginas: book.paginas, updated_at: book.updated_at }, { onConflict: 'id' });
+      saving = false;
+      if (error) { message('Não foi possível salvar.', error.message || 'Tente novamente.'); label('Salvar agora'); return; }
+      if (revision > targetRevision) { label('Alterações pendentes'); timer = setTimeout(() => save(revision), 280); return; }
+      label(forced ? '✓ Salvo agora' : '✓ Salvo');
+    }
+
+    function updateHint() {
+      const hint = $('#hint');
+      if (mode === 'type') { hint.textContent = 'Modo texto ativo. Suas anotações são salvas automaticamente.'; return; }
+      if (tool === 'eraser') { hint.textContent = 'Borracha ativa. Toque em um traço para apagá-lo por inteiro.'; return; }
+      if (tool === 'highlighter') { hint.textContent = 'Marca-texto ativo. Escolha uma cor e destaque sem pesar a página.'; return; }
+      hint.textContent = penOnly ? 'Caneta ativa. Só o Apple Pencil escreve; a mão pode apoiar e rolar a página.' : 'Caneta ativa. Caneta, toque e mouse podem escrever.';
+    }
+    function setTool(nextTool) {
+      tool = nextTool;
+      [['penTool', 'pen'], ['highlighter', 'highlighter'], ['eraser', 'eraser']].forEach(([id, name]) => {
+        const button = $(`#${id}`), active = tool === name;
+        button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+      });
+      $('#eraser').classList.toggle('eraser', tool === 'eraser');
+      $('#penSizeControl').hidden = tool === 'eraser';
+      $('#eraserSizeControl').hidden = tool !== 'eraser';
+      updateHint();
+    }
+    function setMode(nextMode) {
+      mode = nextMode;
+      const paper = $('#paper');
+      paper.dataset.mode = mode;
+      paper.classList.toggle('pen-only', mode === 'draw' && penOnly);
+      canvas.style.touchAction = mode === 'draw' ? (penOnly ? 'pan-y' : 'none') : 'auto';
+      document.querySelectorAll('[data-mode]').forEach(button => button.classList.toggle('active', button.dataset.mode === mode));
+      $('#tools').hidden = mode !== 'draw';
+      updateHint();
+    }
+    function render() {
+      document.documentElement.classList.remove('access-checking'); $('#editor').hidden = false;
+      $('#title').value = book.titulo || ''; $('#writing').value = sheet().texto || '';
+      $('#bookMark').style.setProperty('--book-color', book.cor);
+      document.querySelectorAll('[data-color]').forEach(button => button.classList.toggle('active', button.dataset.color === book.cor));
+      paint(); setTool('pen'); setMode(mode);
+    }
+
+    const accepts = event => !penOnly || event.pointerType === 'pen';
+    function eraseAt(currentPoint) {
+      const current = sheet(), radius = eraserSize * 2.4;
+      for (let index = current.tracos.length - 1; index >= 0; index -= 1) {
+        const candidate = current.tracos[index], points = candidate.pontos || [];
+        const hit = points.some((item, pointIndex) => pointIndex ? pointToSegment(currentPoint, points[pointIndex - 1], item) <= radius + Number(candidate.tamanho || 4) / 2 : distance(currentPoint, item) <= radius);
+        if (!hit) continue;
+        current.tracos.splice(index, 1); remember({ type: 'remove', stroke: candidate, index }); paint(); changed(); return;
+      }
+    }
+    canvas.addEventListener('pointerdown', event => {
+      if (mode !== 'draw' || !accepts(event)) return;
+      event.preventDefault();
+      const currentPoint = point(event); drawing = true; canvas.setPointerCapture?.(event.pointerId);
+      if (tool === 'eraser') { lastErasePoint = currentPoint; eraseAt(currentPoint); return; }
+      stroke = { id: uid(), ferramenta: tool === 'highlighter' ? 'highlight' : 'pen', cor: pen, tamanho: penSize, pontos: [currentPoint] };
+      sheet().tracos.push(stroke); drawStroke(stroke);
+    });
+    canvas.addEventListener('pointermove', event => {
+      if (!drawing || mode !== 'draw' || !accepts(event)) return;
+      event.preventDefault(); const currentPoint = point(event);
+      if (tool === 'eraser') {
+        if (!lastErasePoint || distance(lastErasePoint, currentPoint) >= Math.max(6, eraserSize / 2)) { lastErasePoint = currentPoint; eraseAt(currentPoint); }
+        return;
+      }
+      if (!stroke) return;
+      const previousPoint = stroke.pontos[stroke.pontos.length - 1];
+      if (distance(previousPoint, currentPoint) < Math.max(2.5, Number(stroke.tamanho) * .45)) return;
+      stroke.pontos.push(currentPoint); drawSegment(previousPoint, currentPoint, stroke);
+    });
+    function stopDrawing() {
+      if (!drawing) return;
+      drawing = false; lastErasePoint = null;
+      if (stroke) { remember({ type: 'add', id: stroke.id }); stroke = null; changed(); }
+    }
+    function undo() {
+      const action = history.pop(); if (!action) return;
+      const current = sheet();
+      if (action.type === 'add') current.tracos = current.tracos.filter(item => item.id !== action.id);
+      if (action.type === 'remove') current.tracos.splice(action.index, 0, action.stroke);
+      if (action.type === 'clear') { current.tracos = action.tracos; current.texto = action.texto; current.desenho = action.desenho; $('#writing').value = current.texto; }
+      paint(); changed();
+    }
+
+    $('#writing').addEventListener('input', event => { sheet().texto = event.target.value; changed(); });
+    $('#title').addEventListener('input', event => { book.titulo = event.target.value || 'Caderno sem título'; changed(); });
+    $('#saveNow').addEventListener('click', () => save(revision, true));
+    document.querySelectorAll('[data-mode]').forEach(button => button.addEventListener('click', () => setMode(button.dataset.mode)));
+    $('#penTool').addEventListener('click', () => setTool('pen'));
+    $('#highlighter').addEventListener('click', () => setTool('highlighter'));
+    $('#eraser').addEventListener('click', () => setTool('eraser'));
+    document.querySelectorAll('[data-pen]').forEach(button => button.addEventListener('click', () => { pen = button.dataset.pen; document.querySelectorAll('[data-pen]').forEach(item => item.classList.toggle('active', item === button)); updateHint(); }));
+    document.querySelectorAll('[data-color]').forEach(button => button.addEventListener('click', () => { book.cor = button.dataset.color; $('#bookMark').style.setProperty('--book-color', book.cor); document.querySelectorAll('[data-color]').forEach(item => item.classList.toggle('active', item === button)); changed(); }));
+    $('#penSize').addEventListener('input', event => { penSize = Number(event.target.value); });
+    $('#eraserSize').addEventListener('input', event => { eraserSize = Number(event.target.value); });
+    $('#undo').addEventListener('click', undo);
+    $('#clearInk').addEventListener('click', () => {
+      const current = sheet();
+      if (!current.texto && !current.tracos.length && !current.desenho) return;
+      if (!confirm('Limpar toda a página? O texto e a escrita à mão serão apagados.')) return;
+      remember({ type: 'clear', tracos: current.tracos, texto: current.texto, desenho: current.desenho });
+      current.tracos = []; current.texto = ''; current.desenho = ''; $('#writing').value = ''; paint(); changed();
+    });
+    $('#penOnly').addEventListener('click', () => {
+      penOnly = !penOnly;
+      const button = $('#penOnly'); button.classList.toggle('active', penOnly); button.textContent = penOnly ? '✦ Só Apple Pencil' : '✦ Caneta, toque e mouse'; button.setAttribute('aria-pressed', String(penOnly));
+      setMode(mode);
+    });
+    canvas.addEventListener('pointerup', stopDrawing);
+    canvas.addEventListener('pointercancel', stopDrawing);
+    canvas.addEventListener('pointerleave', event => { if (event.buttons === 0) stopDrawing(); });
+    document.addEventListener('keydown', event => {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 's') { event.preventDefault(); save(revision, true); }
+      if (mode === 'draw' && (event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'z') { event.preventDefault(); undo(); }
+    });
+
+    async function start() {
+      if (!ready) { document.documentElement.classList.remove('access-checking'); message('A conexão não está disponível.', 'Volte à sua jornada e tente novamente.'); return; }
+      const id = new URLSearchParams(location.search).get('id');
+      if (!id) { location.replace('cadernos.html'); return; }
+      client = window.supabase.createClient(cfg.url, cfg.anonKey);
+      const { data: { session }, error } = await client.auth.getSession();
+      if (error || !session?.user) { location.replace('minha-jornada.html'); return; }
+      user = session.user;
+      const { data, error: loadError } = await client.from('cadernos_estudo').select('id,perfil_id,titulo,cor,paginas,updated_at').eq('id', id).eq('perfil_id', user.id).maybeSingle();
+      if (loadError || !data) { document.documentElement.classList.remove('access-checking'); message('Não foi possível abrir este caderno.', loadError?.message || 'Volte à sua biblioteca e tente novamente.'); return; }
+      book = normalize(data); render();
+    }
+    start().catch(error => { document.documentElement.classList.remove('access-checking'); message('Não foi possível abrir este caderno.', error.message || 'Tente novamente.'); });
+  })();
   </script>
 </body>
 </html>
