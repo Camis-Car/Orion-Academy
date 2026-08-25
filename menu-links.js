@@ -237,44 +237,48 @@
       .aq-menu-links a{min-height:50px;display:block}
       .aq-menu-links a:focus-visible{outline:3px solid rgba(217,174,99,.55);outline-offset:2px}
       .aq-mobile-login{display:none}
-      @media (max-width:700px){
-        body{scroll-padding-top:86px}
-        /* Reserva espaço real no cabeçalho para os controles fixos. */
-        body>header .nav{min-height:70px;padding-right:138px!important}
-        body>header.top{padding-right:138px!important}
-        body.orion-mobile-actions>header .nav{padding-right:220px!important}
-        body.orion-mobile-actions header .nav .brand{flex:0 0 auto;font-size:0!important;gap:0}
-        body.orion-mobile-actions header .nav .brand :is(.brand-mark,.mark){margin:0}
-        body.orion-mobile-actions header .nav-actions .button{position:fixed!important;z-index:1002;top:12px;right:132px;display:inline-flex!important;min-height:42px!important;margin:0!important;padding:0 9px!important;border-radius:6px!important;white-space:nowrap;font-size:.68rem!important;line-height:1!important}
-        body.orion-mobile-actions .menu-toggle{display:none!important}
-        html.orion-readable :is(p,li,td,th,blockquote,figcaption,.lead,.description,.subtitle,.helper,.notice,.guide-item span){font-size:.95rem!important;line-height:1.72!important}
-        /* Acesso direto à conta, sempre ao lado do menu no topo. */
-        .aq-menu-toggle{top:12px!important;right:12px!important;width:42px!important;height:42px!important}
-        .aq-mobile-login{position:fixed;z-index:1002;top:12px;right:60px;display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 10px;border:1px solid rgba(255,244,213,.72);border-radius:6px;color:#10213a!important;background:#d9ae63;font-size:.72rem!important;font-weight:800;letter-spacing:.015em;box-shadow:0 8px 20px rgba(8,21,38,.2);white-space:nowrap}
-        .aq-mobile-login:hover{color:#10213a!important;background:#edcd90}
-        .aq-mobile-login:focus-visible{outline:3px solid rgba(255,255,255,.82)!important;outline-offset:2px}
+      /* O botão fica na borda direita e o conteúdo do cabeçalho reserva esse espaço. */
+      body.orion-header-safe>header :is(.nav,.top){
+        gap:18px!important;
+        padding-right:84px!important;
       }
-      @media (max-width:370px){
-        body.orion-mobile-actions>header .nav{padding-right:211px!important}
-        body.orion-mobile-actions header .nav-actions .button{right:128px;padding:0 7px!important;font-size:.63rem!important}
-        .aq-mobile-login{right:58px;padding:0 8px;font-size:.68rem!important}
+      body.orion-header-safe>header :is(.brand,.back,.public-link){
+        min-width:0;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
       }
-      /* Menu no centro do cabeçalho: acompanha a página ao rolar. */
       .aq-menu-toggle{
         position:absolute!important;
         z-index:1002!important;
-        top:12px!important;
-        right:auto!important;
-        left:50%!important;
-        width:44px!important;
-        height:44px!important;
-        transform:translateX(-50%)!important;
+        top:16px!important;
+        right:18px!important;
+        left:auto!important;
+        width:46px!important;
+        height:46px!important;
+        transform:none!important;
       }
-      @media(max-width:700px){
-        .aq-menu-toggle{
-          width:42px!important;
-          height:42px!important;
-        }
+      @media (max-width:700px){
+        body{scroll-padding-top:86px}
+        body>header :is(.nav,.top){min-height:70px;padding-right:128px!important}
+        body>header :is(.back,.public-link){display:none!important}
+        body.orion-mobile-actions>header .nav{padding-right:230px!important}
+        body.orion-mobile-actions header .nav .brand{flex:0 0 auto;font-size:0!important;gap:0}
+        body.orion-mobile-actions header .nav .brand :is(.brand-mark,.mark){margin:0}
+        body.orion-mobile-actions header .nav-actions .button{position:absolute!important;z-index:1002;top:12px;right:132px;display:inline-flex!important;min-height:42px!important;margin:0!important;padding:0 9px!important;border-radius:6px!important;white-space:nowrap;font-size:.68rem!important;line-height:1!important}
+        body.orion-mobile-actions .menu-toggle{display:none!important}
+        html.orion-readable :is(p,li,td,th,blockquote,figcaption,.lead,.description,.subtitle,.helper,.notice,.guide-item span){font-size:.95rem!important;line-height:1.72!important}
+        .aq-menu-toggle{top:12px!important;right:12px!important;width:42px!important;height:42px!important}
+        .aq-mobile-login{position:absolute;z-index:1002;top:12px;right:60px;display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:0 10px;border:1px solid rgba(255,244,213,.72);border-radius:6px;color:#10213a!important;background:#d9ae63;font-size:.72rem!important;font-weight:800;letter-spacing:.015em;box-shadow:0 8px 20px rgba(8,21,38,.2);white-space:nowrap}
+        .aq-mobile-login:hover{color:#10213a!important;background:#edcd90}
+        .aq-mobile-login:focus-visible{outline:3px solid rgba(255,255,255,.82)!important;outline-offset:2px}
+      }
+      @media (max-width:390px){
+        body>header .nav .brand{font-size:0!important;gap:0!important}
+        body>header .nav .brand :is(.brand-mark,.mark){margin:0}
+        body.orion-mobile-actions>header .nav{padding-right:220px!important}
+        body.orion-mobile-actions header .nav-actions .button{right:128px;padding:0 7px!important;font-size:.63rem!important}
+        .aq-mobile-login{right:58px;padding:0 8px;font-size:.68rem!important}
       }
     `;
     document.head.append(style);
@@ -292,6 +296,9 @@
     login.textContent = 'Log in';
     login.setAttribute('aria-label', 'Entrar na sua área do estudante');
     document.body.append(login);
+  }
+  if (document.querySelector('.aq-menu-toggle')) {
+    document.body.classList.add('orion-header-safe');
   }
   if (document.querySelector('header .nav-actions .button')) {
     document.body.classList.add('orion-mobile-actions');
