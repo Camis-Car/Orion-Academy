@@ -9,6 +9,7 @@
   if (!form || !courseInput || !offers.length) return;
 
   const normal = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+  const publicDirectory = Array.isArray(window.INSTITUICOES_PUBLICAS_2024) ? window.INSTITUICOES_PUBLICAS_2024 : [];
   const number = value => new Intl.NumberFormat('pt-BR').format(Number(value || 0));
   const score = value => Number.isFinite(Number(value)) && Number(value) > 0 ? Number(value).toFixed(2).replace('.', ',') : '—';
   const make = (tag, className, text) => {
@@ -23,7 +24,7 @@
     return element;
   };
   const unique = values => [...new Set(values.filter(Boolean))];
-  const institutions = unique(offers.map(offer => offer.instituicao)).sort((a, b) => a.localeCompare(b, 'pt-BR'));
+  const institutions = unique([...offers.map(offer => offer.instituicao), ...publicDirectory.map(institution => institution.nome)]).sort((a, b) => a.localeCompare(b, 'pt-BR'));
   const institutionInputs = [1, 2, 3].map(index => document.getElementById('institution' + index));
 
   const style = document.createElement('style');
@@ -109,6 +110,7 @@
   };
   const createCard = (institution, courseValue) => {
     const items = offers.filter(offer => offer.instituicao === institution);
+    const directoryInstitution = publicDirectory.find(item => normal(item.nome) === normal(institution));
     const campuses = unique(items.map(offer => [offer.cidade, offer.uf, offer.campus || 'Campus não informado'].filter(Boolean).join(' · ')));
     const matches = courseMatches(items, courseValue);
     const card = make('article', 'college-card');
@@ -116,8 +118,8 @@
     const heading = make('div');
     append(heading, 'span', 'eyebrow', 'Instituição pública');
     append(heading, 'h3', '', institution);
-    append(heading, 'p', '', unique(items.map(offer => offer.sigla)).join(' · ') || 'Sigla não informada');
-    const badge = make('span', 'tag', 'SiSU 2026');
+    append(heading, 'p', '', unique(items.map(offer => offer.sigla)).join(' · ') || directoryInstitution?.sigla || 'Sigla não informada');
+    const badge = make('span', 'tag', items.length ? 'SiSU 2026' : 'Diretório público');
     top.append(heading, badge);
     const facts = make('div', 'facts');
     facts.append(
@@ -126,7 +128,12 @@
       createFact('Campi / locais', number(campuses.length))
     );
     const courseBox = make('div', 'course-box');
-    if (courseValue && matches.length) {
+    if (!items.length) {
+      const unavailable = make('div', 'no-course');
+      const name = make('strong', '', institution);
+      unavailable.append(name, document.createTextNode(' está disponível no diretório de instituições públicas, mas não tem oferta na chamada regular do SiSU 2026. Verifique o processo seletivo próprio e o edital da instituição.'));
+      courseBox.append(unavailable);
+    } else if (courseValue && matches.length) {
       append(courseBox, 'h4', '', courseValue + ' nesta instituição');
       append(courseBox, 'p', '', 'Ofertas encontradas na chamada regular do SiSU 2026.');
       append(courseBox, 'span', 'course-reference', 'Referência: ' + modeSelect.options[modeSelect.selectedIndex].text);
@@ -151,6 +158,8 @@
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
       source.append(link);
+    } else if (directoryInstitution) {
+      source.textContent = 'Fonte: diretório de instituições públicas — Censo da Educação Superior 2024.';
     } else {
       source.textContent = 'Fonte: relatório oficial SiSU 2026.';
     }

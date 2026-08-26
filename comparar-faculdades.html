@@ -36,6 +36,8 @@
     <section class="results" id="results" hidden aria-live="polite"><div class="result-heading"><div><span class="eyebrow" style="color:#a77a34">Resultado</span><h2>O seu comparativo</h2></div><p id="resultDescription"></p></div><div class="summary-grid" id="summaryGrid"></div><section class="compare-tip"><i>✓</i><div><b>Compare além da nota de corte.</b><p>Depois de observar vagas e referências de corte, veja campus, cidade, permanência estudantil, turno, custos de deslocamento e as regras do edital antes de definir suas opções.</p></div></section></section>
   </main>
   <footer><div class="wrap footer"><span>© 2026 Orion Academy. Todos os direitos reservados.</span><a href="faculdades-publicas.html">Faculdades públicas</a></div></footer>
+  <script src="instituicoes-publicas-2024.js"></script>
+  <script src="instituicoes-com-ofertas-interestaduais-sisu-2026.js"></script>
   <script src="sisu-2026-nacional.js"></script>
   <script src="comparar-faculdades-aprimorado.js"></script>
   <script src="menu-links.js"></script>
@@ -49,5 +51,6 @@
       const toggle=document.getElementById('aqMenuToggle'),menu=document.getElementById('aqSiteMenu'),close=document.getElementById('aqMenuClose');const shut=()=>{menu.classList.remove('open');menu.setAttribute('aria-hidden','true');toggle.setAttribute('aria-expanded','false')};toggle.addEventListener('click',()=>{const open=menu.classList.toggle('open');menu.setAttribute('aria-hidden',String(!open));toggle.setAttribute('aria-expanded',String(open))});close.addEventListener('click',shut);menu.addEventListener('click',event=>{if(event.target===menu)shut()});document.addEventListener('keydown',event=>{if(event.key==='Escape')shut()});
     })();
   </script>
+  <script src="comparar-faculdades-por-estado.js"></script>
 </body>
 </html>
