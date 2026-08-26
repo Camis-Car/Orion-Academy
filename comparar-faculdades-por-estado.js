@@ -12,7 +12,7 @@
   stateField.className = 'field modalidade-field';
   const label = document.createElement('label');
   label.htmlFor = 'compareState';
-  label.textContent = 'Estado para filtrar as sugestões';
+  label.textContent = 'Estado da comparação';
   const select = document.createElement('select');
   select.id = 'compareState';
   select.setAttribute('aria-describedby', 'compareStateHelp');
@@ -44,11 +44,11 @@
     acronyms.forEach(acronym => addOption(options, acronym));
     institutionOptions.replaceChildren(options);
     if (!uf) {
-      help.textContent = 'Mostrando instituições públicas de todo o Brasil e as instituições com oferta no Sisu 2026.';
+      help.textContent = 'Mostrando instituições públicas de todo o Brasil e as instituições com oferta no Sisu 2026. Sem estado, os totais abrangem toda a instituição.';
       return;
     }
     const sisuInstitutionCount = unique(stateOffers.map(item => item.instituicao)).length;
-    help.textContent = `${uf}: ${unique(directoryRows.map(item => item.nome)).length} instituições públicas no diretório; ${sisuInstitutionCount} com ofertas na chamada regular do Sisu 2026.`;
+    help.textContent = `${uf}: ${unique(directoryRows.map(item => item.nome)).length} instituições públicas no diretório; ${sisuInstitutionCount} com ofertas na chamada regular do Sisu 2026. As vagas e os resultados da comparação usarão este estado.`;
   };
 
   select.addEventListener('change', updateSuggestions);

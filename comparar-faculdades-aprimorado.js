@@ -76,6 +76,7 @@
       return actual === wanted || actual.includes(wanted) || wanted.includes(actual);
     }) : [];
   };
+  const selectedState = () => document.getElementById('compareState')?.value || '';
   const modeFor = offer => (offer.modalidades || []).find(mode => mode.codigo === modeSelect.value) || null;
   const createFact = (label, value) => {
     const fact = make('div', 'fact');
@@ -109,7 +110,9 @@
     return item;
   };
   const createCard = (institution, courseValue) => {
-    const items = offers.filter(offer => offer.instituicao === institution);
+    const scope = selectedState();
+    const allInstitutionItems = offers.filter(offer => offer.instituicao === institution);
+    const items = scope ? allInstitutionItems.filter(offer => offer.uf === scope) : allInstitutionItems;
     const directoryInstitution = publicDirectory.find(item => normal(item.nome) === normal(institution));
     const campuses = unique(items.map(offer => [offer.cidade, offer.uf, offer.campus || 'Campus não informado'].filter(Boolean).join(' · ')));
     const matches = courseMatches(items, courseValue);
@@ -119,7 +122,7 @@
     append(heading, 'span', 'eyebrow', 'Instituição pública');
     append(heading, 'h3', '', institution);
     append(heading, 'p', '', unique(items.map(offer => offer.sigla)).join(' · ') || directoryInstitution?.sigla || 'Sigla não informada');
-    const badge = make('span', 'tag', items.length ? 'SiSU 2026' : 'Diretório público');
+    const badge = make('span', 'tag', items.length ? `SiSU 2026${scope ? ` · ${scope}` : ''}` : 'Diretório público');
     top.append(heading, badge);
     const facts = make('div', 'facts');
     facts.append(
@@ -131,7 +134,7 @@
     if (!items.length) {
       const unavailable = make('div', 'no-course');
       const name = make('strong', '', institution);
-      unavailable.append(name, document.createTextNode(' está disponível no diretório de instituições públicas, mas não tem oferta na chamada regular do SiSU 2026. Verifique o processo seletivo próprio e o edital da instituição.'));
+      unavailable.append(name, document.createTextNode(` está disponível no diretório de instituições públicas, mas não tem oferta na chamada regular do SiSU 2026${scope ? ` em ${scope}` : ''}. Verifique o processo seletivo próprio e o edital da instituição.`));
       courseBox.append(unavailable);
     } else if (courseValue && matches.length) {
       append(courseBox, 'h4', '', courseValue + ' nesta instituição');
@@ -186,9 +189,10 @@
     const courseValue = courseInput.value.trim();
     grid.replaceChildren();
     uniqueSelected.forEach(institution => grid.append(createCard(institution, courseValue)));
+    const scope = selectedState();
     description.textContent = courseValue
-      ? 'Vagas e notas de corte do curso usam a modalidade de referência selecionada. Os totais da instituição continuam mostrando toda a oferta do SiSU 2026.'
-      : 'Os totais mostram a oferta da chamada regular do SiSU 2026. Informe um curso para comparar vagas e cortes por modalidade.';
+      ? `Vagas e notas de corte do curso usam a modalidade de referência selecionada${scope ? ` em ${scope}` : ''}. Os totais da instituição seguem o mesmo recorte.`
+      : `Os totais mostram a oferta da chamada regular do SiSU 2026${scope ? ` em ${scope}` : ''}. Informe um curso para comparar vagas e cortes por modalidade.`;
     results.hidden = false;
     results.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, true);
