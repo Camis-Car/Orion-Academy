@@ -32,27 +32,19 @@
   document.head.append(style);
 
   const modeField = make('div', 'field modalidade-field');
-  const modeLabel = make('label', '', 'Modalidade de referência');
+  const modeLabel = make('label', '', 'Modalidade de referência (UFRJ 2026)');
   modeLabel.htmlFor = 'referenceQuota';
   const modeSelect = make('select');
   modeSelect.id = 'referenceQuota';
   modeSelect.setAttribute('aria-describedby', 'referenceQuotaHelp');
-  const modeHelp = make('small', '', 'As vagas e notas de corte do curso serão exibidas nesta modalidade. A elegibilidade e os documentos são confirmados no edital da instituição.');
+  const modeHelp = make('small', '', 'Use uma das 10 modalidades da legenda UFRJ. A elegibilidade e os documentos são confirmados no edital da instituição.');
   modeHelp.id = 'referenceQuotaHelp';
   modeField.append(modeLabel, modeSelect, modeHelp);
   courseInput.closest('.field').after(modeField);
 
-  const modeMap = new Map();
-  offers.forEach(offer => (offer.modalidades || []).forEach(mode => {
-    if (mode && mode.codigo && !modeMap.has(mode.codigo)) modeMap.set(mode.codigo, mode);
-  }));
-  [...modeMap.values()].sort((a, b) => {
-    if (a.codigo === 'AC') return -1;
-    if (b.codigo === 'AC') return 1;
-    return String(a.nome || a.codigo).localeCompare(String(b.nome || b.codigo), 'pt-BR');
-  }).forEach(mode => {
-    modeSelect.add(new Option(String(mode.codigo) + ' — ' + String(mode.nome || 'Modalidade de concorrência'), mode.codigo));
-  });
+  const referenceModes = Array.isArray(window.ORION_MODALIDADES_SISU) ? window.ORION_MODALIDADES_SISU : [];
+  const referenceModeByCode = new Map(referenceModes.map(mode => [mode.codigo, mode]));
+  referenceModes.forEach(mode => modeSelect.add(new Option(`${mode.numero}. ${mode.nome}`, mode.codigo)));
   if ([...modeSelect.options].some(option => option.value === 'AC')) modeSelect.value = 'AC';
 
   const query = new URLSearchParams(location.search);
@@ -77,7 +69,10 @@
     }) : [];
   };
   const selectedState = () => document.getElementById('compareState')?.value || '';
-  const modeFor = offer => (offer.modalidades || []).find(mode => mode.codigo === modeSelect.value) || null;
+  const modeFor = offer => {
+    if (modeSelect.value === 'V1') return offer.sigla === 'UFRJ' ? (offer.modalidades || []).find(mode => mode.codigo === 'V1' || mode.codigo === 'AA_TRANS_UFRJ') || null : null;
+    return (offer.modalidades || []).find(mode => mode.codigo === modeSelect.value) || null;
+  };
   const createFact = (label, value) => {
     const fact = make('div', 'fact');
     append(fact, 'span', '', label);
@@ -104,8 +99,9 @@
     details.append(compareLink(offer));
     const metric = make('div', 'offer-score');
     append(metric, 'b', '', mode ? score(mode.notaCorte) : '—');
-    append(metric, 'small', '', mode && Number(mode.notaCorte) > 0 ? 'corte ' + modeSelect.value + ' · 2026' : mode ? 'sem corte publicado' : 'modalidade não ofertada');
-    append(metric, 'small', 'mode-vacancies', mode ? number(mode.vagas) + ' vagas ' + modeSelect.value : '— vagas');
+    const reference = referenceModeByCode.get(modeSelect.value);
+    append(metric, 'small', '', mode && Number(mode.notaCorte) > 0 ? `corte modalidade ${reference?.numero || '—'} · 2026` : mode ? 'sem corte publicado' : 'modalidade não ofertada');
+    append(metric, 'small', 'mode-vacancies', mode ? `${number(mode.vagas)} vagas na modalidade ${reference?.numero || 'selecionada'}` : '— vagas');
     item.append(details, metric);
     return item;
   };
