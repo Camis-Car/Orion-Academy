@@ -18,8 +18,8 @@
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
     const priority = { Home: 0, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3 };
-    const firstPriority = priority[first[1]] ?? 2;
-    const secondPriority = priority[second[1]] ?? 2;
+    const firstPriority = priority[first[1]] ?? 4;
+    const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
     return first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' });
   });
@@ -335,6 +335,50 @@
       if (href.split('?')[0] === currentPage) link.setAttribute('aria-current', 'page');
       pagesDropdown.append(link);
     });
+  }
+
+  if (currentPage === 'minha-jornada.html') {
+    const organizerRooms = document.querySelector('.organizer-rooms');
+    if (organizerRooms && !organizerRooms.querySelector('a[href="alimentacao-e-estudos.html"]')) {
+      const nutritionLink = document.createElement('a');
+      nutritionLink.className = 'tool';
+      nutritionLink.href = 'alimentacao-e-estudos.html';
+      nutritionLink.setAttribute('aria-label', 'Abrir informações sobre alimentação e estudos');
+
+      const icon = document.createElement('span');
+      icon.className = 'tool-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = '◒';
+
+      const title = document.createElement('h3');
+      title.textContent = 'Alimentação e estudos';
+      const description = document.createElement('p');
+      description.textContent = 'Consulte a pesquisa do projeto sobre alimentação, hidratação e rotina de estudo.';
+
+      nutritionLink.append(icon, title, description);
+      organizerRooms.append(nutritionLink);
+    }
+
+    const studyRooms = document.querySelector('.study-rooms');
+    if (studyRooms && !studyRooms.querySelector('a[href="countdown-enem.html"]')) {
+      const countdownLink = document.createElement('a');
+      countdownLink.className = 'tool';
+      countdownLink.href = 'countdown-enem.html';
+      countdownLink.setAttribute('aria-label', 'Abrir o Countdown ENEM');
+
+      const icon = document.createElement('span');
+      icon.className = 'tool-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = '⌛';
+
+      const title = document.createElement('h3');
+      title.textContent = 'Countdown ENEM';
+      const description = document.createElement('p');
+      description.textContent = 'Acompanhe a contagem regressiva para os dois dias de prova do Enem.';
+
+      countdownLink.append(icon, title, description);
+      studyRooms.append(countdownLink);
+    }
   }
 
   const hubCopy = [
