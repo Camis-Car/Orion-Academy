@@ -343,7 +343,7 @@
     });
     $('#newPage').addEventListener('click', addPage); $('#removePage').addEventListener('click', deletePage);
     async function start() {
-      if (!ready) { document.documentElement.classList.remove('access-checking'); message('A conexão não está disponível.', 'Volte à sua jornada e tente novamente.'); return; }
+      if (!ready) { document.documentElement.classList.remove('access-checking'); message('A conexão não está disponível.', 'Volte à área do estudante e tente novamente.'); return; }
       const id = new URLSearchParams(location.search).get('id'); if (!id) { location.replace('cadernos.html'); return; }
       client = window.supabase.createClient(cfg.url, cfg.anonKey); const { data:{ session }, error } = await client.auth.getSession(); if (error || !session?.user) { location.replace('minha-jornada.html'); return; }
       user = session.user; const { data, error:loadError } = await client.from('cadernos_estudo').select('id,perfil_id,titulo,cor,paginas,updated_at').eq('id', id).eq('perfil_id', user.id).maybeSingle();

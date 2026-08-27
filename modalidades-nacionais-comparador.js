@@ -9,7 +9,7 @@
   quota.value = modes.some(mode => mode.codigo === current) ? current : 'AC';
 
   const label = document.querySelector('label[for="quota"]');
-  if (label) label.textContent = 'Modalidade de referência (UFRJ 2026)';
+  if (label) label.textContent = 'Modalidade de referência';
 
   const updateObjective = () => {
     const objective = document.getElementById('selectedObjective');

@@ -32,12 +32,12 @@
   document.head.append(style);
 
   const modeField = make('div', 'field modalidade-field');
-  const modeLabel = make('label', '', 'Modalidade de referência (UFRJ 2026)');
+  const modeLabel = make('label', '', 'Modalidade de referência');
   modeLabel.htmlFor = 'referenceQuota';
   const modeSelect = make('select');
   modeSelect.id = 'referenceQuota';
   modeSelect.setAttribute('aria-describedby', 'referenceQuotaHelp');
-  const modeHelp = make('small', '', 'Use uma das 10 modalidades da legenda UFRJ. A elegibilidade e os documentos são confirmados no edital da instituição.');
+  const modeHelp = make('small', '', 'Use uma das 10 modalidades de referência. A elegibilidade e os documentos são confirmados no edital da instituição.');
   modeHelp.id = 'referenceQuotaHelp';
   modeField.append(modeLabel, modeSelect, modeHelp);
   courseInput.closest('.field').after(modeField);
@@ -70,7 +70,7 @@
   };
   const selectedState = () => document.getElementById('compareState')?.value || '';
   const modeFor = offer => {
-    if (modeSelect.value === 'V1') return offer.sigla === 'UFRJ' ? (offer.modalidades || []).find(mode => mode.codigo === 'V1' || mode.codigo === 'AA_TRANS_UFRJ') || null : null;
+    if (modeSelect.value === 'V1') return (offer.modalidades || []).find(mode => mode.codigo === 'V1' || mode.codigo === 'AA_TRANS_UFRJ') || null;
     return (offer.modalidades || []).find(mode => mode.codigo === modeSelect.value) || null;
   };
   const createFact = (label, value) => {

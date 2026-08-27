@@ -1,23 +1,25 @@
 (() => {
   const entries = [
-    ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Hábitos que apoiam a rotina de estudo'],
-    ['index.html?public=1', 'Home', 'Voltar para a página inicial'],
-    ['cadastro.html', 'Criar cadastro', 'Acesse informações mais completas'],
-    ['minha-jornada.html', 'Área do estudante', 'Informações e escolhas reunidas'],
-    ['carreiras.html', 'Profissões', 'Explore áreas e cursos'],
-    ['carreiras-militares.html', 'Carreiras militares', 'Informações e formas de ingresso'],
+    ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Informações sobre hábitos e rotina de estudo'],
+    ['index.html?public=1', 'Home', 'Informações e ferramentas para estudantes'],
+    ['cadastro.html', 'Criar cadastro', 'Reúna consultas e informações salvas'],
+    ['minha-jornada.html', 'Área do estudante', 'Consultas, referências e escolhas salvas'],
+    ['carreiras.html', 'Profissões', 'Informações sobre áreas e cursos'],
+    ['carreiras-militares.html', 'Carreiras militares', 'Editais, critérios e formas de ingresso'],
     ['faculdades-publicas.html', 'Faculdades públicas', 'Instituições em todo o Brasil'],
-    ['comparar-faculdades.html', 'Comparar faculdades', 'Ofertas, campi e vagas'],
+    ['comparar-faculdades.html', 'Comparar faculdades', 'Compare ofertas, campus e vagas'],
     ['plano-sisu.html', 'Vagas e Sisu', 'Vagas e modalidades do Sisu'],
-    ['comparar-notas.html', 'Compare suas notas', 'Compare com referências do Sisu'],
+    ['comparar-notas.html', 'Comparar notas', 'Cálculos e referências do Sisu'],
     ['listas-espera-rj.html', 'Listas de espera', 'Chamadas e processos de ingresso'],
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
-    ['painel-bolsas.html', 'Bolsas e apoios', 'Organize oportunidades de bolsa'],
-    ['estude-no-exterior.html', 'Estude no Exterior', 'Processos e fontes oficiais'],
+    ['painel-bolsas.html', 'Bolsas e apoios', 'Informações sobre bolsas e apoios'],
+    ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    if (first[1] === 'Home') return -1;
-    if (second[1] === 'Home') return 1;
+    const priority = { Home: 0, 'Vagas e Sisu': 1 };
+    const firstPriority = priority[first[1]] ?? 2;
+    const secondPriority = priority[second[1]] ?? 2;
+    if (firstPriority !== secondPriority) return firstPriority - secondPriority;
     return first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' });
   });
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
@@ -308,7 +310,7 @@
     links.replaceChildren();
     const heading = document.createElement('p');
     heading.className = 'aq-menu-index';
-    heading.textContent = 'Home · demais opções A–Z';
+    heading.textContent = 'Ferramenta de consulta · Home e opções A–Z';
     links.append(heading);
     entries.forEach(([href, label, description]) => {
       const link = document.createElement('a');
@@ -335,35 +337,107 @@
   }
 
   const hubCopy = [
+    ['Voltar à minha jornada', 'Voltar à área do estudante'],
+    ['Voltar para a minha jornada', 'Voltar para a área do estudante'],
+    ['Minha jornada', 'Área do estudante'],
+    ['minha jornada', 'área do estudante'],
     ['Teste vocacional e apresentação', 'Hub de informações para estudantes'],
     ['Teste vocacional e caminhos', 'Hub de informações para estudantes'],
     ['Formas de ingresso e caminhos', 'Informações e formas de ingresso'],
     ['Comece sua jornada', 'Acesse informações reunidas'],
-    ['Sua jornada começa aqui.', 'Sua área de informações começa aqui.'],
-    ['Organize escolhas, acompanhe seus próximos passos e transforme informação em um plano possível.', 'Reúna escolhas e consultas em um só lugar para acessar informações do hub.'],
-    ['Plano personalizado', 'Informações reunidas'],
+    ['Sua jornada começa aqui.', 'Suas informações salvas começam aqui.'],
+    ['Sua jornada continua.', 'Suas informações salvas estão aqui.'],
+    ['Organize escolhas, acompanhe seus próximos passos e transforme informação em um plano possível.', 'Reúna escolhas, consultas e referências em um só lugar.'],
+    ['Plano personalizado', 'Ferramentas de consulta'],
     ['Acesse sua jornada', 'Acesse sua área de informações'],
-    ['Entrar na minha jornada', 'Entrar na minha área'],
+    ['Entrar na minha jornada', 'Entrar na área do estudante'],
     ['Seu próximo passo', 'Informações para consultar'],
-    ['Escolha até três cursos e instituições para que a Orion Academy possa organizar seus próximos passos.', 'Escolha até três cursos e instituições para reunir suas consultas e comparar informações.'],
-    ['Esses dados ficam associados somente à sua conta e ajudam o projeto a apresentar caminhos mais úteis.', 'Esses dados ficam associados somente à sua conta e mantêm suas escolhas e consultas reunidas.'],
+    ['Escolha até três cursos e instituições para que a Orion Academy possa organizar seus próximos passos.', 'Escolha até três cursos e instituições para salvar consultas e comparar informações.'],
+    ['Esses dados ficam associados somente à sua conta e ajudam o projeto a apresentar caminhos mais úteis.', 'Esses dados ficam associados somente à sua conta e mantêm escolhas e consultas reunidas.'],
     ['Roteiro da sua jornada', 'Informações salvas na sua conta'],
-    ['Complete suas escolhas para receber caminhos mais direcionados.', 'Complete suas escolhas para reunir informações de comparação.'],
+    ['Roteiro de hoje', 'Consultas de hoje'],
+    ['Complete suas escolhas para receber caminhos mais direcionados.', 'Complete suas escolhas para ampliar as comparações disponíveis.'],
     ['Encontre seu caminho.', 'Consulte e compare opções.'],
     ['Faça login para abrir sua área pessoal.', 'Faça login para abrir sua área de informações.'],
     ['Sua jornada está pronta para você.', 'Sua área de informações está pronta.'],
     ['Informações básicas salvas para personalizar a jornada.', 'Informações básicas salvas na sua conta.'],
     ['Você já pode comparar caminhos com mais clareza.', 'Você já pode comparar opções com mais contexto.'],
     ['Acesso confirmado. Abrindo sua jornada…', 'Acesso confirmado. Abrindo sua área de informações…'],
-    ['Entrar na minha jornada', 'Entrar na minha área']
+    ['Continue de onde parou.', 'Acesse suas informações salvas.'],
+    ['Seu perfil', 'Informações da conta'],
+    ['Seu espaço.', 'Suas informações salvas.'],
+    ['Planejamento em construção.', 'Consultas em organização.'],
+    ['Você não precisa decidir tudo de uma vez. Cada etapa deixa suas escolhas mais claras.', 'Use as consultas e comparações para registrar as opções que deseja analisar.'],
+    ['Um passo por vez.', 'Uma consulta por vez.'],
+    ['Planeje seu tempo.', 'Organize seu tempo.'],
+    ['Estratégia pessoal', 'Ferramentas de estudo'],
+    ['Encontre seu caminho', 'Consulte suas opções'],
+    ['Amplie seus horizontes.', 'Amplie suas informações.'],
+    ['Conheça outros caminhos de formação e os recursos da Orion Academy.', 'Consulte outras formas de formação e os recursos informativos da Orion Academy.'],
+    ['Plano de candidatura', 'Vagas e Sisu'],
+    ['Seu plano de candidatura', 'Vagas e Sisu'],
+    ['Plano de vagas', 'Vagas e Sisu'],
+    ['Meu plano de vagas', 'Vagas e Sisu'],
+    ['Plano de estudos', 'Temas e pesos de estudo'],
+    ['Gerar meu plano', 'Consultar temas e pesos'],
+    ['O plano é gerado neste navegador.', 'A consulta é gerada neste navegador.'],
+    ['Seu roteiro', 'Informações consultadas'],
+    ['O que priorizar agora', 'Temas e referências consultados'],
+    ['A Orion Academy orienta;', 'A Orion Academy reúne informações gerais;'],
+    ['A Orion Academy apresenta orientação geral', 'A Orion Academy reúne informações gerais'],
+    ['Use esta página para se orientar', 'Use esta página para consultar informações gerais'],
+    ['caminhos para carreiras militares', 'formas de ingresso em carreiras militares'],
+    ['Bolsas e caminhos para cursos concorridos.', 'Bolsas, financiamento e informações de acesso.'],
+    ['Rotas para Medicina.', 'Informações sobre acesso a Medicina.'],
+    ['Uma estratégia para Medicina.', 'Informações para consultar sobre Medicina.'],
+    ['Seu foco', 'Filtro de consulta'],
+    ['Mapa de possibilidades', 'Informações disponíveis'],
+    ['Plano alternativo responsável', 'Opções alternativas para consultar'],
+    ['onde seus planos podem começar.', 'quais instituições estão disponíveis.'],
+    ['sua nota conversa com cada oportunidade.', 'sua nota se compara às referências de cada oferta.'],
+    ['Escolha com mais clareza', 'Compare informações'],
+    ['trilha de estudo', 'guia de estudo'],
+    ['Atualize o plano conforme suas dificuldades reais.', 'Atualize sua organização de estudos conforme suas dificuldades reais.'],
+    ['campi', 'campus'],
+    ['Campi', 'Campus'],
+    ['Escolha com mais clareza', 'Compare informações'],
+    ['O seu comparativo', 'Comparação de informações'],
+    ['Seu comparativo', 'Comparação de informações'],
+    ['Seu planejamento', 'Informações salvas'],
+    ['Monte seu plano', 'Consulte temas e pesos'],
+    ['Montar plano de estudos', 'Consultar temas e pesos'],
+    ['Crie uma senha forte para acessar sua jornada na Orion Academy.', 'Crie uma senha forte para acessar sua área de informações na Orion Academy.'],
+    ['Depois de criar o cadastro, entre pela sua jornada usando e-mail e senha.', 'Depois de criar o cadastro, entre na área do estudante com e-mail e senha.'],
+    ['Volte à sua jornada', 'Volte à área do estudante'],
+    ['Sua área pessoal', 'Sua área de informações'],
+    ['Sua central pessoal', 'Sua área de informações'],
+    ['Tudo o que você salvar aqui fica reunido para facilitar suas escolhas e próximos passos.', 'Tudo o que você salvar aqui fica reunido para facilitar suas consultas e comparações.'],
+    ['Seu planejamento inicial está organizado.', 'Suas informações salvas estão organizadas.'],
+    ['transforme objetivos em um plano de preparação.', 'consulte temas e informações para seus estudos.'],
+    ['Inclua a última opção ou explore seu plano de estudos.', 'Inclua a última opção ou consulte temas e pesos de estudo.'],
+    ['Ter alternativas ajuda a construir um plano mais realista.', 'Ter alternativas ampliam as informações disponíveis para comparar.'],
+    ['Ver plano', 'Consultar']
   ];
 
-  const rewriteHubCopy = (node) => {
-    let text = node.data;
+  const rewriteHubText = (value) => {
+    let text = value;
     hubCopy.forEach(([from, to]) => { text = text.replaceAll(from, to); });
-    text = text.replace(/Sua jornada continua\./g, 'Suas informações salvas estão aqui.');
     text = text.replace(/para comparar caminhos com segurança\./g, 'para comparar opções com mais contexto.');
+    return text;
+  };
+
+  const rewriteHubCopy = (node) => {
+    const text = rewriteHubText(node.data);
     if (text !== node.data) node.data = text;
+  };
+
+  const rewriteHubAttributes = (element) => {
+    ['aria-label', 'title', 'placeholder'].forEach((attribute) => {
+      if (!element.hasAttribute(attribute)) return;
+      const current = element.getAttribute(attribute);
+      const text = rewriteHubText(current);
+      if (text !== current) element.setAttribute(attribute, text);
+    });
   };
 
   const normalizeHubCopy = (root = document.body) => {
@@ -372,6 +446,8 @@
       rewriteHubCopy(root);
       return;
     }
+    if (root.nodeType === Node.ELEMENT_NODE) rewriteHubAttributes(root);
+    if (root.querySelectorAll) root.querySelectorAll('[aria-label],[title],[placeholder]').forEach(rewriteHubAttributes);
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const tag = node.parentElement?.tagName;
