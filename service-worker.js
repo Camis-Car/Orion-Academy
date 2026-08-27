@@ -1,4 +1,4 @@
-const CACHE_NAME = 'orion-academy-pwa-v17';
+const CACHE_NAME = 'orion-academy-pwa-v18';
 const CORE_FILES = [
   './',
   './index.html',
@@ -9,6 +9,7 @@ const CORE_FILES = [
   './pwa.js',
   './cadastro.html',
   './minha-jornada.html',
+  './alimentacao-e-estudos.html',
   './cronometro-estudos.html',
   './guia-enem.html',
   './questoes-enem.html',

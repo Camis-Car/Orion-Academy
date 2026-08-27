@@ -1,5 +1,6 @@
 (() => {
   const entries = [
+    ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Hábitos que apoiam a rotina de estudo'],
     ['index.html?public=1', 'Home', 'Voltar para a página inicial'],
     ['cadastro.html', 'Criar cadastro', 'Comece sua jornada'],
     ['minha-jornada.html', 'Minha jornada', 'Sua central de estudante'],
