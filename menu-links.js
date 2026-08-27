@@ -17,7 +17,7 @@
     ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Vagas e Sisu': 1 };
+    const priority = { Home: 0, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3 };
     const firstPriority = priority[first[1]] ?? 2;
     const secondPriority = priority[second[1]] ?? 2;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
