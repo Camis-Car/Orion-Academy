@@ -341,7 +341,7 @@
     const organizerRooms = document.querySelector('.organizer-rooms');
     if (organizerRooms && !organizerRooms.querySelector('a[href="alimentacao-e-estudos.html"]')) {
       const nutritionLink = document.createElement('a');
-      nutritionLink.className = 'tool';
+      nutritionLink.className = 'tool nutrition-tool';
       nutritionLink.href = 'alimentacao-e-estudos.html';
       nutritionLink.setAttribute('aria-label', 'Abrir informações sobre alimentação e estudos');
 
