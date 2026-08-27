@@ -1,16 +1,8 @@
 (() => {
   const entries = [
-    ['index.html', 'Início', 'Teste vocacional e apresentação'],
+    ['index.html?public=1', 'Home', 'Voltar para a página inicial'],
     ['cadastro.html', 'Criar cadastro', 'Comece sua jornada'],
     ['minha-jornada.html', 'Minha jornada', 'Sua central de estudante'],
-    ['guia-enem.html', 'Guia ENEM', 'Conteúdos para revisar por matéria'],
-    ['questoes-enem.html', 'Questões oficiais do ENEM', 'Treine com provas e gabaritos'],
-    ['plano-estudos.html', 'Plano de estudos', 'Prioridades para cada objetivo'],
-    ['caderno-erros.html', 'Caderno de erros', 'Revise erros e dificuldades'],
-    ['cadernos.html', 'Cadernos de anotações', 'Escreva, digite e organize suas matérias'],
-    ['cronometro-estudos.html', 'Cronômetro de estudos', 'Organize sessões de foco'],
-    ['calendario-pessoal.html', 'Meu calendário', 'Planeje sua rotina pessoal'],
-    ['minhas-escolhas.html', 'Minhas escolhas', 'Até três cursos e instituições'],
     ['carreiras.html', 'Profissões', 'Explore áreas e cursos'],
     ['carreiras-militares.html', 'Carreiras militares', 'Formas de ingresso e caminhos'],
     ['faculdades-publicas.html', 'Faculdades públicas', 'Instituições em todo o Brasil'],
@@ -21,7 +13,6 @@
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
     ['painel-bolsas.html', 'Bolsas e apoios', 'Organize oportunidades de bolsa'],
     ['estude-no-exterior.html', 'Estude no Exterior', 'Processos e fontes oficiais'],
-    ['sobre-nos.html', 'Nossa História', 'Os criadores e a origem do projeto'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' }));
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
@@ -303,6 +294,11 @@
   if (document.querySelector('header .nav-actions .button')) {
     document.body.classList.add('orion-mobile-actions');
   }
+  document.querySelectorAll('a[href="sobre-nos.html"]').forEach((link) => {
+    const card = link.closest('.tool, .quick');
+    if (card) card.remove();
+    else link.remove();
+  });
   document.querySelectorAll('.aq-menu-links').forEach((links) => {
     links.replaceChildren();
     const heading = document.createElement('p');
@@ -316,7 +312,7 @@
       const detail = document.createElement('small');
       detail.textContent = description;
       link.append(detail);
-      if (href === currentPage) link.setAttribute('aria-current', 'page');
+      if (href.split('?')[0] === currentPage) link.setAttribute('aria-current', 'page');
       links.append(link);
     });
   });
@@ -328,7 +324,7 @@
       const link = document.createElement('a');
       link.href = href;
       link.textContent = label;
-      if (href === currentPage) link.setAttribute('aria-current', 'page');
+      if (href.split('?')[0] === currentPage) link.setAttribute('aria-current', 'page');
       pagesDropdown.append(link);
     });
   }
