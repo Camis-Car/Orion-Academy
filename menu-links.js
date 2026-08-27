@@ -15,7 +15,11 @@
     ['painel-bolsas.html', 'Bolsas e apoios', 'Organize oportunidades de bolsa'],
     ['estude-no-exterior.html', 'Estude no Exterior', 'Processos e fontes oficiais'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
-  ].sort((first, second) => first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' }));
+  ].sort((first, second) => {
+    if (first[1] === 'Home') return -1;
+    if (second[1] === 'Home') return 1;
+    return first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' });
+  });
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
   const themeStorageKey = 'orion-theme';
 
@@ -304,7 +308,7 @@
     links.replaceChildren();
     const heading = document.createElement('p');
     heading.className = 'aq-menu-index';
-    heading.textContent = 'Todas as opções · A–Z';
+    heading.textContent = 'Home · demais opções A–Z';
     links.append(heading);
     entries.forEach(([href, label, description]) => {
       const link = document.createElement('a');
