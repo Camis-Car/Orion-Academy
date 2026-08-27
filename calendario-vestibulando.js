@@ -1,5 +1,5 @@
 window.CALENDARIO_VESTIBULANDO = {
-  atualizadoEm: '02/08/2026',
+  atualizadoEm: '27/08/2026',
   eventos: [
     { data: '2026-05-25', fim: '2026-06-12', processo: 'Enem', etapa: 'Inscrições', grupo: 'nacional', status: 'encerrada', fonte: 'Inep — perguntas frequentes do Enem', url: 'https://www.gov.br/inep/pt-br/acesso-a-informacao/perguntas-frequentes/exame-nacional-do-ensino-medio-enem/' },
     { data: '2026-06-07', processo: 'UERJ 2027', etapa: '1º Exame de Qualificação', grupo: 'rj', status: 'encerrada', fonte: 'UERJ — Vestibular Estadual 2027', url: 'https://www.uerj.br/noticia/vestibular-uerj-2027-inscricoes-para-1o-exame-de-qualificacao-vao-ate-7-5-prova-sera-aplicada-em-junho/' },
@@ -25,7 +25,29 @@ window.CALENDARIO_VESTIBULANDO = {
     { data: '2026-05-24', processo: 'Marinha 2026', etapa: 'Provas — Engenheiros, Quadro Técnico e Saúde', grupo: 'militar', status: 'encerrada', fonte: 'Marinha — Concursos 2026', url: 'https://concursos.marinha.mil.br/' },
     { data: '2026-06-16', processo: 'Marinha 2026', etapa: 'Prova — Soldado Fuzileiro Naval', grupo: 'militar', status: 'encerrada', fonte: 'Marinha — Concursos 2026', url: 'https://concursos.marinha.mil.br/' },
     { data: '2026-04-26', processo: 'Marinha 2026', etapa: 'Prova — Escolas de Aprendizes-Marinheiros', grupo: 'militar', status: 'encerrada', fonte: 'Marinha — Concursos 2026', url: 'https://concursos.marinha.mil.br/' },
-    { data: '2026-08-29', fim: '2026-08-30', processo: 'Escola Naval 2026', etapa: 'Provas de admissão', grupo: 'militar', status: 'confirmada', fonte: 'Marinha — Concursos 2026', url: 'https://concursos.marinha.mil.br/' }
+    { data: '2026-08-29', fim: '2026-08-30', processo: 'Escola Naval 2026', etapa: 'Provas de admissão', grupo: 'militar', status: 'confirmada', fonte: 'Marinha — Concursos 2026', url: 'https://concursos.marinha.mil.br/' },
+    { data: '2026-08-31', fim: '2026-09-04', processo: 'PSC/UFAM 2027', etapa: 'Solicitação de isenção — etapas 1, 2 e 3', grupo: 'seriados', status: 'confirmada', fonte: 'UFAM — Processo Seletivo Contínuo', url: 'https://ufam.edu.br/noticias/7891-ufam-lanca-editais-das-etapas-1-2-e-3-do-processo-seletivo-continuo-psc.html' },
+    { data: '2026-09-12', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' },
+    { data: '2026-10-03', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' },
+    { data: '2026-11-01', processo: 'PAS/UEM 2026', etapa: 'Provas das etapas 1, 2 e 3', grupo: 'seriados', status: 'confirmada', fonte: 'UEM — Programação 2026/2027', url: 'https://cvu.uem.br/programacao.html' },
+    { data: '2026-11-04', fim: '2026-11-05', processo: 'Provão Paulista 2026', etapa: 'Provas — 3ª série do Ensino Médio e EJA', grupo: 'seriados', status: 'confirmada', fonte: 'Provão Paulista — calendário 2026', url: 'https://www.provaopaulistaseriado.sp.gov.br/' },
+    { data: '2026-11-07', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' },
+    { data: '2026-11-10', fim: '2026-11-11', processo: 'Provão Paulista 2026', etapa: 'Provas — 2ª série do Ensino Médio', grupo: 'seriados', status: 'confirmada', fonte: 'Provão Paulista — calendário 2026', url: 'https://www.provaopaulistaseriado.sp.gov.br/' },
+    { data: '2026-11-12', fim: '2026-11-13', processo: 'Provão Paulista 2026', etapa: 'Provas — 1ª série do Ensino Médio', grupo: 'seriados', status: 'confirmada', fonte: 'Provão Paulista — calendário 2026', url: 'https://www.provaopaulistaseriado.sp.gov.br/' },
+    { data: '2026-11-29', processo: 'PAS/UnB 3', etapa: 'Prova — Subprograma 2024–2026', grupo: 'seriados', status: 'confirmada', fonte: 'UnB — editais do PAS 2026', url: 'https://noticias.unb.br/component/agenda/agenda/5691' },
+    { data: '2026-11-29', processo: 'PSS/UEPG 2026', etapa: 'Provas — PSS 1, 2 e 3', grupo: 'seriados', status: 'confirmada', fonte: 'UEPG — PSS 2026', url: 'https://www2.uepg.br/cps/pss-2026/' },
+    { data: '2026-11-29', processo: 'PSS/UFRR 2027', etapa: 'Provas — etapas E1, E2 e E3', grupo: 'seriados', status: 'confirmada', fonte: 'UFRR — Vestibular 2027', url: 'https://ufrr.br/noticias/ufrr-inicia-nesta-segunda-feira-27-as-inscricoes-para-o-vestibular-2027/' },
+    { data: '2026-11-29', processo: 'Seriado Unioeste 2027', etapa: 'Provas das fases do Vestibular Seriado', grupo: 'seriados', status: 'confirmada', fonte: 'Unioeste — Vestibular 2027', url: 'https://www.unioeste.br/portal/publicacoes-do-ingresso/publicacoes-vestibular-2027' },
+    { data: '2026-12-05', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' },
+    { data: '2026-12-05', fim: '2026-12-06', processo: 'PISM/UFJF 2027', etapa: 'Provas — módulos I, II e III', grupo: 'seriados', status: 'confirmada', fonte: 'UFJF — PISM 2027', url: 'https://www2.ufjf.br/noticias/2026/06/10/ufjf-publica-edital-do-pism-2027/' },
+    { data: '2026-12-05', fim: '2026-12-06', processo: 'PAVE/UFPel 2026', etapa: 'Aplicação das provas', grupo: 'seriados', status: 'confirmada', fonte: 'UFPel — calendário acadêmico 2026', url: 'https://wp.ufpel.edu.br/cra/calendarios-academicos/calendario-academico-2026/' },
+    { data: '2026-12-06', processo: 'PAS/UnB 1', etapa: 'Prova — Subprograma 2026–2028', grupo: 'seriados', status: 'confirmada', fonte: 'UnB — editais do PAS 2026', url: 'https://noticias.unb.br/component/agenda/agenda/5691' },
+    { data: '2026-12-12', processo: 'Seriado UFMG', etapa: 'Prova — 2ª etapa do ciclo 2025–2027', grupo: 'seriados', status: 'confirmada', fonte: 'UFMG — Provas 2026', url: 'https://www.ufmg.br/seriadoufmg/prova-2026/' },
+    { data: '2026-12-13', processo: 'PAS/UnB 2', etapa: 'Prova — Subprograma 2025–2027', grupo: 'seriados', status: 'confirmada', fonte: 'UnB — editais do PAS 2026', url: 'https://noticias.unb.br/component/agenda/agenda/5691' },
+    { data: '2026-12-13', processo: 'Seriado UFMG', etapa: 'Prova — 1ª etapa do ciclo 2026–2028', grupo: 'seriados', status: 'confirmada', fonte: 'UFMG — Provas 2026', url: 'https://www.ufmg.br/seriadoufmg/prova-2026/' },
+    { data: '2027-03-06', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' },
+    { data: '2027-05-01', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' },
+    { data: '2027-06-05', processo: 'SAT', etapa: 'Aplicação do exame', grupo: 'internacional', status: 'confirmada', fonte: 'College Board — SAT Dates and Deadlines', url: 'https://satsuite.collegeboard.org/sat/dates-deadlines' }
   ],
   acompanhar: [
     { processo: 'Sisu, Prouni e Fies', grupo: 'nacional', descricao: 'As datas de inscrição, resultado e lista de espera são divulgadas em edital próprio. Acompanhe os portais do MEC para cada edição.', url: 'https://www.gov.br/mec/pt-br/assuntos/es/sistema-de-selecao-unificada-sisu' },
@@ -47,6 +69,8 @@ window.CALENDARIO_VESTIBULANDO = {
     { processo: 'Marinha — quadros técnicos, saúde e engenharia', grupo: 'militar', descricao: 'Há editais próprios para Corpo de Engenheiros, Quadro Técnico, Saúde, Quadros Complementares e outras áreas de nível superior.', url: 'https://concursos.marinha.mil.br/' },
     { processo: 'Marinha — serviço temporário', grupo: 'militar', descricao: 'Seleções por Distrito Naval para praças e oficiais temporários. Não é a mesma modalidade de carreira permanente.', url: 'https://concursos.marinha.mil.br/' },
     { processo: 'Polícias e Bombeiros Militares', grupo: 'militar', descricao: 'São carreiras estaduais; cada estado publica edital, calendário, exigências físicas e etapas próprias.', url: 'https://www.gov.br/pt-br/servicos/ingressar-nas-forcas-armadas' },
-    { processo: 'Instituições de outros estados', grupo: 'estados', descricao: 'Cada universidade estadual ou federal pode ter formas de ingresso e cronogramas diferentes. Use a página de faculdades para chegar ao portal oficial.', url: 'faculdades-publicas.html' }
+    { processo: 'Instituições de outros estados', grupo: 'estados', descricao: 'Cada universidade estadual ou federal pode ter formas de ingresso e cronogramas diferentes. Use a página de faculdades para chegar ao portal oficial.', url: 'faculdades-publicas.html' },
+    { processo: 'Vestibulares seriados', grupo: 'seriados', descricao: 'Consulte os processos em etapas durante o Ensino Médio e confirme qual edital corresponde à sua série e ao seu estado.', url: 'vestibulares-seriados.html' },
+    { processo: 'SIS/UEA, SSA/UPE, SASI e outros editais', grupo: 'seriados', descricao: 'Quando a nova data ainda não estiver publicada, acompanhe a página de cada processo antes de planejar inscrição ou prova.', url: 'vestibulares-seriados.html' }
   ]
 };
