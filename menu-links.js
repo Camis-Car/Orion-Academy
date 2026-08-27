@@ -2,13 +2,13 @@
   const entries = [
     ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Hábitos que apoiam a rotina de estudo'],
     ['index.html?public=1', 'Home', 'Voltar para a página inicial'],
-    ['cadastro.html', 'Criar cadastro', 'Comece sua jornada'],
-    ['minha-jornada.html', 'Minha jornada', 'Sua central de estudante'],
+    ['cadastro.html', 'Criar cadastro', 'Acesse informações mais completas'],
+    ['minha-jornada.html', 'Área do estudante', 'Informações e escolhas reunidas'],
     ['carreiras.html', 'Profissões', 'Explore áreas e cursos'],
-    ['carreiras-militares.html', 'Carreiras militares', 'Formas de ingresso e caminhos'],
+    ['carreiras-militares.html', 'Carreiras militares', 'Informações e formas de ingresso'],
     ['faculdades-publicas.html', 'Faculdades públicas', 'Instituições em todo o Brasil'],
     ['comparar-faculdades.html', 'Comparar faculdades', 'Ofertas, campi e vagas'],
-    ['plano-sisu.html', 'Plano de candidatura', 'Vagas e modalidades do Sisu'],
+    ['plano-sisu.html', 'Vagas e Sisu', 'Vagas e modalidades do Sisu'],
     ['comparar-notas.html', 'Compare suas notas', 'Compare com referências do Sisu'],
     ['listas-espera-rj.html', 'Listas de espera', 'Chamadas e processos de ingresso'],
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
@@ -333,6 +333,70 @@
       pagesDropdown.append(link);
     });
   }
+
+  const hubCopy = [
+    ['Teste vocacional e apresentação', 'Hub de informações para estudantes'],
+    ['Teste vocacional e caminhos', 'Hub de informações para estudantes'],
+    ['Formas de ingresso e caminhos', 'Informações e formas de ingresso'],
+    ['Comece sua jornada', 'Acesse informações reunidas'],
+    ['Sua jornada começa aqui.', 'Sua área de informações começa aqui.'],
+    ['Organize escolhas, acompanhe seus próximos passos e transforme informação em um plano possível.', 'Reúna escolhas e consultas em um só lugar para acessar informações do hub.'],
+    ['Plano personalizado', 'Informações reunidas'],
+    ['Acesse sua jornada', 'Acesse sua área de informações'],
+    ['Entrar na minha jornada', 'Entrar na minha área'],
+    ['Seu próximo passo', 'Informações para consultar'],
+    ['Escolha até três cursos e instituições para que a Orion Academy possa organizar seus próximos passos.', 'Escolha até três cursos e instituições para reunir suas consultas e comparar informações.'],
+    ['Esses dados ficam associados somente à sua conta e ajudam o projeto a apresentar caminhos mais úteis.', 'Esses dados ficam associados somente à sua conta e mantêm suas escolhas e consultas reunidas.'],
+    ['Roteiro da sua jornada', 'Informações salvas na sua conta'],
+    ['Complete suas escolhas para receber caminhos mais direcionados.', 'Complete suas escolhas para reunir informações de comparação.'],
+    ['Encontre seu caminho.', 'Consulte e compare opções.'],
+    ['Faça login para abrir sua área pessoal.', 'Faça login para abrir sua área de informações.'],
+    ['Sua jornada está pronta para você.', 'Sua área de informações está pronta.'],
+    ['Informações básicas salvas para personalizar a jornada.', 'Informações básicas salvas na sua conta.'],
+    ['Você já pode comparar caminhos com mais clareza.', 'Você já pode comparar opções com mais contexto.'],
+    ['Acesso confirmado. Abrindo sua jornada…', 'Acesso confirmado. Abrindo sua área de informações…'],
+    ['Entrar na minha jornada', 'Entrar na minha área']
+  ];
+
+  const rewriteHubCopy = (node) => {
+    let text = node.data;
+    hubCopy.forEach(([from, to]) => { text = text.replaceAll(from, to); });
+    text = text.replace(/Sua jornada continua\./g, 'Suas informações salvas estão aqui.');
+    text = text.replace(/para comparar caminhos com segurança\./g, 'para comparar opções com mais contexto.');
+    if (text !== node.data) node.data = text;
+  };
+
+  const normalizeHubCopy = (root = document.body) => {
+    if (!root) return;
+    if (root.nodeType === Node.TEXT_NODE) {
+      rewriteHubCopy(root);
+      return;
+    }
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode(node) {
+        const tag = node.parentElement?.tagName;
+        return ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEMPLATE'].includes(tag)
+          ? NodeFilter.FILTER_REJECT
+          : NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(rewriteHubCopy);
+  };
+
+  normalizeHubCopy();
+  new MutationObserver((records) => {
+    records.forEach((record) => {
+      if (record.type === 'characterData') {
+        normalizeHubCopy(record.target);
+        return;
+      }
+      record.addedNodes.forEach((node) => {
+        if (node.nodeType === Node.ELEMENT_NODE || node.nodeType === Node.TEXT_NODE) normalizeHubCopy(node);
+      });
+    });
+  }).observe(document.body, { childList: true, characterData: true, subtree: true });
 
   if (!document.querySelector('script[src="pwa.js"]')) {
     const pwa = document.createElement('script');
