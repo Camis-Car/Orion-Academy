@@ -379,6 +379,54 @@
       countdownLink.append(icon, title, description);
       studyRooms.append(countdownLink);
     }
+
+    const journeyIllustrations = {
+      'calendario-pessoal.html': ['calendario', '▦', '◷'],
+      'cronometro-estudos.html': ['cronometro', '◷', '·'],
+      'cadernos.html': ['cadernos', '✎', '▤'],
+      'alimentacao-e-estudos.html': ['nutricao', '♧', '◒'],
+      'caderno-erros.html': ['revisao', '↻', '✓'],
+      'painel-bolsas.html': ['bolsas', '✦', '◌'],
+      'guia-enem.html': ['guia', '✦', '▤'],
+      'questoes-enem.html': ['questoes', '?', '✓'],
+      'plano-estudos.html': ['plano', '↗', '▦'],
+      'calendario-vestibulando.html': ['agenda', '◫', '✦'],
+      'countdown-enem.html': ['countdown', '⌛', '✦'],
+      'minhas-escolhas.html': ['escolhas', '◈', '⌁'],
+      'carreiras.html': ['profissoes', '⌁', '✦'],
+      'faculdades-publicas.html': ['faculdades', '⌂', '▥'],
+      'comparar-faculdades.html': ['comparar', '⇄', '⌂'],
+      'comparar-notas.html': ['notas', '≈', '✦'],
+      'plano-sisu.html': ['sisu', '◎', '▦'],
+      'listas-espera-rj.html': ['listas', '☷', '◷'],
+      'index.html': ['inicio', '⌂', '✦'],
+      'carreiras-militares.html': ['militares', '★', '⌂'],
+      'estude-no-exterior.html': ['exterior', '◎', '✦'],
+      'privacidade.html': ['privacidade', '⌘', '✓']
+    };
+
+    const decorateJourneyTools = () => {
+      document.querySelectorAll('.classroom-grid .tool').forEach((card) => {
+        const href = (card.getAttribute('href') || '').split(/[?#]/)[0];
+        const [topic, symbol, accent] = journeyIllustrations[href] || ['informacoes', '✦', '·'];
+        const icon = card.querySelector('.tool-icon');
+        if (!icon) return;
+
+        card.dataset.illustration = topic;
+        icon.classList.add('tool-illustration');
+        icon.replaceChildren();
+
+        const mainSymbol = document.createElement('span');
+        mainSymbol.className = 'tool-symbol';
+        mainSymbol.textContent = symbol;
+        const accentSymbol = document.createElement('span');
+        accentSymbol.className = 'tool-accent';
+        accentSymbol.textContent = accent;
+        icon.append(mainSymbol, accentSymbol);
+      });
+    };
+
+    requestAnimationFrame(decorateJourneyTools);
   }
 
   const hubCopy = [
