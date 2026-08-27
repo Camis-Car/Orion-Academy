@@ -1,4 +1,4 @@
-const CACHE_NAME = 'orion-academy-pwa-v34';
+const CACHE_NAME = 'orion-academy-pwa-v36';
 const CORE_FILES = [
   './',
   './index.html',
@@ -13,7 +13,8 @@ const CORE_FILES = [
   './cronometro-estudos.html',
   './guia-enem.html',
   './questoes-enem.html',
-  './calendario-vestibulando.html'
+  './calendario-vestibulando.html',
+  './countdown-enem.html'
 ];
 
 self.addEventListener('install', (event) => {

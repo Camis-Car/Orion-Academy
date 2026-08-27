@@ -12,6 +12,7 @@
     ['comparar-notas.html', 'Comparar notas', 'Cálculos e referências do Sisu'],
     ['listas-espera-rj.html', 'Listas de espera', 'Chamadas e processos de ingresso'],
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
+    ['countdown-enem.html', 'Countdown ENEM', 'Contagem regressiva para os dias de prova'],
     ['painel-bolsas.html', 'Bolsas e apoios', 'Informações sobre bolsas e apoios'],
     ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']

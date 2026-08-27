@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contagem regressiva para os dois dias de aplicação do Enem 2026, no horário de Brasília.">
+  <meta name="theme-color" content="#0d1d35">
+  <title>Countdown ENEM 2026 — Orion Academy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#0d1d35;--ink:#17243a;--gold:#d9ae63;--gold-light:#f4d598;--paper:#f7f5f0;--line:#dce3eb;--muted:#617087;--green:#24694f;--red:#a04745}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",Arial,sans-serif}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}.aq-menu-toggle{position:fixed;right:18px;bottom:18px;z-index:30;width:52px;height:52px;border:0;border-radius:50%;background:#d9ae63;color:#17243a;box-shadow:0 12px 28px rgba(13,29,53,.25);cursor:pointer}.aq-menu-toggle span{display:block;width:19px;height:2px;margin:4px auto;background:currentColor}.aq-menu-backdrop{position:fixed;inset:0;z-index:40;display:none;background:rgba(8,18,35,.58);padding:16px}.aq-menu-backdrop.open{display:flex;justify-content:flex-end}.aq-menu-panel{width:min(360px,100%);height:100%;overflow:auto;background:#10213a;color:#fff;padding:20px;box-shadow:-14px 0 40px rgba(0,0,0,.22)}.aq-menu-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-bottom:15px;border-bottom:1px solid rgba(255,255,255,.14)}.aq-menu-title{font:600 21px "Playfair Display",serif}.aq-menu-close{width:36px;height:36px;border:1px solid rgba(255,255,255,.25);border-radius:50%;background:transparent;color:#fff;font-size:26px;cursor:pointer}.aq-menu-index{margin:20px 0 8px;color:#f1c77e;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.aq-menu-links a{display:block;padding:12px 10px;border-radius:8px;color:#fff;text-decoration:none}.aq-menu-links a:hover,.aq-menu-links a[aria-current="page"]{background:rgba(255,255,255,.1)}.aq-menu-links small{display:block;margin-top:3px;color:#c9d5e4;font-size:11px;line-height:1.4}.aq-menu-note{margin:17px 0 0;color:#c9d5e4;font-size:11px;line-height:1.55}body.aq-menu-open{overflow:hidden}
+    header{background:#fff;border-bottom:1px solid var(--line)}.nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--navy);font:600 22px "Playfair Display",serif;text-decoration:none}.brand-mark{display:grid;place-items:center;width:30px;height:35px;border:1px solid #c79a4f;color:#b18134;font:700 18px Georgia,serif}.back{color:#75531e;font-size:13px;font-weight:700;text-decoration:none}.back:hover{text-decoration:underline;text-underline-offset:4px}
+    .hero{position:relative;overflow:hidden;background:radial-gradient(circle at 82% 22%,rgba(217,174,99,.27),transparent 25%),linear-gradient(135deg,#0d1d35,#18395c);color:#fff;padding:74px 0 62px}.hero:after{content:"";position:absolute;right:-110px;bottom:-170px;width:410px;height:410px;border:1px solid rgba(244,213,152,.27);border-radius:50%;box-shadow:0 0 0 50px rgba(244,213,152,.05),0 0 0 100px rgba(244,213,152,.04)}.hero-content{position:relative;z-index:1;max-width:760px}.eyebrow{display:block;margin-bottom:11px;color:var(--gold-light);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}.hero h1{max-width:690px;margin:0;font:600 clamp(36px,5vw,64px)/1.04 "Playfair Display",serif}.hero p{max-width:650px;margin:19px 0 0;color:#dbe5ee;font-size:16px;line-height:1.7}.status-line{display:inline-flex;align-items:center;gap:8px;margin-top:22px;padding:8px 12px;border:1px solid rgba(244,213,152,.42);border-radius:999px;background:rgba(13,29,53,.3);color:#fff;font-size:12px;font-weight:700}.status-line i{width:8px;height:8px;border-radius:50%;background:#f4d598;box-shadow:0 0 0 4px rgba(244,213,152,.16)}
+    .countdown-wrap{position:relative;z-index:2;margin-top:-32px}.countdown-card{padding:28px;border:1px solid #d8c6a3;background:#fff;box-shadow:0 22px 45px rgba(13,29,53,.13)}.countdown-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:23px}.countdown-head h2{margin:0;color:var(--navy);font:600 clamp(24px,3vw,34px)/1.12 "Playfair Display",serif}.countdown-head p{max-width:400px;margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.6}.time-zone{flex:0 0 auto;margin:0;color:#76551d;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.clock{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.unit{min-width:0;padding:20px 10px 16px;border:1px solid var(--line);background:#fbfcfe;text-align:center}.unit b{display:block;overflow:hidden;color:var(--navy);font:600 clamp(33px,5vw,54px)/1 "Playfair Display",serif;font-variant-numeric:tabular-nums}.unit span{display:block;margin-top:9px;color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+    main{padding:52px 0 72px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.section-head h2{margin:0;color:var(--navy);font:600 clamp(27px,3vw,38px)/1.15 "Playfair Display",serif}.section-head p{max-width:470px;margin:0;color:var(--muted);font-size:13px;line-height:1.6}.days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.day{position:relative;padding:26px;border:1px solid var(--line);background:#fff}.day.active{border-color:#bd9149;box-shadow:0 12px 28px rgba(175,126,44,.12)}.day.active:before{content:"Em foco";position:absolute;top:17px;right:18px;color:#835f22;font-size:10px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}.day-number{display:flex;align-items:center;gap:12px;color:#8a6525;font-size:12px;font-weight:700}.day-number i{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#f6e5be;color:#75531e;font-style:normal}.day h3{max-width:310px;margin:18px 0 8px;color:var(--navy);font:600 27px/1.12 "Playfair Display",serif}.day time{display:block;color:#43556c;font-size:13px;font-weight:700}.subjects{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.subjects span{padding:6px 8px;border-radius:4px;background:#f2f5f8;color:#40526a;font-size:11px;line-height:1.35}.day-note{margin:18px 0 0;color:var(--muted);font-size:12px;line-height:1.6}.info-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:40px}.info-card{padding:26px;border:1px solid var(--line);background:#fff}.info-card h2{margin:0;color:var(--navy);font:600 26px/1.15 "Playfair Display",serif}.times{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:19px}.times div{padding:14px 10px;background:#f7f8fa}.times b{display:block;color:#8a6525;font:600 22px/1 "Playfair Display",serif}.times span{display:block;margin-top:6px;color:var(--muted);font-size:11px;line-height:1.4}.source-card{display:flex;flex-direction:column;justify-content:space-between;background:var(--green);border-color:var(--green);color:#fff}.source-card h2{color:#fff}.source-card p{margin:13px 0 22px;color:#d8eee5;font-size:13px;line-height:1.65}.source-card a{display:inline-flex;align-items:center;justify-content:center;min-height:43px;padding:0 14px;background:#fff;color:#1f654b;font-size:12px;font-weight:700;text-decoration:none}.source-card a:hover{background:#e6f3ed}.notice{margin:30px 0 0;padding:14px 16px;border-left:4px solid var(--gold);background:#fbf5e8;color:#4d4851;font-size:12px;line-height:1.6}.notice b{color:#6f4e1d}footer{border-top:1px solid var(--line);background:#fff}.footer{display:flex;justify-content:space-between;gap:18px;padding:23px 0;color:#637086;font-size:11px}.footer a{color:#76551d;font-weight:700;text-decoration:none}
+    @media(max-width:700px){.wrap{width:min(100% - 28px,1120px)}.nav{min-height:64px}.brand{font-size:19px}.back{font-size:11px}.hero{padding:55px 0 51px}.hero p{font-size:14px}.countdown-wrap{margin-top:-22px}.countdown-card{padding:20px 15px}.countdown-head{display:block}.time-zone{display:block;margin-top:14px}.clock{gap:7px}.unit{padding:15px 4px 12px}.unit b{font-size:33px}.unit span{font-size:8px}.section-head{display:block}.section-head p{margin-top:9px}.days,.info-grid{grid-template-columns:1fr}.day{padding:22px}.times{grid-template-columns:1fr}.footer{flex-direction:column}.aq-menu-toggle{right:13px;bottom:13px}}
+  </style>
+</head>
+<body>
+  <button class="aq-menu-toggle" id="aqMenuToggle" type="button" aria-label="Abrir menu do site" aria-controls="aqSiteMenu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="aq-menu-backdrop" id="aqSiteMenu" aria-hidden="true"><nav class="aq-menu-panel" aria-label="Navegação principal"><div class="aq-menu-top"><span class="aq-menu-title">Orion Academy</span><button class="aq-menu-close" id="aqMenuClose" type="button" aria-label="Fechar menu">×</button></div><div class="aq-menu-links"><a href="index.html?public=1">Home<small>Informações e ferramentas para estudantes</small></a></div><p class="aq-menu-note">Consulte sempre os editais e comunicados oficiais.</p></nav></div>
+  <header><div class="wrap nav"><a class="brand" href="index.html?public=1"><span class="brand-mark" aria-hidden="true">O</span>Orion Academy</a><a class="back" href="calendario-vestibulando.html">← Ver calendário</a></div></header>
+  <section class="hero" aria-labelledby="countdown-title"><div class="wrap hero-content"><span class="eyebrow">Enem 2026 · horário de Brasília</span><h1 id="countdown-title">Countdown ENEM</h1><p id="heroDescription">Acompanhe a contagem para o primeiro dia de prova. Quando ele começar, a página muda automaticamente para o segundo dia.</p><span class="status-line" id="examStatus" aria-live="polite"><i aria-hidden="true"></i><span>Preparando a contagem</span></span></div></section>
+  <main class="wrap">
+    <section class="countdown-wrap" aria-labelledby="timerTitle"><div class="countdown-card"><div class="countdown-head"><div><h2 id="timerTitle">Calculando o tempo restante…</h2><p id="timerDescription">A contagem é atualizada a cada segundo.</p></div><span class="time-zone">Horário de Brasília</span></div><div class="clock" aria-label="Contagem regressiva"><div class="unit"><b id="days">00</b><span>dias</span></div><div class="unit"><b id="hours">00</b><span>horas</span></div><div class="unit"><b id="minutes">00</b><span>minutos</span></div><div class="unit"><b id="seconds">00</b><span>segundos</span></div></div></div></section>
+    <section style="margin-top:52px" aria-labelledby="daysTitle"><div class="section-head"><div><span class="eyebrow" style="color:#8a6525">Os dois dias de aplicação</span><h2 id="daysTitle">Provas, horários e matérias.</h2></div><p>O card em foco acompanha automaticamente o momento do Enem.</p></div><div class="days"><article class="day" id="firstDay"><div class="day-number"><i>01</i><span>Primeiro dia</span></div><h3>Domingo, 8 de novembro</h3><time datetime="2026-11-08T13:30:00-03:00">Início das provas: 13h30</time><div class="subjects"><span>Linguagens</span><span>Ciências Humanas</span><span>Redação</span></div><p class="day-note">Portões abrem às 12h, fecham às 13h e a aplicação termina às 19h.</p></article><article class="day" id="secondDay"><div class="day-number"><i>02</i><span>Segundo dia</span></div><h3>Domingo, 15 de novembro</h3><time datetime="2026-11-15T13:30:00-03:00">Início das provas: 13h30</time><div class="subjects"><span>Ciências da Natureza</span><span>Matemática</span></div><p class="day-note">Portões abrem às 12h, fecham às 13h e a aplicação termina às 18h30.</p></article></div></section>
+    <section class="info-grid" aria-label="Informações para o dia da prova"><article class="info-card"><span class="eyebrow" style="color:#8a6525">No dia da prova</span><h2>Horários para lembrar.</h2><div class="times"><div><b>12h</b><span>Abertura dos portões</span></div><div><b>13h</b><span>Fechamento dos portões</span></div><div><b>13h30</b><span>Início das provas</span></div></div><p class="notice"><b>Atenção:</b> o countdown é uma ferramenta de acompanhamento. Confira o Cartão de Confirmação, o local de prova e as orientações atualizadas diretamente nos canais do Inep.</p></article><aside class="info-card source-card"><div><span class="eyebrow" style="color:#d9f0e6">Fonte oficial</span><h2>Confirme no Inep.</h2><p>As datas e horários desta página seguem o cronograma do Enem 2026 divulgado pelo Inep.</p></div><a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/orientacoes/cronograma" target="_blank" rel="noopener noreferrer">Abrir cronograma oficial ↗</a></aside></section>
+  </main>
+  <footer><div class="wrap footer"><span>© 2026 Orion Academy. Ferramenta de consulta e organização de informações.</span><a href="calendario-vestibulando.html">Calendário do Vestibulando</a></div></footer>
+  <script src="menu-links.js"></script>
+  <script>
+    (() => {
+      const schedule = {
+        firstStart: new Date('2026-11-08T13:30:00-03:00'),
+        firstEnd: new Date('2026-11-08T19:00:00-03:00'),
+        secondStart: new Date('2026-11-15T13:30:00-03:00'),
+        secondEnd: new Date('2026-11-15T18:30:00-03:00')
+      };
+      const fields = {
+        days: document.getElementById('days'), hours: document.getElementById('hours'), minutes: document.getElementById('minutes'), seconds: document.getElementById('seconds'),
+        title: document.getElementById('timerTitle'), description: document.getElementById('timerDescription'), status: document.getElementById('examStatus'), hero: document.getElementById('heroDescription'),
+        firstCard: document.getElementById('firstDay'), secondCard: document.getElementById('secondDay')
+      };
+      const pad = value => String(value).padStart(2, '0');
+      const setClock = difference => {
+        const total = Math.max(0, Math.floor(difference / 1000));
+        fields.days.textContent = pad(Math.floor(total / 86400));
+        fields.hours.textContent = pad(Math.floor(total % 86400 / 3600));
+        fields.minutes.textContent = pad(Math.floor(total % 3600 / 60));
+        fields.seconds.textContent = pad(total % 60);
+      };
+      const setStatus = (text, activeCard) => {
+        fields.status.lastElementChild.textContent = text;
+        fields.firstCard.classList.toggle('active', activeCard === 'first');
+        fields.secondCard.classList.toggle('active', activeCard === 'second');
+      };
+      const update = () => {
+        const now = new Date();
+        if (now < schedule.firstStart) {
+          fields.title.textContent = 'Faltam para o 1º dia do Enem.';
+          fields.description.textContent = 'A contagem muda automaticamente para o 2º dia assim que o primeiro começar.';
+          fields.hero.textContent = 'Acompanhe a contagem para o primeiro dia de prova. Quando ele começar, a página muda automaticamente para o segundo dia.';
+          setStatus('Próximo: 1º dia · 8 de novembro', 'first');
+          setClock(schedule.firstStart - now);
+          return;
+        }
+        if (now < schedule.secondStart) {
+          const inFirstDay = now < schedule.firstEnd;
+          fields.title.textContent = 'Faltam para o 2º dia do Enem.';
+          fields.description.textContent = inFirstDay ? 'O 1º dia está em andamento. A próxima prova será no domingo seguinte.' : 'O 1º dia terminou. A contagem segue para o segundo dia de prova.';
+          fields.hero.textContent = 'A página já está contando para o segundo dia: Ciências da Natureza e Matemática.';
+          setStatus(inFirstDay ? '1º dia em andamento · próximo: 15 de novembro' : 'Próximo: 2º dia · 15 de novembro', inFirstDay ? 'first' : 'second');
+          setClock(schedule.secondStart - now);
+          return;
+        }
+        if (now < schedule.secondEnd) {
+          fields.title.textContent = 'Hoje é o 2º dia do Enem.';
+          fields.description.textContent = 'A prova está em andamento. A aplicação termina às 18h30, no horário de Brasília.';
+          fields.hero.textContent = 'Ciências da Natureza e Matemática são aplicadas hoje. Consulte o Inep para as orientações oficiais.';
+          setStatus('2º dia em andamento', 'second');
+          setClock(0);
+          return;
+        }
+        fields.title.textContent = 'O Enem 2026 foi concluído.';
+        fields.description.textContent = 'Acompanhe os próximos comunicados, resultados e cronogramas nos canais oficiais do Inep.';
+        fields.hero.textContent = 'As provas de 2026 terminaram. Esta página continuará apontando para as informações oficiais.';
+        setStatus('Aplicação de 2026 concluída', null);
+        setClock(0);
+      };
+      update();
+      window.setInterval(update, 1000);
+    })();
+  </script>
+</body>
+</html>
