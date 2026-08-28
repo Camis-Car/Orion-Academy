@@ -46,5 +46,30 @@
   </main>
   <footer><div class="wrap footer"><span>© 2026 Orion Academy. Ferramenta de consulta e organização de informações.</span><a href="calendario-vestibulando.html">Calendário do Vestibulando</a></div></footer>
   <script src="menu-links.js"></script>
+  <script>
+    (() => {
+      const toggle = document.getElementById('aqMenuToggle');
+      const menu = document.getElementById('aqSiteMenu');
+      const closeButton = document.getElementById('aqMenuClose');
+      if (!toggle || !menu || !closeButton) return;
+      const close = () => {
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('aq-menu-open');
+      };
+      const open = () => {
+        menu.classList.add('open');
+        menu.setAttribute('aria-hidden', 'false');
+        toggle.setAttribute('aria-expanded', 'true');
+        document.body.classList.add('aq-menu-open');
+        closeButton.focus();
+      };
+      toggle.addEventListener('click', () => menu.classList.contains('open') ? close() : open());
+      closeButton.addEventListener('click', close);
+      menu.addEventListener('click', (event) => { if (event.target === menu) close(); });
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') close(); });
+    })();
+  </script>
 </body>
 </html>
