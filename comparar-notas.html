@@ -24,6 +24,7 @@
       document.head.appendChild(googleAnalyticsTag);
     })();
   </script>
+  <style>.comparison-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px;padding-top:15px;border-top:1px solid var(--line)}.official-source{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:0;color:#748294;font-size:10px;font-weight:700}.official-source b{padding:4px 7px;color:#21634d;background:#eaf5ee;border-radius:999px;font-size:9px;letter-spacing:.04em;text-transform:uppercase}.official-source a{color:#76541c;text-decoration:underline;text-underline-offset:3px}.save-comparison{min-height:38px;padding:0 13px;cursor:pointer;color:#173a5e;background:#fff;border:1px solid #b9cada;border-radius:4px;font-size:11px;font-weight:800}.save-comparison:hover{border-color:#a77a34;color:#76541c}.save-comparison:disabled{cursor:wait;opacity:.7}@media(max-width:560px){.comparison-actions{align-items:stretch;flex-direction:column}}</style>
 </head>
   <body><button class="aq-menu-toggle" id="aqMenuToggle" type="button" aria-label="Abrir menu do site" aria-controls="aqSiteMenu" aria-expanded="false"><span></span><span></span><span></span></button><div class="aq-menu-backdrop" id="aqSiteMenu" aria-hidden="true"><nav class="aq-menu-panel" aria-label="Navegação principal"><div class="aq-menu-top"><span class="aq-menu-title">Orion Academy</span><button class="aq-menu-close" id="aqMenuClose" type="button" aria-label="Fechar menu">×</button></div><div class="aq-menu-links"><a href="index.html">Início<small>Teste vocacional e apresentação</small></a><a href="sobre-nos.html">Sobre Nós<small>Os criadores e a origem do projeto</small></a><a href="estude-no-exterior.html">Estude no Exterior<small>Processos e fontes oficiais</small></a><a href="carreiras.html">Profissões<small>Explore áreas e cursos</small></a><a href="carreiras-militares.html">Carreiras militares<small>Formas de ingresso e caminhos</small></a><a href="faculdades-publicas.html">Faculdades públicas<small>Instituições em todo o Brasil</small></a><a href="plano-sisu.html">Seu plano de candidatura<small>Vagas e modalidades do Sisu</small></a><a href="comparar-notas.html">Compare suas notas<small>Compare com referências do Sisu</small></a><a href="listas-espera-rj.html">Listas de espera<small>Chamadas e processos de ingresso</small></a><a href="cadastro.html">Criar cadastro<small>Comece sua jornada</small></a></div><p class="aq-menu-note">Confirme sempre datas, editais e convocações nos canais oficiais das instituições.</p></nav></div>
     <header><div class="wrap nav"><a class="brand" href="index.html"><span class="brand-mark" role="img" aria-label="Bispo de xadrez" style="width:34px;height:39px"><svg viewBox="0 0 40 48" aria-hidden="true" focusable="false" style="display:block;width:100%;height:100%" fill="currentColor"><path fill-rule="evenodd" d="M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 9-7.7 9-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z"/><path d="M8 40h24v3H8zM4 45h32v3H4z"/></svg></span>Orion Academy</a><a class="back" href="plano-sisu.html">← Voltar ao plano de vagas</a></div></header>
@@ -37,7 +38,7 @@
       <section class="results" id="results" hidden><div class="results-head"><div><span class="eyebrow" style="color:#a9782e">Sua comparação</span><h2>Onde sua nota pode se encaixar.</h2></div><p class="meta" id="meta"></p></div><div class="summary" id="summary"></div><div class="result-list" id="resultList"></div></section>
     </main>
     <footer><div class="wrap footer"><span>© 2026 Orion Academy. Todos os direitos reservados.</span><div class="footer-links"><a href="plano-sisu.html">Plano de vagas</a><a href="https://www.instagram.com/projetoaquiles_/" target="_blank" rel="noopener noreferrer">◎ @projetoaquiles_</a><a href="mailto:projeto.aquiless@gmail.com">✉ E-mail</a></div></div></footer>
-    <script src="instituicoes-publicas-2024.js"></script><script src="sisu-2026-nacional.js"></script><script src="sisu-historico.js"></script><script src="modalidades-sisu.js"></script>
+    <script src="instituicoes-publicas-2024.js"></script><script src="sisu-2026-nacional.js"></script><script src="sisu-historico.js"></script><script src="modalidades-sisu.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="cadastro-config.js"></script>
     <style>.score{background:#eef3f8}.score strong{color:#143154}.score span{color:#38546f}.cutoff-score{display:block;margin-top:12px;padding-top:11px;border-top:1px solid #d8e1ea;text-align:inherit}.cutoff-score small{display:block;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.cutoff-score b{display:block;margin-top:3px;font-family:"Playfair Display",Georgia,serif;font-size:24px;font-weight:600;line-height:1}.cutoff-score.passed small,.cutoff-score.passed b{color:#237558}.cutoff-score.not-passed small,.cutoff-score.not-passed b{color:#b42318}.comparison{grid-template-columns:1fr}.comparison div{border-left:3px solid var(--gold);background:var(--amber-pale)}.status{border-left:4px solid}.status.warn{color:#8f1d1d;background:#fff1f0;border-color:#b42318}.status.good{border-color:#237558}.status-label{display:block;margin-bottom:5px;font-size:10px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.pending{border-left-color:#b42318;background:#fff4f3;color:#7c2520}.selected-objective{margin:23px 0 0;padding:18px 20px;border:1px solid #d9ae63;background:#fff9ee;color:#314158}.selected-objective b{display:block;color:#0d1d35;font:600 22px "Playfair Display",Georgia,serif}.selected-objective p{margin:7px 0 0;font-size:12px;line-height:1.6}.selected-objective small{display:block;margin-top:10px;color:#667085;font-size:11px;line-height:1.55}</style>
     <script>
       document.addEventListener('DOMContentLoaded', () => {
@@ -120,5 +121,69 @@
         document.getElementById('comparisonForm').addEventListener('submit',()=>{const scores=inputs();if(Object.values(scores).some(score=>!Number.isFinite(score)||score<0||score>1000))return;requestAnimationFrame(()=>requestAnimationFrame(()=>{const section=document.getElementById('results');section.hidden=false;document.getElementById('meta').textContent='Resultado calculado com a modalidade de referência selecionada.';document.getElementById('summary').innerHTML=`<article class="summary-card"><strong>1</strong><span>oferta selecionada</span></article><article class="summary-card"><strong>${selectedOffer.pesos?'Sim':'—'}</strong><span>pesos oficiais importados</span></article><article class="summary-card"><strong>${findHistory(selectedOffer).length?'Sim':'—'}</strong><span>histórico disponível</span></article>`;document.getElementById('resultList').innerHTML=card(selectedOffer,scores)}));});
       })();
     </script>
+  <script>
+    (() => {
+      const list = document.getElementById('resultList');
+      const normal = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim();
+      const escape = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+      const offers = (window.SISU_2026_NACIONAL || {}).ofertas || [];
+      const config = window.PROJETO_AQUILES_SUPABASE || {};
+      const configured = typeof window.supabase !== 'undefined' && /^https:\/\//.test(config.url || '') && String(config.anonKey || '').trim().length > 20;
+      const client = configured ? window.supabase.createClient(config.url, config.anonKey) : null;
+      const quotaName = code => (window.ORION_MODALIDADES_SISU || []).find(item => item.codigo === code)?.nome || (code || 'Ampla concorrência');
+      const scoreValue = id => Number(String(document.getElementById(id)?.value || '').replace(',', '.'));
+      const calculate = offer => {
+        const weights = offer.pesos;
+        const scores = ['redacao','natureza','humanas','linguagens','matematica'].reduce((all, key) => ({...all, [key]: scoreValue(key)}), {});
+        if (!weights || Object.values(scores).some(value => !Number.isFinite(value))) return null;
+        const total = Object.values(weights).reduce((sum, value) => sum + Number(value || 0), 0);
+        return total ? Object.entries(weights).reduce((sum, [key, weight]) => sum + scores[key] * Number(weight || 0), 0) / total : null;
+      };
+      const findOffer = card => {
+        const course = normal(card.querySelector('h3')?.textContent);
+        const institution = normal(card.querySelector('.inst')?.childNodes[0]?.textContent);
+        const tags = [...card.querySelectorAll('.tag')].map(tag => normal(tag.textContent));
+        return offers.find(offer => normal(offer.curso) === course && normal(offer.instituicao) === institution && (!offer.campus || tags.includes(normal(offer.campus)))) || offers.find(offer => normal(offer.curso) === course && normal(offer.instituicao) === institution);
+      };
+      const decorate = () => {
+        [...list.querySelectorAll('.result')].forEach(card => {
+          if (card.querySelector('.comparison-actions')) return;
+          const offer = findOffer(card);
+          if (!offer) return;
+          const sourceUrl = offer.fonteUrl || 'https://sisu.mec.gov.br/vagas';
+          const sourceName = offer.fonte || 'Sisu / MEC';
+          const review = ((window.SISU_2026_NACIONAL || {}).atualizadoEm || '2026-08-27').split('-').reverse().join('/');
+          const action = document.createElement('div');
+          action.className = 'comparison-actions';
+          action.innerHTML = `<p class="official-source"><b>✓ Fonte oficial</b><span>Revisado em ${escape(review)}</span><a href="${escape(sourceUrl)}" target="_blank" rel="noopener noreferrer">Abrir edital/fonte: ${escape(sourceName)} ↗</a></p><button class="save-comparison" type="button" data-offer-id="${escape(offer.id)}">Salvar comparação</button>`;
+          card.append(action);
+        });
+      };
+      new MutationObserver(decorate).observe(list, {childList:true, subtree:true});
+      list.addEventListener('click', async event => {
+        const button = event.target.closest('.save-comparison');
+        if (!button) return;
+        if (!client) { location.href = 'cadastro.html?returnTo=favoritos.html'; return; }
+        const { data: { user } } = await client.auth.getUser();
+        if (!user) { location.href = 'cadastro.html?returnTo=favoritos.html'; return; }
+        const offer = offers.find(item => item.id === button.dataset.offerId);
+        if (!offer) return;
+        const modality = document.getElementById('quota')?.value || 'AC';
+        const mode = (offer.modalidades || []).find(item => item.codigo === modality) || (offer.modalidades || []).find(item => item.codigo === 'AC');
+        button.disabled = true;
+        button.textContent = 'Salvando…';
+        try {
+          const record = { perfil_id:user.id, oferta_id:offer.id, curso:offer.curso, instituicao:offer.instituicao, sigla:offer.sigla || null, campus:offer.campus || null, cidade:offer.cidade || null, uf:offer.uf || null, modalidade:modality, modalidade_nome:quotaName(modality), nota_calculada:calculate(offer), nota_corte:Number.isFinite(Number(mode?.notaCorte)) ? Number(mode.notaCorte) : null, fonte:offer.fonte || 'Sisu / MEC', fonte_url:offer.fonteUrl || 'https://sisu.mec.gov.br/vagas' };
+          const { error } = await client.from('comparacoes_salvas').upsert(record, {onConflict:'perfil_id,oferta_id,modalidade'});
+          if (error) throw error;
+          button.textContent = 'Salvo ✓';
+        } catch (error) {
+          button.disabled = false;
+          button.textContent = 'Salvar comparação';
+          alert(error.message || 'Não foi possível salvar agora. Confira se a atualização do banco de dados foi executada.');
+        }
+      });
+    })();
+  </script>
   <script id="aq-global-menu-script">(()=>{const toggle=document.getElementById('aqMenuToggle'),menu=document.getElementById('aqSiteMenu'),closeButton=document.getElementById('aqMenuClose');if(!toggle||!menu||!closeButton)return;const close=()=>{menu.classList.remove('open');menu.setAttribute('aria-hidden','true');toggle.setAttribute('aria-expanded','false');document.body.classList.remove('aq-menu-open')};const open=()=>{menu.classList.add('open');menu.setAttribute('aria-hidden','false');toggle.setAttribute('aria-expanded','true');document.body.classList.add('aq-menu-open');closeButton.focus()};toggle.addEventListener('click',()=>menu.classList.contains('open')?close() : open());closeButton.addEventListener('click',close);menu.addEventListener('click',event=>{if(event.target===menu)close()});document.addEventListener('keydown',event=>{if(event.key==='Escape')close()});})();</script><script src="menu-links.js"></script></body>
 </html>

@@ -23,8 +23,43 @@
       @media (max-width:820px) { .career-grid { grid-template-columns:repeat(2,1fr); } .area-summary { display:block; } .area-pills { justify-content:flex-start; max-width:none; } }
       @media (max-width:560px) { .wrap { width:min(100% - 36px,600px); } .header-contact { display:none; } .hero { padding:60px 0; } main { padding-top:48px; } .quick-next,.controls,.next-step,.footer { align-items:stretch; flex-direction:column; } .quick-next .button { width:100%; } .next-actions { justify-content:stretch; flex-direction:column; } .next-actions .button { width:100%; } .search { width:100%; } .career-grid { grid-template-columns:1fr; } .next-step { padding:30px 25px; } .next-step h2 { font-size:29px; } .footer { padding:20px 0; gap:12px; } }
     </style>
-      <script src="cursos-sisu-2026.js"></script>
-      <style>.career-link{display:inline-flex;align-items:center;margin-top:auto;padding-top:19px;color:#936b2e;font-size:12px;font-weight:700}.career-link:hover{color:#143154;text-decoration:underline}</style>
+      <script src="cursos-sisu-2026.js"></script><script src="sisu-2026-nacional.js"></script>
+      <style>.career{min-height:0}.career-details{margin-top:15px;padding-top:13px;border-top:1px solid #e4e8ed}.career-details summary{cursor:pointer;color:#284b70;font-size:11px;font-weight:800}.career-details summary:hover{color:#936b2e}.career-details-grid{display:grid;gap:10px;margin-top:12px}.career-details-grid div{padding:10px;background:#f7f9fa}.career-details-grid b{display:block;color:#6b7b8d;font-size:9px;letter-spacing:.06em;text-transform:uppercase}.career-details-grid span{display:block;margin-top:4px;color:#385067;font-size:11px;line-height:1.5}.career-universities{margin:12px 0 0;color:#526579;font-size:10px;line-height:1.6}.career-universities b{color:#234767}.career-link{display:inline-flex;align-items:center;margin-top:auto;padding-top:19px;color:#936b2e;font-size:12px;font-weight:700}.career-link:hover{color:#143154;text-decoration:underline}</style>
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          const clean = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR').trim();
+          const esc = value => String(value || '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
+          const offers = (window.SISU_2026_NACIONAL || {}).ofertas || [];
+          const common = {
+            humanas:{duration:'Em geral, 4 anos', studies:'Teorias sociais, leitura, escrita, pesquisa e análise de contextos humanos.', areas:'Educação, comunicação, pesquisa, gestão, setor público e projetos sociais.', subjects:'Linguagens, História, Sociologia, Filosofia e produção textual.'},
+            biologicas:{duration:'Em geral, 4 a 5 anos', studies:'Ciências da vida, saúde, prevenção, investigação e práticas de cuidado.', areas:'Serviços de saúde, pesquisa, educação, gestão e políticas públicas.', subjects:'Biologia, Química, Anatomia, Fisiologia e Bioquímica.'},
+            tecnologicas:{duration:'Em geral, 4 a 5 anos', studies:'Matemática, projetos, tecnologia, soluções técnicas e desenvolvimento de sistemas.', areas:'Indústria, tecnologia, serviços, pesquisa, inovação e gestão de projetos.', subjects:'Matemática, Física, programação, desenho técnico e estatística.'},
+            cientificas:{duration:'Em geral, 4 anos', studies:'Métodos científicos, análise de evidências, modelagem e investigação.', areas:'Pesquisa, ensino, laboratórios, tecnologia, dados e divulgação científica.', subjects:'Matemática, Física, Química, estatística e metodologia científica.'}
+          };
+          const specific = {
+            'Medicina':{duration:'6 anos',studies:'Ciências da saúde, diagnóstico, prevenção e cuidado clínico.',areas:'Atenção básica, hospitais, especialidades médicas, pesquisa e gestão em saúde.',subjects:'Biologia, Química, Anatomia, Fisiologia e Clínica médica.'},
+            'Direito':{duration:'5 anos',studies:'Leis, instituições, argumentação, direitos e resolução de conflitos.',areas:'Advocacia, setor público, empresas, mediação, pesquisa e defensoria.',subjects:'Língua Portuguesa, História, Filosofia, Sociologia e teoria do Direito.'},
+            'Psicologia':{duration:'5 anos',studies:'Comportamento, desenvolvimento humano, saúde mental e métodos de pesquisa.',areas:'Clínica, escolas, empresas, hospitais, políticas públicas e pesquisa.',subjects:'Biologia, Sociologia, Filosofia, Estatística e técnicas de entrevista.'},
+            'Enfermagem':{duration:'5 anos',studies:'Cuidado integral, procedimentos, gestão em saúde e educação em prevenção.',areas:'Hospitais, atenção básica, urgência, gestão, ensino e pesquisa.',subjects:'Biologia, Anatomia, Fisiologia, Farmacologia e Saúde coletiva.'},
+            'Nutrição':{duration:'4 anos',studies:'Alimentos, metabolismo, avaliação nutricional e educação alimentar.',areas:'Clínicas, hospitais, saúde pública, esportes, alimentação coletiva e indústria.',subjects:'Biologia, Química, Bioquímica, Fisiologia e Ciência dos alimentos.'},
+            'Odontologia':{duration:'5 anos',studies:'Saúde bucal, prevenção, diagnóstico e procedimentos odontológicos.',areas:'Clínicas, saúde pública, especialidades, pesquisa e gestão.',subjects:'Biologia, Química, Anatomia, Fisiologia e materiais odontológicos.'},
+            'Ciência da Computação':{duration:'4 anos',studies:'Algoritmos, programação, sistemas, dados e fundamentos da computação.',areas:'Software, dados, segurança, pesquisa, produtos digitais e infraestrutura.',subjects:'Matemática, lógica, programação, estruturas de dados e estatística.'},
+            'Análise e Desenvolvimento de Sistemas':{duration:'Em geral, 2,5 a 3 anos',studies:'Programação, banco de dados, requisitos e construção de sistemas.',areas:'Desenvolvimento web e mobile, testes, dados, suporte e produtos digitais.',subjects:'Lógica, programação, banco de dados, redes e engenharia de software.'},
+            'Engenharia Civil':{duration:'5 anos',studies:'Estruturas, materiais, obras, solo e planejamento de projetos.',areas:'Construção civil, infraestrutura, saneamento, consultoria e gestão de obras.',subjects:'Matemática, Física, desenho técnico, materiais e estruturas.'},
+            'Engenharia de Software':{duration:'4 a 5 anos',studies:'Arquitetura, programação, qualidade, produtos e manutenção de software.',areas:'Desenvolvimento, testes, produto, dados, segurança e pesquisa tecnológica.',subjects:'Lógica, programação, matemática, banco de dados e engenharia de software.'}
+          };
+          const areaFor = tag => ({'Humanas':'humanas','Biológicas':'biologicas','Tecnológicas':'tecnologicas','Científicas':'cientificas'}[tag] || 'tecnologicas');
+          const detail = (title, tag) => {
+            const info = specific[title] || common[areaFor(tag)];
+            const institutions = [...new Set(offers.filter(offer => clean(offer.curso) === clean(title)).map(offer => offer.sigla || offer.instituicao).filter(Boolean))].slice(0,4);
+            const names = institutions.length ? institutions.join(' · ') : 'Consulte a oferta por instituição, campus e edição.';
+            return `<details class="career-details"><summary>O que conhecer antes de escolher</summary><div class="career-details-grid"><div><b>O que se estuda</b><span>${esc(info.studies)}</span></div><div><b>Duração mais comum</b><span>${esc(info.duration)}; confirme o projeto pedagógico da instituição.</span></div><div><b>Áreas de atuação</b><span>${esc(info.areas)}</span></div><div><b>Matérias mais presentes</b><span>${esc(info.subjects)}</span></div></div><p class="career-universities"><b>Universidades públicas com oferta no Sisu 2026:</b> ${esc(names)}</p></details>`;
+          };
+          const addDetails = () => document.querySelectorAll('#careerContent .career, #catalogoSisu .career').forEach(card => { if (card.querySelector('.career-details')) return; const title = card.querySelector('h3')?.textContent.trim(); const tag = card.querySelector('.career-tag')?.textContent.trim(); if (title) card.querySelector('p')?.insertAdjacentHTML('afterend', detail(title, tag)); });
+          new MutationObserver(addDetails).observe(document.querySelector('main.wrap'), {childList:true, subtree:true});
+          addDetails();
+        });
+      </script>
       <script>
         document.addEventListener('DOMContentLoaded', () => {
           const destination = title => `plano-sisu.html?curso=${encodeURIComponent(title)}&abrirNotas=1`;

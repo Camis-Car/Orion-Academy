@@ -188,7 +188,7 @@
         source.href = process.url;
         source.target = '_blank';
         source.rel = 'noopener noreferrer';
-        source.textContent = `Abrir fonte: ${process.fonte} ↗`;
+        source.textContent = `✓ Fonte oficial · revisado em ${data.atualizadoEm || '27/08/2026'} · abrir edital/fonte: ${process.fonte} ↗`;
         method.append(source);
         results.append(method);
       };
