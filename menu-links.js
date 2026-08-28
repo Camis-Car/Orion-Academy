@@ -290,7 +290,7 @@
 
   const normalizeHeaders = () => {
     document.querySelectorAll('body > header').forEach((header) => {
-      if (header.dataset.orionUnified === 'true') return;
+      if (header.dataset.orionOriginalHeader === 'true' || header.dataset.orionUnified === 'true') return;
       const brand = header.querySelector('.brand');
       if (!brand) return;
       header.dataset.orionUnified = 'true';
