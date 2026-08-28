@@ -239,7 +239,6 @@
       .aq-menu-links .aq-menu-index{margin:0 2px 5px;color:#8a662b;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
       .aq-menu-links a{min-height:50px;display:block}
       .aq-menu-links a:focus-visible{outline:3px solid rgba(217,174,99,.55);outline-offset:2px}
-      .aq-menu-toggle{position:fixed;z-index:1002;top:16px;right:18px;width:46px;height:46px;display:grid;place-content:center;gap:5px;padding:0;border:1px solid rgba(217,174,99,.72);border-radius:6px;color:#fff;background:#0d1d35;box-shadow:0 8px 20px rgba(8,21,38,.24);cursor:pointer}.aq-menu-toggle span{display:block;width:17px;height:2px;background:currentColor}.aq-menu-backdrop{position:fixed;z-index:1001;inset:0;display:grid;justify-content:end;background:rgba(5,15,29,.54);opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s}.aq-menu-backdrop.open{opacity:1;visibility:visible}.aq-menu-panel{display:block;width:min(360px,calc(100% - 42px));height:100%;overflow-y:auto;padding:28px 26px;background:#fbfaf7;box-shadow:-18px 0 40px rgba(5,15,29,.18);transform:translateX(100%);transition:transform .24s ease}.aq-menu-backdrop.open .aq-menu-panel{transform:translateX(0)}.aq-menu-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:19px;border-bottom:1px solid #e1e6eb}.aq-menu-title{color:#0d1d35;font:600 22px "Playfair Display",Georgia,serif}.aq-menu-close{width:35px;height:35px;border:1px solid #d7dde4;background:#fff;color:#173a5e;font-size:21px;cursor:pointer}.aq-menu-links{display:grid;gap:4px;margin-top:20px}.aq-menu-links a{padding:12px;color:#273951;border-bottom:1px solid #e6eaee;font-size:14px;font-weight:700}.aq-menu-links small{display:block;margin-top:3px;color:#7a8798;font-size:10px;font-weight:500}.aq-menu-note{margin:20px 0 0;color:#697789;font-size:11px;line-height:1.6}.aq-menu-open{overflow:hidden}
       .aq-mobile-login{display:none}
       /* O botão fica na borda direita e o conteúdo do cabeçalho reserva esse espaço. */
       body.orion-header-safe>header :is(.nav,.top){
@@ -343,33 +342,8 @@
     document.head.append(style);
   };
 
-  const ensureGlobalMenu = () => {
-    if (document.querySelector('.aq-menu-toggle') || !document.body) return;
-    const toggle = document.createElement('button');
-    toggle.className = 'aq-menu-toggle';
-    toggle.type = 'button';
-    toggle.setAttribute('aria-label', 'Abrir menu do site');
-    toggle.setAttribute('aria-controls', 'aqSiteMenu');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = '<span></span><span></span><span></span>';
-    const backdrop = document.createElement('div');
-    backdrop.className = 'aq-menu-backdrop';
-    backdrop.id = 'aqSiteMenu';
-    backdrop.setAttribute('aria-hidden', 'true');
-    backdrop.innerHTML = '<nav class="aq-menu-panel" aria-label="Navegação principal"><div class="aq-menu-top"><span class="aq-menu-title">Orion Academy</span><button class="aq-menu-close" type="button" aria-label="Fechar menu">×</button></div><div class="aq-menu-links"></div><p class="aq-menu-note">Confirme sempre datas, editais e convocações nos canais oficiais das instituições.</p></nav>';
-    const close = () => { backdrop.classList.remove('open'); backdrop.setAttribute('aria-hidden', 'true'); toggle.setAttribute('aria-expanded', 'false'); document.body.classList.remove('aq-menu-open'); };
-    const open = () => { backdrop.classList.add('open'); backdrop.setAttribute('aria-hidden', 'false'); toggle.setAttribute('aria-expanded', 'true'); document.body.classList.add('aq-menu-open'); backdrop.querySelector('.aq-menu-close')?.focus(); };
-    toggle.addEventListener('click', () => backdrop.classList.contains('open') ? close() : open());
-    backdrop.querySelector('.aq-menu-close')?.addEventListener('click', close);
-    backdrop.addEventListener('click', event => { if (event.target === backdrop) close(); });
-    document.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
-    document.body.prepend(backdrop);
-    document.body.prepend(toggle);
-  };
-
   injectMenuStyles();
   normalizeHeaders();
-  ensureGlobalMenu();
   injectThemeStyles();
   applyTheme(readTheme());
   addThemeControl();
