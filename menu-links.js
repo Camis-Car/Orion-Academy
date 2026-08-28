@@ -18,7 +18,7 @@
     ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3 };
+    const priority = { Home: 0, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Privacidade e seus dados': 99 };
     const firstPriority = priority[first[1]] ?? 4;
     const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
@@ -285,7 +285,62 @@
     document.documentElement.classList.add('orion-readable');
   };
 
+  const normalizeHeaders = () => {
+    document.querySelectorAll('body > header').forEach((header) => {
+      if (header.dataset.orionUnified === 'true') return;
+      const brand = header.querySelector('.brand');
+      if (!brand) return;
+      header.dataset.orionUnified = 'true';
+      let mark = brand.querySelector('.brand-mark, .mark');
+      if (!mark) {
+        mark = document.createElement('span');
+        mark.className = 'brand-mark';
+        brand.prepend(mark);
+      }
+      mark.setAttribute('aria-hidden', 'true');
+      mark.replaceChildren(document.createTextNode('♝'));
+    });
+
+    if (document.getElementById('orionUnifiedHeaderStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'orionUnifiedHeaderStyles';
+    style.textContent = `
+      body > header[data-orion-unified="true"]{
+        position:relative!important;z-index:20!important;width:100%!important;
+        min-height:76px!important;border:0!important;background:#0d1d35!important;color:#fff!important;
+        box-shadow:0 1px 0 rgba(217,174,99,.24)!important;
+      }
+      body > header[data-orion-unified="true"] :is(.nav,.top){
+        width:min(1152px,calc(100% - 48px))!important;min-height:76px!important;margin:0 auto!important;
+        display:flex!important;align-items:center!important;justify-content:space-between!important;gap:18px!important;
+      }
+      body > header[data-orion-unified="true"] .brand{
+        display:inline-flex!important;align-items:center!important;gap:10px!important;color:#fff!important;
+        font-family:"Playfair Display",Georgia,serif!important;font-size:20px!important;font-weight:600!important;
+        line-height:1.1!important;letter-spacing:-.025em!important;text-decoration:none!important;
+      }
+      body > header[data-orion-unified="true"] .brand :is(.brand-mark,.mark){
+        display:grid!important;place-items:center!important;flex:0 0 auto!important;width:29px!important;height:34px!important;
+        overflow:hidden!important;border:1px solid #d9ae63!important;clip-path:polygon(50% 0,100% 18%,89% 100%,11% 100%,0 18%)!important;
+        color:#e5bf7e!important;background:transparent!important;font:700 21px/1 Georgia,serif!important;
+      }
+      body > header[data-orion-unified="true"] .back,body > header[data-orion-unified="true"] .public-link{
+        color:#f2ce8e!important;font-size:12px!important;font-weight:800!important;text-decoration:none!important;
+      }
+      body > header[data-orion-unified="true"] .back:hover,body > header[data-orion-unified="true"] .public-link:hover{color:#fff!important;text-decoration:underline!important;text-underline-offset:4px!important;}
+      @media(max-width:700px){
+        body > header[data-orion-unified="true"]{min-height:68px!important;}
+        body > header[data-orion-unified="true"] :is(.nav,.top){width:min(100% - 28px,1152px)!important;min-height:68px!important;padding:12px 132px 12px 0!important;gap:10px!important;}
+        body > header[data-orion-unified="true"] .brand{font-size:18px!important;white-space:nowrap!important;}
+        body > header[data-orion-unified="true"] .back,body > header[data-orion-unified="true"] .public-link{display:none!important;}
+      }
+      @media(max-width:390px){body > header[data-orion-unified="true"] .brand{font-size:0!important;gap:0!important;}}
+    `;
+    document.head.append(style);
+  };
+
   injectMenuStyles();
+  normalizeHeaders();
   injectThemeStyles();
   applyTheme(readTheme());
   addThemeControl();

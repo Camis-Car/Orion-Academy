@@ -1,75 +1,128 @@
-/* Referências numéricas publicadas para processos seriados.
-   Cada valor conserva a escala e o critério da instituição de origem. */
-window.NOTAS_VESTIBULARES_SERIADOS = {
-  atualizadaEm: '27/08/2026',
-  areas: ['Saúde', 'Tecnologia e Exatas', 'Humanas e Sociais', 'Licenciaturas'],
-  processos: [
-    { uf: 'AM', estado: 'Amazonas', nome: 'SIS/UEA', fonte: 'UEA — Sistema de Ingresso Seriado', url: 'https://proreitoria.uea.edu.br/proplan/?page_id=731' },
-    { uf: 'AM', estado: 'Amazonas', nome: 'PSC/UFAM', fonte: 'UFAM — Processo Seletivo Contínuo', url: 'https://ufam.edu.br/noticias/7891-ufam-lanca-editais-das-etapas-1-2-e-3-do-processo-seletivo-continuo-psc.html' },
-    { uf: 'DF', estado: 'Distrito Federal', nome: 'PAS/UnB', fonte: 'UnB — Programa de Avaliação Seriada', url: 'https://vempraunb.unb.br/pas/' },
-    { uf: 'MG', estado: 'Minas Gerais', nome: 'PISM/UFJF', fonte: 'UFJF — PISM', url: 'https://www2.ufjf.br/copese/vestibular-pism-2/pism-2027/' },
-    { uf: 'MG', estado: 'Minas Gerais', nome: 'Seriado UFMG', fonte: 'UFMG — Seriado', url: 'https://www.ufmg.br/seriadoufmg/o-ciclo-2/' },
-    { uf: 'MG', estado: 'Minas Gerais', nome: 'PAS/UFLA', fonte: 'UFLA — Processo de Avaliação Seriada', url: 'https://ufla.br/processo-de-avaliacao-seriada/' },
-    { uf: 'MG', estado: 'Minas Gerais', nome: 'SASI/UFVJM', fonte: 'UFVJM — SASI', url: 'https://portal.ufvjm.edu.br/a-universidade/formas-de-ingresso/sasi/2025' },
-    { uf: 'PE', estado: 'Pernambuco', nome: 'SSA/UPE', fonte: 'UPE — Sistema Seriado de Avaliação', url: 'https://processodeingresso.upe.pe.gov.br/' },
-    { uf: 'PR', estado: 'Paraná', nome: 'PAS/UEM', fonte: 'UEM — Processo de Avaliação Seriada', url: 'https://www.pas.uem.br/faq.html' },
-    { uf: 'PR', estado: 'Paraná', nome: 'PSS/UEPG', fonte: 'UEPG — Processo Seletivo Seriado', url: 'https://www2.uepg.br/cps/pss-2026/' },
-    { uf: 'PR', estado: 'Paraná', nome: 'Seriado Unioeste', fonte: 'Unioeste — Vestibular Seriado', url: 'https://www.unioeste.br/portal/vestibular/publicacoes-seriado' },
-    { uf: 'RR', estado: 'Roraima', nome: 'PSS/UFRR', fonte: 'UFRR — Processo Seletivo Seriado', url: 'https://ufrr.br/noticias/ufrr-inicia-nesta-segunda-feira-27-as-inscricoes-para-o-vestibular-2027/' },
-    { uf: 'RS', estado: 'Rio Grande do Sul', nome: 'PAVE/UFPel', fonte: 'UFPel — Programa de Avaliação da Vida Escolar', url: 'https://wp.ufpel.edu.br/pave/' },
-    { uf: 'RS', estado: 'Rio Grande do Sul', nome: 'PSS/UFSM', fonte: 'UFSM — Processo Seletivo Seriado', url: 'https://nisa.ufsm.br/concursos' },
-    { uf: 'SP', estado: 'São Paulo', nome: 'Provão Paulista', fonte: 'Provão Paulista Seriado', url: 'https://www.provaopaulistaseriado.sp.gov.br/' }
-  ],
-  referencias: [
-    {
-      uf: 'MG', processo: 'PISM/UFJF', area: 'Saúde', valor: '756,42', unidade: 'pontos',
-      titulo: 'Média de referência das menores notas aprovadas',
-      edicao: 'PISM 2026 · Módulo III · Triênio 2023–2025 · Grupo C',
-      descricao: 'Cálculo da Orion Academy com as menores pontuações aprovadas do Grupo C em cursos selecionados da área.',
-      cursos: 'Medicina (1.040,25), Farmácia (676,75), Fisioterapia (719,75), Nutrição (561,75), Odontologia (681,25) e Psicologia (858,75).',
-      alerta: 'Não é média oficial nem previsão: a pontuação muda conforme curso, grupo, campus e edição.',
-      fonte: 'UFJF — PISM 2026: pontuação máxima e mínima para aprovação',
-      url: 'https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf'
-    },
-    {
-      uf: 'MG', processo: 'PISM/UFJF', area: 'Tecnologia e Exatas', valor: '865,75', unidade: 'pontos',
-      titulo: 'Média de referência das menores notas aprovadas',
-      edicao: 'PISM 2026 · Módulo III · Triênio 2023–2025 · Grupo C',
-      descricao: 'Cálculo da Orion Academy com as menores pontuações aprovadas do Grupo C em cursos selecionados da área.',
-      cursos: 'Ciência da Computação (1.015,50), Engenharia Civil (719,00), Engenharia Computacional (1.033,25), Engenharia de Produção (746,75), Engenharia Elétrica – Robótica e Automação Industrial (945,25), Engenharia Mecânica (892,75) e Sistemas de Informação (707,75).',
-      alerta: 'Não é média oficial nem previsão: a pontuação muda conforme curso, grupo, campus e edição.',
-      fonte: 'UFJF — PISM 2026: pontuação máxima e mínima para aprovação',
-      url: 'https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf'
-    },
-    {
-      uf: 'MG', processo: 'PISM/UFJF', area: 'Humanas e Sociais', valor: '652,00', unidade: 'pontos',
-      titulo: 'Média de referência das menores notas aprovadas',
-      edicao: 'PISM 2026 · Módulo III · Triênio 2023–2025 · Grupo C',
-      descricao: 'Cálculo da Orion Academy com as menores pontuações aprovadas do Grupo C em cursos selecionados da área.',
-      cursos: 'Direito (890,00), História – bacharelado/licenciatura integral (718,75), Ciências Sociais – bacharelado (537,50), Pedagogia – licenciatura matutino (581,25), Serviço Social – matutino (605,25) e Ciências Econômicas – integral (579,25).',
-      alerta: 'Não é média oficial nem previsão: a pontuação muda conforme curso, grupo, campus e edição.',
-      fonte: 'UFJF — PISM 2026: pontuação máxima e mínima para aprovação',
-      url: 'https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf'
-    },
-    {
-      uf: 'MG', processo: 'PISM/UFJF', area: 'Licenciaturas', valor: '610,75', unidade: 'pontos',
-      titulo: 'Média de referência das menores notas aprovadas',
-      edicao: 'PISM 2026 · Módulo III · Triênio 2023–2025 · Grupo C',
-      descricao: 'Cálculo da Orion Academy com as menores pontuações aprovadas do Grupo C em cursos selecionados da área.',
-      cursos: 'Ciências Biológicas (715,75), Matemática (648,25), Física (619,50), Química (534,50), História (718,75), Letras (629,75), Pedagogia – matutino (581,25) e Geografia (438,25).',
-      alerta: 'Não é média oficial nem previsão: a pontuação muda conforme curso, grupo, campus e edição.',
-      fonte: 'UFJF — PISM 2026: pontuação máxima e mínima para aprovação',
-      url: 'https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf'
-    },
-    {
-      uf: 'SP', processo: 'Provão Paulista', area: 'Todas as áreas', valor: '22', unidade: 'acertos',
-      titulo: 'Pontuação mínima de habilitação',
-      edicao: 'Critério informado na página oficial do processo',
-      descricao: 'A página do Provão Paulista informa o mínimo de 22 acertos para USP, Unesp e Unicamp.',
-      cursos: '',
-      alerta: 'Não é média nem nota de corte final: a classificação varia por curso, instituição e edital.',
-      fonte: 'Provão Paulista Seriado — Perguntas frequentes',
-      url: 'https://www.provaopaulistaseriado.sp.gov.br/'
-    }
-  ]
-};
+/*
+  Dados de consulta dos vestibulares seriados.
+  As notas são sempre o menor resultado entre pessoas aprovadas em uma edição
+  específica; não são promessa de classificação em edição futura.
+*/
+(() => {
+  const fontePism = 'https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf';
+  const cursoPism = (nome, ampla, cotas = {}, campus = 'Juiz de Fora') => ({
+    id: `${nome}::${campus}`,
+    nome,
+    campus,
+    cortes: { AC: ampla, ...cotas }
+  });
+
+  window.NOTAS_VESTIBULARES_SERIADOS = {
+    atualizadaEm: '27/08/2026',
+    edicaoDasNotas: 'PISM 2026 · Módulo III · Triênio 2023–2025',
+    cotas: [
+      { codigo: 'AC', nome: 'Ampla concorrência', grupo: 'Grupo C' },
+      { codigo: 'LB_PPI', nome: 'PPI, escola pública e baixa renda', grupo: 'Grupo A' },
+      { codigo: 'LB_EP', nome: 'Escola pública e baixa renda', grupo: 'Grupo B' },
+      { codigo: 'LI_PPI', nome: 'PPI, escola pública, sem critério de renda', grupo: 'Grupo D' },
+      { codigo: 'LI_EP', nome: 'Escola pública, sem critério de renda', grupo: 'Grupo E' },
+      { codigo: 'LB_Q', nome: 'Quilombola, escola pública e baixa renda', grupo: 'Grupo G' },
+      { codigo: 'LB_PCD', nome: 'Pessoa com deficiência, escola pública e baixa renda', grupo: 'Grupo H' },
+      { codigo: 'LI_Q', nome: 'Quilombola, escola pública, sem critério de renda', grupo: 'Grupo I' },
+      { codigo: 'LI_PCD', nome: 'Pessoa com deficiência, escola pública, sem critério de renda', grupo: 'Grupo J' },
+      { codigo: 'F', nome: 'Ação afirmativa própria para pessoas surdas (Letras-Libras)', grupo: 'Grupo F' }
+    ],
+    processos: [
+      { uf: 'AM', estado: 'Amazonas', nome: 'SIS/UEA', instituicao: 'Universidade do Estado do Amazonas', local: 'Manaus e interior do Amazonas', fonte: 'UEA — Sistema de Ingresso Seriado', url: 'https://proreitoria.uea.edu.br/proplan/?page_id=731' },
+      { uf: 'AM', estado: 'Amazonas', nome: 'PSC/UFAM', instituicao: 'Universidade Federal do Amazonas', local: 'Amazonas', fonte: 'UFAM — Processo Seletivo Contínuo', url: 'https://ufam.edu.br/noticias/7891-ufam-lanca-editais-das-etapas-1-2-e-3-do-processo-seletivo-continuo-psc.html' },
+      { uf: 'DF', estado: 'Distrito Federal', nome: 'PAS/UnB', instituicao: 'Universidade de Brasília', local: 'Distrito Federal', fonte: 'UnB — Programa de Avaliação Seriada', url: 'https://vempraunb.unb.br/pas/' },
+      { uf: 'MG', estado: 'Minas Gerais', nome: 'PISM/UFJF', instituicao: 'Universidade Federal de Juiz de Fora', local: 'Juiz de Fora e Governador Valadares, MG', fonte: 'UFJF — pontuação máxima e mínima para aprovação do PISM 2026', url: fontePism, cursos: [
+        cursoPism('Administração — integral', 302.25, {}, 'Governador Valadares'),
+        cursoPism('Ciências Contábeis — integral', 335.75, {}, 'Governador Valadares'),
+        cursoPism('Ciências Econômicas — integral', 455.25, {}, 'Governador Valadares'),
+        cursoPism('Direito — integral', 760.75, { LB_PPI: 196.25, LB_EP: 543.25, LI_PPI: 587.75, LI_EP: 744.75, LI_PCD: 525.50 }, 'Governador Valadares'),
+        cursoPism('Educação Física — bacharelado', 250, {}, 'Governador Valadares'),
+        cursoPism('Farmácia — integral', 427.50, { LB_PPI: 232, LI_PPI: 324.50, LI_EP: 295.75, LB_PCD: 451.25 }, 'Governador Valadares'),
+        cursoPism('Fisioterapia — integral', 597.75, { LB_PPI: 293.50, LI_PPI: 232, LI_EP: 457.25 }, 'Governador Valadares'),
+        cursoPism('Medicina — integral', 957.75, { LB_PPI: 482.50, LB_EP: 785.25, LI_PPI: 697.25, LI_EP: 941.50, LI_PCD: 531.25 }, 'Governador Valadares'),
+        cursoPism('Nutrição — integral', 334.50, { LB_PPI: 206.50, LI_PPI: 352.75, LI_EP: 296 }, 'Governador Valadares'),
+        cursoPism('Odontologia — integral', 568, { LB_PPI: 200, LI_PPI: 260.75, LI_EP: 422.25 }, 'Governador Valadares'),
+        cursoPism('Administração — integral', 583.50, { LB_PPI: 452.50, LI_PPI: 579.50, LI_EP: 366.25 }),
+        cursoPism('Administração — noturno', 533.50, { LB_PPI: 250.50, LI_PPI: 299.25, LI_EP: 419.75 }),
+        cursoPism('Arquitetura e Urbanismo — integral', 777.25, { LB_PPI: 438.75, LI_PPI: 346, LI_EP: 729.25, LB_PCD: 726.75 }),
+        cursoPism('Artes Visuais — bacharelado integral', 571.50, { LB_PPI: 329.50, LI_PPI: 560.75, LI_EP: 265, LI_PCD: 305.50 }),
+        cursoPism('Artes Visuais — licenciatura integral', 391, { LB_PPI: 239.50, LB_EP: 290.25 }),
+        cursoPism('Bacharelado Interdisciplinar em Ciências Humanas', 412.75, { LI_EP: 285.75 }),
+        cursoPism('Ciência da Computação — integral', 1015.50, { LB_PPI: 421, LI_PPI: 765, LI_EP: 942.75 }),
+        cursoPism('Ciência da Computação — noturno', 860.25, { LB_PPI: 393.25, LI_PPI: 349.50, LI_EP: 753.25, LI_PCD: 554.75 }),
+        cursoPism('Ciência da Religião — licenciatura noturno', 570),
+        cursoPism('Ciências Biológicas — bacharelado/licenciatura integral', 715.75, { LB_PPI: 329.50, LI_PPI: 332, LI_EP: 516 }),
+        cursoPism('Ciências Contábeis — integral', 426.75, { LB_PPI: 453.25, LI_PPI: 343.25, LI_EP: 450.75 }),
+        cursoPism('Ciências Contábeis — noturno', 421.75, { LI_EP: 398.25 }),
+        cursoPism('Ciências Econômicas — integral', 579.25, { LI_EP: 525 }),
+        cursoPism('Ciências Econômicas — noturno', 384.50, { LB_PPI: 424, LB_EP: 414.25, LI_PPI: 397.50, LI_EP: 498.25 }),
+        cursoPism('Ciências Exatas — integral', 326, { LB_PPI: 366.50, LB_EP: 293, LI_EP: 275 }),
+        cursoPism('Ciências Sociais — bacharelado vespertino', 537.50, { LI_PPI: 390.75, LI_EP: 382.75 }),
+        cursoPism('Ciências Sociais — licenciatura noturno', 438.50),
+        cursoPism('Cinema e Audiovisual — integral', 629, { LB_PPI: 325.75, LB_EP: 343.25, LI_PPI: 322.50, LI_EP: 614.75 }),
+        cursoPism('Design — integral', 630.50, { LB_PPI: 237.75, LB_EP: 477, LI_PPI: 363.50, LI_EP: 592.75 }),
+        cursoPism('Direito — integral', 890, { LB_PPI: 435.50, LB_EP: 679.25, LI_PPI: 660.50, LI_EP: 822, LI_PCD: 462.25 }),
+        cursoPism('Direito — noturno', 806.75, { LB_PPI: 489, LB_EP: 674.25, LI_PPI: 627.25, LI_EP: 769.75, LB_Q: 388.25, LI_PCD: 484.25 }),
+        cursoPism('Educação Física — bacharelado/licenciatura integral', 476, { LB_PPI: 273.25, LI_PPI: 297, LI_EP: 436.75, LB_PCD: 318.50 }),
+        cursoPism('Enfermagem — integral', 546, { LB_PPI: 214, LI_PPI: 384.25, LI_EP: 475 }),
+        cursoPism('Engenharia Ambiental e Sanitária — integral', 354.75, { LB_EP: 311.25, LI_EP: 355.25 }),
+        cursoPism('Engenharia Civil — integral', 719, { LB_PPI: 292.50, LB_EP: 305.75, LI_PPI: 289.25, LI_EP: 434.50 }),
+        cursoPism('Engenharia Computacional — integral', 1033.25, { LB_PPI: 414.50, LI_PPI: 350.75, LI_EP: 1019 }),
+        cursoPism('Engenharia de Produção — noturno', 746.75, { LB_PPI: 568.75, LI_PPI: 295.25, LI_EP: 419.50 }),
+        cursoPism('Engenharia Elétrica — Energia noturno', 536.75, { LB_PPI: 341.25, LI_PPI: 261, LI_EP: 411.50 }),
+        cursoPism('Engenharia Elétrica — Robótica e Automação Industrial', 945.25, { LB_PPI: 552.75, LI_PPI: 289.75, LI_EP: 541.50, LB_PCD: 402.25 }),
+        cursoPism('Engenharia Elétrica — Sistemas de Potência', 702.50, { LB_PPI: 429.75, LI_PPI: 387, LI_EP: 334.50 }),
+        cursoPism('Engenharia Elétrica — Sistemas Eletrônicos', 614.25, { LI_EP: 390.75 }),
+        cursoPism('Engenharia Elétrica — Telecomunicações', 365.25, { LI_EP: 331.50 }),
+        cursoPism('Engenharia Mecânica — integral', 892.75, { LB_PPI: 226.50, LI_PPI: 432.75, LI_EP: 653.25 }),
+        cursoPism('Estatística — integral', 441.75, { LI_EP: 505 }),
+        cursoPism('Farmácia — integral', 676.75, { LB_PPI: 202.25, LB_EP: 514.50, LI_PPI: 339, LI_EP: 609.75 }),
+        cursoPism('Filosofia — bacharelado/licenciatura integral', 289.75),
+        cursoPism('Física — bacharelado/licenciatura integral', 619.50, { LB_PPI: 402.75, LI_EP: 341 }),
+        cursoPism('Fisioterapia — integral', 719.75, { LB_PPI: 287.75, LI_PPI: 543.25, LI_EP: 650.50 }),
+        cursoPism('Geografia — bacharelado/licenciatura integral', 438.25, { LB_PPI: 454.75, LB_EP: 505, LI_PPI: 236.25, LI_EP: 401.75 }),
+        cursoPism('Geografia — licenciatura noturno', 219.50),
+        cursoPism('História — bacharelado/licenciatura integral', 718.75, { LB_PPI: 362, LB_EP: 297.75, LI_PPI: 372.25, LI_EP: 644.75 }),
+        cursoPism('História — bacharelado/licenciatura noturno', 398.50, { LB_EP: 467, LI_PPI: 380.50, LI_EP: 483.25 }),
+        cursoPism('Jornalismo — integral', 753.75, { LB_PPI: 321.50, LI_PPI: 672, LI_EP: 584.75 }),
+        cursoPism('Jornalismo — noturno', 684.50, { LB_PPI: 246.50, LI_PPI: 386.50, LI_EP: 680.50 }),
+        cursoPism('Letras — bacharelado/licenciatura integral', 629.75, { LB_PPI: 498.75, LI_PPI: 365.25, LI_EP: 449.50 }),
+        cursoPism('Letras — licenciatura noturno', 366.50),
+        cursoPism('Letras-Libras — licenciatura noturno', 450),
+        cursoPism('Matemática — bacharelado/licenciatura integral', 648.25, { LB_PPI: 394.50, LI_PPI: 345.50, LI_EP: 455 }),
+        cursoPism('Matemática — licenciatura noturno', 354.75, { LI_EP: 417 }),
+        cursoPism('Medicina — integral', 1040.25, { LB_PPI: 464, LB_EP: 887.75, LI_PPI: 743.50, LI_EP: 1011.75, LB_PCD: 597, LI_PCD: 751.25 }),
+        cursoPism('Medicina Veterinária — integral', 651, { LB_PPI: 249.75, LB_EP: 568, LI_PPI: 375, LI_EP: 615.25, LB_PCD: 326 }),
+        cursoPism('Moda — integral', 617, { LB_PPI: 271.75, LB_EP: 224.75, LI_PPI: 486.25, LI_EP: 499 }),
+        cursoPism('Música — licenciatura integral', 397.25),
+        cursoPism('Nutrição — integral', 561.75, { LB_PPI: 201.25, LB_EP: 377.50, LI_PPI: 322, LI_EP: 532.25 }),
+        cursoPism('Odontologia — integral', 681.25, { LB_PPI: 207.25, LB_EP: 611, LI_PPI: 368.75, LI_EP: 661.25 }),
+        cursoPism('Pedagogia — licenciatura matutino', 581.25, { LB_PPI: 255.50, LI_PPI: 343, LI_EP: 332.50 }),
+        cursoPism('Pedagogia — licenciatura noturno', 484.25, { LB_PPI: 247.50, LI_PPI: 290.50, LI_EP: 462 }),
+        cursoPism('Psicologia — integral', 858.75, { LB_PPI: 558, LB_EP: 766.25, LI_PPI: 568, LI_EP: 850, LI_PCD: 463.75 }),
+        cursoPism('Química — bacharelado/licenciatura integral', 534.50, { LB_EP: 454.50, LI_PPI: 523, LI_EP: 434.50 }),
+        cursoPism('Química — licenciatura noturno', 271.75),
+        cursoPism('Rádio, TV e Internet — integral', 539.75, { LI_EP: 409.75 }),
+        cursoPism('Serviço Social — matutino', 605.25, { LB_PPI: 361.75, LI_PPI: 371.75, LI_EP: 380 }),
+        cursoPism('Serviço Social — noturno', 357, { LI_PPI: 228.25, LI_EP: 313 }),
+        cursoPism('Sistemas de Informação — noturno', 707.75, { LB_PPI: 444, LI_PPI: 359.25, LI_EP: 546.50 }),
+        cursoPism('Turismo — integral', 245.25),
+        cursoPism('Turismo — noturno', 499)
+      ] },
+      { uf: 'MG', estado: 'Minas Gerais', nome: 'Seriado UFMG', instituicao: 'Universidade Federal de Minas Gerais', local: 'Belo Horizonte e unidades da UFMG, MG', fonte: 'UFMG — Processo Seletivo Seriado', url: 'https://www.ufmg.br/seriadoufmg/o-ciclo-2/' },
+      { uf: 'MG', estado: 'Minas Gerais', nome: 'PAS/UFLA', instituicao: 'Universidade Federal de Lavras', local: 'Lavras, MG', fonte: 'UFLA — Processo de Avaliação Seriada', url: 'https://pas.ufla.br/products/index.html' },
+      { uf: 'MG', estado: 'Minas Gerais', nome: 'SASI/UFVJM', instituicao: 'Universidade Federal dos Vales do Jequitinhonha e Mucuri', local: 'Diamantina, Janaúba, Teófilo Otoni e Unaí, MG', fonte: 'UFVJM — Seleção Seriada', url: 'https://portal.ufvjm.edu.br/noticias/2026-periodo-eleitoral/sasi-2026-inscricoes-abertas-para-vestibular-seriado-da-ufvjm' },
+      { uf: 'MG', estado: 'Minas Gerais', nome: 'PAES/Unimontes', instituicao: 'Universidade Estadual de Montes Claros', local: 'Montes Claros e campi da Unimontes, MG', fonte: 'Unimontes — PAES', url: 'https://www.coteps.unimontes.br/paes/' },
+      { uf: 'MG', estado: 'Minas Gerais', nome: 'PIAS/Uniube', instituicao: 'Universidade de Uberaba', local: 'Uberaba e Uberlândia, MG', fonte: 'Uniube — Programa de Ingresso por Avaliação Seriada', url: 'https://uniube.br/concursos/arquivos/edital/unico/834' },
+      { uf: 'MS', estado: 'Mato Grosso do Sul', nome: 'PASSE/UFMS', instituicao: 'Universidade Federal de Mato Grosso do Sul', local: 'Campi da UFMS, MS', fonte: 'UFMS — Programa de Avaliação Seriada Seletiva', url: 'https://ingresso.ufms.br/processo/passe/' },
+      { uf: 'PE', estado: 'Pernambuco', nome: 'SSA/UPE', instituicao: 'Universidade de Pernambuco', local: 'Campi da UPE, PE', fonte: 'UPE — Sistema Seriado de Avaliação', url: 'https://processodeingresso.upe.pe.gov.br/' },
+      { uf: 'PR', estado: 'Paraná', nome: 'PAS/UEM', instituicao: 'Universidade Estadual de Maringá', local: 'Maringá e campi da UEM, PR', fonte: 'UEM — Processo de Avaliação Seriada', url: 'https://www.pas.uem.br/faq.html' },
+      { uf: 'PR', estado: 'Paraná', nome: 'PSS/UEPG', instituicao: 'Universidade Estadual de Ponta Grossa', local: 'Ponta Grossa, PR', fonte: 'UEPG — Processo Seletivo Seriado', url: 'https://www.uepg.br/inscricoes-pss-2026/' },
+      { uf: 'PR', estado: 'Paraná', nome: 'Seriado Unioeste', instituicao: 'Universidade Estadual do Oeste do Paraná', local: 'Campi da Unioeste, PR', fonte: 'Unioeste — Vestibular Seriado', url: 'https://www.unioeste.br/portal/vestibular/publicacoes-seriado' },
+      { uf: 'RR', estado: 'Roraima', nome: 'PSS/UFRR', instituicao: 'Universidade Federal de Roraima', local: 'Boa Vista, RR', fonte: 'UFRR — Processo Seletivo Seriado', url: 'https://www.cpv.ufrr.br/seletivo/site/processos' },
+      { uf: 'RS', estado: 'Rio Grande do Sul', nome: 'PAVE/UFPel', instituicao: 'Universidade Federal de Pelotas', local: 'Pelotas, RS', fonte: 'UFPel — Programa de Avaliação da Vida Escolar', url: 'https://wp.ufpel.edu.br/pave/' },
+      { uf: 'RS', estado: 'Rio Grande do Sul', nome: 'PSS/UFSM', instituicao: 'Universidade Federal de Santa Maria', local: 'Santa Maria e campi da UFSM, RS', fonte: 'UFSM — Processo Seletivo Seriado', url: 'https://www.ufsm.br/pro-reitorias/prograd/editais/050-2025' },
+      { uf: 'SP', estado: 'São Paulo', nome: 'Provão Paulista', instituicao: 'Instituições públicas participantes', local: 'Estado de São Paulo', fonte: 'Provão Paulista Seriado', url: 'https://provaopaulistaseriado.vunesp.com.br/' }
+    ]
+  };
+})();
