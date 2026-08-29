@@ -289,6 +289,22 @@
   };
 
   const normalizeHeaders = () => {
+    const createOriginalBishop = () => {
+      const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.setAttribute('viewBox', '0 0 40 48');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('focusable', 'false');
+      svg.setAttribute('fill', 'currentColor');
+      svg.style.cssText = 'display:block;width:100%;height:100%';
+      const body = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      body.setAttribute('fill-rule', 'evenodd');
+      body.setAttribute('d', 'M20 2L9 15c0 5.5 4.9 10.3 9 13.2L11 38h18l-7-9.8c4.1-2.9 9-7.7 9-13.2L20 2Zm3.9 5.4L14 16.2l4 3 9-10.1Z');
+      const base = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      base.setAttribute('d', 'M8 40h24v3H8zM4 45h32v3H4z');
+      svg.append(body, base);
+      return svg;
+    };
+
     document.querySelectorAll('body > header').forEach((header) => {
       if (header.dataset.orionOriginalHeader === 'true' || header.dataset.orionUnified === 'true') return;
       const brand = header.querySelector('.brand');
@@ -301,7 +317,7 @@
         brand.prepend(mark);
       }
       mark.setAttribute('aria-hidden', 'true');
-      mark.replaceChildren(document.createTextNode('♝'));
+      mark.replaceChildren(createOriginalBishop());
     });
 
     if (document.getElementById('orionUnifiedHeaderStyles')) return;
