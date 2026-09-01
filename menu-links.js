@@ -494,7 +494,11 @@
       .orion-data-trust-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 15px;border:1px solid #b9893d;border-radius:999px;color:#132a45!important;background:#e8c985;font-size:12px;font-weight:800;text-align:center;white-space:nowrap;box-shadow:0 7px 14px rgba(104,74,27,.12)}.orion-data-trust-action:hover{background:#f2dba8}.orion-data-trust-action:focus-visible{outline:3px solid rgba(185,137,61,.72);outline-offset:3px}
       .orion-page-index{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:12px 14px;border:1px solid #dce5ec;border-radius:14px;background:#fff;color:#50647a}.orion-page-index b{margin-right:3px;color:#193a5f;font-size:11px}.orion-page-index a{padding:6px 9px;border-radius:999px;color:#234f7a!important;background:#edf4fa;font-size:11px;font-weight:800}.orion-page-index a:hover{color:#183e64!important;background:#e0edf8}
       .orion-home-updates{padding:0 0 34px;background:#fbfaf7}.orion-home-updates-inner{display:grid;grid-template-columns:minmax(225px,.72fr) minmax(0,1.28fr);gap:25px;align-items:center;padding:23px 27px;border:1px solid #d9e2eb;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(13,29,53,.05)}.orion-home-updates h2{margin:5px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,32px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-update-list{display:grid;gap:8px}.orion-update{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid #e1e8ee;border-radius:13px;color:#1c4f7c;background:#fbfdff;font-size:12px;font-weight:800}.orion-update:hover{border-color:#cba25c;background:#fffaf0}.orion-update time{color:#8a6525;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
-      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}}
+      .orion-saved-filter-note{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px;padding:11px 12px;border:1px solid #dbe5ee;border-radius:12px;color:#52677c;background:#f7fbff;font-size:11px;line-height:1.45}.orion-saved-filter-note strong{color:#245d4b}.orion-saved-filter-note button{padding:6px 9px;cursor:pointer;border:1px solid #b9cbd9;border-radius:999px;color:#244866;background:#fff;font:800 10px/1 "DM Sans",Arial,sans-serif}.orion-saved-filter-note button:hover{border-color:#b9893d;color:#785719}
+      .orion-print-toolbar{display:flex;justify-content:flex-end;margin:0 0 18px}.orion-print-button{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;cursor:pointer;border:1px solid #b88940;border-radius:999px;color:#183b5d;background:#fffaf0;font:800 11px/1 "DM Sans",Arial,sans-serif;box-shadow:0 5px 12px rgba(44,63,83,.08)}.orion-print-button:hover{background:#f5dfad}.orion-print-button:focus-visible{outline:3px solid rgba(185,137,61,.55);outline-offset:3px}
+      .orion-student-timeline{margin:30px 0;padding:25px;border:1px solid #dbe4ec;border-radius:18px;background:linear-gradient(135deg,#fff,#f6faff);box-shadow:0 10px 25px rgba(13,29,53,.05)}.orion-student-timeline-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:18px}.orion-student-timeline h2{margin:6px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,31px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-student-timeline-head p{max-width:450px;margin:0;color:#627589;font-size:11px;line-height:1.55;text-align:right}.orion-timeline-list{display:grid;gap:10px}.orion-timeline-item{display:grid;grid-template-columns:31px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px;border:1px solid #e0e8ee;border-radius:13px;background:#fff;color:#173a5e}.orion-timeline-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;color:#71521f;background:#f8ead0;font-size:14px}.orion-timeline-copy{min-width:0}.orion-timeline-copy b{display:block;overflow:hidden;color:#183b5d;font-size:12px;text-overflow:ellipsis;white-space:nowrap}.orion-timeline-copy span{display:block;margin-top:3px;color:#6a7b8d;font-size:10px;line-height:1.4}.orion-timeline-item time{color:#87682f;font-size:10px;font-weight:800;white-space:nowrap}.orion-timeline-empty{padding:15px;border:1px dashed #cbd9e3;border-radius:13px;color:#61758a;background:#fff;font-size:12px;line-height:1.6}.orion-timeline-item:hover{border-color:#cfab68;background:#fffdf8}
+      @media print{@page{margin:12mm}.aq-menu-toggle,.aq-menu-backdrop,.aq-mobile-login,.orion-header-search,.orion-print-toolbar,footer,.orion-page-index,.theme-control{display:none!important}body{background:#fff!important;color:#111!important}body>header,body>header[data-orion-unified="true"]{min-height:auto!important;color:#111!important;background:#fff!important;border-bottom:1px solid #bbb!important}body>header :is(.nav,.top),body>header[data-orion-unified="true"] :is(.nav,.top){width:100%!important;min-height:54px!important;padding:0!important;color:#111!important}body>header .brand,body>header[data-orion-unified="true"] .brand{color:#111!important}body>header .back,body>header .public-link{display:none!important}.hero{padding:22px 0!important;color:#111!important;background:#fff!important}.hero:after{display:none!important}.hero :is(h1,h2,h3,p,.eyebrow){color:#111!important}.hero p{max-width:none!important}.wrap{width:100%!important}.orion-data-trust{box-shadow:none!important}.orion-data-trust-action{box-shadow:none!important}main{padding:18px 0!important}.orion-print-results :is(.planner,.selector,#comparisonForm,#studyForm,.add-card){display:none!important}.results,.result,.offer,.card,.event,.checklist,.orion-data-trust,.orion-student-timeline{break-inside:avoid!important;box-shadow:none!important}a{color:#111!important;text-decoration:none!important}.results[hidden]{display:none!important}}
+      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}.orion-saved-filter-note,.orion-student-timeline-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}}
     `;
     document.head.append(style);
   };
@@ -623,12 +627,296 @@
     logos.insertAdjacentElement('afterend', section);
   };
 
+  const localData = {
+    get(key, fallback) {
+      try {
+        const value = JSON.parse(window.localStorage.getItem(key));
+        return value === null ? fallback : value;
+      } catch (_) {
+        return fallback;
+      }
+    },
+    set(key, value) {
+      try {
+        window.localStorage.setItem(key, JSON.stringify(value));
+        return true;
+      } catch (_) {
+        return false;
+      }
+    },
+    remove(key) {
+      try {
+        window.localStorage.removeItem(key);
+      } catch (_) {
+        // O recurso continua funcionando sem armazenamento local.
+      }
+    }
+  };
+
+  const savedFiltersKey = 'orion-saved-filters-v1';
+  const activitiesKey = 'orion-student-activity-v1';
+  const normalText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+  const formatActivityDate = (value) => {
+    const date = new Date(value);
+    if (Number.isNaN(date.getTime())) return 'agora';
+    const day = new Date();
+    if (date.toDateString() === day.toDateString()) return 'hoje';
+    day.setDate(day.getDate() - 1);
+    if (date.toDateString() === day.toDateString()) return 'ontem';
+    return new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short' }).format(date);
+  };
+  const readActivities = () => {
+    const value = localData.get(activitiesKey, []);
+    return Array.isArray(value) ? value.filter((item) => item && item.title && item.href).slice(0, 16) : [];
+  };
+  const recordActivity = (type, title, href, detail = '') => {
+    const cleanTitle = normalText(title);
+    if (!cleanTitle) return;
+    const entry = { id: `${type}|${href}|${cleanTitle}`, type, title: cleanTitle, href, detail: normalText(detail), updatedAt: new Date().toISOString() };
+    const next = [entry, ...readActivities().filter((item) => item.id !== entry.id)].slice(0, 16);
+    if (!localData.set(activitiesKey, next)) return;
+    window.dispatchEvent(new CustomEvent('orion:activity-updated'));
+  };
+
+  const addSavedFilterNote = (form, message) => {
+    if (!form || form.parentElement?.querySelector('.orion-saved-filter-note')) return null;
+    const note = document.createElement('div');
+    note.className = 'orion-saved-filter-note';
+    const text = document.createElement('span');
+    const strong = document.createElement('strong');
+    strong.textContent = 'Filtros salvos neste navegador. ';
+    text.append(strong, document.createTextNode(message));
+    const clear = document.createElement('button');
+    clear.type = 'button';
+    clear.textContent = 'Limpar filtros salvos';
+    note.append(text, clear);
+    form.insertAdjacentElement('afterend', note);
+    return { note, text, clear };
+  };
+
+  const setupSisuSavedFilters = () => {
+    if (currentPage !== 'plano-sisu.html') return;
+    const form = document.getElementById('planForm');
+    const course = document.getElementById('courseInput');
+    const state = document.getElementById('state');
+    const city = document.getElementById('city');
+    const quota = document.getElementById('quota');
+    const addCourse = document.getElementById('addCourse');
+    const chips = document.getElementById('chips');
+    if (!form || !course || !state || !quota || !addCourse || !chips) return;
+
+    const note = addSavedFilterNote(form, 'Cursos, estado e modalidade são guardados apenas aqui; notas e dados pessoais não entram nesse registro.');
+    const readCourses = () => [...chips.querySelectorAll('.chip')].map((chip) => normalText(chip.firstChild?.textContent)).filter(Boolean);
+    const save = () => {
+      const all = localData.get(savedFiltersKey, {});
+      localData.set(savedFiltersKey, { ...all,
+        sisu: { courses: readCourses(), state: state.value, city: city?.value || '', quota: quota.value, updatedAt: new Date().toISOString() }
+      });
+    };
+    const saved = localData.get(savedFiltersKey, {})?.sisu;
+    const hasJourneyParameters = ['curso', 'uf', 'cota', 'cidade'].some((name) => new URLSearchParams(window.location.search).has(name));
+    const restore = () => {
+      if (!saved || hasJourneyParameters) return;
+      if ([...state.options].some((option) => option.value === saved.state)) state.value = saved.state || '';
+      if (city) city.value = saved.city || '';
+      if ([...quota.options].some((option) => option.value === saved.quota)) quota.value = saved.quota || '';
+      (Array.isArray(saved.courses) ? saved.courses : []).slice(0, 3).forEach((name) => {
+        course.value = name;
+        addCourse.click();
+      });
+      state.dispatchEvent(new Event('change', { bubbles: true }));
+      if (note && (saved.state || saved.quota || saved.city || saved.courses?.length)) note.text.firstChild.textContent = 'Filtros recuperados neste navegador. ';
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', restore, { once: true });
+    else window.setTimeout(restore, 0);
+    [course, state, city, quota].filter(Boolean).forEach((field) => field.addEventListener('change', save));
+    course.addEventListener('input', save);
+    new MutationObserver(save).observe(chips, { childList: true });
+    form.addEventListener('submit', () => {
+      save();
+      window.setTimeout(() => {
+        if (document.getElementById('results')?.hidden) return;
+        const label = readCourses().join(', ') || 'Ofertas do Sisu';
+        const detail = [state.value, quota.selectedOptions[0]?.textContent].filter(Boolean).join(' · ');
+        recordActivity('Pesquisa salva', label, 'plano-sisu.html', detail);
+      }, 0);
+    });
+    note?.clear.addEventListener('click', () => {
+      const stored = localData.get(savedFiltersKey, {});
+      if (stored && typeof stored === 'object') {
+        delete stored.sisu;
+        localData.set(savedFiltersKey, stored);
+      }
+      note.text.firstChild.textContent = 'Filtros salvos removidos deste navegador. ';
+    });
+  };
+
+  const setupComparisonSavedFilters = () => {
+    if (currentPage !== 'comparar-notas.html') return;
+    const form = document.getElementById('comparisonForm');
+    const course = document.getElementById('course');
+    const state = document.getElementById('state');
+    const quota = document.getElementById('quota');
+    if (!form || !course || !state || !quota) return;
+    const note = addSavedFilterNote(form, 'Curso, estado e modalidade ficam apenas neste aparelho. As suas cinco notas não são salvas.');
+    const save = () => {
+      const all = localData.get(savedFiltersKey, {});
+      localData.set(savedFiltersKey, { ...all, comparison: { course: course.value, state: state.value, quota: quota.value, updatedAt: new Date().toISOString() } });
+    };
+    const saved = localData.get(savedFiltersKey, {})?.comparison;
+    const hasJourneyParameters = ['curso', 'uf', 'cota'].some((name) => new URLSearchParams(window.location.search).has(name));
+    const restore = () => {
+      if (!saved || hasJourneyParameters) return;
+      course.value = saved.course || '';
+      if ([...state.options].some((option) => option.value === saved.state)) state.value = saved.state || '';
+      if ([...quota.options].some((option) => option.value === saved.quota)) quota.value = saved.quota || '';
+      if (note && (saved.course || saved.state || saved.quota)) note.text.firstChild.textContent = 'Filtros recuperados neste navegador. ';
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', restore, { once: true });
+    else window.setTimeout(restore, 0);
+    [course, state, quota].forEach((field) => {
+      field.addEventListener('change', save);
+      field.addEventListener('input', save);
+    });
+    form.addEventListener('submit', () => {
+      save();
+      window.setTimeout(() => {
+        if (document.getElementById('results')?.hidden) return;
+        recordActivity('Comparação de notas', course.value || 'Notas do Enem', 'comparar-notas.html', [state.value, quota.selectedOptions[0]?.textContent].filter(Boolean).join(' · '));
+      }, 0);
+    });
+    note?.clear.addEventListener('click', () => {
+      const stored = localData.get(savedFiltersKey, {});
+      if (stored && typeof stored === 'object') {
+        delete stored.comparison;
+        localData.set(savedFiltersKey, stored);
+      }
+      note.text.firstChild.textContent = 'Filtros salvos removidos deste navegador. ';
+    });
+  };
+
+  const addActivityTracking = () => {
+    if (currentPage === 'comparar-faculdades.html') {
+      const form = document.getElementById('compareForm');
+      form?.addEventListener('submit', () => {
+        const course = document.getElementById('course')?.value || 'Faculdades públicas';
+        const institutions = ['institution1', 'institution2', 'institution3'].map((id) => document.getElementById(id)?.value).filter(Boolean).join(' · ');
+        window.setTimeout(() => {
+          if (!document.getElementById('results')?.hidden) recordActivity('Comparação de faculdades', course, 'comparar-faculdades.html', institutions);
+        }, 0);
+      });
+    }
+    if (currentPage === 'calendario-vestibulando.html') {
+      document.querySelectorAll('[data-filter], .filter, .filter-button').forEach((button) => {
+        button.addEventListener('click', () => {
+          const label = normalText(button.textContent);
+          if (label) recordActivity('Calendário consultado', label, 'calendario-vestibulando.html', 'Calendário de vestibulares');
+        });
+      });
+    }
+    if (currentPage === 'cadernos.html') {
+      document.getElementById('newNotebook')?.addEventListener('click', () => recordActivity('Cadernos', 'Criou ou abriu um novo caderno', 'cadernos.html', 'Cadernos livres'));
+      document.getElementById('bookGrid')?.addEventListener('click', (event) => {
+        const card = event.target.closest('[data-book]');
+        if (card) recordActivity('Cadernos', card.querySelector('h3')?.textContent || 'Caderno aberto', 'cadernos.html', 'Cadernos livres');
+      });
+    }
+  };
+
+  const addStudentTimeline = () => {
+    if (currentPage !== 'minha-jornada.html') return;
+    const member = document.getElementById('memberView');
+    const overview = member?.querySelector('.overview');
+    if (!member || !overview || document.getElementById('orion-student-timeline')) return;
+    const section = document.createElement('section');
+    section.id = 'orion-student-timeline';
+    section.className = 'orion-student-timeline';
+    const header = document.createElement('div');
+    header.className = 'orion-student-timeline-head';
+    const intro = document.createElement('div');
+    const eyebrow = document.createElement('span');
+    eyebrow.className = 'eyebrow';
+    eyebrow.style.color = '#a77a34';
+    eyebrow.textContent = 'Sua linha do tempo';
+    const title = document.createElement('h2');
+    title.textContent = 'Retome suas consultas.';
+    intro.append(eyebrow, title);
+    const copy = document.createElement('p');
+    copy.textContent = 'Pesquisas, comparações, calendário e cadernos usados neste navegador. Não inclui notas nem outros dados pessoais.';
+    header.append(intro, copy);
+    const list = document.createElement('div');
+    list.className = 'orion-timeline-list';
+    section.append(header, list);
+    overview.insertAdjacentElement('afterend', section);
+
+    const iconByType = { 'Pesquisa salva': '⌕', 'Comparação de notas': '≈', 'Comparação de faculdades': '⇄', 'Calendário consultado': '◫', Cadernos: '✎' };
+    const render = () => {
+      list.replaceChildren();
+      const records = readActivities();
+      if (!records.length) {
+        const empty = document.createElement('div');
+        empty.className = 'orion-timeline-empty';
+        empty.textContent = 'Quando você consultar vagas, comparar opções, abrir o calendário ou usar os cadernos, os atalhos mais recentes aparecerão aqui.';
+        list.append(empty);
+        return;
+      }
+      records.forEach((record) => {
+        const link = document.createElement('a');
+        link.className = 'orion-timeline-item';
+        link.href = record.href;
+        const icon = document.createElement('span');
+        icon.className = 'orion-timeline-icon';
+        icon.setAttribute('aria-hidden', 'true');
+        icon.textContent = iconByType[record.type] || '✦';
+        const content = document.createElement('span');
+        content.className = 'orion-timeline-copy';
+        const name = document.createElement('b');
+        name.textContent = record.title;
+        const detail = document.createElement('span');
+        detail.textContent = [record.type, record.detail].filter(Boolean).join(' · ');
+        content.append(name, detail);
+        const time = document.createElement('time');
+        time.dateTime = record.updatedAt;
+        time.textContent = formatActivityDate(record.updatedAt);
+        link.append(icon, content, time);
+        list.append(link);
+      });
+    };
+    window.addEventListener('orion:activity-updated', render);
+    render();
+  };
+
+  const addPrintTools = () => {
+    const printablePages = new Set(['plano-estudos.html', 'plano-sisu.html', 'comparar-notas.html', 'comparar-faculdades.html', 'calendario-vestibulando.html', 'calendario-pessoal.html', 'listas-espera-rj.html', 'painel-bolsas.html', 'painel-controle.html', 'estude-no-exterior.html']);
+    const main = document.querySelector('main');
+    if (!printablePages.has(currentPage) || !main || document.querySelector('.orion-print-toolbar')) return;
+    const toolbar = document.createElement('div');
+    toolbar.className = 'orion-print-toolbar';
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'orion-print-button';
+    button.textContent = '⎙ Imprimir ou salvar em PDF';
+    button.addEventListener('click', () => {
+      const results = document.getElementById('results');
+      document.body.classList.toggle('orion-print-results', Boolean(results && !results.hidden) || currentPage === 'calendario-pessoal.html');
+      window.print();
+    });
+    window.addEventListener('afterprint', () => document.body.classList.remove('orion-print-results'));
+    toolbar.append(button);
+    main.prepend(toolbar);
+  };
+
   injectMenuStyles();
   normalizeHeaders();
   addHeaderSearch();
   injectProfessionalStyles();
   addDataTrustPanel();
   refreshHomeHub();
+  setupSisuSavedFilters();
+  setupComparisonSavedFilters();
+  addActivityTracking();
+  addStudentTimeline();
+  addPrintTools();
   injectThemeStyles();
   applyTheme(readTheme());
   addThemeControl();
