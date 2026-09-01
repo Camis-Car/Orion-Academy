@@ -13,6 +13,7 @@
     ['listas-espera-rj.html', 'Listas de espera', 'Chamadas e processos de ingresso'],
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
     ['vestibulares-seriados.html', 'Vestibulares seriados', 'Processos em etapas e fontes oficiais'],
+    ['plano-estudos.html', 'Plano de estudos', 'Prioridades e organização da rotina'],
     ['cronometro-estudos.html', 'Cronômetro e Countdown ENEM', 'Foco de estudo e contagem para os dias de prova'],
     ['painel-bolsas.html', 'Bolsas e apoios', 'Informações sobre bolsas e apoios'],
     ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
@@ -40,13 +41,67 @@
       data: '.list'
     },
     'carreiras.html': {
-      title: 'Profissões e cursos',
-      description: 'Os resumos ajudam a conhecer áreas de estudo. As ofertas de curso devem ser confirmadas por instituição, campus, turno e processo seletivo.',
+      title: 'Profissões e faculdades públicas',
+      description: 'Os resumos apresentam áreas de estudo; o filtro integrado localiza ofertas por curso, estado e instituição. Confirme campus, turno, vagas e edital antes de se inscrever.',
       source: 'Portal Único de Acesso ao Ensino Superior · Sisu',
       url: 'https://sisu.mec.gov.br/',
       button: 'Consultar ofertas no Sisu ↗',
       how: '.controls',
       data: '#careerContent'
+    },
+    'alimentacao-e-estudos.html': {
+      title: 'Alimentação, hidratação e estudos',
+      description: 'Esta página reúne referências de saúde pública e pesquisa do projeto. Resultados da pesquisa própria devem ser interpretados como percepção dos participantes, não como diagnóstico.',
+      source: 'Ministério da Saúde · Guia Alimentar para a População Brasileira',
+      url: 'https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf',
+      button: 'Abrir Guia Alimentar ↗',
+      how: '.hero',
+      data: 'main'
+    },
+    'questoes-enem.html': {
+      title: 'Questões oficiais do ENEM',
+      description: 'Os cadernos, gabaritos e anulações usados nas sessões devem ser confirmados diretamente na publicação oficial do Inep. As respostas ficam somente neste navegador.',
+      source: 'Inep · Provas e gabaritos do ENEM',
+      url: 'https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/provas-e-gabaritos',
+      button: 'Abrir provas do Inep ↗',
+      how: '.archive',
+      data: '#practice'
+    },
+    'guia-enem.html': {
+      title: 'Guia de estudos do ENEM',
+      description: 'O guia organiza a matriz e provas anteriores para estudo. A edição vigente, o cronograma e as regras de aplicação devem sempre ser confirmados no Inep.',
+      source: 'Inep · ENEM',
+      url: 'https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem',
+      button: 'Consultar Inep ↗',
+      how: '.intro',
+      data: 'main'
+    },
+    'cronometro-estudos.html': {
+      title: 'Cronômetro e Countdown ENEM',
+      description: 'O cronômetro é uma ferramenta local de organização. A contagem do Enem é apenas um lembrete: confirme datas, horários e local de prova no cronograma oficial.',
+      source: 'Inep · Cronograma do ENEM',
+      url: 'https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enem/orientacoes/cronograma',
+      button: 'Ver cronograma oficial ↗',
+      how: '.focus-layout',
+      data: '.constellation-card'
+    },
+    'estude-no-exterior.html': {
+      title: 'Estude no exterior',
+      description: 'Os caminhos de inscrição, bolsas e vistos variam por país, instituição e edição. Use os resumos para se orientar e confirme cada requisito na fonte responsável.',
+      source: 'EducationUSA e portais oficiais de admissão e visto',
+      url: 'https://educationusa.state.gov/',
+      button: 'Abrir EducationUSA ↗',
+      how: '.quick',
+      data: 'main'
+    },
+    'entenda-escolhas.html': {
+      title: 'Termos de ingresso',
+      description: 'Cotas, notas de corte, pesos e listas de espera mudam conforme processo e instituição. As definições ajudam na leitura, mas a regra aplicável é sempre a do edital.',
+      source: 'Portal Único de Acesso ao Ensino Superior · MEC',
+      url: 'https://acessounico.mec.gov.br/sisu',
+      button: 'Abrir Portal Único ↗',
+      how: '.hero',
+      data: 'main'
     },
     'plano-sisu.html': {
       title: 'Vagas e modalidades do Sisu',
@@ -329,6 +384,7 @@
         outline-offset:3px;
       }
       .aq-menu-links .aq-menu-index{margin:0 2px 5px;color:#8a662b;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
+      .aq-menu-links .aq-menu-group{margin:16px 2px 4px;color:#8a662b;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.aq-menu-links .aq-menu-group:first-of-type{margin-top:2px}
       .aq-menu-links a{min-height:50px;display:block}
       .aq-menu-links .aq-menu-priority{border:1px solid rgba(185,137,61,.42);border-radius:14px;background:linear-gradient(135deg,#fffaf0,#f8e5bb);box-shadow:0 6px 15px rgba(31,48,72,.08)}
       .aq-menu-links .aq-menu-priority:hover{border-color:#b9893d;background:#f7dfae}
@@ -493,6 +549,7 @@
       .orion-data-trust-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 15px;border:1px solid #b9893d;border-radius:999px;color:#132a45!important;background:#e8c985;font-size:12px;font-weight:800;text-align:center;white-space:nowrap;box-shadow:0 7px 14px rgba(104,74,27,.12)}.orion-data-trust-action:hover{background:#f2dba8}.orion-data-trust-action:focus-visible{outline:3px solid rgba(185,137,61,.72);outline-offset:3px}
       .orion-page-index{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:12px 14px;border:1px solid #dce5ec;border-radius:14px;background:#fff;color:#50647a}.orion-page-index b{margin-right:3px;color:#193a5f;font-size:11px}.orion-page-index a{padding:6px 9px;border-radius:999px;color:#234f7a!important;background:#edf4fa;font-size:11px;font-weight:800}.orion-page-index a:hover{color:#183e64!important;background:#e0edf8}
       .orion-home-updates{padding:0 0 34px;background:#fbfaf7}.orion-home-updates-inner{display:grid;grid-template-columns:minmax(225px,.72fr) minmax(0,1.28fr);gap:25px;align-items:center;padding:23px 27px;border:1px solid #d9e2eb;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(13,29,53,.05)}.orion-home-updates h2{margin:5px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,32px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-update-list{display:grid;gap:8px}.orion-update{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid #e1e8ee;border-radius:13px;color:#1c4f7c;background:#fbfdff;font-size:12px;font-weight:800}.orion-update:hover{border-color:#cba25c;background:#fffaf0}.orion-update time{color:#8a6525;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
+      .orion-home-search{margin:0 0 27px;padding:22px 24px;border:1px solid #d9c18e;border-radius:18px;background:linear-gradient(135deg,#102a48,#1d4e78);box-shadow:0 13px 28px rgba(13,29,53,.12)}.orion-home-search-copy{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:15px}.orion-home-search .eyebrow{color:#e8c985}.orion-home-search h2{margin:6px 0 0;color:#fff;font:600 clamp(24px,2.8vw,33px)/1.12 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-home-search p{max-width:470px;margin:0;color:#d7e5f1;font-size:12px;line-height:1.6;text-align:right}.orion-home-search-form{display:grid;grid-template-columns:1fr auto;gap:9px}.orion-home-search-form input{min-height:48px;padding:0 14px;border:1px solid #c1d2e0;border-radius:12px;color:#17243a;background:#fff;font:600 13px "DM Sans",Arial,sans-serif}.orion-home-search-form button{min-height:48px;padding:0 16px;cursor:pointer;border:0;border-radius:12px;color:#17243a;background:#e8c985;font:800 12px "DM Sans",Arial,sans-serif}.orion-home-search-form button:hover{background:#f4d9a3}
       .orion-saved-filter-note{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px;padding:11px 12px;border:1px solid #dbe5ee;border-radius:12px;color:#52677c;background:#f7fbff;font-size:11px;line-height:1.45}.orion-saved-filter-note strong{color:#245d4b}.orion-saved-filter-note button{padding:6px 9px;cursor:pointer;border:1px solid #b9cbd9;border-radius:999px;color:#244866;background:#fff;font:800 10px/1 "DM Sans",Arial,sans-serif}.orion-saved-filter-note button:hover{border-color:#b9893d;color:#785719}
       .orion-print-toolbar{display:flex;justify-content:flex-end;margin:0 0 18px}.orion-print-button{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;cursor:pointer;border:1px solid #b88940;border-radius:999px;color:#183b5d;background:#fffaf0;font:800 11px/1 "DM Sans",Arial,sans-serif;box-shadow:0 5px 12px rgba(44,63,83,.08)}.orion-print-button:hover{background:#f5dfad}.orion-print-button:focus-visible{outline:3px solid rgba(185,137,61,.55);outline-offset:3px}
       .orion-student-timeline{margin:30px 0;padding:25px;border:1px solid #dbe4ec;border-radius:18px;background:linear-gradient(135deg,#fff,#f6faff);box-shadow:0 10px 25px rgba(13,29,53,.05)}.orion-student-timeline-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:18px}.orion-student-timeline h2{margin:6px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,31px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-student-timeline-head p{max-width:450px;margin:0;color:#627589;font-size:11px;line-height:1.55;text-align:right}.orion-timeline-list{display:grid;gap:10px}.orion-timeline-item{display:grid;grid-template-columns:31px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px;border:1px solid #e0e8ee;border-radius:13px;background:#fff;color:#173a5e}.orion-timeline-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;color:#71521f;background:#f8ead0;font-size:14px}.orion-timeline-copy{min-width:0}.orion-timeline-copy b{display:block;overflow:hidden;color:#183b5d;font-size:12px;text-overflow:ellipsis;white-space:nowrap}.orion-timeline-copy span{display:block;margin-top:3px;color:#6a7b8d;font-size:10px;line-height:1.4}.orion-timeline-item time{color:#87682f;font-size:10px;font-weight:800;white-space:nowrap}.orion-timeline-empty{padding:15px;border:1px dashed #cbd9e3;border-radius:13px;color:#61758a;background:#fff;font-size:12px;line-height:1.6}.orion-timeline-item:hover{border-color:#cfab68;background:#fffdf8}
@@ -500,7 +557,7 @@
       .orion-error-notebook{margin:48px 0 0;padding:25px;border:1px solid #e7d3cf;border-radius:18px;background:linear-gradient(135deg,#fff9f8,#fff)}.orion-error-notebook-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:17px}.orion-error-notebook h2{margin:6px 0 0;color:#6e3631;font:600 clamp(24px,2.8vw,33px)/1.12 "Playfair Display",Georgia,serif}.orion-error-notebook-head p{max-width:465px;margin:0;color:#765f5b;font-size:12px;line-height:1.6;text-align:right}.orion-error-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}.orion-error-summary div{padding:13px;border:1px solid #eadbd8;border-radius:12px;background:#fff}.orion-error-summary b{display:block;color:#8e443c;font:600 28px/1 "Playfair Display",Georgia,serif}.orion-error-summary span{display:block;margin-top:5px;color:#746b6a;font-size:10px;line-height:1.4}.orion-error-list{display:grid;gap:9px}.orion-error-entry{padding:13px;border:1px solid #eadeda;border-radius:12px;background:#fff}.orion-error-entry b{display:block;color:#173a5e;font-size:12px}.orion-error-entry span{display:block;margin-top:5px;color:#72625f;font-size:11px;line-height:1.5}.orion-error-entry em{display:inline-block;margin:8px 5px 0 0;padding:4px 7px;border-radius:999px;color:#8b413a;background:#f9e6e3;font-size:10px;font-style:normal;font-weight:800}.orion-error-empty{padding:15px;border:1px dashed #d7bebb;border-radius:12px;color:#735f5c;background:#fff;font-size:12px;line-height:1.6}
       .orion-enem-countdown{margin:38px 0;padding:25px;border:1px solid #d8c6a3;border-radius:18px;background:linear-gradient(135deg,#fff,#fffaf0);box-shadow:0 12px 26px rgba(13,29,53,.05)}.orion-enem-countdown-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:17px}.orion-enem-countdown h2{margin:6px 0 0;color:#102a48;font:600 clamp(25px,2.8vw,35px)/1.12 "Playfair Display",Georgia,serif}.orion-enem-countdown-head p{max-width:445px;margin:0;color:#607286;font-size:12px;line-height:1.6;text-align:right}.orion-countdown-clock{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.orion-countdown-unit{padding:15px 8px;border:1px solid #dfe5ea;border-radius:12px;background:#fff;text-align:center}.orion-countdown-unit b{display:block;color:#173a5e;font:600 clamp(28px,4vw,45px)/1 "Playfair Display",Georgia,serif;font-variant-numeric:tabular-nums}.orion-countdown-unit span{display:block;margin-top:6px;color:#6b7b8e;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.orion-countdown-days{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.orion-countdown-days div{padding:12px;border-left:3px solid #d9ae63;border-radius:0 10px 10px 0;background:#fff}.orion-countdown-days b{display:block;color:#173a5e;font-size:11px}.orion-countdown-days span{display:block;margin-top:4px;color:#607286;font-size:10px;line-height:1.5}
       @media print{@page{margin:12mm}.aq-menu-toggle,.aq-menu-backdrop,.aq-mobile-login,.orion-header-search,.orion-print-toolbar,footer,.orion-page-index,.theme-control{display:none!important}body{background:#fff!important;color:#111!important}body>header,body>header[data-orion-unified="true"]{min-height:auto!important;color:#111!important;background:#fff!important;border-bottom:1px solid #bbb!important}body>header :is(.nav,.top),body>header[data-orion-unified="true"] :is(.nav,.top){width:100%!important;min-height:54px!important;padding:0!important;color:#111!important}body>header .brand,body>header[data-orion-unified="true"] .brand{color:#111!important}body>header .back,body>header .public-link{display:none!important}.hero{padding:22px 0!important;color:#111!important;background:#fff!important}.hero:after{display:none!important}.hero :is(h1,h2,h3,p,.eyebrow){color:#111!important}.hero p{max-width:none!important}.wrap{width:100%!important}.orion-data-trust{box-shadow:none!important}.orion-data-trust-action{box-shadow:none!important}main{padding:18px 0!important}.orion-print-results :is(.planner,.selector,#comparisonForm,#studyForm,.add-card){display:none!important}.results,.result,.offer,.card,.event,.checklist,.orion-data-trust,.orion-student-timeline{break-inside:avoid!important;box-shadow:none!important}a{color:#111!important;text-decoration:none!important}.results[hidden]{display:none!important}}
-      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}.orion-saved-filter-note,.orion-student-timeline-head,.orion-course-finder-head,.orion-error-notebook-head,.orion-enem-countdown-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p,.orion-course-finder-head p,.orion-error-notebook-head p,.orion-enem-countdown-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}.orion-course-fields,.orion-course-result,.orion-error-summary,.orion-countdown-days{grid-template-columns:1fr}.orion-countdown-clock{gap:6px}.orion-countdown-unit{padding:12px 4px}.orion-countdown-unit b{font-size:29px}}
+      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}.orion-home-search{padding:19px}.orion-home-search-copy{align-items:flex-start;flex-direction:column}.orion-home-search p{text-align:left}.orion-home-search-form{grid-template-columns:1fr}.orion-saved-filter-note,.orion-student-timeline-head,.orion-course-finder-head,.orion-error-notebook-head,.orion-enem-countdown-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p,.orion-course-finder-head p,.orion-error-notebook-head p,.orion-enem-countdown-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}.orion-course-fields,.orion-course-result,.orion-error-summary,.orion-countdown-days{grid-template-columns:1fr}.orion-countdown-clock{gap:6px}.orion-countdown-unit{padding:12px 4px}.orion-countdown-unit b{font-size:29px}}
     `;
     document.head.append(style);
   };
@@ -589,6 +646,38 @@
         grid.append(link);
       });
       grid.dataset.orionHubReady = 'true';
+    }
+    if (grid && !document.querySelector('.orion-home-search')) {
+      const search = document.createElement('section');
+      search.className = 'orion-home-search';
+      search.setAttribute('aria-labelledby', 'orion-home-search-title');
+      const copy = document.createElement('div');
+      copy.className = 'orion-home-search-copy';
+      const intro = document.createElement('div');
+      const eyebrow = document.createElement('span');
+      eyebrow.className = 'eyebrow';
+      eyebrow.textContent = 'Busca geral';
+      const heading = document.createElement('h2');
+      heading.id = 'orion-home-search-title';
+      heading.textContent = 'O que você quer consultar?';
+      intro.append(eyebrow, heading);
+      const text = document.createElement('p');
+      text.textContent = 'Pesquise cursos, estados, instituições, vestibulares, cotas ou termos como “Medicina Paraná” e “PISM”.';
+      copy.append(intro, text);
+      const form = document.createElement('form');
+      form.className = 'orion-home-search-form';
+      const input = document.createElement('input');
+      input.type = 'search'; input.name = 'q'; input.placeholder = 'Ex.: Medicina Paraná'; input.setAttribute('aria-label', 'Buscar informações no site');
+      const button = document.createElement('button');
+      button.type = 'submit'; button.textContent = 'Buscar informações →';
+      form.append(input, button);
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const query = input.value.trim();
+        window.location.href = `busca.html${query ? `?q=${encodeURIComponent(query)}` : ''}`;
+      });
+      search.append(copy, form);
+      grid.insertAdjacentElement('beforebegin', search);
     }
     const logos = document.querySelector('.logos');
     if (!logos || document.querySelector('.orion-home-updates')) return;
@@ -1140,9 +1229,18 @@
     links.replaceChildren();
     const heading = document.createElement('p');
     heading.className = 'aq-menu-index';
-    heading.textContent = 'Ferramenta de consulta · Home e opções A–Z';
+    heading.textContent = 'Hub de informações para estudantes';
     links.append(heading);
-    entries.forEach(([href, label, description]) => {
+    const groups = [
+      ['Consulta e escolhas', ['Home', 'Buscar informações', 'Profissões e faculdades', 'Vagas e Sisu', 'Comparar faculdades', 'Comparar notas', 'Entenda antes de escolher']],
+      ['Vestibulares e calendário', ['Calendário do Vestibulando', 'Vestibulares seriados', 'Listas de espera']],
+      ['Ferramentas de estudo', ['Plano de estudos', 'Cronômetro e Countdown ENEM', 'Alimentação e estudos']],
+      ['Área do estudante', ['Área do estudante', 'Favoritos e comparações', 'Criar cadastro']],
+      ['Outras informações', ['Bolsas e apoios', 'Carreiras militares', 'Estude no Exterior', 'Como usamos as informações', 'Privacidade e seus dados']]
+    ];
+    const byLabel = new Map(entries.map((entry) => [entry[1], entry]));
+    const added = new Set();
+    const appendLink = ([href, label, description]) => {
       const link = document.createElement('a');
       link.href = href;
       if (['Buscar informações', 'Vagas e Sisu', 'Área do estudante'].includes(label)) link.classList.add('aq-menu-priority');
@@ -1152,7 +1250,18 @@
       link.append(detail);
       if (href.split('?')[0] === currentPage) link.setAttribute('aria-current', 'page');
       links.append(link);
+      added.add(label);
+    };
+    groups.forEach(([title, labels]) => {
+      const available = labels.map((label) => byLabel.get(label)).filter(Boolean);
+      if (!available.length) return;
+      const groupTitle = document.createElement('p');
+      groupTitle.className = 'aq-menu-group';
+      groupTitle.textContent = title;
+      links.append(groupTitle);
+      available.forEach(appendLink);
     });
+    entries.filter((entry) => !added.has(entry[1])).forEach(appendLink);
   });
 
   const pagesDropdown = document.querySelector('#pagesDropdown');
