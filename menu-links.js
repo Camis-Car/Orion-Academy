@@ -238,7 +238,13 @@
       }
       .aq-menu-links .aq-menu-index{margin:0 2px 5px;color:#8a662b;font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase}
       .aq-menu-links a{min-height:50px;display:block}
+      .aq-menu-links .aq-menu-priority{border:1px solid rgba(185,137,61,.42);border-radius:14px;background:linear-gradient(135deg,#fffaf0,#f8e5bb);box-shadow:0 6px 15px rgba(31,48,72,.08)}
+      .aq-menu-links .aq-menu-priority:hover{border-color:#b9893d;background:#f7dfae}
+      .aq-menu-links .aq-menu-priority small{color:#715222!important;font-weight:600}
       .aq-menu-links a:focus-visible{outline:3px solid rgba(217,174,99,.55);outline-offset:2px}
+      :is(.button,.new-button,.next-page-button,.orion-theme-toggle){border-radius:14px!important}
+      body > header .nav-actions .button,.aq-mobile-login{border-radius:999px!important}
+      .orion-header-search{display:inline-grid;place-items:center;flex:0 0 auto;width:42px;height:42px;padding:0;border:1px solid rgba(217,174,99,.72);border-radius:50%;color:#f2ce8e;background:rgba(255,255,255,.04);box-shadow:0 5px 14px rgba(5,18,35,.18);transition:background .18s,color .18s,transform .18s,box-shadow .18s}.orion-header-search:hover{color:#fff;background:rgba(217,174,99,.16);box-shadow:0 8px 18px rgba(5,18,35,.28);transform:translateY(-1px)}.orion-header-search:focus-visible{outline:3px solid rgba(217,174,99,.72);outline-offset:3px}.orion-search-icon{position:relative;display:block;width:14px;height:14px;border:2px solid currentColor;border-radius:50%}.orion-search-icon:after{content:"";position:absolute;right:-5px;bottom:-4px;width:7px;height:2px;border-radius:2px;background:currentColor;transform:rotate(45deg);transform-origin:left center}@media(max-width:700px){body.orion-header-safe .orion-header-search{display:none!important}}
       .aq-mobile-login{display:none}
       /* O botão fica na borda direita e o conteúdo do cabeçalho reserva esse espaço. */
       body.orion-header-safe>header :is(.nav,.top){
@@ -358,8 +364,28 @@
     document.head.append(style);
   };
 
+  const addHeaderSearch = () => {
+    document.querySelectorAll('body > header').forEach((header) => {
+      if (header.querySelector('.orion-header-search')) return;
+      const target = header.querySelector('.nav-actions') || header.querySelector('.nav, .top');
+      if (!target) return;
+      const link = document.createElement('a');
+      link.className = 'orion-header-search';
+      link.href = 'busca.html';
+      link.setAttribute('aria-label', 'Buscar informações no site');
+      link.title = 'Buscar informações';
+      const icon = document.createElement('span');
+      icon.className = 'orion-search-icon';
+      icon.setAttribute('aria-hidden', 'true');
+      link.append(icon);
+      if (target.classList.contains('nav-actions')) target.prepend(link);
+      else target.append(link);
+    });
+  };
+
   injectMenuStyles();
   normalizeHeaders();
+  addHeaderSearch();
   injectThemeStyles();
   applyTheme(readTheme());
   addThemeControl();
@@ -391,6 +417,7 @@
     entries.forEach(([href, label, description]) => {
       const link = document.createElement('a');
       link.href = href;
+      if (['Buscar informações', 'Vagas e Sisu', 'Área do estudante'].includes(label)) link.classList.add('aq-menu-priority');
       link.append(document.createTextNode(label));
       const detail = document.createElement('small');
       detail.textContent = description;
