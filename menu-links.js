@@ -19,9 +19,10 @@
     ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
     ['entenda-escolhas.html', 'Entenda antes de escolher', 'Cotas, notas, campus e lista de espera'],
     ['favoritos.html', 'Favoritos e comparações', 'Cursos, faculdades e comparações salvas'],
+    ['como-usamos-informacoes.html', 'Como usamos as informações', 'Critérios, fontes e limites do hub'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Privacidade e seus dados': 99 };
+    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 98, 'Privacidade e seus dados': 99 };
     const firstPriority = priority[first[1]] ?? 4;
     const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
@@ -29,6 +30,98 @@
   });
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
   const themeStorageKey = 'orion-theme';
+  const dataPageProfiles = {
+    'faculdades-publicas.html': {
+      title: 'Instituições públicas',
+      description: 'Consulte instituições por estado, cidade e administração. A existência de uma instituição não confirma oferta de curso, vaga ou forma de ingresso.',
+      source: 'Cadastro e-MEC e Censo da Educação Superior',
+      url: 'https://emec.mec.gov.br/emec/nova-index/',
+      button: 'Consultar e-MEC ↗',
+      how: '.filters',
+      data: '.list'
+    },
+    'carreiras.html': {
+      title: 'Profissões e cursos',
+      description: 'Os resumos ajudam a conhecer áreas de estudo. As ofertas de curso devem ser confirmadas por instituição, campus, turno e processo seletivo.',
+      source: 'Portal Único de Acesso ao Ensino Superior · Sisu',
+      url: 'https://sisu.mec.gov.br/',
+      button: 'Consultar ofertas no Sisu ↗',
+      how: '.controls',
+      data: '#careerContent'
+    },
+    'plano-sisu.html': {
+      title: 'Vagas e modalidades do Sisu',
+      description: 'Consulte ofertas da chamada regular, vagas e modalidades. A consulta serve para pesquisa e não substitui a inscrição ou a classificação oficial.',
+      source: 'Portal Único de Acesso ao Ensino Superior · Sisu',
+      url: 'https://sisu.mec.gov.br/',
+      button: 'Abrir Sisu oficial ↗',
+      how: '.planner',
+      data: '#results'
+    },
+    'comparar-notas.html': {
+      title: 'Referências de nota e pesos',
+      description: 'A comparação usa somente registros e pesos disponíveis na base. Ela é uma referência de estudo e nunca uma previsão de aprovação.',
+      source: 'Portal Único de Acesso ao Ensino Superior · Sisu',
+      url: 'https://sisu.mec.gov.br/vagas',
+      button: 'Consultar Sisu ↗',
+      how: '.layout',
+      data: '#results'
+    },
+    'comparar-faculdades.html': {
+      title: 'Comparação de faculdades',
+      description: 'Compare informações da chamada regular do Sisu. Outros cursos, campi e formas de ingresso podem existir fora dessa seleção.',
+      source: 'Portal Único de Acesso ao Ensino Superior · Sisu',
+      url: 'https://sisu.mec.gov.br/',
+      button: 'Abrir Sisu oficial ↗',
+      how: '.selector',
+      data: '#results'
+    },
+    'vestibulares-seriados.html': {
+      title: 'Vestibulares seriados',
+      description: 'Cada processo possui regras, etapas, escalas de nota e vagas próprias. Os cartões da página levam à instituição responsável por cada processo.',
+      source: 'Páginas e editais das instituições responsáveis',
+      url: '#programs-title',
+      button: 'Ver fontes por processo ↓',
+      how: '.intro',
+      data: '#serial-reference-title'
+    },
+    'calendario-vestibulando.html': {
+      title: 'Calendário do vestibulando',
+      description: 'Use as datas para se organizar. Inscrições, provas e chamadas só devem ser consideradas definitivas depois da confirmação no edital correspondente.',
+      source: 'Organizadoras e instituições responsáveis',
+      url: '#datesTitle',
+      button: 'Ver fontes no calendário ↓',
+      how: '.tools',
+      data: '#timeline'
+    },
+    'listas-espera-rj.html': {
+      title: 'Listas de espera e chamadas',
+      description: 'As chamadas variam por instituição, curso e modalidade. A presença em uma lista não garante vaga, matrícula ou validação de documentos.',
+      source: 'Canais de ingresso das instituições',
+      url: '#orion-page-data',
+      button: 'Ver canais oficiais ↓',
+      how: '.heading',
+      data: '.grid'
+    },
+    'painel-bolsas.html': {
+      title: 'Bolsas e apoios',
+      description: 'Bolsas, financiamentos e apoios têm critérios próprios e podem mudar a cada edição. Use esta página para localizar os canais de confirmação.',
+      source: 'Portal Único de Acesso ao Ensino Superior · MEC',
+      url: 'https://acessounico.mec.gov.br/',
+      button: 'Abrir Acesso Único ↗',
+      how: '.selector',
+      data: '#routeCards'
+    },
+    'carreiras-militares.html': {
+      title: 'Carreiras militares',
+      description: 'Idade, vagas, etapas, requisitos físicos e critérios de seleção são definidos por edital e podem mudar a cada processo.',
+      source: 'Portais oficiais de ingresso das Forças Armadas',
+      url: 'https://www.gov.br/defesa/pt-br/assuntos/forcas-armadas',
+      button: 'Consultar portais oficiais ↗',
+      how: '.intro',
+      data: '.grid'
+    }
+  };
 
   const readTheme = () => {
     try {
@@ -383,9 +476,157 @@
     });
   };
 
+  const injectProfessionalStyles = () => {
+    if (document.getElementById('orionProfessionalStyles')) return;
+    const style = document.createElement('style');
+    style.id = 'orionProfessionalStyles';
+    style.textContent = `
+      main :is(input,select,textarea){border-radius:12px!important}
+      main :is(.submit,.add,.load,.action,.save,.document-action){border-radius:14px!important}
+      main :is(.filter,.filter-button,.choice-chip){border-radius:999px!important}
+      main :is(.card,.institution,.offer,.result,.program-card,.event,.second-card,.follow,.quick,.benefit,.career,.college-card){border-radius:16px!important}
+      main :is(.tag,.badge,.pill,.official-badge){border-radius:999px!important}
+      .orion-data-trust{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:center;margin:26px 0 13px;padding:21px 23px;border:1px solid #d9bc80;border-radius:18px;background:linear-gradient(125deg,#fffaf0,#f2f7fb);box-shadow:0 10px 24px rgba(13,29,53,.07);color:#17304b}
+      .orion-data-trust-kicker{display:block;margin-bottom:7px;color:#8a6525;font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase}
+      .orion-data-trust h2{margin:0;color:#102a48;font:600 clamp(22px,2.6vw,30px)/1.12 "Playfair Display",Georgia,serif;letter-spacing:-.025em}
+      .orion-data-trust p{max-width:770px;margin:8px 0 0;color:#4d6279;font-size:13px;line-height:1.65}
+      .orion-data-trust-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.orion-data-trust-meta span{display:inline-flex;align-items:center;min-height:27px;padding:0 9px;border:1px solid #d9c18e;border-radius:999px;color:#604a24;background:#fffdf8;font-size:10px;font-weight:800}.orion-data-trust-meta span:first-child{color:#1e6048;border-color:#b8d8c4;background:#eff8f1}
+      .orion-data-trust-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 15px;border:1px solid #b9893d;border-radius:999px;color:#132a45!important;background:#e8c985;font-size:12px;font-weight:800;text-align:center;white-space:nowrap;box-shadow:0 7px 14px rgba(104,74,27,.12)}.orion-data-trust-action:hover{background:#f2dba8}.orion-data-trust-action:focus-visible{outline:3px solid rgba(185,137,61,.72);outline-offset:3px}
+      .orion-page-index{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:12px 14px;border:1px solid #dce5ec;border-radius:14px;background:#fff;color:#50647a}.orion-page-index b{margin-right:3px;color:#193a5f;font-size:11px}.orion-page-index a{padding:6px 9px;border-radius:999px;color:#234f7a!important;background:#edf4fa;font-size:11px;font-weight:800}.orion-page-index a:hover{color:#183e64!important;background:#e0edf8}
+      .orion-home-updates{padding:0 0 34px;background:#fbfaf7}.orion-home-updates-inner{display:grid;grid-template-columns:minmax(225px,.72fr) minmax(0,1.28fr);gap:25px;align-items:center;padding:23px 27px;border:1px solid #d9e2eb;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(13,29,53,.05)}.orion-home-updates h2{margin:5px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,32px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-update-list{display:grid;gap:8px}.orion-update{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid #e1e8ee;border-radius:13px;color:#1c4f7c;background:#fbfdff;font-size:12px;font-weight:800}.orion-update:hover{border-color:#cba25c;background:#fffaf0}.orion-update time{color:#8a6525;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
+      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}}
+    `;
+    document.head.append(style);
+  };
+
+  const addDataTrustPanel = () => {
+    const profile = dataPageProfiles[currentPage];
+    const main = document.querySelector('main');
+    if (!profile || !main || document.getElementById('orion-data-trust')) return;
+
+    const make = (tag, className, text) => {
+      const element = document.createElement(tag);
+      if (className) element.className = className;
+      if (text) element.textContent = text;
+      return element;
+    };
+    const setTarget = (selector, id) => {
+      const target = document.querySelector(selector);
+      if (!target) return null;
+      if (!target.id) target.id = id;
+      return `#${target.id}`;
+    };
+
+    const panel = make('section', 'orion-data-trust');
+    panel.id = 'orion-data-trust';
+    panel.setAttribute('aria-label', 'Fonte e atualização dos dados');
+    const copy = make('div', 'orion-data-trust-copy');
+    copy.append(make('span', 'orion-data-trust-kicker', 'Fonte e atualização'));
+    copy.append(make('h2', '', profile.title));
+    copy.append(make('p', '', profile.description));
+    const meta = make('div', 'orion-data-trust-meta');
+    meta.append(make('span', '', '✓ Fonte oficial'));
+    meta.append(make('span', '', 'Revisado em 31/08/2026'));
+    meta.append(make('span', '', 'Regras, vagas, notas e datas podem mudar'));
+    copy.append(meta);
+    const action = make('a', 'orion-data-trust-action', profile.button);
+    action.href = profile.url;
+    if (/^https?:/i.test(profile.url)) {
+      action.target = '_blank';
+      action.rel = 'noopener noreferrer';
+    }
+    action.setAttribute('aria-label', `${profile.button.replace(/ [↗↓]$/, '')}: ${profile.source}`);
+    panel.append(copy, action);
+
+    const howTarget = setTarget(profile.how, 'orion-how-it-works');
+    const dataTarget = setTarget(profile.data, 'orion-page-data');
+    const index = make('nav', 'orion-page-index');
+    index.setAttribute('aria-label', 'Nesta página');
+    index.append(make('b', '', 'Nesta página'));
+    [[ '#orion-data-trust', 'Fonte e atualização' ], [howTarget, 'Como funciona'], [dataTarget, 'Dados e resultados']].forEach(([href, label]) => {
+      if (!href) return;
+      const link = make('a', '', label);
+      link.href = href;
+      index.append(link);
+    });
+    main.prepend(index);
+    main.prepend(panel);
+  };
+
+  const refreshHomeHub = () => {
+    if (currentPage !== 'index.html') return;
+    const grid = document.querySelector('.benefit-grid');
+    if (grid && !grid.dataset.orionHubReady) {
+      const topics = [
+        ['busca.html', '⌕', 'Buscar informações', 'Pesquise cursos, estados, universidades, vestibulares e termos importantes.'],
+        ['plano-sisu.html', '◎', 'Vagas e Sisu', 'Consulte ofertas, modalidades e referências da chamada regular.'],
+        ['faculdades-publicas.html', '⌘', 'Faculdades públicas', 'Encontre instituições por estado, cidade e administração.'],
+        ['carreiras.html', '⌁', 'Profissões e cursos', 'Conheça áreas, cursos e informações para ampliar sua pesquisa.'],
+        ['calendario-vestibulando.html', '◈', 'Vestibulares e calendário', 'Acompanhe provas, editais, etapas e processos seriados.'],
+        ['plano-estudos.html', '✦', 'Ferramentas de estudo', 'Organize a rotina, registre ideias e priorize conteúdos.']
+      ];
+      grid.replaceChildren();
+      topics.forEach(([href, icon, title, description]) => {
+        const link = document.createElement('a');
+        link.className = 'benefit';
+        link.href = href;
+        const iconBox = document.createElement('div');
+        iconBox.className = 'icon-box';
+        iconBox.setAttribute('aria-hidden', 'true');
+        iconBox.textContent = icon;
+        const heading = document.createElement('h3');
+        heading.textContent = title;
+        const text = document.createElement('p');
+        text.textContent = description;
+        link.append(iconBox, heading, text);
+        grid.append(link);
+      });
+      grid.dataset.orionHubReady = 'true';
+    }
+    const logos = document.querySelector('.logos');
+    if (!logos || document.querySelector('.orion-home-updates')) return;
+    const section = document.createElement('section');
+    section.className = 'orion-home-updates';
+    section.setAttribute('aria-labelledby', 'orion-updates-title');
+    const wrap = document.createElement('div');
+    wrap.className = 'wrap orion-home-updates-inner';
+    const intro = document.createElement('div');
+    const eyebrow = document.createElement('span');
+    eyebrow.className = 'eyebrow';
+    eyebrow.textContent = 'Atualizações recentes';
+    const heading = document.createElement('h2');
+    heading.id = 'orion-updates-title';
+    heading.textContent = 'Informações revisadas para sua consulta.';
+    intro.append(eyebrow, heading);
+    const list = document.createElement('div');
+    list.className = 'orion-update-list';
+    [
+      ['31 ago. 2026', 'Padrão de fontes, revisões e avisos nas páginas de dados', 'como-usamos-informacoes.html'],
+      ['27 ago. 2026', 'Referências de vagas e modalidades do Sisu 2026', 'plano-sisu.html'],
+      ['27 ago. 2026', 'Calendário do vestibulando com links de confirmação', 'calendario-vestibulando.html']
+    ].forEach(([date, label, href]) => {
+      const link = document.createElement('a');
+      link.className = 'orion-update';
+      link.href = href;
+      const time = document.createElement('time');
+      time.dateTime = date === '31 ago. 2026' ? '2026-08-31' : '2026-08-27';
+      time.textContent = date;
+      const text = document.createElement('span');
+      text.textContent = label;
+      link.append(time, text);
+      list.append(link);
+    });
+    wrap.append(intro, list);
+    section.append(wrap);
+    logos.insertAdjacentElement('afterend', section);
+  };
+
   injectMenuStyles();
   normalizeHeaders();
   addHeaderSearch();
+  injectProfessionalStyles();
+  addDataTrustPanel();
+  refreshHomeHub();
   injectThemeStyles();
   applyTheme(readTheme());
   addThemeControl();
