@@ -20,9 +20,10 @@
     ['entenda-escolhas.html', 'Entenda antes de escolher', 'Cotas, notas, campus e lista de espera'],
     ['favoritos.html', 'Favoritos e comparações', 'Cursos, faculdades e comparações salvas'],
     ['como-usamos-informacoes.html', 'Como usamos as informações', 'Critérios, fontes e limites do hub'],
+    ['equipe-editorial.html', 'Equipe editorial e metodologia', 'Como revisamos fontes e corrigimos informações'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 98, 'Privacidade e seus dados': 99 };
+    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, 'Privacidade e seus dados': 99 };
     const firstPriority = priority[first[1]] ?? 4;
     const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
