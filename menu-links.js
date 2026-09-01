@@ -1226,7 +1226,8 @@
       notice.id = 'orionLoadCareerOffers';
       notice.className = 'orion-data-trust';
       notice.setAttribute('aria-label', 'Carregar ofertas nacionais por estado');
-      notice.innerHTML = '<div class="orion-data-trust-copy"><span class="orion-data-trust-kicker">Consulta sob demanda</span><h2>Encontre ofertas por estado e instituição.</h2><p>O catálogo nacional de vagas será aberto somente quando você pedir a pesquisa. Isso deixa esta página mais rápida no celular.</p></div><button class="orion-data-trust-action" type="button" data-orion-needs-sisu>Carregar catálogo nacional</button>';
+      const states = window.ORION_SISU_ESTADOS_DISPONIVEIS || ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
+      notice.innerHTML = `<div class="orion-data-trust-copy"><span class="orion-data-trust-kicker">Consulta sob demanda</span><h2>Encontre ofertas por estado e instituição.</h2><p>Escolha um estado para baixar apenas as vagas daquela UF. A consulta nacional continua disponível quando necessária.</p></div><label for="orionCareerState" style="display:grid;gap:6px;color:#17304b;font-size:11px;font-weight:800">Estado da consulta<select id="orionCareerState" data-orion-sisu-state style="min-height:42px;padding:0 12px;border:1px solid #b9893d;border-radius:999px;background:#fff;color:#17304b;font:inherit"><option value="">Escolha um estado</option>${states.map((state) => `<option value="${state}">${state}</option>`).join('')}</select></label><button class="orion-data-trust-action" type="button" data-orion-needs-sisu>Carregar catálogo nacional</button>`;
       target.prepend(notice);
     }
   }

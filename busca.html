@@ -44,5 +44,28 @@
       form.addEventListener('submit',event=>{event.preventDefault();search()});input.addEventListener('search',search);const initial=new URLSearchParams(location.search).get('q');if(initial){input.value=initial;search()}
     })();
   </script>
+  <script>
+    (() => {
+      const form = document.getElementById('searchForm');
+      const input = document.getElementById('query');
+      const count = document.getElementById('resultCount');
+      const names = { acre: 'AC', alagoas: 'AL', amapa: 'AP', amazonas: 'AM', bahia: 'BA', ceara: 'CE', 'distrito federal': 'DF', 'espirito santo': 'ES', goias: 'GO', maranhao: 'MA', 'mato grosso': 'MT', 'mato grosso do sul': 'MS', 'minas gerais': 'MG', para: 'PA', paraiba: 'PB', parana: 'PR', pernambuco: 'PE', piaui: 'PI', 'rio de janeiro': 'RJ', 'rio grande do norte': 'RN', 'rio grande do sul': 'RS', rondonia: 'RO', roraima: 'RR', 'santa catarina': 'SC', 'sao paulo': 'SP', sergipe: 'SE', tocantins: 'TO' };
+      const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
+      const stateInText = (value) => Object.entries(names).sort(([a], [b]) => b.length - a.length).find(([name]) => normalize(value).includes(name))?.[1] || '';
+      form.addEventListener('submit', async (event) => {
+        const state = stateInText(input.value);
+        if (!state || window.SISU_2026_NACIONAL || !window.orionLoadSisuState) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        count.textContent = `Carregando as ofertas do Sisu em ${state}…`;
+        try {
+          await window.orionLoadSisuState(state);
+          form.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
+        } catch (_) {
+          count.textContent = 'Não foi possível carregar as ofertas desse estado agora. Tente novamente.';
+        }
+      }, true);
+    })();
+  </script>
 </body>
 </html>
