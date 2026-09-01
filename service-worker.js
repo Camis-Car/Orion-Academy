@@ -1,4 +1,4 @@
-const CACHE_NAME = 'orion-academy-pwa-v57';
+const CACHE_NAME = 'orion-academy-pwa-v58';
 const CORE_FILES = [
   './',
   './index.html',
@@ -8,6 +8,7 @@ const CORE_FILES = [
   './menu-links.js',
   './sisu-loader.js',
   './acompanhamentos.js',
+  './dados-revisao/fontes-oficiais-status.json',
   './pwa.js',
   './cadastro.html',
   './minha-jornada.html',
@@ -49,6 +50,14 @@ self.addEventListener('fetch', (event) => {
       caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
       return response;
     }).catch(async () => (await caches.match(request)) || (await caches.match('./offline.html'))));
+    return;
+  }
+
+  if (url.pathname.includes('/dados-revisao/')) {
+    event.respondWith(fetch(request).then((response) => {
+      if (response && response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
+      return response;
+    }).catch(() => caches.match(request)));
     return;
   }
 

@@ -1,0 +1,43 @@
+name: Revisar fontes oficiais
+
+on:
+  schedule:
+    - cron: '0 09 1,16 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  revisar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Verificar fontes externas
+        run: node scripts/revisar-fontes-oficiais.mjs
+      - name: Registrar resultado da revisão
+        id: changes
+        run: |
+          if git diff --quiet -- dados-revisao; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "Orion Academy Bot"
+            git config user.email "actions@github.com"
+            git add dados-revisao
+            git commit -m "chore: revisa fontes oficiais"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Abrir alerta para mudanças detectadas
+        if: steps.changes.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          existing=$(gh issue list --state open --search "Revisão editorial: fontes oficiais com alterações in:title" --json number --jq 'length')
+          if grep -q "## Itens para revisão editorial" dados-revisao/pendencias-fontes.md && [ "$existing" = "0" ]; then
+            gh issue create --title "Revisão editorial: fontes oficiais com alterações" --body-file dados-revisao/pendencias-fontes.md
+          fi

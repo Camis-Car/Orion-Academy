@@ -1,0 +1,12 @@
+{
+  "versao": 1,
+  "verificadoEm": null,
+  "frequencia": "1º e 16º dia de cada mês",
+  "resumo": {
+    "fontes": 0,
+    "disponiveis": 0,
+    "mudancasDetectadas": 0,
+    "indisponiveis": 0
+  },
+  "fontes": []
+}
