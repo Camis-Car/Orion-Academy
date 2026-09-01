@@ -5,16 +5,15 @@
     ['busca.html', 'Buscar informações', 'Pesquise cursos, faculdades e processos'],
     ['cadastro.html', 'Criar cadastro', 'Reúna consultas e informações salvas'],
     ['minha-jornada.html', 'Área do estudante', 'Consultas, referências e escolhas salvas'],
-    ['carreiras.html', 'Profissões', 'Informações sobre áreas e cursos'],
+    ['carreiras.html', 'Profissões e faculdades', 'Cursos, instituições públicas e ofertas por estado'],
     ['carreiras-militares.html', 'Carreiras militares', 'Editais, critérios e formas de ingresso'],
-    ['faculdades-publicas.html', 'Faculdades públicas', 'Instituições em todo o Brasil'],
     ['comparar-faculdades.html', 'Comparar faculdades', 'Compare ofertas, campus e vagas'],
     ['plano-sisu.html', 'Vagas e Sisu', 'Vagas e modalidades do Sisu'],
     ['comparar-notas.html', 'Comparar notas', 'Cálculos e referências do Sisu'],
     ['listas-espera-rj.html', 'Listas de espera', 'Chamadas e processos de ingresso'],
     ['calendario-vestibulando.html', 'Calendário do Vestibulando', 'Datas, provas e segundas fases'],
     ['vestibulares-seriados.html', 'Vestibulares seriados', 'Processos em etapas e fontes oficiais'],
-    ['countdown-enem.html', 'Countdown ENEM', 'Contagem regressiva para os dias de prova'],
+    ['cronometro-estudos.html', 'Cronômetro e Countdown ENEM', 'Foco de estudo e contagem para os dias de prova'],
     ['painel-bolsas.html', 'Bolsas e apoios', 'Informações sobre bolsas e apoios'],
     ['estude-no-exterior.html', 'Estude no Exterior', 'Guias, processos e fontes oficiais'],
     ['entenda-escolhas.html', 'Entenda antes de escolher', 'Cotas, notas, campus e lista de espera'],
@@ -497,8 +496,11 @@
       .orion-saved-filter-note{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px;padding:11px 12px;border:1px solid #dbe5ee;border-radius:12px;color:#52677c;background:#f7fbff;font-size:11px;line-height:1.45}.orion-saved-filter-note strong{color:#245d4b}.orion-saved-filter-note button{padding:6px 9px;cursor:pointer;border:1px solid #b9cbd9;border-radius:999px;color:#244866;background:#fff;font:800 10px/1 "DM Sans",Arial,sans-serif}.orion-saved-filter-note button:hover{border-color:#b9893d;color:#785719}
       .orion-print-toolbar{display:flex;justify-content:flex-end;margin:0 0 18px}.orion-print-button{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;cursor:pointer;border:1px solid #b88940;border-radius:999px;color:#183b5d;background:#fffaf0;font:800 11px/1 "DM Sans",Arial,sans-serif;box-shadow:0 5px 12px rgba(44,63,83,.08)}.orion-print-button:hover{background:#f5dfad}.orion-print-button:focus-visible{outline:3px solid rgba(185,137,61,.55);outline-offset:3px}
       .orion-student-timeline{margin:30px 0;padding:25px;border:1px solid #dbe4ec;border-radius:18px;background:linear-gradient(135deg,#fff,#f6faff);box-shadow:0 10px 25px rgba(13,29,53,.05)}.orion-student-timeline-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-end;margin-bottom:18px}.orion-student-timeline h2{margin:6px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,31px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-student-timeline-head p{max-width:450px;margin:0;color:#627589;font-size:11px;line-height:1.55;text-align:right}.orion-timeline-list{display:grid;gap:10px}.orion-timeline-item{display:grid;grid-template-columns:31px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px;border:1px solid #e0e8ee;border-radius:13px;background:#fff;color:#173a5e}.orion-timeline-icon{display:grid;place-items:center;width:31px;height:31px;border-radius:50%;color:#71521f;background:#f8ead0;font-size:14px}.orion-timeline-copy{min-width:0}.orion-timeline-copy b{display:block;overflow:hidden;color:#183b5d;font-size:12px;text-overflow:ellipsis;white-space:nowrap}.orion-timeline-copy span{display:block;margin-top:3px;color:#6a7b8d;font-size:10px;line-height:1.4}.orion-timeline-item time{color:#87682f;font-size:10px;font-weight:800;white-space:nowrap}.orion-timeline-empty{padding:15px;border:1px dashed #cbd9e3;border-radius:13px;color:#61758a;background:#fff;font-size:12px;line-height:1.6}.orion-timeline-item:hover{border-color:#cfab68;background:#fffdf8}
+      .orion-course-finder{margin:0 0 38px;padding:25px;border:1px solid #d8e2eb;border-radius:18px;background:linear-gradient(140deg,#fff,#f5f9fc);box-shadow:0 12px 28px rgba(13,29,53,.05)}.orion-course-finder-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:18px}.orion-course-finder h2{margin:6px 0 0;color:#102a48;font:600 clamp(24px,2.8vw,34px)/1.12 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-course-finder-head p{max-width:460px;margin:0;color:#5f7286;font-size:12px;line-height:1.6;text-align:right}.orion-course-fields{display:grid;grid-template-columns:1.2fr .65fr 1fr;gap:11px}.orion-course-fields label{display:grid;gap:6px;color:#425a73;font-size:11px;font-weight:800}.orion-course-fields input,.orion-course-fields select{min-height:44px;padding:0 11px;border:1px solid #cfdbe5;border-radius:11px;color:#17243a;background:#fff;font:600 12px "DM Sans",Arial,sans-serif}.orion-course-result{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.orion-course-result .orion-offer{padding:14px;border:1px solid #dfe7ed;border-radius:12px;background:#fff}.orion-offer b{display:block;color:#173a5e;font-size:12px}.orion-offer span{display:block;margin-top:4px;color:#607387;font-size:10px;line-height:1.45}.orion-course-empty{grid-column:1/-1;padding:14px;border:1px dashed #c8d7e2;border-radius:12px;color:#596f84;background:#fff;font-size:12px;line-height:1.55}.orion-course-action{display:inline-flex;align-items:center;justify-content:center;min-height:38px;margin-top:16px;padding:0 12px;border:1px solid #b98a40;border-radius:999px;color:#173a5e;background:#fff8ea;font-size:11px;font-weight:800}.orion-course-action:hover{background:#f6e1ae}
+      .orion-error-notebook{margin:48px 0 0;padding:25px;border:1px solid #e7d3cf;border-radius:18px;background:linear-gradient(135deg,#fff9f8,#fff)}.orion-error-notebook-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:17px}.orion-error-notebook h2{margin:6px 0 0;color:#6e3631;font:600 clamp(24px,2.8vw,33px)/1.12 "Playfair Display",Georgia,serif}.orion-error-notebook-head p{max-width:465px;margin:0;color:#765f5b;font-size:12px;line-height:1.6;text-align:right}.orion-error-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}.orion-error-summary div{padding:13px;border:1px solid #eadbd8;border-radius:12px;background:#fff}.orion-error-summary b{display:block;color:#8e443c;font:600 28px/1 "Playfair Display",Georgia,serif}.orion-error-summary span{display:block;margin-top:5px;color:#746b6a;font-size:10px;line-height:1.4}.orion-error-list{display:grid;gap:9px}.orion-error-entry{padding:13px;border:1px solid #eadeda;border-radius:12px;background:#fff}.orion-error-entry b{display:block;color:#173a5e;font-size:12px}.orion-error-entry span{display:block;margin-top:5px;color:#72625f;font-size:11px;line-height:1.5}.orion-error-entry em{display:inline-block;margin:8px 5px 0 0;padding:4px 7px;border-radius:999px;color:#8b413a;background:#f9e6e3;font-size:10px;font-style:normal;font-weight:800}.orion-error-empty{padding:15px;border:1px dashed #d7bebb;border-radius:12px;color:#735f5c;background:#fff;font-size:12px;line-height:1.6}
+      .orion-enem-countdown{margin:38px 0;padding:25px;border:1px solid #d8c6a3;border-radius:18px;background:linear-gradient(135deg,#fff,#fffaf0);box-shadow:0 12px 26px rgba(13,29,53,.05)}.orion-enem-countdown-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:17px}.orion-enem-countdown h2{margin:6px 0 0;color:#102a48;font:600 clamp(25px,2.8vw,35px)/1.12 "Playfair Display",Georgia,serif}.orion-enem-countdown-head p{max-width:445px;margin:0;color:#607286;font-size:12px;line-height:1.6;text-align:right}.orion-countdown-clock{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.orion-countdown-unit{padding:15px 8px;border:1px solid #dfe5ea;border-radius:12px;background:#fff;text-align:center}.orion-countdown-unit b{display:block;color:#173a5e;font:600 clamp(28px,4vw,45px)/1 "Playfair Display",Georgia,serif;font-variant-numeric:tabular-nums}.orion-countdown-unit span{display:block;margin-top:6px;color:#6b7b8e;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.orion-countdown-days{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.orion-countdown-days div{padding:12px;border-left:3px solid #d9ae63;border-radius:0 10px 10px 0;background:#fff}.orion-countdown-days b{display:block;color:#173a5e;font-size:11px}.orion-countdown-days span{display:block;margin-top:4px;color:#607286;font-size:10px;line-height:1.5}
       @media print{@page{margin:12mm}.aq-menu-toggle,.aq-menu-backdrop,.aq-mobile-login,.orion-header-search,.orion-print-toolbar,footer,.orion-page-index,.theme-control{display:none!important}body{background:#fff!important;color:#111!important}body>header,body>header[data-orion-unified="true"]{min-height:auto!important;color:#111!important;background:#fff!important;border-bottom:1px solid #bbb!important}body>header :is(.nav,.top),body>header[data-orion-unified="true"] :is(.nav,.top){width:100%!important;min-height:54px!important;padding:0!important;color:#111!important}body>header .brand,body>header[data-orion-unified="true"] .brand{color:#111!important}body>header .back,body>header .public-link{display:none!important}.hero{padding:22px 0!important;color:#111!important;background:#fff!important}.hero:after{display:none!important}.hero :is(h1,h2,h3,p,.eyebrow){color:#111!important}.hero p{max-width:none!important}.wrap{width:100%!important}.orion-data-trust{box-shadow:none!important}.orion-data-trust-action{box-shadow:none!important}main{padding:18px 0!important}.orion-print-results :is(.planner,.selector,#comparisonForm,#studyForm,.add-card){display:none!important}.results,.result,.offer,.card,.event,.checklist,.orion-data-trust,.orion-student-timeline{break-inside:avoid!important;box-shadow:none!important}a{color:#111!important;text-decoration:none!important}.results[hidden]{display:none!important}}
-      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}.orion-saved-filter-note,.orion-student-timeline-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}}
+      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}.orion-saved-filter-note,.orion-student-timeline-head,.orion-course-finder-head,.orion-error-notebook-head,.orion-enem-countdown-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p,.orion-course-finder-head p,.orion-error-notebook-head p,.orion-enem-countdown-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}.orion-course-fields,.orion-course-result,.orion-error-summary,.orion-countdown-days{grid-template-columns:1fr}.orion-countdown-clock{gap:6px}.orion-countdown-unit{padding:12px 4px}.orion-countdown-unit b{font-size:29px}}
     `;
     document.head.append(style);
   };
@@ -566,8 +568,7 @@
       const topics = [
         ['busca.html', '⌕', 'Buscar informações', 'Pesquise cursos, estados, universidades, vestibulares e termos importantes.'],
         ['plano-sisu.html', '◎', 'Vagas e Sisu', 'Consulte ofertas, modalidades e referências da chamada regular.'],
-        ['faculdades-publicas.html', '⌘', 'Faculdades públicas', 'Encontre instituições por estado, cidade e administração.'],
-        ['carreiras.html', '⌁', 'Profissões e cursos', 'Conheça áreas, cursos e informações para ampliar sua pesquisa.'],
+        ['carreiras.html', '⌁', 'Profissões e faculdades', 'Conheça áreas, cursos e encontre ofertas por estado e instituição.'],
         ['calendario-vestibulando.html', '◈', 'Vestibulares e calendário', 'Acompanhe provas, editais, etapas e processos seriados.'],
         ['plano-estudos.html', '✦', 'Ferramentas de estudo', 'Organize a rotina, registre ideias e priorize conteúdos.']
       ];
@@ -886,6 +887,199 @@
     render();
   };
 
+  const addIntegratedCourseFinder = () => {
+    if (currentPage !== 'carreiras.html' || document.getElementById('orion-course-finder')) return;
+    const offers = Array.isArray(window.SISU_2026_NACIONAL?.ofertas) ? window.SISU_2026_NACIONAL.ofertas : [];
+    const publicInstitutions = Array.isArray(window.INSTITUICOES_PUBLICAS_2024) ? window.INSTITUICOES_PUBLICAS_2024 : [];
+    const main = document.querySelector('main');
+    const anchor = document.querySelector('.area-summary');
+    if (!main || !anchor || !offers.length) return;
+
+    document.title = 'Profissões e faculdades públicas — Orion Academy';
+    const heroTitle = document.querySelector('.hero h1');
+    const heroCopy = document.querySelector('.hero p');
+    if (heroTitle) heroTitle.textContent = 'Profissões, cursos e faculdades públicas.';
+    if (heroCopy) heroCopy.textContent = 'Conheça áreas de estudo e localize, no mesmo lugar, ofertas de cursos e instituições públicas por estado e faculdade.';
+
+    const make = (tag, className, text) => {
+      const node = document.createElement(tag);
+      if (className) node.className = className;
+      if (text) node.textContent = text;
+      return node;
+    };
+    const section = make('section', 'orion-course-finder');
+    section.id = 'orion-course-finder';
+    const head = make('div', 'orion-course-finder-head');
+    const intro = document.createElement('div');
+    const eyebrow = make('span', 'eyebrow', 'Pesquisa integrada');
+    eyebrow.style.color = '#a77a34';
+    const title = make('h2', '', 'Encontre curso, estado e faculdade.');
+    intro.append(eyebrow, title);
+    head.append(intro, make('p', '', 'Escolha um curso, uma UF e, se desejar, uma faculdade. Os resultados usam as ofertas carregadas da chamada regular do Sisu 2026.'));
+    const fields = make('div', 'orion-course-fields');
+    const buildField = (labelText, control) => {
+      const label = make('label', '', labelText);
+      label.append(control);
+      fields.append(label);
+    };
+    const course = document.createElement('input');
+    course.type = 'search'; course.id = 'orionFinderCourse'; course.placeholder = 'Ex.: Medicina'; course.setAttribute('list', 'orionFinderCourses');
+    const courseList = document.createElement('datalist');
+    courseList.id = 'orionFinderCourses';
+    [...new Set(offers.map((offer) => offer.curso).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR')).forEach((name) => {
+      const option = document.createElement('option'); option.value = name; courseList.append(option);
+    });
+    const state = document.createElement('select'); state.id = 'orionFinderState';
+    const allStates = make('option', '', 'Todos os estados'); allStates.value = ''; state.append(allStates);
+    [...new Set(offers.map((offer) => offer.uf).filter(Boolean))].sort().forEach((uf) => { const option = make('option', '', uf); option.value = uf; state.append(option); });
+    const institution = document.createElement('select'); institution.id = 'orionFinderInstitution';
+    buildField('Curso ou profissão', course); buildField('Estado', state); buildField('Faculdade pública', institution);
+    const result = make('div', 'orion-course-result');
+    const action = make('a', 'orion-course-action', 'Abrir consulta completa de vagas →');
+    action.href = 'plano-sisu.html';
+    section.append(head, fields, courseList, result, action);
+    anchor.insertAdjacentElement('beforebegin', section);
+
+    const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR').trim();
+    const updateInstitutions = () => {
+      const previous = institution.value;
+      institution.replaceChildren();
+      const all = make('option', '', state.value ? 'Todas as faculdades do estado' : 'Escolha primeiro um estado'); all.value = ''; institution.append(all);
+      institution.disabled = !state.value;
+      const names = [...new Set([
+        ...offers.filter((offer) => !state.value || offer.uf === state.value).map((offer) => offer.instituicao),
+        ...publicInstitutions.filter((item) => state.value && item.uf === state.value).map((item) => item.nome)
+      ].filter(Boolean))].sort((a, b) => a.localeCompare(b, 'pt-BR'));
+      names.forEach((name) => { const option = make('option', '', name); option.value = name; institution.append(option); });
+      if ([...institution.options].some((option) => option.value === previous)) institution.value = previous;
+    };
+    const render = () => {
+      const courseQuery = normalize(course.value);
+      const matches = offers.filter((offer) => (!courseQuery || normalize(offer.curso).includes(courseQuery)) && (!state.value || offer.uf === state.value) && (!institution.value || offer.instituicao === institution.value));
+      result.replaceChildren();
+      if (!courseQuery && !state.value && !institution.value) {
+        result.append(make('div', 'orion-course-empty', 'Comece escolhendo uma profissão, um estado ou uma faculdade para ver as ofertas disponíveis.'));
+      } else if (!matches.length) {
+        result.append(make('div', 'orion-course-empty', 'Nenhuma oferta do Sisu 2026 foi localizada com estes filtros. Isso não significa que o curso ou a instituição não existam: confira o edital e outras formas de ingresso.'));
+      } else {
+        matches.slice(0, 12).forEach((offer) => {
+          const card = make('article', 'orion-offer');
+          card.append(make('b', '', offer.curso || 'Curso'), make('span', '', [offer.instituicao, offer.sigla, offer.campus, offer.cidade, offer.uf].filter(Boolean).join(' · ')));
+          result.append(card);
+        });
+        if (matches.length > 12) result.append(make('div', 'orion-course-empty', `${matches.length} ofertas encontradas. Mostramos as primeiras 12; abra a consulta completa para ver todas.`));
+      }
+      const params = new URLSearchParams();
+      if (course.value.trim()) params.set('curso', course.value.trim());
+      if (state.value) params.set('uf', state.value);
+      if (institution.value) params.set('instituicao', institution.value);
+      action.href = `plano-sisu.html${params.size ? `?${params}` : ''}`;
+      const locationParams = new URLSearchParams(window.location.search);
+      ['curso', 'uf', 'instituicao'].forEach((key) => locationParams.delete(key));
+      params.forEach((value, key) => locationParams.set(key, value));
+      window.history.replaceState(null, '', `carreiras.html${locationParams.size ? `?${locationParams}` : ''}${window.location.hash}`);
+    };
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('curso')) course.value = params.get('curso');
+    if ([...state.options].some((option) => option.value === params.get('uf'))) state.value = params.get('uf');
+    updateInstitutions();
+    if ([...institution.options].some((option) => option.value === params.get('instituicao'))) institution.value = params.get('instituicao');
+    [course, institution].forEach((field) => field.addEventListener('input', render));
+    state.addEventListener('change', () => { updateInstitutions(); render(); });
+    main.addEventListener('click', (event) => {
+      const card = event.target.closest('.career');
+      if (!card || event.target.closest('a,button,summary,input,select')) return;
+      const careerName = card.querySelector('h3')?.textContent?.trim();
+      if (!careerName) return;
+      course.value = careerName; render(); section.scrollIntoView({ behavior: 'smooth', block: 'start' }); course.focus();
+    });
+    render();
+  };
+
+  const addErrorNotebookToQuestions = () => {
+    if (currentPage !== 'questoes-enem.html' || document.getElementById('caderno-erros')) return;
+    const sessions = Array.isArray(window.AQUILES_ENEM_OFICIAL?.sessions) ? window.AQUILES_ENEM_OFICIAL.sessions : [];
+    const target = document.querySelector('.practice');
+    if (!sessions.length || !target) return;
+    const section = document.createElement('section');
+    section.id = 'caderno-erros';
+    section.className = 'orion-error-notebook';
+    section.setAttribute('aria-labelledby', 'orion-error-title');
+    const head = document.createElement('div'); head.className = 'orion-error-notebook-head';
+    const intro = document.createElement('div');
+    const eyebrow = document.createElement('span'); eyebrow.className = 'eyebrow'; eyebrow.style.color = '#9b4d45'; eyebrow.textContent = 'Revisão da sua prática';
+    const title = document.createElement('h2'); title.id = 'orion-error-title'; title.textContent = 'Caderno de erros.';
+    intro.append(eyebrow, title);
+    const copy = document.createElement('p'); copy.textContent = 'Depois de corrigir uma sessão, as questões erradas e em branco aparecem aqui. Tudo fica apenas neste navegador.';
+    head.append(intro, copy);
+    const summary = document.createElement('div'); summary.className = 'orion-error-summary';
+    const list = document.createElement('div'); list.className = 'orion-error-list';
+    section.append(head, summary, list);
+    target.insertAdjacentElement('afterend', section);
+
+    const getSaved = (key) => { try { const item = JSON.parse(localStorage.getItem(key) || '{}'); return item && typeof item === 'object' ? item : {}; } catch (_) { return {}; } };
+    const render = () => {
+      const reports = sessions.map((session) => {
+        const saved = getSaved(`orion-enem-2022-${session.id}`);
+        if (!saved.corrected) return null;
+        const answers = saved.answers && typeof saved.answers === 'object' ? saved.answers : {};
+        const pending = [], wrong = [];
+        session.answers.forEach((answer, index) => {
+          if (answer === '*') return;
+          const selected = answers[index];
+          if (!selected) pending.push(session.firstQuestion + index);
+          else if (selected !== answer) wrong.push(session.firstQuestion + index);
+        });
+        return { session, pending, wrong };
+      }).filter(Boolean);
+      const errors = reports.reduce((total, report) => total + report.pending.length + report.wrong.length, 0);
+      const pending = reports.reduce((total, report) => total + report.pending.length, 0);
+      summary.replaceChildren();
+      [[reports.length, 'sessões corrigidas'], [errors, 'questões para revisar'], [pending, 'deixadas em branco']].forEach(([value, label]) => {
+        const card = document.createElement('div'); const number = document.createElement('b'); number.textContent = value; const text = document.createElement('span'); text.textContent = label; card.append(number, text); summary.append(card);
+      });
+      list.replaceChildren();
+      if (!reports.length) {
+        const empty = document.createElement('div'); empty.className = 'orion-error-empty'; empty.textContent = 'Seu caderno aparecerá aqui depois que você finalizar e corrigir uma sessão oficial.'; list.append(empty); return;
+      }
+      reports.forEach(({ session, pending: blank, wrong }) => {
+        const entry = document.createElement('article'); entry.className = 'orion-error-entry';
+        const heading = document.createElement('b'); heading.textContent = `${session.label} · ${session.area}`;
+        const detail = document.createElement('span'); detail.textContent = `${wrong.length} erro(s) e ${blank.length} em branco.`;
+        entry.append(heading, detail);
+        [...wrong.map((number) => `Q${number} · erro`), ...blank.map((number) => `Q${number} · em branco`)].forEach((label) => { const tag = document.createElement('em'); tag.textContent = label; entry.append(tag); });
+        list.append(entry);
+      });
+    };
+    document.getElementById('finish')?.addEventListener('click', () => window.setTimeout(render, 0));
+    document.getElementById('restart')?.addEventListener('click', () => window.setTimeout(render, 0));
+    render();
+  };
+
+  const addEnemCountdownToTimer = () => {
+    if (currentPage !== 'cronometro-estudos.html' || document.getElementById('countdown-enem')) return;
+    const anchor = document.querySelector('.constellation-card') || document.querySelector('main > section');
+    if (!anchor) return;
+    const section = document.createElement('section'); section.id = 'countdown-enem'; section.className = 'orion-enem-countdown';
+    const head = document.createElement('div'); head.className = 'orion-enem-countdown-head';
+    const intro = document.createElement('div'); const eyebrow = document.createElement('span'); eyebrow.className = 'eyebrow'; eyebrow.style.color = '#a77a34'; eyebrow.textContent = 'Enem 2026 · horário de Brasília'; const title = document.createElement('h2'); title.textContent = 'Countdown ENEM'; intro.append(eyebrow, title);
+    const description = document.createElement('p'); description.id = 'orionCountdownDescription'; head.append(intro, description);
+    const clock = document.createElement('div'); clock.className = 'orion-countdown-clock';
+    const fields = {};
+    [['days', 'dias'], ['hours', 'horas'], ['minutes', 'minutos'], ['seconds', 'segundos']].forEach(([key, label]) => { const unit = document.createElement('div'); unit.className = 'orion-countdown-unit'; const value = document.createElement('b'); value.textContent = '00'; const text = document.createElement('span'); text.textContent = label; unit.append(value, text); clock.append(unit); fields[key] = value; });
+    const days = document.createElement('div'); days.className = 'orion-countdown-days';
+    [['1º dia · 8 de novembro', 'Linguagens, Humanas e Redação'], ['2º dia · 15 de novembro', 'Natureza e Matemática']].forEach(([heading, detail]) => { const card = document.createElement('div'); const strong = document.createElement('b'); strong.textContent = heading; const text = document.createElement('span'); text.textContent = detail; card.append(strong, text); days.append(card); });
+    section.append(head, clock, days); anchor.insertAdjacentElement('beforebegin', section);
+    const first = new Date('2026-11-08T13:30:00-03:00'); const second = new Date('2026-11-15T13:30:00-03:00'); const secondEnd = new Date('2026-11-15T18:30:00-03:00');
+    const update = () => {
+      const now = new Date(); const target = now < first ? first : now < second ? second : null; const labels = now < first ? 'Faltam para o 1º dia do Enem.' : now < second ? 'A contagem agora segue para o 2º dia do Enem.' : now < secondEnd ? 'Hoje é o 2º dia do Enem.' : 'O Enem 2026 foi concluído.';
+      description.textContent = labels;
+      const total = target ? Math.max(0, Math.floor((target - now) / 1000)) : 0;
+      fields.days.textContent = String(Math.floor(total / 86400)).padStart(2, '0'); fields.hours.textContent = String(Math.floor(total % 86400 / 3600)).padStart(2, '0'); fields.minutes.textContent = String(Math.floor(total % 3600 / 60)).padStart(2, '0'); fields.seconds.textContent = String(total % 60).padStart(2, '0');
+    };
+    update(); window.setInterval(update, 1000);
+  };
+
   const addPrintTools = () => {
     const printablePages = new Set(['plano-estudos.html', 'plano-sisu.html', 'comparar-notas.html', 'comparar-faculdades.html', 'calendario-vestibulando.html', 'calendario-pessoal.html', 'listas-espera-rj.html', 'painel-bolsas.html', 'painel-controle.html', 'estude-no-exterior.html']);
     const main = document.querySelector('main');
@@ -916,6 +1110,9 @@
   setupComparisonSavedFilters();
   addActivityTracking();
   addStudentTimeline();
+  addIntegratedCourseFinder();
+  addErrorNotebookToQuestions();
+  addEnemCountdownToTimer();
   addPrintTools();
   injectThemeStyles();
   applyTheme(readTheme());
@@ -993,38 +1190,37 @@
     }
 
     const studyRooms = document.querySelector('.study-rooms');
-    if (studyRooms && !studyRooms.querySelector('a[href="countdown-enem.html"]')) {
-      const countdownLink = document.createElement('a');
-      countdownLink.className = 'tool';
-      countdownLink.href = 'countdown-enem.html';
-      countdownLink.setAttribute('aria-label', 'Abrir o Countdown ENEM');
-
-      const icon = document.createElement('span');
-      icon.className = 'tool-icon';
-      icon.setAttribute('aria-hidden', 'true');
-      icon.textContent = '⌛';
-
-      const title = document.createElement('h3');
-      title.textContent = 'Countdown ENEM';
-      const description = document.createElement('p');
-      description.textContent = 'Acompanhe a contagem regressiva para os dois dias de prova do Enem.';
-
-      countdownLink.append(icon, title, description);
-      studyRooms.append(countdownLink);
+    studyRooms?.querySelectorAll('a[href="countdown-enem.html"]').forEach((card) => card.remove());
+    const timerRoom = studyRooms?.querySelector('a[href="cronometro-estudos.html"]');
+    if (timerRoom) {
+      timerRoom.setAttribute('aria-label', 'Abrir cronômetro de estudos e Countdown ENEM');
+      const title = timerRoom.querySelector('h3');
+      const description = timerRoom.querySelector('p');
+      if (title) title.textContent = 'Cronômetro e Countdown ENEM';
+      if (description) description.textContent = 'Organize blocos de foco e acompanhe a contagem para os dois dias de prova.';
+    }
+    document.querySelectorAll('.classroom-grid .tool[href="caderno-erros.html"]').forEach((card) => card.remove());
+    const choiceRooms = document.querySelector('.choice-rooms');
+    choiceRooms?.querySelectorAll('a[href="faculdades-publicas.html"]').forEach((card) => card.remove());
+    const careersRoom = choiceRooms?.querySelector('a[href="carreiras.html"]');
+    if (careersRoom) {
+      careersRoom.setAttribute('aria-label', 'Abrir profissões, cursos e faculdades públicas');
+      const title = careersRoom.querySelector('h3');
+      const description = careersRoom.querySelector('p');
+      if (title) title.textContent = 'Profissões e faculdades';
+      if (description) description.textContent = 'Pesquise cursos, estados e instituições públicas em um só lugar.';
     }
 
     const journeyIllustrations = {
       'calendario-pessoal.html': ['calendario', '▦', '◷'],
-      'cronometro-estudos.html': ['cronometro', '◷', '·'],
+      'cronometro-estudos.html': ['cronometro', '◷', '⌛'],
       'cadernos.html': ['cadernos', '✎', '▤'],
       'alimentacao-e-estudos.html': ['nutricao', '♧', '◒'],
-      'caderno-erros.html': ['revisao', '↻', '✓'],
       'painel-bolsas.html': ['bolsas', '✦', '◌'],
       'guia-enem.html': ['guia', '✦', '▤'],
       'questoes-enem.html': ['questoes', '?', '✓'],
       'plano-estudos.html': ['plano', '↗', '▦'],
       'calendario-vestibulando.html': ['agenda', '◫', '✦'],
-      'countdown-enem.html': ['countdown', '⌛', '✦'],
       'minhas-escolhas.html': ['escolhas', '◈', '⌁'],
       'carreiras.html': ['profissoes', '⌁', '✦'],
       'faculdades-publicas.html': ['faculdades', '⌂', '▥'],
