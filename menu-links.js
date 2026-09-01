@@ -1201,6 +1201,17 @@
   addActivityTracking();
   addStudentTimeline();
   addIntegratedCourseFinder();
+  if (currentPage === 'carreiras.html' && !window.SISU_2026_NACIONAL && !document.getElementById('orionLoadCareerOffers')) {
+    const target = document.querySelector('#careerContent, main');
+    if (target) {
+      const notice = document.createElement('section');
+      notice.id = 'orionLoadCareerOffers';
+      notice.className = 'orion-data-trust';
+      notice.setAttribute('aria-label', 'Carregar ofertas nacionais por estado');
+      notice.innerHTML = '<div class="orion-data-trust-copy"><span class="orion-data-trust-kicker">Consulta sob demanda</span><h2>Encontre ofertas por estado e instituição.</h2><p>O catálogo nacional de vagas será aberto somente quando você pedir a pesquisa. Isso deixa esta página mais rápida no celular.</p></div><button class="orion-data-trust-action" type="button" data-orion-needs-sisu>Carregar catálogo nacional</button>';
+      target.prepend(notice);
+    }
+  }
   addErrorNotebookToQuestions();
   addEnemCountdownToTimer();
   addPrintTools();
