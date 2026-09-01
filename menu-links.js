@@ -555,6 +555,8 @@
 
   const refreshHomeHub = () => {
     if (currentPage !== 'index.html') return;
+    document.querySelectorAll('.career-stack a[href="cadernos.html"], .career-stack .career-static').forEach((card) => card.remove());
+    document.getElementById('quizLayer')?.remove();
     const grid = document.querySelector('.benefit-grid');
     if (grid && !grid.dataset.orionHubReady) {
       const topics = [
