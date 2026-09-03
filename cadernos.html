@@ -46,5 +46,31 @@
   async function remove(id){const b=books.find(x=>x.id===id);if(!b||!confirm(`Excluir “${b.titulo}”? Essa ação remove toda a anotação.`))return;const{error}=await client.from('cadernos_estudo').delete().eq('id',id).eq('perfil_id',user.id);if(error){note('Não foi possível excluir.',error.message||'Tente novamente.',true);return}books=books.filter(x=>x.id!==id);render()}
   $('#newNotebook').onclick=create;$('#bookGrid').onclick=e=>{const del=e.target.closest('[data-delete]');if(del){remove(del.dataset.delete);return}if(e.target.closest('#addCard')){create();return}const card=e.target.closest('[data-book]');if(card)location.href=`editor-caderno.html?id=${encodeURIComponent(card.dataset.book)}`};async function start(){if(!ok){document.documentElement.classList.remove('access-checking');note('A conexão dos cadernos não está disponível.','Volte à sua jornada e tente novamente quando a conexão estiver pronta.',true);return}client=window.supabase.createClient(cfg.url,cfg.anonKey);const{data:{session},error}=await client.auth.getSession();if(error||!session?.user){location.replace('minha-jornada.html');return}user=session.user;document.documentElement.classList.remove('access-checking');await load()}start().catch(e=>{document.documentElement.classList.remove('access-checking');note('Não foi possível abrir seus cadernos.',e.message||'Tente novamente.',true)})})();
   </script><script src="menu-links.js"></script><script>(()=>{const t=document.getElementById('aqMenuToggle'),m=document.getElementById('aqSiteMenu'),c=document.getElementById('aqMenuClose'),shut=()=>{m.classList.remove('open');m.setAttribute('aria-hidden','true');t.setAttribute('aria-expanded','false')};t.onclick=()=>{const open=m.classList.toggle('open');m.setAttribute('aria-hidden',String(!open));t.setAttribute('aria-expanded',String(open))};c.onclick=shut;m.onclick=e=>{if(e.target===m)shut()};document.addEventListener('keydown',e=>{if(e.key==='Escape')shut()})})();</script>
+  <script>
+    (() => {
+      const maximum = 15;
+      const grid = document.getElementById('bookGrid');
+      const status = document.getElementById('statusBox');
+      const refresh = () => {
+        const amount = grid.querySelectorAll('[data-book]').length;
+        const header = document.querySelector('.library-head > div');
+        let note = document.getElementById('notebookLimit');
+        if (!note && header) { note = document.createElement('small'); note.id = 'notebookLimit'; header.append(note); }
+        if (note) note.textContent = `${amount} de ${maximum} cadernos utilizados`;
+        document.querySelectorAll('#newNotebook, #addCard').forEach((button) => { button.disabled = amount >= maximum; button.setAttribute('aria-disabled', String(amount >= maximum)); });
+      };
+      document.addEventListener('click', (event) => {
+        if (!event.target.closest('#newNotebook, #addCard') || grid.querySelectorAll('[data-book]').length < maximum) return;
+        event.preventDefault();
+        event.stopImmediatePropagation();
+        status.hidden = false;
+        status.className = 'status error';
+        status.textContent = `Você já atingiu o limite de ${maximum} cadernos. Exclua um caderno para criar outro.`;
+        status.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, true);
+      new MutationObserver(refresh).observe(grid, { childList: true, subtree: true });
+      refresh();
+    })();
+  </script>
 </body>
 </html>

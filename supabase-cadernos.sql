@@ -53,6 +53,28 @@ create trigger cadernos_estudo_updated_at
 before update on public.cadernos_estudo
 for each row execute function public.atualizar_updated_at();
 
+-- Limite de produto: cada perfil pode guardar até 15 cadernos. A verificação
+-- no banco impede ultrapassar o limite mesmo com duas abas abertas ao mesmo tempo.
+create or replace function public.limitar_cadernos_por_perfil()
+returns trigger
+language plpgsql
+security definer
+set search_path = public
+as $$
+begin
+  perform pg_advisory_xact_lock(hashtext(new.perfil_id::text));
+  if (select count(*) from public.cadernos_estudo where perfil_id = new.perfil_id) >= 15 then
+    raise exception 'Limite de 15 cadernos por perfil atingido.' using errcode = 'P0001';
+  end if;
+  return new;
+end;
+$$;
+
+drop trigger if exists cadernos_estudo_limite_por_perfil on public.cadernos_estudo;
+create trigger cadernos_estudo_limite_por_perfil
+before insert on public.cadernos_estudo
+for each row execute function public.limitar_cadernos_por_perfil();
+
 -- Atualiza imediatamente o PostgREST/Supabase para que o site encontre a
 -- nova tabela, sem depender do tempo de renovação automática do cache.
 notify pgrst, 'reload schema';

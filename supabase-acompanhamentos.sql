@@ -2,6 +2,18 @@
 -- Ele guarda acompanhamentos da Área do Estudante e os avisos internos publicados pela equipe.
 -- Não armazena notas do ENEM, senhas, documentos ou dados de cotas além da modalidade escolhida.
 
+create or replace function public.atualizar_updated_at()
+returns trigger
+language plpgsql
+security invoker
+set search_path = public
+as $$
+begin
+  new.updated_at = now();
+  return new;
+end;
+$$;
+
 create table if not exists public.acompanhamentos (
   id uuid primary key default gen_random_uuid(),
   perfil_id uuid not null references public.perfis(id) on delete cascade,
@@ -26,23 +38,28 @@ create table if not exists public.acompanhamentos (
 
 alter table public.acompanhamentos enable row level security;
 
+drop policy if exists "Cada estudante lê seus acompanhamentos" on public.acompanhamentos;
 create policy "Cada estudante lê seus acompanhamentos"
 on public.acompanhamentos for select to authenticated
 using (auth.uid() = perfil_id);
 
+drop policy if exists "Cada estudante cria seus acompanhamentos" on public.acompanhamentos;
 create policy "Cada estudante cria seus acompanhamentos"
 on public.acompanhamentos for insert to authenticated
 with check (auth.uid() = perfil_id);
 
+drop policy if exists "Cada estudante atualiza seus acompanhamentos" on public.acompanhamentos;
 create policy "Cada estudante atualiza seus acompanhamentos"
 on public.acompanhamentos for update to authenticated
 using (auth.uid() = perfil_id)
 with check (auth.uid() = perfil_id);
 
+drop policy if exists "Cada estudante exclui seus acompanhamentos" on public.acompanhamentos;
 create policy "Cada estudante exclui seus acompanhamentos"
 on public.acompanhamentos for delete to authenticated
 using (auth.uid() = perfil_id);
 
+drop trigger if exists acompanhamentos_updated_at on public.acompanhamentos;
 create trigger acompanhamentos_updated_at
 before update on public.acompanhamentos
 for each row execute function public.atualizar_updated_at();
@@ -69,6 +86,7 @@ create table if not exists public.atualizacoes_publicadas (
 
 alter table public.atualizacoes_publicadas enable row level security;
 
+drop policy if exists "Estudantes leem avisos publicados" on public.atualizacoes_publicadas;
 create policy "Estudantes leem avisos publicados"
 on public.atualizacoes_publicadas for select to authenticated
 using (publicado = true);
@@ -86,14 +104,17 @@ create table if not exists public.leituras_atualizacoes (
 
 alter table public.leituras_atualizacoes enable row level security;
 
+drop policy if exists "Cada estudante lê suas leituras" on public.leituras_atualizacoes;
 create policy "Cada estudante lê suas leituras"
 on public.leituras_atualizacoes for select to authenticated
 using (auth.uid() = perfil_id);
 
+drop policy if exists "Cada estudante registra suas leituras" on public.leituras_atualizacoes;
 create policy "Cada estudante registra suas leituras"
 on public.leituras_atualizacoes for insert to authenticated
 with check (auth.uid() = perfil_id);
 
+drop policy if exists "Cada estudante atualiza suas leituras" on public.leituras_atualizacoes;
 create policy "Cada estudante atualiza suas leituras"
 on public.leituras_atualizacoes for update to authenticated
 using (auth.uid() = perfil_id)
