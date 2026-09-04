@@ -1386,6 +1386,7 @@
       'plano-estudos.html': ['plano', '<path d="M5 5.5h14v13H5zM8.5 9h7M8.5 12h4M8.5 15h2"/><path d="M16.5 14.5v4M14.5 16.5h4"/>', '·'],
       'calendario-vestibulando.html': ['agenda', '<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 10h17M12 13.2l.8 1.8 2 .2-1.5 1.4.4 2-1.7-1-1.7 1 .4-2-1.5-1.4 2-.2.8-1.8Z"/>', '·'],
       'minhas-escolhas.html': ['escolhas', '<path d="M12 20s-7-4.3-7-9.5A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.5C19 15.7 12 20 12 20Z"/><path d="M12 8V4M10 4h4"/>', '·'],
+      'favoritos.html': ['favoritos', '<path d="M12 20s-7-4.3-7-9.5A3.8 3.8 0 0 1 12 8a3.8 3.8 0 0 1 7 2.5C19 15.7 12 20 12 20Z"/><path d="M12 8V4M10 4h4"/>', '·'],
       'carreiras.html': ['profissoes', '<circle cx="12" cy="12" r="7.5"/><path d="m14.8 9.2-2 3.6-3.6 2 2-3.6 3.6-2ZM12 4.5V3M19.5 12H21M12 19.5V21M4.5 12H3"/>', '·'],
       'faculdades-publicas.html': ['faculdades', '<path d="M3 10.5 12 5l9 5.5M5.5 11.5v7M9 11.5v7M15 11.5v7M18.5 11.5v7M3.5 19.5h17"/><path d="M12 8.5h.01"/>', '·'],
       'comparar-faculdades.html': ['comparar', '<path d="M5 6.5h10M15 3.5l3 3-3 3M19 17.5H9M9 14.5l-3 3 3 3"/>', '·'],
@@ -1398,7 +1399,7 @@
       'privacidade.html': ['privacidade', '<rect x="5.5" y="10" width="13" height="10" rx="2"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10M12 14v2"/>', '·']
     };
     const journeyImageFiles = {
-      'calendario-pessoal.html': 'calendario-pessoal.png', 'cronometro-estudos.html': 'cronometro-estudos.png', 'cadernos.html': 'cadernos.png', 'alimentacao-e-estudos.html': 'nutricao.png', 'painel-bolsas.html': 'bolsas.png', 'guia-enem.html': 'guia-enem.png', 'questoes-enem.html': 'questoes-enem.png', 'plano-estudos.html': 'plano-estudos.png', 'calendario-vestibulando.html': 'calendario-vestibulando.png', 'minhas-escolhas.html': 'minhas-escolhas.png', 'carreiras.html': 'profissoes.png', 'faculdades-publicas.html': 'faculdades.png', 'comparar-faculdades.html': 'comparar-faculdades.png', 'comparar-notas.html': 'comparar-notas.png', 'plano-sisu.html': 'plano-sisu.png', 'listas-espera-rj.html': 'listas-espera.png', 'index.html': 'inicio.png', 'carreiras-militares.html': 'militares.png', 'estude-no-exterior.html': 'exterior.png', 'privacidade.html': 'privacidade.png'
+      'calendario-pessoal.html': 'calendario-pessoal.png', 'cronometro-estudos.html': 'cronometro-estudos.png', 'cadernos.html': 'cadernos.png', 'alimentacao-e-estudos.html': 'nutricao.png', 'painel-bolsas.html': 'bolsas.png', 'guia-enem.html': 'guia-enem.png', 'questoes-enem.html': 'questoes-enem.png', 'plano-estudos.html': 'plano-estudos.png', 'calendario-vestibulando.html': 'calendario-vestibulando.png', 'minhas-escolhas.html': 'minhas-escolhas.png', 'favoritos.html': 'minhas-escolhas.png', 'carreiras.html': 'profissoes.png', 'faculdades-publicas.html': 'faculdades.png', 'comparar-faculdades.html': 'comparar-faculdades.png', 'comparar-notas.html': 'comparar-notas.png', 'plano-sisu.html': 'plano-sisu.png', 'listas-espera-rj.html': 'listas-espera.png', 'index.html': 'inicio.png', 'carreiras-militares.html': 'militares.png', 'estude-no-exterior.html': 'exterior.png', 'privacidade.html': 'privacidade.png'
     };
 
     const decorateJourneyTools = () => {

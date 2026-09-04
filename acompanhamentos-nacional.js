@@ -48,13 +48,17 @@
     button.disabled = true;
     button.textContent = 'Ativando…';
     status.textContent = 'Salvando este acompanhamento na sua conta…';
-    const { data, error } = await client.from('acompanhamentos').upsert({
+    const payload = {
       perfil_id: user.id, ...nationalKey, oferta_id: null, modalidade_nome: 'Avisos nacionais',
       acompanhar_vagas: true, acompanhar_editais: true, acompanhar_chamadas: true, acompanhar_calendario: true,
       fonte: 'Fontes oficiais nacionais', fonte_url: 'https://www.gov.br/mec/', ultima_revisao: null
-    }, { onConflict: 'perfil_id,curso,uf,instituicao,campus,modalidade' }).select().single();
+    };
+    const request = subscription
+      ? client.from('acompanhamentos').update(payload).eq('id', subscription.id).eq('perfil_id', user.id)
+      : client.from('acompanhamentos').insert(payload);
+    const { data, error } = await request.select().single();
     if (error) {
-      status.textContent = 'Não foi possível ativar agora. Execute o arquivo supabase-acompanhamentos.sql no Supabase e tente novamente.';
+      status.textContent = `Não foi possível ativar agora: ${error.message || 'tente novamente em alguns instantes.'}`;
       button.disabled = false;
       button.textContent = 'Tentar novamente';
       return;
