@@ -21,6 +21,7 @@
     ['favoritos.html', 'Favoritos e comparações', 'Cursos, faculdades e comparações salvas'],
     ['como-usamos-informacoes.html', 'Como usamos as informações', 'Critérios, fontes e limites do hub'],
     ['equipe-editorial.html', 'Equipe editorial e metodologia', 'Como revisamos fontes e corrigimos informações'],
+    ['status-fontes.html', 'Status das fontes', 'Verificação técnica e pendências de fontes oficiais'],
     ['impacto-projeto-aquiles.html', 'Impacto do Projeto Aquiles', 'Problema, método, evidências e limites do projeto'],
     ['acessibilidade-orion.html', 'Acessibilidade', 'Como tornar a Orion utilizável por mais estudantes'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
@@ -33,6 +34,28 @@
   });
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
   const themeStorageKey = 'orion-theme';
+  const enablePrivacyMetrics = () => {
+    if (location.protocol !== 'https:' || navigator.doNotTrack === '1' || window.gtag) return;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-NKRC7R3XJ5', { allow_google_signals: false, allow_ad_personalization_signals: false });
+    const tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=G-NKRC7R3XJ5';
+    document.head.append(tag);
+  };
+  enablePrivacyMetrics();
+  const metric = (name, parameters = {}) => {
+    if (navigator.doNotTrack === '1' || !window.gtag) return;
+    window.gtag('event', name, parameters);
+  };
+  window.orionMetric = metric;
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href^="http"]');
+    if (!link) return;
+    try { metric('official_source_open', { link_host: new URL(link.href).hostname }); } catch {}
+  });
   const dataPageProfiles = {
     'faculdades-publicas.html': {
       title: 'Instituições públicas',

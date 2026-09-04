@@ -75,6 +75,9 @@
       .hero p { max-width: 498px; color: rgba(255,255,255,.75); font-size: 17px; line-height: 1.65; }
       .hero-buttons { display: flex; gap: 12px; margin-top: 31px; }
       .hero-buttons .button-light { background: rgba(255,255,255,.05); color: #fff; border-color: rgba(255,255,255,.28); }
+      .hero-quick { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+      .hero-quick span { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid rgba(255,255,255,.18); border-radius: 999px; color: rgba(255,255,255,.78); background: rgba(5,17,32,.18); font-size: 11px; font-weight: 600; }
+      .hero-quick span::before { content: "✓"; color: #efce91; font-weight: 800; }
       .hero-proof { margin-top: 58px; display: flex; align-items: center; gap: 13px; color: rgba(255,255,255,.68); font-size: 12px; }
       .faces { display: flex; padding-left: 5px; }
       .face { margin-left: -5px; width: 25px; height: 25px; border: 2px solid var(--navy); border-radius: 50%; background: linear-gradient(135deg, #d3b28d, #835a43); }
@@ -169,9 +172,10 @@
         <div class="wrap hero-grid">
           <div class="hero-copy">
             <span class="eyebrow" style="color:#e5bd77">Orion Academy · Hub de informações</span>
-            <h1>O que você precisa <em>resolver</em> hoje?</h1>
+            <h1>Uma ferramenta para <em>consultar</em> e comparar informações de concursos e vestibulares.</h1>
             <p>Encontre referências oficiais, compare possibilidades e organize sua rotina de estudo em um só lugar.</p>
             <div class="hero-buttons"><a class="button button-gold" href="#informacoes">Começar agora <span class="arrow">→</span></a><a class="button button-light" href="#demonstracao">Ver demonstração <span class="arrow">↓</span></a></div>
+            <div class="hero-quick" aria-label="Principais benefícios"><span>Consulta sem cadastro</span><span>Fontes oficiais visíveis</span><span>Ferramentas de estudo</span></div>
           </div>
           <div class="hero-art" aria-hidden="true"><div class="gold-disc"></div><div class="arch"></div><div class="study-person"><i class="head"></i><i class="hair"></i><i class="torso"></i><i class="collar"></i><i class="book"></i></div><div class="floating-card"><small>Em destaque</small><strong>Calendário do Vestibulando</strong><div class="score"><span>Datas, provas e etapas</span><i></i></div></div></div>
         </div>

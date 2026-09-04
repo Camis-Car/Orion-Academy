@@ -67,5 +67,20 @@
       }, true);
     })();
   </script>
+  <script>
+    (() => {
+      const form = document.getElementById('searchForm'), input = document.getElementById('query'), results = document.getElementById('results');
+      const safeTerm = (value) => {
+        const term = String(value || '').trim().toLocaleLowerCase('pt-BR').slice(0, 48);
+        return !term || /@|https?:|\d{7,}/.test(term) ? '' : term;
+      };
+      form.addEventListener('submit', () => window.setTimeout(() => {
+        const term = safeTerm(input.value), total = results.querySelectorAll('.result').length;
+        if (!term || !window.orionMetric) return;
+        window.orionMetric('site_search', { search_term: term, result_count: total });
+        if (!total) window.orionMetric('search_without_result', { search_term: term });
+      }, 0));
+    })();
+  </script>
 </body>
 </html>
