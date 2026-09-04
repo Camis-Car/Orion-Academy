@@ -1397,6 +1397,9 @@
       'estude-no-exterior.html': ['exterior', '<circle cx="12" cy="12" r="8.5"/><path d="M3.8 12h16.4M12 3.5c2.2 2.3 3.3 5.1 3.3 8.5S14.2 18.2 12 20.5c-2.2-2.3-3.3-5.1-3.3-8.5S9.8 5.8 12 3.5"/>', '·'],
       'privacidade.html': ['privacidade', '<rect x="5.5" y="10" width="13" height="10" rx="2"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10M12 14v2"/>', '·']
     };
+    const journeyImageFiles = {
+      'calendario-pessoal.html': 'calendario-pessoal.png', 'cronometro-estudos.html': 'cronometro-estudos.png', 'cadernos.html': 'cadernos.png', 'alimentacao-e-estudos.html': 'nutricao.png', 'painel-bolsas.html': 'bolsas.png', 'guia-enem.html': 'guia-enem.png', 'questoes-enem.html': 'questoes-enem.png', 'plano-estudos.html': 'plano-estudos.png', 'calendario-vestibulando.html': 'calendario-vestibulando.png', 'minhas-escolhas.html': 'minhas-escolhas.png', 'carreiras.html': 'profissoes.png', 'faculdades-publicas.html': 'faculdades.png', 'comparar-faculdades.html': 'comparar-faculdades.png', 'comparar-notas.html': 'comparar-notas.png', 'plano-sisu.html': 'plano-sisu.png', 'listas-espera-rj.html': 'listas-espera.png', 'index.html': 'inicio.png', 'carreiras-militares.html': 'militares.png', 'estude-no-exterior.html': 'exterior.png', 'privacidade.html': 'privacidade.png'
+    };
 
     const decorateJourneyTools = () => {
       document.querySelectorAll('.classroom-grid .tool').forEach((card) => {
@@ -1406,6 +1409,8 @@
         if (!icon) return;
 
         card.dataset.illustration = topic;
+        const imageFile = journeyImageFiles[href];
+        if (imageFile) card.style.setProperty('--room-image', `url("assets/area-estudante/${imageFile}")`);
         icon.classList.add('tool-illustration');
         icon.replaceChildren();
 
