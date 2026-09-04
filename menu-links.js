@@ -21,9 +21,11 @@
     ['favoritos.html', 'Favoritos e comparações', 'Cursos, faculdades e comparações salvas'],
     ['como-usamos-informacoes.html', 'Como usamos as informações', 'Critérios, fontes e limites do hub'],
     ['equipe-editorial.html', 'Equipe editorial e metodologia', 'Como revisamos fontes e corrigimos informações'],
+    ['impacto-projeto-aquiles.html', 'Impacto do Projeto Aquiles', 'Problema, método, evidências e limites do projeto'],
+    ['acessibilidade-orion.html', 'Acessibilidade', 'Como tornar a Orion utilizável por mais estudantes'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, 'Privacidade e seus dados': 99 };
+    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Impacto do Projeto Aquiles': 96, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, Acessibilidade: 99, 'Privacidade e seus dados': 100 };
     const firstPriority = priority[first[1]] ?? 4;
     const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
@@ -641,11 +643,10 @@
     const grid = document.querySelector('.benefit-grid');
     if (grid && !grid.dataset.orionHubReady) {
       const topics = [
-        ['busca.html', '⌕', 'Buscar informações', 'Pesquise cursos, estados, universidades, vestibulares e termos importantes.'],
-        ['plano-sisu.html', '◎', 'Vagas e Sisu', 'Consulte ofertas, modalidades e referências da chamada regular.'],
-        ['carreiras.html', '⌁', 'Profissões e faculdades', 'Conheça áreas, cursos e encontre ofertas por estado e instituição.'],
-        ['calendario-vestibulando.html', '◈', 'Vestibulares e calendário', 'Acompanhe provas, editais, etapas e processos seriados.'],
-        ['plano-estudos.html', '✦', 'Ferramentas de estudo', 'Organize a rotina, registre ideias e priorize conteúdos.']
+        ['carreiras.html', '⌁', 'Encontrar curso ou faculdade', 'Pesquise cursos, estados, instituições públicas e campus.'],
+        ['plano-sisu.html', '◎', 'Entender Sisu, vagas e cotas', 'Consulte modalidades, vagas, notas e explicações antes de comparar.'],
+        ['plano-estudos.html', '✦', 'Organizar estudos e rotina', 'Monte um plano, use o cronômetro e registre seus estudos.'],
+        ['calendario-vestibulando.html', '◈', 'Acompanhar editais e datas', 'Veja calendário, vestibulares e fontes para confirmar cada etapa.']
       ];
       grid.replaceChildren();
       topics.forEach(([href, icon, title, description]) => {

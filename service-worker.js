@@ -1,4 +1,4 @@
-const CACHE_NAME = 'orion-academy-pwa-v61';
+const CACHE_NAME = 'orion-academy-pwa-v62';
 const CORE_FILES = [
   './',
   './index.html',
@@ -26,7 +26,9 @@ const CORE_FILES = [
   './entenda-escolhas.html',
   './favoritos.html',
   './como-usamos-informacoes.html',
-  './equipe-editorial.html'
+  './equipe-editorial.html',
+  './impacto-projeto-aquiles.html',
+  './acessibilidade-orion.html'
 ];
 
 self.addEventListener('install', (event) => {
