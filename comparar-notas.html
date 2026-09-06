@@ -174,7 +174,9 @@
         button.textContent = 'Salvando…';
         try {
           const record = { perfil_id:user.id, oferta_id:offer.id, curso:offer.curso, instituicao:offer.instituicao, sigla:offer.sigla || null, campus:offer.campus || null, cidade:offer.cidade || null, uf:offer.uf || null, modalidade:modality, modalidade_nome:quotaName(modality), nota_calculada:calculate(offer), nota_corte:Number.isFinite(Number(mode?.notaCorte)) ? Number(mode.notaCorte) : null, fonte:offer.fonte || 'Sisu / MEC', fonte_url:offer.fonteUrl || 'https://sisu.mec.gov.br/vagas' };
-          const { error } = await client.from('comparacoes_salvas').upsert(record, {onConflict:'perfil_id,oferta_id,modalidade'});
+          const { data: existing, error: existingError } = await client.from('comparacoes_salvas').select('id').eq('perfil_id', user.id).eq('oferta_id', offer.id).eq('modalidade', modality).maybeSingle();
+          if (existingError) throw existingError;
+          const { error } = existing ? await client.from('comparacoes_salvas').update(record).eq('id', existing.id).eq('perfil_id', user.id) : await client.from('comparacoes_salvas').insert(record);
           if (error) throw error;
           button.textContent = 'Salvo ✓';
         } catch (error) {

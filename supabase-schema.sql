@@ -1,4 +1,4 @@
--- Projeto Aquiles — execute uma única vez no SQL Editor do Supabase.
+-- Orion Academy — execute uma única vez no SQL Editor do Supabase.
 -- O e-mail e a autenticação ficam em auth.users; esta tabela guarda somente o perfil necessário.
 
 create table if not exists public.perfis (

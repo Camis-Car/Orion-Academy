@@ -1,6 +1,6 @@
 (() => {
   const entries = [
-    ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Informações sobre hábitos e rotina de estudo'],
+    ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Hábitos e condições para a rotina de estudo'],
     ['index.html?public=1', 'Home', 'Informações e ferramentas para estudantes'],
     ['busca.html', 'Buscar informações', 'Pesquise cursos, faculdades e processos'],
     ['cadastro.html', 'Criar cadastro', 'Reúna consultas e informações salvas'],
@@ -22,17 +22,17 @@
     ['como-usamos-informacoes.html', 'Como usamos as informações', 'Critérios, fontes e limites do hub'],
     ['equipe-editorial.html', 'Equipe editorial e metodologia', 'Como revisamos fontes e corrigimos informações'],
     ['status-fontes.html', 'Status das fontes', 'Verificação técnica e pendências de fontes oficiais'],
-    ['impacto-projeto-aquiles.html', 'Impacto do Projeto Aquiles', 'Problema, método, evidências e limites do projeto'],
     ['acessibilidade-orion.html', 'Acessibilidade', 'Como tornar a Orion utilizável por mais estudantes'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Impacto do Projeto Aquiles': 96, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, Acessibilidade: 99, 'Privacidade e seus dados': 100 };
+    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, Acessibilidade: 99, 'Privacidade e seus dados': 100 };
     const firstPriority = priority[first[1]] ?? 4;
     const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
     return first[1].localeCompare(second[1], 'pt-BR', { sensitivity: 'base' });
   });
   const currentPage = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('a[href*="projeto.aquiless@gmail.com"], a[href*="projetoaquiles_"]').forEach((link) => link.remove());
   const themeStorageKey = 'orion-theme';
   const enablePrivacyMetrics = () => {
     if (location.protocol !== 'https:' || navigator.doNotTrack === '1' || window.gtag) return;
@@ -1338,17 +1338,14 @@
       nutritionLink.className = 'tool nutrition-tool';
       nutritionLink.href = 'alimentacao-e-estudos.html';
       nutritionLink.setAttribute('aria-label', 'Abrir informações sobre alimentação e estudos');
-
       const icon = document.createElement('span');
       icon.className = 'tool-icon';
       icon.setAttribute('aria-hidden', 'true');
       icon.textContent = '◒';
-
       const title = document.createElement('h3');
       title.textContent = 'Alimentação e estudos';
       const description = document.createElement('p');
-      description.textContent = 'Consulte a pesquisa do projeto sobre alimentação, hidratação e rotina de estudo.';
-
+      description.textContent = 'Consulte referências sobre alimentação, hidratação e rotina de estudo.';
       nutritionLink.append(icon, title, description);
       organizerRooms.append(nutritionLink);
     }

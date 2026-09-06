@@ -1,4 +1,4 @@
--- Projeto Aquiles — área administrativa
+-- Orion Academy — área administrativa
 -- Execute este arquivo uma única vez no SQL Editor do Supabase.
 -- A regra abaixo permite usar a tabela de tarefas administrativas
 -- somente quando a conta autenticada for camilaoc14@gmail.com.
