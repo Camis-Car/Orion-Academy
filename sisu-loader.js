@@ -5,12 +5,15 @@
   const query = new URLSearchParams(location.search);
   const states = ['AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
   const stateNames = { acre: 'AC', alagoas: 'AL', amapa: 'AP', amazonas: 'AM', bahia: 'BA', ceara: 'CE', 'distrito federal': 'DF', 'espirito santo': 'ES', goias: 'GO', maranhao: 'MA', 'mato grosso': 'MT', 'mato grosso do sul': 'MS', 'minas gerais': 'MG', para: 'PA', paraiba: 'PB', parana: 'PR', pernambuco: 'PE', piaui: 'PI', 'rio de janeiro': 'RJ', 'rio grande do norte': 'RN', 'rio grande do sul': 'RS', rondonia: 'RO', roraima: 'RR', 'santa catarina': 'SC', 'sao paulo': 'SP', sergipe: 'SE', tocantins: 'TO' };
+  const stateSearchHints = { ufpr: 'PR', curitiba: 'PR', ufrgs: 'RS', 'porto alegre': 'RS', ufba: 'BA', salvador: 'BA', ufrj: 'RJ', 'rio de janeiro': 'RJ', unb: 'DF', brasilia: 'DF', usp: 'SP', 'sao paulo': 'SP', ufmg: 'MG', 'belo horizonte': 'MG', ufsc: 'SC', florianopolis: 'SC' };
   const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
   const validState = (value) => states.includes(String(value || '').toUpperCase()) ? String(value).toUpperCase() : '';
   const stateFromText = (value) => {
     const text = normalize(value);
     const byName = Object.entries(stateNames).sort(([a], [b]) => b.length - a.length).find(([name]) => text.includes(name));
     if (byName) return byName[1];
+    const byHint = Object.entries(stateSearchHints).sort(([a], [b]) => b.length - a.length).find(([hint]) => text.includes(hint));
+    if (byHint) return byHint[1];
     const abbreviation = text.toUpperCase().match(/(?:^|\s)(AC|AL|AM|AP|BA|CE|DF|ES|GO|MA|MG|MS|MT|PA|PB|PE|PI|PR|RJ|RN|RO|RS|SC|SE|SP|TO)(?:$|\s)/);
     return abbreviation ? abbreviation[1] : '';
   };
