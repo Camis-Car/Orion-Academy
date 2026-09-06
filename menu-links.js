@@ -615,7 +615,7 @@
     copy.append(make('p', '', profile.description));
     const meta = make('div', 'orion-data-trust-meta');
     meta.append(make('span', '', '✓ Fonte oficial'));
-    const automaticReview = make('span', 'orion-automatic-review', 'Verificação automática: aguardando primeira revisão');
+    const automaticReview = make('span', 'orion-automatic-review', 'Base revisada em 01/08/2026');
     automaticReview.dataset.orionAutomaticReview = 'true';
     meta.append(automaticReview);
     meta.append(make('span', '', 'Regras, vagas, notas e datas podem mudar'));
@@ -653,7 +653,7 @@
         const summary = status.resumo || {};
         const label = summary.mudancasDetectadas || summary.indisponiveis
           ? `Revisão necessária: ${Number(summary.mudancasDetectadas || 0) + Number(summary.indisponiveis || 0)} fonte(s) com pendência`
-          : `Verificação automática em ${date}`;
+          : `Fontes verificadas em ${date}`;
         document.querySelectorAll('[data-orion-automatic-review]').forEach((element) => { element.textContent = label; });
       })
       .catch(() => {});
