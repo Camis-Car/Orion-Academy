@@ -1,4 +1,4 @@
-const CACHE_NAME = 'orion-academy-pwa-v69';
+const CACHE_NAME = 'orion-academy-pwa-v70';
 const CORE_FILES = [
   './',
   './index.html',
@@ -65,11 +65,8 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  event.respondWith(caches.match(request).then((cached) => {
-    const fresh = fetch(request).then((response) => {
-      if (response && response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
-      return response;
-    });
-    return cached || fresh;
-  }));
+  event.respondWith(fetch(request).then((response) => {
+    if (response && response.ok) caches.open(CACHE_NAME).then((cache) => cache.put(request, response.clone()));
+    return response;
+  }).catch(() => caches.match(request)));
 });

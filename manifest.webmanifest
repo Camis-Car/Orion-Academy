@@ -21,6 +21,16 @@
   ],
   "shortcuts": [
     {
+      "name": "Buscar informações",
+      "short_name": "Buscar",
+      "url": "busca.html"
+    },
+    {
+      "name": "Vagas e Sisu",
+      "short_name": "Sisu",
+      "url": "plano-sisu.html"
+    },
+    {
       "name": "Área do estudante",
       "short_name": "Área",
       "url": "minha-jornada.html"
@@ -29,11 +39,6 @@
       "name": "Cronômetro de estudos",
       "short_name": "Foco",
       "url": "cronometro-estudos.html"
-    },
-    {
-      "name": "Teste vocacional",
-      "short_name": "Teste",
-      "url": "index.html#inicio"
     }
   ]
 }
