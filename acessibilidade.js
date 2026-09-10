@@ -51,7 +51,7 @@
         if (element.querySelector(':scope > .orion-state-label') || !element.textContent.trim()) return;
         // Cada aviso visual do site já define ícone, cores e espaçamento próprios.
         // Não inserimos outro selo para preservar a grade e evitar sobreposição.
-        if (element.matches('.notice')) return;
+        if (element.matches('.notice, .alert, .warning') || element.querySelector(':scope > i, :scope > .status-icon')) return;
         const classes = element.className instanceof SVGAnimatedString ? element.className.baseVal : String(element.className || '');
         const text = `${classes} ${element.getAttribute('role') || ''}`.toLowerCase();
         const state = /error|wrong|alert/.test(text) ? 'error' : /warning|warn|attention/.test(text) ? 'attention' : /success|correct/.test(text) ? 'success' : 'information';
