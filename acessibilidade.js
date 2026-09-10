@@ -16,12 +16,6 @@
       table.quota-table,table[class*="quota" i],table[class*="cota" i]{border-collapse:separate;border-spacing:0}table.quota-table :is(th,td),table[class*="quota" i] :is(th,td),table[class*="cota" i] :is(th,td){border-bottom:1px solid #637a90!important}table.quota-table th,table[class*="quota" i] th,table[class*="cota" i] th{color:#102a48!important;background:#e7eff6!important}
       .orion-a11y-ready :focus-visible{outline:3px solid #a96500!important;outline-offset:3px!important;box-shadow:0 0 0 6px rgba(255,244,213,.92)!important}
       .orion-a11y-ready main:focus{outline:none}
-      /* Padrão visual da Orion: textos de navegação, apresentação e cartões centralizados. */
-      .orion-a11y-ready :is(header,main,footer) :is(h1,h2,h3,h4,h5,h6,p,small,b,strong,em,.eyebrow,.lead,.section-note,.footer-text,.card-title,.card-description,.tool-icon,.tool-title,.tool-description){text-align:center!important}
-      .orion-a11y-ready :is(header,main,footer) :is(.tool,.card,.feature,.benefit,.step,.career,.orion-area,.archive-card,.session,.book-card,.empty,.notice,.info,.status){text-align:center!important}
-      .orion-a11y-ready :is(header,main,footer) :is(ul,ol){list-style-position:inside;text-align:center!important;padding-left:0!important}
-      /* Dados comparativos, campos e tabelas permanecem alinhados para leitura e preenchimento precisos. */
-      .orion-a11y-ready :is(table,.table-wrap,.filters,.filter-group,form,.form-grid,.field,.search-form,.search-results,.question-list,.answer-card,.writing,.textbox-layer) :is(h1,h2,h3,h4,h5,h6,p,small,b,strong,em,label,legend,li,span,td,th){text-align:left!important}
       @media (prefers-contrast:more){.orion-a11y-ready a:not(.button),.orion-a11y-ready main a{font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px}.orion-a11y-ready :is(button,input,select,textarea,.button){border:2px solid currentColor!important}.orion-a11y-ready :focus-visible{outline-width:4px!important}}
       @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.orion-a11y-ready *, .orion-a11y-ready *:before, .orion-a11y-ready *:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
       @media (pointer:coarse){.orion-a11y-ready :is(button,input,select,textarea,.button,a.aq-mobile-login,.aq-menu-toggle,.aq-menu-close){min-height:44px;min-width:44px}.orion-a11y-ready :is(input,select,textarea){font-size:16px!important}}
