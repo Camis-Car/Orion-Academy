@@ -1,7 +1,18 @@
-const CACHE_NAME = 'orion-academy-pwa-v70';
+const CACHE_NAME = 'orion-academy-pwa-v75';
 const CORE_FILES = [
   './',
   './index.html',
+  './feira.html',
+  './feira.js',
+  './feira-home.js',
+  './feira-app.css',
+  './feira-paths.css',
+  './feira-local.css',
+  './feira-vocacional.html',
+  './feira-faculdades.html',
+  './feira-militares.html',
+  './feira-exterior.html',
+  './sisu-2026-nacional.js',
   './offline.html',
   './manifest.webmanifest',
   './orion-icon.svg',
@@ -28,7 +39,11 @@ const CORE_FILES = [
   './como-usamos-informacoes.html',
   './equipe-editorial.html',
   './acessibilidade-orion.html',
-  './status-fontes.html'
+  './status-fontes.html',
+  './vestibulares-seriados.html',
+  './notas-vestibulares-seriados.js',
+  './vestibulares-seriados-atualizacoes.js',
+  './sisu-2026-estados/ac.js','./sisu-2026-estados/al.js','./sisu-2026-estados/am.js','./sisu-2026-estados/ap.js','./sisu-2026-estados/ba.js','./sisu-2026-estados/ce.js','./sisu-2026-estados/df.js','./sisu-2026-estados/es.js','./sisu-2026-estados/go.js','./sisu-2026-estados/ma.js','./sisu-2026-estados/mg.js','./sisu-2026-estados/ms.js','./sisu-2026-estados/mt.js','./sisu-2026-estados/pa.js','./sisu-2026-estados/pb.js','./sisu-2026-estados/pe.js','./sisu-2026-estados/pi.js','./sisu-2026-estados/pr.js','./sisu-2026-estados/rj.js','./sisu-2026-estados/rn.js','./sisu-2026-estados/ro.js','./sisu-2026-estados/rr.js','./sisu-2026-estados/rs.js','./sisu-2026-estados/sc.js','./sisu-2026-estados/se.js','./sisu-2026-estados/sp.js','./sisu-2026-estados/to.js'
 ];
 
 self.addEventListener('install', (event) => {

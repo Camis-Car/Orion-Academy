@@ -1,7 +1,8 @@
 (() => {
   const entries = [
-    ['alimentacao-e-estudos.html', 'Alimentação e estudos', 'Hábitos e condições para a rotina de estudo'],
+    ['alimentacao-e-estudos.html', 'Pesquisa Ambrosia', 'Alimentação, hidratação e bem-estar nos estudos'],
     ['index.html?public=1', 'Home', 'Informações e ferramentas para estudantes'],
+    ['feira.html', 'Modo feira offline', 'Teste rápido, cursos nacionais e caminhos de formação'],
     ['busca.html', 'Buscar informações', 'Pesquise cursos, faculdades e processos'],
     ['cadastro.html', 'Criar cadastro', 'Reúna consultas e informações salvas'],
     ['minha-jornada.html', 'Área do estudante', 'Consultas, referências e escolhas salvas'],
@@ -25,7 +26,7 @@
     ['acessibilidade-orion.html', 'Acessibilidade', 'Como tornar a Orion utilizável por mais estudantes'],
     ['privacidade.html', 'Privacidade e seus dados', 'Como protegemos suas informações']
   ].sort((first, second) => {
-    const priority = { Home: 0, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, Acessibilidade: 99, 'Privacidade e seus dados': 100 };
+    const priority = { Home: 0, 'Pesquisa Ambrosia': .25, 'Buscar informações': .5, 'Vagas e Sisu': 1, 'Área do estudante': 2, 'Criar cadastro': 3, 'Como usamos as informações': 97, 'Equipe editorial e metodologia': 98, Acessibilidade: 99, 'Privacidade e seus dados': 100 };
     const firstPriority = priority[first[1]] ?? 4;
     const secondPriority = priority[second[1]] ?? 4;
     if (firstPriority !== secondPriority) return firstPriority - secondPriority;
@@ -76,8 +77,8 @@
       data: '#careerContent'
     },
     'alimentacao-e-estudos.html': {
-      title: 'Alimentação, hidratação e estudos',
-      description: 'Esta página reúne referências de saúde pública e pesquisa do projeto. Resultados da pesquisa própria devem ser interpretados como percepção dos participantes, não como diagnóstico.',
+      title: 'Pesquisa Ambrosia',
+      description: 'A Pesquisa Ambrosia reúne referências de saúde pública sobre alimentação, hidratação e estudos. Resultados de campo devem ser interpretados como percepção dos participantes, não como diagnóstico.',
       source: 'Ministério da Saúde · Guia Alimentar para a População Brasileira',
       url: 'https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf',
       button: 'Abrir Guia Alimentar ↗',
@@ -574,7 +575,6 @@
       .orion-data-trust-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:13px}.orion-data-trust-meta span{display:inline-flex;align-items:center;min-height:27px;padding:0 9px;border:1px solid #d9c18e;border-radius:999px;color:#604a24;background:#fffdf8;font-size:10px;font-weight:800}.orion-data-trust-meta span:first-child{color:#1e6048;border-color:#b8d8c4;background:#eff8f1}
       .orion-data-trust-action{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 15px;border:1px solid #b9893d;border-radius:999px;color:#132a45!important;background:#e8c985;font-size:12px;font-weight:800;text-align:center;white-space:nowrap;box-shadow:0 7px 14px rgba(104,74,27,.12)}.orion-data-trust-action:hover{background:#f2dba8}.orion-data-trust-action:focus-visible{outline:3px solid rgba(185,137,61,.72);outline-offset:3px}
       .orion-page-index{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin:0 0 28px;padding:12px 14px;border:1px solid #dce5ec;border-radius:14px;background:#fff;color:#50647a}.orion-page-index b{margin-right:3px;color:#193a5f;font-size:11px}.orion-page-index a{padding:6px 9px;border-radius:999px;color:#234f7a!important;background:#edf4fa;font-size:11px;font-weight:800}.orion-page-index a:hover{color:#183e64!important;background:#e0edf8}
-      .orion-home-updates{padding:0 0 34px;background:#fbfaf7}.orion-home-updates-inner{display:grid;grid-template-columns:minmax(225px,.72fr) minmax(0,1.28fr);gap:25px;align-items:center;padding:23px 27px;border:1px solid #d9e2eb;border-radius:18px;background:#fff;box-shadow:0 10px 24px rgba(13,29,53,.05)}.orion-home-updates h2{margin:5px 0 0;color:#102a48;font:600 clamp(23px,2.8vw,32px)/1.14 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-update-list{display:grid;gap:8px}.orion-update{display:grid;grid-template-columns:84px minmax(0,1fr);gap:10px;align-items:center;padding:10px 12px;border:1px solid #e1e8ee;border-radius:13px;color:#1c4f7c;background:#fbfdff;font-size:12px;font-weight:800}.orion-update:hover{border-color:#cba25c;background:#fffaf0}.orion-update time{color:#8a6525;font-size:10px;letter-spacing:.04em;text-transform:uppercase}
       .orion-home-search{margin:0 0 27px;padding:22px 24px;border:1px solid #d9c18e;border-radius:18px;background:linear-gradient(135deg,#102a48,#1d4e78);box-shadow:0 13px 28px rgba(13,29,53,.12)}.orion-home-search-copy{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:15px}.orion-home-search .eyebrow{color:#e8c985}.orion-home-search h2{margin:6px 0 0;color:#fff;font:600 clamp(24px,2.8vw,33px)/1.12 "Playfair Display",Georgia,serif;letter-spacing:-.03em}.orion-home-search p{max-width:470px;margin:0;color:#d7e5f1;font-size:12px;line-height:1.6;text-align:right}.orion-home-search-form{display:grid;grid-template-columns:1fr auto;gap:9px}.orion-home-search-form input{min-height:48px;padding:0 14px;border:1px solid #c1d2e0;border-radius:12px;color:#17243a;background:#fff;font:600 13px "DM Sans",Arial,sans-serif}.orion-home-search-form button{min-height:48px;padding:0 16px;cursor:pointer;border:0;border-radius:12px;color:#17243a;background:#e8c985;font:800 12px "DM Sans",Arial,sans-serif}.orion-home-search-form button:hover{background:#f4d9a3}
       .orion-saved-filter-note{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:15px;padding:11px 12px;border:1px solid #dbe5ee;border-radius:12px;color:#52677c;background:#f7fbff;font-size:11px;line-height:1.45}.orion-saved-filter-note strong{color:#245d4b}.orion-saved-filter-note button{padding:6px 9px;cursor:pointer;border:1px solid #b9cbd9;border-radius:999px;color:#244866;background:#fff;font:800 10px/1 "DM Sans",Arial,sans-serif}.orion-saved-filter-note button:hover{border-color:#b9893d;color:#785719}
       .orion-print-toolbar{display:flex;justify-content:flex-end;margin:0 0 18px}.orion-print-button{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;cursor:pointer;border:1px solid #b88940;border-radius:999px;color:#183b5d;background:#fffaf0;font:800 11px/1 "DM Sans",Arial,sans-serif;box-shadow:0 5px 12px rgba(44,63,83,.08)}.orion-print-button:hover{background:#f5dfad}.orion-print-button:focus-visible{outline:3px solid rgba(185,137,61,.55);outline-offset:3px}
@@ -583,7 +583,7 @@
       .orion-error-notebook{margin:48px 0 0;padding:25px;border:1px solid #e7d3cf;border-radius:18px;background:linear-gradient(135deg,#fff9f8,#fff)}.orion-error-notebook-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:17px}.orion-error-notebook h2{margin:6px 0 0;color:#6e3631;font:600 clamp(24px,2.8vw,33px)/1.12 "Playfair Display",Georgia,serif}.orion-error-notebook-head p{max-width:465px;margin:0;color:#765f5b;font-size:12px;line-height:1.6;text-align:right}.orion-error-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:14px}.orion-error-summary div{padding:13px;border:1px solid #eadbd8;border-radius:12px;background:#fff}.orion-error-summary b{display:block;color:#8e443c;font:600 28px/1 "Playfair Display",Georgia,serif}.orion-error-summary span{display:block;margin-top:5px;color:#746b6a;font-size:10px;line-height:1.4}.orion-error-list{display:grid;gap:9px}.orion-error-entry{padding:13px;border:1px solid #eadeda;border-radius:12px;background:#fff}.orion-error-entry b{display:block;color:#173a5e;font-size:12px}.orion-error-entry span{display:block;margin-top:5px;color:#72625f;font-size:11px;line-height:1.5}.orion-error-entry em{display:inline-block;margin:8px 5px 0 0;padding:4px 7px;border-radius:999px;color:#8b413a;background:#f9e6e3;font-size:10px;font-style:normal;font-weight:800}.orion-error-empty{padding:15px;border:1px dashed #d7bebb;border-radius:12px;color:#735f5c;background:#fff;font-size:12px;line-height:1.6}
       .orion-enem-countdown{margin:38px 0;padding:25px;border:1px solid #d8c6a3;border-radius:18px;background:linear-gradient(135deg,#fff,#fffaf0);box-shadow:0 12px 26px rgba(13,29,53,.05)}.orion-enem-countdown-head{display:flex;align-items:end;justify-content:space-between;gap:18px;margin-bottom:17px}.orion-enem-countdown h2{margin:6px 0 0;color:#102a48;font:600 clamp(25px,2.8vw,35px)/1.12 "Playfair Display",Georgia,serif}.orion-enem-countdown-head p{max-width:445px;margin:0;color:#607286;font-size:12px;line-height:1.6;text-align:right}.orion-countdown-clock{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.orion-countdown-unit{padding:15px 8px;border:1px solid #dfe5ea;border-radius:12px;background:#fff;text-align:center}.orion-countdown-unit b{display:block;color:#173a5e;font:600 clamp(28px,4vw,45px)/1 "Playfair Display",Georgia,serif;font-variant-numeric:tabular-nums}.orion-countdown-unit span{display:block;margin-top:6px;color:#6b7b8e;font-size:9px;font-weight:800;letter-spacing:.07em;text-transform:uppercase}.orion-countdown-days{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:13px}.orion-countdown-days div{padding:12px;border-left:3px solid #d9ae63;border-radius:0 10px 10px 0;background:#fff}.orion-countdown-days b{display:block;color:#173a5e;font-size:11px}.orion-countdown-days span{display:block;margin-top:4px;color:#607286;font-size:10px;line-height:1.5}
       @media print{@page{margin:12mm}.aq-menu-toggle,.aq-menu-backdrop,.aq-mobile-login,.orion-header-search,.orion-print-toolbar,footer,.orion-page-index,.theme-control{display:none!important}body{background:#fff!important;color:#111!important}body>header,body>header[data-orion-unified="true"]{min-height:auto!important;color:#111!important;background:#fff!important;border-bottom:1px solid #bbb!important}body>header :is(.nav,.top),body>header[data-orion-unified="true"] :is(.nav,.top){width:100%!important;min-height:54px!important;padding:0!important;color:#111!important}body>header .brand,body>header[data-orion-unified="true"] .brand{color:#111!important}body>header .back,body>header .public-link{display:none!important}.hero{padding:22px 0!important;color:#111!important;background:#fff!important}.hero:after{display:none!important}.hero :is(h1,h2,h3,p,.eyebrow){color:#111!important}.hero p{max-width:none!important}.wrap{width:100%!important}.orion-data-trust{box-shadow:none!important}.orion-data-trust-action{box-shadow:none!important}main{padding:18px 0!important}.orion-print-results :is(.planner,.selector,#comparisonForm,#studyForm,.add-card){display:none!important}.results,.result,.offer,.card,.event,.checklist,.orion-data-trust,.orion-student-timeline{break-inside:avoid!important;box-shadow:none!important}a{color:#111!important;text-decoration:none!important}.results[hidden]{display:none!important}}
-      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-updates-inner{grid-template-columns:1fr;padding:20px}.orion-update{grid-template-columns:72px minmax(0,1fr)}.orion-home-search{padding:19px}.orion-home-search-copy{align-items:flex-start;flex-direction:column}.orion-home-search p{text-align:left}.orion-home-search-form{grid-template-columns:1fr}.orion-saved-filter-note,.orion-student-timeline-head,.orion-course-finder-head,.orion-error-notebook-head,.orion-enem-countdown-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p,.orion-course-finder-head p,.orion-error-notebook-head p,.orion-enem-countdown-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}.orion-course-fields,.orion-course-result,.orion-error-summary,.orion-countdown-days{grid-template-columns:1fr}.orion-countdown-clock{gap:6px}.orion-countdown-unit{padding:12px 4px}.orion-countdown-unit b{font-size:29px}}
+      @media(max-width:700px){.orion-data-trust{grid-template-columns:1fr;gap:15px;margin-top:18px;padding:18px}.orion-data-trust-action{justify-self:start;white-space:normal}.orion-page-index{align-items:flex-start;flex-direction:column}.orion-page-index b{margin-bottom:2px}.orion-home-search{padding:19px}.orion-home-search-copy{align-items:flex-start;flex-direction:column}.orion-home-search p{text-align:left}.orion-home-search-form{grid-template-columns:1fr}.orion-saved-filter-note,.orion-student-timeline-head,.orion-course-finder-head,.orion-error-notebook-head,.orion-enem-countdown-head{align-items:flex-start;flex-direction:column}.orion-student-timeline{padding:19px}.orion-student-timeline-head p,.orion-course-finder-head p,.orion-error-notebook-head p,.orion-enem-countdown-head p{text-align:left}.orion-timeline-item{grid-template-columns:31px minmax(0,1fr)}.orion-timeline-item time{grid-column:2}.orion-course-fields,.orion-course-result,.orion-error-summary,.orion-countdown-days{grid-template-columns:1fr}.orion-countdown-clock{gap:6px}.orion-countdown-unit{padding:12px 4px}.orion-countdown-unit b{font-size:29px}}
     `;
     document.head.append(style);
   };
@@ -662,7 +662,7 @@
   const refreshHomeHub = () => {
     if (currentPage !== 'index.html') return;
     document.querySelectorAll('.career-stack a[href="cadernos.html"], .career-stack .career-static').forEach((card) => card.remove());
-    document.getElementById('quizLayer')?.remove();
+    removeHomeRecentUpdates();
     const grid = document.querySelector('.benefit-grid');
     if (grid && !grid.dataset.orionHubReady) {
       const topics = [
@@ -721,42 +721,6 @@
       search.append(copy, form);
       grid.insertAdjacentElement('beforebegin', search);
     }
-    const logos = document.querySelector('.logos');
-    if (!logos || document.querySelector('.orion-home-updates')) return;
-    const section = document.createElement('section');
-    section.className = 'orion-home-updates';
-    section.setAttribute('aria-labelledby', 'orion-updates-title');
-    const wrap = document.createElement('div');
-    wrap.className = 'wrap orion-home-updates-inner';
-    const intro = document.createElement('div');
-    const eyebrow = document.createElement('span');
-    eyebrow.className = 'eyebrow';
-    eyebrow.textContent = 'Atualizações recentes';
-    const heading = document.createElement('h2');
-    heading.id = 'orion-updates-title';
-    heading.textContent = 'Informações revisadas para sua consulta.';
-    intro.append(eyebrow, heading);
-    const list = document.createElement('div');
-    list.className = 'orion-update-list';
-    [
-      ['31 ago. 2026', 'Padrão de fontes, revisões e avisos nas páginas de dados', 'como-usamos-informacoes.html'],
-      ['27 ago. 2026', 'Referências de vagas e modalidades do Sisu 2026', 'plano-sisu.html'],
-      ['27 ago. 2026', 'Calendário do vestibulando com links de confirmação', 'calendario-vestibulando.html']
-    ].forEach(([date, label, href]) => {
-      const link = document.createElement('a');
-      link.className = 'orion-update';
-      link.href = href;
-      const time = document.createElement('time');
-      time.dateTime = date === '31 ago. 2026' ? '2026-08-31' : '2026-08-27';
-      time.textContent = date;
-      const text = document.createElement('span');
-      text.textContent = label;
-      link.append(time, text);
-      list.append(link);
-    });
-    wrap.append(intro, list);
-    section.append(wrap);
-    logos.insertAdjacentElement('afterend', section);
   };
 
   const localData = {
@@ -788,6 +752,15 @@
   const savedFiltersKey = 'orion-saved-filters-v1';
   const activitiesKey = 'orion-student-activity-v1';
   const normalText = (value) => String(value || '').replace(/\s+/g, ' ').trim();
+  const removeHomeRecentUpdates = () => {
+    if (currentPage !== 'index.html') return;
+    document.querySelectorAll('.orion-home-updates, [data-orion-home-updates], #orion-home-updates').forEach((element) => element.remove());
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach((heading) => {
+      const label = normalText(heading.textContent).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
+      if (label !== 'atualizacoes recentes') return;
+      heading.closest('section, article, aside, [role="region"]')?.remove();
+    });
+  };
   const formatActivityDate = (value) => {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return 'agora';
@@ -1287,9 +1260,10 @@
     heading.textContent = 'Hub de informações para estudantes';
     links.append(heading);
     const groups = [
+      ['Pesquisa do Projeto Aquiles', ['Pesquisa Ambrosia']],
       ['Consulta e escolhas', ['Home', 'Buscar informações', 'Profissões e faculdades', 'Vagas e Sisu', 'Comparar faculdades', 'Comparar notas', 'Entenda antes de escolher']],
       ['Vestibulares e calendário', ['Calendário do Vestibulando', 'Vestibulares seriados', 'Listas de espera']],
-      ['Ferramentas de estudo', ['Plano de estudos', 'Cronômetro e Countdown ENEM', 'Alimentação e estudos']],
+      ['Ferramentas de estudo', ['Plano de estudos', 'Cronômetro e Countdown ENEM']],
       ['Área do estudante', ['Área do estudante', 'Favoritos e comparações', 'Criar cadastro']],
       ['Outras informações', ['Bolsas e apoios', 'Carreiras militares', 'Estude no Exterior', 'Como usamos as informações', 'Privacidade e seus dados']]
     ];
@@ -1298,7 +1272,7 @@
     const appendLink = ([href, label, description]) => {
       const link = document.createElement('a');
       link.href = href;
-      if (['Buscar informações', 'Vagas e Sisu', 'Área do estudante'].includes(label)) link.classList.add('aq-menu-priority');
+      if (['Pesquisa Ambrosia', 'Buscar informações', 'Vagas e Sisu', 'Área do estudante'].includes(label)) link.classList.add('aq-menu-priority');
       link.append(document.createTextNode(label));
       const detail = document.createElement('small');
       detail.textContent = description;
@@ -1337,15 +1311,15 @@
       const nutritionLink = document.createElement('a');
       nutritionLink.className = 'tool nutrition-tool';
       nutritionLink.href = 'alimentacao-e-estudos.html';
-      nutritionLink.setAttribute('aria-label', 'Abrir informações sobre alimentação e estudos');
+      nutritionLink.setAttribute('aria-label', 'Abrir a Pesquisa Ambrosia sobre alimentação e estudos');
       const icon = document.createElement('span');
       icon.className = 'tool-icon';
       icon.setAttribute('aria-hidden', 'true');
       icon.textContent = '◒';
       const title = document.createElement('h3');
-      title.textContent = 'Alimentação e estudos';
+      title.textContent = 'Pesquisa Ambrosia';
       const description = document.createElement('p');
-      description.textContent = 'Consulte referências sobre alimentação, hidratação e rotina de estudo.';
+      description.textContent = 'Alimentação, hidratação e bem-estar na rotina de estudos.';
       nutritionLink.append(icon, title, description);
       organizerRooms.append(nutritionLink);
     }

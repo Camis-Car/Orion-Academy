@@ -1,10 +1,10 @@
 {
-  "id": "./",
-  "name": "Orion Academy",
-  "short_name": "Orion",
-  "description": "Informação, organização e ferramentas para estudantes.",
+  "id": "./feira.html",
+  "name": "Orion Feira Offline",
+  "short_name": "Orion Feira",
+  "description": "Aplicativo local para feira: teste vocacional, faculdades e caminhos de formação.",
   "lang": "pt-BR",
-  "start_url": "./",
+  "start_url": "./feira.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#0d1d35",
@@ -21,24 +21,24 @@
   ],
   "shortcuts": [
     {
-      "name": "Buscar informações",
-      "short_name": "Buscar",
-      "url": "busca.html"
+      "name": "Teste vocacional",
+      "short_name": "Teste",
+      "url": "feira-vocacional.html"
     },
     {
-      "name": "Vagas e Sisu",
-      "short_name": "Sisu",
-      "url": "plano-sisu.html"
+      "name": "Faculdades e Sisu",
+      "short_name": "Faculdades",
+      "url": "feira-faculdades.html"
     },
     {
-      "name": "Área do estudante",
-      "short_name": "Área",
-      "url": "minha-jornada.html"
+      "name": "Carreiras militares",
+      "short_name": "Militares",
+      "url": "feira-militares.html"
     },
     {
-      "name": "Cronômetro de estudos",
-      "short_name": "Foco",
-      "url": "cronometro-estudos.html"
+      "name": "Estude no exterior",
+      "short_name": "Exterior",
+      "url": "feira-exterior.html"
     }
   ]
 }

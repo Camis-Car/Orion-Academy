@@ -15,12 +15,34 @@
   <style>
     .result-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}.result-action{display:inline-flex;align-items:center;justify-content:center;min-height:34px;padding:0 11px;border:1px solid #c9d6e1;border-radius:999px;color:#2a557c;background:#fff;font-size:11px;font-weight:800;line-height:1.2}.result-action:hover,.result-action:focus-visible{border-color:#9e7330;background:#fff8eb;outline:0}.result-action.primary{border-color:#d9ae63;background:#d9ae63;color:#17243a}.empty b{display:block;color:var(--navy);font:600 23px "Playfair Display",Georgia,serif}.empty p{max-width:640px;margin:8px auto 0}.empty-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:18px}.empty-actions a{padding:9px 12px;border:1px solid #c9d6e1;border-radius:999px;color:#2a557c;background:#fff;font-size:11px;font-weight:800}.empty-actions a:hover,.empty-actions a:focus-visible{border-color:#c89b4f;background:#fff8eb;outline:0}@media(max-width:720px){.result-actions,.empty-actions{align-items:stretch;flex-direction:column}.result-action,.empty-actions a{width:100%}}
   </style>
+  <style id="orion-search-refinement">
+    .search-panel { padding: 28px; border-radius: 16px; border-color: #d9c089; }
+    .search-panel-head { display: flex; align-items: start; justify-content: space-between; gap: 24px; margin-bottom: 20px; }
+    .search-panel-head h2 { margin: 5px 0 0; color: var(--navy); font: 600 28px/1.12 "Playfair Display", Georgia, serif; }
+    .search-panel-head p { max-width: 510px; margin: 0; color: var(--muted); font-size: 12px; line-height: 1.6; }
+    .search-form { grid-template-columns: 1.1fr 1.1fr .55fr auto; gap: 12px; align-items: end; }
+    .search-field { display: grid; gap: 7px; }
+    .search-field label { color: #33475f; font-size: 11px; font-weight: 800; letter-spacing: .02em; }
+    .search-field input, .search-field select { width: 100%; min-height: 50px; padding: 0 13px; border: 1px solid #c6d4df; border-radius: 9px; color: var(--ink); background: #fff; font: 600 13px "DM Sans", Arial, sans-serif; outline: 0; }
+    .search-field input:focus, .search-field select:focus { border-color: #b48335; box-shadow: 0 0 0 4px rgba(217,174,99,.18); }
+    .search-submit { min-height: 50px; border-radius: 9px; white-space: nowrap; }
+    .search-panel-footer { display: flex; justify-content: space-between; gap: 16px; margin-top: 17px; padding-top: 15px; border-top: 1px solid #e6ebef; }
+    .search-panel-footer p { margin: 0; color: #627286; font-size: 11px; line-height: 1.55; }
+    .search-panel-footer b { color: #76581f; }
+    .clear-search { min-height: auto; padding: 0; border: 0; color: #2e5f85; background: transparent; font-size: 11px; text-decoration: underline; text-underline-offset: 3px; }
+    .search-selection { display: flex; flex-wrap: wrap; gap: 7px; margin: 18px 0 -3px; }
+    .search-selection span { padding: 5px 8px; border-radius: 999px; color: #315f4c; background: #e9f4ed; font-size: 10px; font-weight: 800; }
+    .cutoff-reference { color: #174c3a !important; background: #e8f4ec !important; }
+    .process-note { margin-top: 12px; padding: 11px 13px; border-left: 3px solid #d9ae63; color: #5b4a29; background: #fff8e9; font-size: 11px; line-height: 1.55; }
+    @media (max-width: 900px) { .search-form { grid-template-columns: 1fr 1fr; } .search-submit { width: 100%; } }
+    @media (max-width: 620px) { .search-panel { padding: 22px; } .search-panel-head, .search-panel-footer { align-items: flex-start; flex-direction: column; } .search-form { grid-template-columns: 1fr; } .search-panel-footer { gap: 9px; } }
+  </style>
 </head>
 <body><script src="acessibilidade.js"></script>
   <header><div class="wrap nav"><a class="brand" href="index.html?public=1"><span class="brand-mark" aria-hidden="true">♝</span>Orion Academy</a><a class="back" href="index.html?public=1">← Voltar ao hub</a></div></header>
-  <section class="hero"><div class="wrap hero-content"><span class="eyebrow">Pesquisa do hub</span><h1>Encontre a informação que procura.</h1><p>Pesquise cursos, estados, universidades, vestibulares, cotas ou termos como “Medicina Paraná” e “PISM”.</p></div></section>
+  <section class="hero"><div class="wrap hero-content"><span class="eyebrow">Pesquisa do hub</span><h1>Encontre a informação que procura.</h1><p>Escreva como você pesquisaria: “Medicina Rio”, “Medicina São Paulo”, “Direito UFRJ”, “PISM” ou “cotas”. A Orion separa curso, instituição e estado para consultar as ofertas correspondentes.</p></div></section>
   <main class="wrap">
-    <section class="search-panel" aria-label="Busca geral"><form class="search-form" id="searchForm"><input id="query" type="search" autocomplete="off" placeholder="Ex.: Medicina Paraná, PISM, lista de espera" aria-label="Buscar informações"><button type="submit">Buscar →</button></form><fieldset class="search-mode"><legend>Quando a busca incluir um curso:</legend><label><input type="radio" name="courseMatchMode" value="exact" checked> Somente o curso exato</label><label><input type="radio" name="courseMatchMode" value="related"> Incluir cursos relacionados</label></fieldset><p class="search-help"><b>Busca por informação, não por recomendação.</b> Os resultados indicam onde consultar dados e fontes oficiais.</p></section>
+    <section class="search-panel" aria-label="Consultar cursos e faculdades"><div class="search-panel-head"><div><span class="eyebrow" style="color:#8a6525">Consulta de cursos</span><h2>Filtre com precisão.</h2></div><p>Use os filtros ou escreva uma busca livre. Os resultados só aparecem quando curso, faculdade e estado correspondem à mesma oferta.</p></div><form class="search-form" id="searchForm"><div class="search-field"><label for="courseFilter">Curso</label><input id="courseFilter" list="courseOptions" autocomplete="off" placeholder="Ex.: Medicina"><datalist id="courseOptions"></datalist></div><div class="search-field"><label for="institutionFilter">Faculdade ou sigla</label><input id="institutionFilter" list="institutionOptions" autocomplete="off" placeholder="Ex.: UFRJ"><datalist id="institutionOptions"></datalist></div><div class="search-field"><label for="stateFilter">Estado</label><select id="stateFilter"><option value="">Selecione</option><option value="AC">Acre</option><option value="AL">Alagoas</option><option value="AP">Amapá</option><option value="AM">Amazonas</option><option value="BA">Bahia</option><option value="CE">Ceará</option><option value="DF">Distrito Federal</option><option value="ES">Espírito Santo</option><option value="GO">Goiás</option><option value="MA">Maranhão</option><option value="MT">Mato Grosso</option><option value="MS">Mato Grosso do Sul</option><option value="MG">Minas Gerais</option><option value="PA">Pará</option><option value="PB">Paraíba</option><option value="PR">Paraná</option><option value="PE">Pernambuco</option><option value="PI">Piauí</option><option value="RJ">Rio de Janeiro</option><option value="RN">Rio Grande do Norte</option><option value="RS">Rio Grande do Sul</option><option value="RO">Rondônia</option><option value="RR">Roraima</option><option value="SC">Santa Catarina</option><option value="SP">São Paulo</option><option value="SE">Sergipe</option><option value="TO">Tocantins</option></select></div><button class="search-submit" type="submit">Consultar ofertas →</button><div class="search-field" style="grid-column:1 / -1"><label for="query">Busca livre <span style="font-weight:500">(opcional)</span></label><input id="query" type="search" autocomplete="off" placeholder="Ex.: Medicina Rio, Medicina São Paulo, PISM ou cotas" aria-label="Buscar uma informação no hub"></div></form><div class="search-panel-footer"><p><b>Resultado exato.</b> Ao informar Medicina e UFRJ, a consulta exclui todos os outros cursos da universidade.</p><button class="clear-search" id="clearSearch" type="button">Limpar filtros</button></div></section>
     <section aria-labelledby="resultsTitle"><div class="results-head"><div><span class="eyebrow" style="color:#8a6525">Resultados</span><h2 id="resultsTitle">Comece por um tema.</h2></div><p id="resultCount">Digite uma busca para ver resultados.</p></div><div class="quick" id="quickLinks"><a href="busca.html?q=Medicina%20Paran%C3%A1"><b>Medicina no Paraná</b><span>Pesquise cursos, instituições e ofertas por estado.</span></a><a href="busca.html?q=cotas"><b>Cotas</b><span>Entenda modalidades, ampla concorrência e referências.</span></a><a href="busca.html?q=PISM"><b>PISM</b><span>Veja o processo seriado da UFJF e fontes relacionadas.</span></a><a href="calendario-vestibulando.html"><b>Calendário ENEM</b><span>Consulte datas, etapas e links de confirmação.</span></a><a href="busca.html?q=faculdades%20federais"><b>Faculdades federais</b><span>Encontre instituições públicas para começar a pesquisa.</span></a><a href="entenda-escolhas.html"><b>Entenda os termos</b><span>Cotas, nota de corte, campus, turno e lista de espera.</span></a></div><div class="results" id="results" hidden></div></section>
   </main>
   <footer><div class="wrap footer"><span>© 2026 Orion Academy. Ferramenta de consulta e organização de informações.</span><a href="entenda-escolhas.html">Entenda antes de escolher →</a></div></footer>
@@ -88,6 +110,212 @@
         window.orionMetric('site_search', { search_term: term, result_count: total });
         if (!total) window.orionMetric('search_without_result', { search_term: term });
       }, 0));
+    })();
+  </script>
+  <script id="orion-structured-search">
+    (() => {
+      const originalForm = document.getElementById('searchForm');
+      if (!originalForm) return;
+      const form = originalForm.cloneNode(true);
+      originalForm.replaceWith(form);
+
+      const course = form.querySelector('#courseFilter');
+      const institution = form.querySelector('#institutionFilter');
+      const state = form.querySelector('#stateFilter');
+      const topic = form.querySelector('#query');
+      const courses = form.querySelector('#courseOptions');
+      const institutions = form.querySelector('#institutionOptions');
+      const clear = document.getElementById('clearSearch');
+      const results = document.getElementById('results');
+      const count = document.getElementById('resultCount');
+      const quick = document.getElementById('quickLinks');
+      const normalize = (value) => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim().toLocaleLowerCase('pt-BR');
+      const escape = (value) => String(value || '').replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+      const unique = (values) => [...new Set(values.filter(Boolean))].sort((left, right) => left.localeCompare(right, 'pt-BR'));
+      const naturalStates = [
+        ['rio grande do norte', 'RN'], ['rio grande do sul', 'RS'], ['mato grosso do sul', 'MS'], ['distrito federal', 'DF'], ['espirito santo', 'ES'], ['minas gerais', 'MG'], ['rio de janeiro', 'RJ'], ['santa catarina', 'SC'], ['sao paulo', 'SP'],
+        ['acre', 'AC'], ['alagoas', 'AL'], ['amapa', 'AP'], ['amazonas', 'AM'], ['bahia', 'BA'], ['ceara', 'CE'], ['goias', 'GO'], ['maranhao', 'MA'], ['mato grosso', 'MT'], ['paraiba', 'PB'], ['parana', 'PR'], ['pernambuco', 'PE'], ['piaui', 'PI'], ['rondonia', 'RO'], ['roraima', 'RR'], ['sergipe', 'SE'], ['tocantins', 'TO'], ['para', 'PA'],
+        ['rio', 'RJ'], ['rj', 'RJ'], ['sp', 'SP'], ['curitiba', 'PR'], ['porto alegre', 'RS'], ['salvador', 'BA'], ['brasilia', 'DF'], ['belo horizonte', 'MG'], ['florianopolis', 'SC']
+      ];
+      const institutionHints = [
+        ['ufrj', 'RJ', 'UFRJ'], ['uff', 'RJ', 'UFF'], ['ufrrj', 'RJ', 'UFRRJ'], ['usp', 'SP', 'USP'], ['unifesp', 'SP', 'UNIFESP'], ['ufscar', 'SP', 'UFSCAR'], ['ufpr', 'PR', 'UFPR'], ['ufrgs', 'RS', 'UFRGS'], ['ufba', 'BA', 'UFBA'], ['unb', 'DF', 'UnB'], ['ufmg', 'MG', 'UFMG'], ['ufsc', 'SC', 'UFSC']
+      ];
+      const phrasePattern = (term) => new RegExp(`(^|\\s)${term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?=\\s|$)`, 'i');
+      const removePhrase = (text, phrase) => text.replace(phrasePattern(phrase), ' ').replace(/\s+/g, ' ').trim();
+      const inferNaturalSearch = (value) => {
+        let remaining = normalize(value);
+        let inferredState = '';
+        let inferredInstitution = '';
+        const institution = institutionHints.find(([term]) => phrasePattern(term).test(remaining));
+        if (institution) {
+          [, inferredState, inferredInstitution] = institution;
+          remaining = removePhrase(remaining, institution[0]);
+        }
+        const stateMatch = naturalStates.find(([term]) => phrasePattern(term).test(remaining));
+        if (stateMatch) {
+          inferredState = inferredState || stateMatch[1];
+          remaining = removePhrase(remaining, stateMatch[0]);
+        }
+        return { course: remaining, state: inferredState, institution: inferredInstitution };
+      };
+      const resources = [
+        ['Cotas e modalidades', 'Entenda antes de escolher', 'entenda-escolhas.html', 'cotas ampla concorrencia lista de espera pesos nota de corte campus turno'],
+        ['Vagas e Sisu', 'Vagas e Sisu', 'plano-sisu.html', 'sisu vagas modalidades nota de corte pesos'],
+        ['Vestibulares seriados', 'Vestibulares seriados', 'vestibulares-seriados.html', 'pism pas pss pave ssa sasi provao paulista seriado'],
+        ['Instituições públicas', 'Faculdades públicas', 'faculdades-publicas.html', 'faculdade universidade publica federal estadual municipal instituicao campus'],
+        ['Comparações', 'Comparar notas', 'comparar-notas.html', 'enem nota pesos corte modalidade']
+      ];
+      const offers = () => Array.isArray(window.SISU_2026_NACIONAL?.ofertas) ? window.SISU_2026_NACIONAL.ofertas : [];
+      const selected = () => ({ course: course.value.trim(), institution: institution.value.trim(), state: state.value, topic: topic.value.trim() });
+      const hasOfferFilter = () => Boolean(course.value.trim() || institution.value.trim() || state.value);
+      const applyNaturalFilters = () => {
+        if (course.value.trim() || institution.value.trim() || state.value || !topic.value.trim()) return false;
+        const inferred = inferNaturalSearch(topic.value);
+        if (!inferred.state && !inferred.institution) return false;
+        course.value = inferred.course;
+        institution.value = inferred.institution;
+        state.value = inferred.state;
+        topic.value = '';
+        return true;
+      };
+      const stateName = () => state.options[state.selectedIndex]?.textContent || '';
+      const sameInstitution = (offer, value) => {
+        const term = normalize(value);
+        if (!term) return true;
+        const exactValues = [offer.instituicao, offer.sigla, `${offer.sigla || ''} ${offer.instituicao || ''}`].map(normalize);
+        return exactValues.includes(term) || (term.length > 5 && normalize(offer.instituicao).includes(term));
+      };
+      const selectionLabels = (filters) => [
+        filters.course && `Curso: ${filters.course}`,
+        filters.institution && `Faculdade: ${filters.institution}`,
+        filters.state && `Estado: ${stateName()}`
+      ].filter(Boolean).map((label) => `<span>${escape(label)}</span>`).join('');
+      const official = (offer) => `<aside class="official"><b>Fonte oficial</b>${escape(offer.fonte || 'Sisu / MEC')}<br><small>Revisado em 01/08/2026</small><a href="${escape(offer.fonteUrl || 'https://acessounico.mec.gov.br/sisu')}" target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a></aside>`;
+      const offerCard = (offer) => {
+        const params = new URLSearchParams({ curso: offer.curso, uf: offer.uf, instituicao: offer.instituicao });
+        const vacancies = new URLSearchParams({ curso: offer.curso, uf: offer.uf, instituicao: offer.instituicao, abrirNotas: '1' });
+        const source = offer.fonteUrl || 'https://acessounico.mec.gov.br/sisu';
+        const ampla = (offer.modalidades || []).find((modalidade) => modalidade.codigo === 'AC');
+        const cutoff = Number(ampla?.notaCorte || 0);
+        const cutoffLabel = cutoff > 0 ? `ENEM · ampla: ${cutoff.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : 'ENEM · referência não publicada';
+        return `<article class="result"><div><span class="result-kind">Oferta Sisu 2026</span><h3>${escape(offer.curso)}</h3><p>${escape(offer.instituicao)} · ${escape(offer.cidade)} · ${escape(offer.campus || 'Campus não informado')}.</p><div class="result-meta"><span class="match-exact">Resultado exato</span><span>${escape(offer.uf)}</span><span>${escape(String(offer.vagas))} vagas</span><span class="cutoff-reference">${escape(cutoffLabel)}</span></div><div class="result-actions"><a class="result-action primary" href="plano-sisu.html?${vacancies.toString()}">Ver vagas e cotas</a><a class="result-action" href="comparar-notas.html?${params.toString()}">Comparar minha nota</a><a class="result-action" href="${escape(source)}" target="_blank" rel="noopener noreferrer">Abrir fonte oficial ↗</a></div></div>${official(offer)}</article>`;
+      };
+      const serialCardsForCourse = (filters) => {
+        if (!filters.state || !filters.course) return [];
+        const courseTerm = normalize(filters.course);
+        return (window.NOTAS_VESTIBULARES_SERIADOS?.processos || [])
+          .filter((process) => process.uf === filters.state)
+          .flatMap((process) => {
+            const matchingCourses = (process.cursos || []).filter((entry) => normalize(entry.nome).split(/\s+[—–-]\s+/)[0].trim() === courseTerm);
+            if (matchingCourses.length) return matchingCourses.map((entry) => {
+              const cutoff = Number(entry.cortes?.AC || 0);
+              const cutoffLabel = cutoff > 0 ? `Ampla concorrência: ${cutoff.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}` : 'Nota de referência não publicada';
+              return `<article class="result"><div><span class="result-kind">Vestibular seriado</span><h3>${escape(process.nome)} · ${escape(entry.nome)}</h3><p>${escape(process.instituicao)} · ${escape(entry.campus || process.local)}.</p><div class="result-meta"><span>${escape(process.estado)}</span><span class="cutoff-reference">${escape(cutoffLabel)}</span></div><div class="process-note">A escala desta prova é própria e não pode ser comparada diretamente com a nota do ENEM.</div></div><aside class="official"><b>Fonte oficial</b>${escape(process.fonte || process.instituicao)}<br><small>Notas da edição indicada pela instituição</small><a href="${escape(process.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a></aside></article>`;
+            });
+            return [`<article class="result"><div><span class="result-kind">Vestibular seriado</span><h3>${escape(process.nome)}</h3><p>${escape(process.instituicao)} · ${escape(process.local)}.</p><div class="process-note">Este processo atende ao estado pesquisado, mas ainda não há uma nota oficial verificável de ${escape(filters.course)} cadastrada nesta base. Consulte o edital para confirmar a forma de ingresso.</div></div><aside class="official"><b>Fonte oficial</b>${escape(process.fonte || process.instituicao)}<br><small>Regras podem mudar por edição</small><a href="${escape(process.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a></aside></article>`];
+          });
+      };
+      const topicCards = (term) => {
+        const tokens = normalize(term).split(/\s+/).filter(Boolean);
+        if (!tokens.length) return [];
+        const cards = resources.filter(([, title, , tags]) => tokens.every((token) => normalize(`${title} ${tags}`).includes(token)))
+          .map(([kind, title, url]) => `<article class="result"><div><span class="result-kind">${escape(kind)}</span><h3><a href="${escape(url)}">${escape(title)}</a></h3><p>Abra esta área para consultar explicações, dados e referências oficiais relacionadas ao tema.</p></div><aside class="official"><b>Informação organizada</b>Orion Academy<br><small>Confirme regras no edital</small><a href="${escape(url)}">Abrir área ↗</a></aside></article>`);
+        const serial = (window.NOTAS_VESTIBULARES_SERIADOS?.processos || []).filter((process) => tokens.every((token) => normalize(`${process.nome} ${process.instituicao} ${process.estado} ${process.local}`).includes(token))).slice(0, 6)
+          .map((process) => `<article class="result"><div><span class="result-kind">Vestibular seriado</span><h3>${escape(process.nome)}</h3><p>${escape(process.instituicao)} · ${escape(process.local)}.</p><div class="result-meta"><span>${escape(process.estado)}</span><span>${escape(process.instituicao)}</span></div></div><aside class="official"><b>Fonte oficial</b>${escape(process.fonte || process.instituicao)}<br><small>Consulte o processo</small><a href="${escape(process.url || 'vestibulares-seriados.html')}" target="_blank" rel="noopener noreferrer">Abrir fonte ↗</a></aside></article>`);
+        return [...cards, ...serial];
+      };
+      const updateSuggestions = () => {
+        const currentOffers = offers().filter((offer) => !state.value || offer.uf === state.value);
+        const courseValue = normalize(course.value);
+        const institutionScope = currentOffers.filter((offer) => !courseValue || normalize(offer.curso) === courseValue);
+        courses.innerHTML = unique(currentOffers.map((offer) => offer.curso)).map((name) => `<option value="${escape(name)}"></option>`).join('');
+        institutions.innerHTML = unique(institutionScope.flatMap((offer) => [offer.sigla, offer.instituicao])).map((name) => `<option value="${escape(name)}"></option>`).join('');
+      };
+      const emptyOfferResult = (filters) => `<div class="empty"><b>Nenhuma oferta foi encontrada com esses filtros.</b><p>Confira se selecionou o nome oficial do curso e a sigla correta da instituição. A ausência de resultado não significa que o curso não exista ou que não tenha outra forma de ingresso.</p><div class="empty-actions">${filters.state ? `<a href="faculdades-publicas.html?uf=${encodeURIComponent(filters.state)}">Ver instituições públicas deste estado</a>` : ''}<a href="plano-sisu.html">Consultar vagas e Sisu</a><a href="entenda-escolhas.html">Entender modalidades e cotas</a></div></div>`;
+      const render = () => {
+        const filters = selected();
+        const selectedOffers = offers().filter((offer) => (!filters.state || offer.uf === filters.state)
+          && (!filters.course || normalize(offer.curso) === normalize(filters.course))
+          && sameInstitution(offer, filters.institution));
+        const displayedOffers = (filters.course || filters.institution) ? selectedOffers : selectedOffers.slice(0, 60);
+        const cards = hasOfferFilter() ? [...displayedOffers.map(offerCard), ...serialCardsForCourse(filters)] : topicCards(filters.topic);
+        if (!hasOfferFilter() && !filters.topic) {
+          results.hidden = true;
+          quick.hidden = false;
+          count.textContent = 'Selecione curso, faculdade ou estado para começar.';
+          return;
+        }
+        const details = hasOfferFilter() ? ` ${selectedOffers.length} oferta${selectedOffers.length === 1 ? '' : 's'} encontrada${selectedOffers.length === 1 ? '' : 's'}.` : ` ${cards.length} resultado${cards.length === 1 ? '' : 's'} encontrado${cards.length === 1 ? '' : 's'}.`;
+        results.innerHTML = `${hasOfferFilter() ? `<div class="search-selection">${selectionLabels(filters)}</div>` : ''}${cards.length ? cards.join('') : emptyOfferResult(filters)}`;
+        results.hidden = false;
+        quick.hidden = true;
+        count.textContent = hasOfferFilter() ? `Consulta exata:${details}` : `Tema pesquisado:${details}`;
+      };
+      const loadSelectedState = async () => {
+        if (!state.value) { updateSuggestions(); return; }
+        const current = window.SISU_2026_NACIONAL;
+        if (current?.escopo === 'nacional' || current?.escopo === state.value) { updateSuggestions(); return; }
+        if (typeof window.orionLoadSisuState !== 'function') return;
+        count.textContent = `Carregando ofertas do Sisu em ${stateName()}…`;
+        await window.orionLoadSisuState(state.value);
+        updateSuggestions();
+      };
+      const stateFromLegacyQuery = (value) => {
+        const text = normalize(value);
+        return [...state.options].find((option) => option.value && text.includes(normalize(option.textContent)))?.value || '';
+      };
+      const saveAddress = () => {
+        const filters = selected();
+        const url = new URL(location.href);
+        ['q', 'curso', 'instituicao', 'uf', 'tema', 'modo'].forEach((key) => url.searchParams.delete(key));
+        if (filters.course) url.searchParams.set('curso', filters.course);
+        if (filters.institution) url.searchParams.set('instituicao', filters.institution);
+        if (filters.state) url.searchParams.set('uf', filters.state);
+        if (filters.topic) url.searchParams.set('tema', filters.topic);
+        history.replaceState(null, '', url);
+      };
+      form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        try {
+          applyNaturalFilters();
+          await loadSelectedState();
+          updateSuggestions();
+          render();
+          saveAddress();
+        } catch (_) {
+          count.textContent = 'Não foi possível carregar as ofertas desse estado agora. Tente novamente.';
+        }
+      });
+      state.addEventListener('change', async () => {
+        try { await loadSelectedState(); render(); } catch (_) { count.textContent = 'Não foi possível carregar este estado agora.'; }
+      });
+      course.addEventListener('input', updateSuggestions);
+      clear.addEventListener('click', () => {
+        form.reset();
+        updateSuggestions();
+        results.hidden = true;
+        quick.hidden = false;
+        count.textContent = 'Selecione curso, faculdade ou estado para começar.';
+        history.replaceState(null, '', location.pathname);
+        course.focus();
+      });
+      const params = new URLSearchParams(location.search);
+      course.value = params.get('curso') || '';
+      institution.value = params.get('instituicao') || '';
+      state.value = params.get('uf') || '';
+      topic.value = params.get('tema') || '';
+      const legacy = params.get('q') || '';
+      if (legacy && !course.value && !institution.value && !state.value && !topic.value) {
+        const inferred = inferNaturalSearch(legacy);
+        if (inferred.state || inferred.institution) {
+          state.value = inferred.state;
+          institution.value = inferred.institution;
+          course.value = inferred.course;
+        } else topic.value = legacy;
+      }
+      (async () => {
+        try { await loadSelectedState(); updateSuggestions(); render(); } catch (_) { count.textContent = 'Escolha um estado para consultar as ofertas disponíveis.'; }
+      })();
     })();
   </script>
 </body>
