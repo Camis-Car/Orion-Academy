@@ -1,8 +1,8 @@
-name: Revisar fontes oficiais
+name: Monitorar fontes oficiais diariamente
 
 on:
   schedule:
-    - cron: '0 09 1,16 * *'
+    - cron: '0 10 * * *'
   workflow_dispatch:
 
 permissions:
@@ -17,22 +17,29 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Verificar fontes externas
-        run: node scripts/revisar-fontes-oficiais.mjs
-      - name: Registrar resultado da revisão
-        id: changes
+      - name: Verificar fontes externas cadastradas
+        id: monitor
+        shell: bash
         run: |
-          if git diff --quiet -- dados-revisao; then
+          result="$(node scripts/revisar-fontes-oficiais.mjs)"
+          echo "$result"
+          should_commit="$(node -e 'const result = JSON.parse(process.argv[1]); process.stdout.write(String(Boolean(result.shouldCommit)))' "$result")"
+          echo "should_commit=$should_commit" >> "$GITHUB_OUTPUT"
+      - name: Registrar mudança relevante
+        id: changes
+        shell: bash
+        run: |
+          if [ "${{ steps.monitor.outputs.should_commit }}" != "true" ]; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
-          else
-            git config user.name "Orion Academy Bot"
-            git config user.email "actions@github.com"
-            git add dados-revisao
-            git commit -m "chore: revisa fontes oficiais"
-            git push
-            echo "changed=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
-      - name: Abrir alerta para mudanças detectadas
+          git config user.name "Orion Academy Bot"
+          git config user.email "actions@github.com"
+          git add dados-revisao
+          git commit -m "chore: monitora fontes oficiais"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+      - name: Abrir pendência para confirmação editorial
         if: steps.changes.outputs.changed == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
