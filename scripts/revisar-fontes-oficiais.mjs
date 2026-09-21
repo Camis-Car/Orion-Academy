@@ -40,15 +40,27 @@ const editorialUrl = (value) => {
     return false;
   }
 };
-const getUrls = async () => {
-  const urls = new Set();
+const categoryFor = (files) => files.some((path) => /lista[s-]?espera|acompanhamento/i.test(path))
+  ? 'lista_espera'
+  : 'fonte_geral';
+const getSources = async () => {
+  const byUrl = new Map();
   const files = await walk(root);
   for (const path of files) {
     const content = await readFile(path, 'utf8');
+    const repositoryPath = relative(root, path);
     const matches = content.match(/https?:\/\/[^\s"'<>`]+/g) || [];
-    matches.map(cleanUrl).filter(editorialUrl).forEach((url) => urls.add(url));
+    matches.map(cleanUrl).filter(editorialUrl).forEach((url) => {
+      if (!byUrl.has(url)) byUrl.set(url, new Set());
+      byUrl.get(url).add(repositoryPath);
+    });
   }
-  return [...urls].sort((a, b) => a.localeCompare(b));
+  return [...byUrl.entries()]
+    .map(([url, paths]) => {
+      const arquivos = [...paths].sort((left, right) => left.localeCompare(right));
+      return { url, arquivos, categoria: categoryFor(arquivos) };
+    })
+    .sort((left, right) => left.url.localeCompare(right.url));
 };
 
 const fingerprint = (result) => createHash('sha256').update([
@@ -57,15 +69,16 @@ const fingerprint = (result) => createHash('sha256').update([
 const check = async (url) => {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 18000);
+  const headers = { 'user-agent': 'OrionAcademySourceReview/1.0 (+https://theorionacademy.com.br)' };
   try {
     let response = await fetch(url, {
       method: 'HEAD', redirect: 'follow', signal: controller.signal,
-      headers: { 'user-agent': 'OrionAcademySourceReview/1.0 (+https://theorionacademy.com.br)' }
+      headers, cache: 'no-store'
     });
     if (response.status === 403 || response.status === 405 || response.status === 501) {
       response = await fetch(url, {
         method: 'GET', redirect: 'follow', signal: controller.signal,
-        headers: { range: 'bytes=0-1024', 'user-agent': 'OrionAcademySourceReview/1.0 (+https://theorionacademy.com.br)' }
+        headers: { ...headers, range: 'bytes=0-1024' }, cache: 'no-store'
       });
     }
     const result = {
@@ -98,34 +111,58 @@ await mkdir(outputDirectory, { recursive: true });
 let previous = { verificadoEm: null, fontes: [] };
 try { previous = JSON.parse(await readFile(statusPath, 'utf8')); } catch {}
 const previousByUrl = new Map((previous.fontes || []).map((source) => [source.url, source]));
-const urls = await getUrls();
-const checked = await mapConcurrent(urls, 6, check);
+const configuredSources = await getSources();
+const checked = await mapConcurrent(configuredSources, 6, (source) => check(source.url));
 const firstReview = !previous.verificadoEm;
-const sources = checked.map((source) => {
+const sources = checked.map((source, index) => {
+  const configured = configuredSources[index];
   const before = previousByUrl.get(source.url);
   const mudou = !firstReview && Boolean(before) && before.assinatura !== source.assinatura;
-  const nova = !before;
-  return { ...source, mudou, nova, arquivos: [] };
+  const indisponibilidadeNova = !firstReview && !source.disponivel && before?.disponivel === true;
+  return { ...source, ...configured, mudou, nova: !before, indisponibilidadeNova };
 });
-const changed = sources.filter((source) => source.mudou || (!source.disponivel && !firstReview));
+const changed = sources.filter((source) => source.mudou || source.indisponibilidadeNova);
 const unavailable = sources.filter((source) => !source.disponivel);
+const possibleWaitlistChanges = changed.filter((source) => source.categoria === 'lista_espera');
 const now = new Date().toISOString();
 const status = {
-  versao: 1,
+  versao: 2,
   verificadoEm: now,
-  frequencia: '1º e 16º dia de cada mês',
-  resumo: { fontes: sources.length, disponiveis: sources.length - unavailable.length, mudancasDetectadas: changed.filter((source) => source.mudou).length, indisponiveis: unavailable.length },
+  frequencia: 'Diariamente',
+  resumo: {
+    fontes: sources.length,
+    disponiveis: sources.length - unavailable.length,
+    mudancasDetectadas: changed.filter((source) => source.mudou).length,
+    possiveisChamadasOuListas: possibleWaitlistChanges.length,
+    indisponiveis: unavailable.length
+  },
   fontes: sources
 };
 await writeFile(statusPath, `${JSON.stringify(status, null, 2)}\n`);
 
 const reportLines = [
   '# Pendências de fontes oficiais', '', `Verificação automática: ${now}.`, '',
-  firstReview ? 'A primeira execução estabeleceu a linha de base. Nenhuma alteração foi tratada como atualização pendente.' : changed.length ? '## Itens para revisão editorial' : 'Nenhuma mudança ou indisponibilidade detectada nesta verificação.', ''
+  firstReview
+    ? 'A primeira execução estabeleceu a linha de base. Nenhuma alteração foi tratada como atualização pendente.'
+    : changed.length
+      ? '## Itens para revisão editorial'
+      : 'Nenhuma mudança ou indisponibilidade nova foi detectada nesta verificação.', ''
 ];
 if (!firstReview && changed.length) {
-  changed.forEach((source) => reportLines.push(`- ${source.mudou ? 'Mudança detectada' : 'Fonte indisponível'}: ${source.url}${source.status ? ` (HTTP ${source.status})` : ''}`));
-  reportLines.push('', 'Confirme a fonte, atualize o dado correspondente e registre a revisão antes de publicar mudanças no conteúdo.');
+  changed.forEach((source) => {
+    const contexto = source.categoria === 'lista_espera' ? 'Possível chamada ou lista de espera' : 'Mudança detectada';
+    const evento = source.indisponibilidadeNova && !source.mudou ? 'Fonte indisponível' : contexto;
+    reportLines.push(`- ${evento}: ${source.url}${source.status ? ` (HTTP ${source.status})` : ''}`);
+    if (source.arquivos.length) reportLines.push(`  - Referência no projeto: ${source.arquivos.join(', ')}`);
+  });
+  reportLines.push('', 'Confirme o documento na fonte oficial antes de publicar um aviso para estudantes. Alterações técnicas não são, por si só, uma nova chamada.');
 }
 await writeFile(reportPath, `${reportLines.join('\n')}\n`);
-console.log(JSON.stringify({ firstReview, checked: sources.length, changed: changed.length, unavailable: unavailable.length }));
+console.log(JSON.stringify({
+  firstReview,
+  checked: sources.length,
+  changed: changed.length,
+  possibleWaitlistChanges: possibleWaitlistChanges.length,
+  unavailable: unavailable.length,
+  shouldCommit: firstReview || changed.length > 0
+}));
