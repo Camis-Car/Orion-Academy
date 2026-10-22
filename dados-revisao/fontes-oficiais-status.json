@@ -1,13 +1,13 @@
 {
   "versao": 2,
-  "verificadoEm": "2026-10-21T14:46:25.592Z",
+  "verificadoEm": "2026-10-22T14:46:35.624Z",
   "frequencia": "Diariamente",
   "resumo": {
     "fontes": 240,
-    "disponiveis": 161,
-    "mudancasDetectadas": 90,
+    "disponiveis": 154,
+    "mudancasDetectadas": 100,
     "possiveisChamadasOuListas": 0,
-    "indisponiveis": 79
+    "indisponiveis": 86
   },
   "fontes": [
     {
@@ -106,12 +106,12 @@
       "url": "https://admission.brown.edu/first-year",
       "status": 200,
       "finalUrl": "https://admission.brown.edu/first-year",
-      "etag": "W/\"1792585818\"",
-      "lastModified": "Wed, 21 Oct 2026 12:30:18 GMT",
+      "etag": "W/\"1792672210\"",
+      "lastModified": "Thu, 22 Oct 2026 12:30:10 GMT",
       "contentLength": "12050",
       "disponivel": true,
       "erro": "",
-      "assinatura": "5e43c897d18ecca406c3",
+      "assinatura": "579ad700d50664ced2b3",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -124,12 +124,12 @@
       "url": "https://admission.princeton.edu/apply/first-year-application",
       "status": 404,
       "finalUrl": "https://admission.princeton.edu/apply/first-year-application",
-      "etag": "\"1792542380\"",
-      "lastModified": "Wed, 21 Oct 2026 00:26:20 GMT",
+      "etag": "\"1792656400\"",
+      "lastModified": "Thu, 22 Oct 2026 08:06:40 GMT",
       "contentLength": "69098",
       "disponivel": false,
       "erro": "",
-      "assinatura": "bfec62ff411e44a1bf28",
+      "assinatura": "bd4e7cc5186428ee44b6",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -206,7 +206,7 @@
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -215,11 +215,11 @@
       "status": 404,
       "finalUrl": "https://admissions.dartmouth.edu/apply/first-year-applicants",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:26 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:45:18 GMT",
       "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "715651de371d74340c06",
+      "assinatura": "ad45ca65317f13656bb7",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -230,21 +230,21 @@
     },
     {
       "url": "https://admissions.duke.edu/apply/",
-      "status": 0,
-      "finalUrl": "",
+      "status": 200,
+      "finalUrl": "https://admissions.duke.edu/apply/",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": false,
-      "erro": "Falha de conexão",
-      "assinatura": "e937a26fdde33481f805",
+      "disponivel": true,
+      "erro": "",
+      "assinatura": "6c480b3c915d30ddef22",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://admissions.umich.edu/apply/first-year-applicants",
@@ -252,15 +252,15 @@
       "finalUrl": "https://admissions.umich.edu/apply/first-year-applicants",
       "etag": "",
       "lastModified": "",
-      "contentLength": "5673",
+      "contentLength": "5694",
       "disponivel": false,
       "erro": "",
-      "assinatura": "cfd1db223ba892235a41",
+      "assinatura": "ab404fe0aa22fbfcada9",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -304,17 +304,17 @@
       "url": "https://admissions.yale.edu/apply",
       "status": 200,
       "finalUrl": "https://admissions.yale.edu/apply",
-      "etag": "W/\"1792017207\"",
-      "lastModified": "Wed, 14 Oct 2026 22:33:27 GMT",
-      "contentLength": "13535",
+      "etag": "W/\"1792612182\"",
+      "lastModified": "Wed, 21 Oct 2026 19:49:42 GMT",
+      "contentLength": "13574",
       "disponivel": true,
       "erro": "",
-      "assinatura": "a6a50d383b97dca71d17",
+      "assinatura": "6172e81de26122d95503",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -324,10 +324,10 @@
       "finalUrl": "https://alunos.uminho.pt/PT/candidatos/estudantesinternacionais/Paginas/ConcursoEspecialEI.aspx",
       "etag": "",
       "lastModified": "",
-      "contentLength": "32949",
+      "contentLength": "32952",
       "disponivel": true,
       "erro": "",
-      "assinatura": "a30b1cf112791f382b16",
+      "assinatura": "05fd1dde8d5606c79fab",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -378,16 +378,16 @@
       "finalUrl": "https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf",
       "etag": "",
       "lastModified": "",
-      "contentLength": "312",
+      "contentLength": "310",
       "disponivel": false,
       "erro": "",
-      "assinatura": "7620e6a75b35907e8c06",
+      "assinatura": "987d65529f6ffbee7b6e",
       "arquivos": [
         "alimentacao-e-estudos.html",
         "menu-links.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -441,7 +441,7 @@
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -449,12 +449,12 @@
       "url": "https://college.harvard.edu/admissions/apply/first-year-applicants",
       "status": 200,
       "finalUrl": "https://college.harvard.edu/admissions/apply/first-year-applicants",
-      "etag": "W/\"1792590793\"",
-      "lastModified": "Wed, 21 Oct 2026 13:53:13 GMT",
-      "contentLength": "123344",
+      "etag": "W/\"1792678511\"",
+      "lastModified": "Thu, 22 Oct 2026 14:15:11 GMT",
+      "contentLength": "123473",
       "disponivel": true,
       "erro": "",
-      "assinatura": "904e1632ef5ce96a9f63",
+      "assinatura": "937badf106b6bbaf8f46",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -479,7 +479,7 @@
         "plano-estudos-dados.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -504,51 +504,51 @@
     },
     {
       "url": "https://concursos.marinha.mil.br/soldado-fuzileiro-naval.html",
-      "status": 200,
+      "status": 206,
       "finalUrl": "https://concursos.marinha.mil.br/soldado-fuzileiro-naval.html",
-      "etag": "",
+      "etag": "W/\"d95d-65ccc8acc6a00-gzip\"",
       "lastModified": "Thu, 01 Oct 2026 19:37:12 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "4b010be1414f368e5319",
+      "assinatura": "52ff9473ed689d37d8e3",
       "arquivos": [
         "calendario-vestibulando.js",
         "plano-estudos-dados.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
     {
       "url": "https://cvu.uem.br/programacao.html",
-      "status": 200,
-      "finalUrl": "https://cvu.uem.br/programacao.html",
-      "etag": "W/\"6a74d365-8f95\"",
-      "lastModified": "Thu, 06 Aug 2026 18:33:09 GMT",
+      "status": 0,
+      "finalUrl": "",
+      "etag": "",
+      "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "a4b8cf08841b8cb19bb4",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://developer.spotify.com/dashboard",
       "status": 200,
       "finalUrl": "https://developer.spotify.com/dashboard",
-      "etag": "\"j915icigrp3mb\"",
+      "etag": "\"19zl9hys3a3mb\"",
       "lastModified": "",
       "contentLength": "4691",
       "disponivel": true,
       "erro": "",
-      "assinatura": "36c8ac55f8cdb199acf9",
+      "assinatura": "0c8cc0ff538399f82a07",
       "arquivos": [
         "spotify-config.js"
       ],
@@ -571,7 +571,7 @@
         "questoes-enem.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -595,57 +595,57 @@
     },
     {
       "url": "https://educationusa.state.gov/",
-      "status": 200,
+      "status": 503,
       "finalUrl": "https://educationusa.state.gov/",
-      "etag": "W/\"1792576859-0\"",
-      "lastModified": "Wed, 21 Oct 2026 10:00:59 GMT",
-      "contentLength": "11799",
-      "disponivel": true,
+      "etag": "",
+      "lastModified": "",
+      "contentLength": "0",
+      "disponivel": false,
       "erro": "",
-      "assinatura": "65b13abf7f49f8d21138",
+      "assinatura": "167a027d77be5ff8632d",
       "arquivos": [
         "menu-links.js"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://educationusa.state.gov/your-5-steps-us-study/complete-your-application/undergraduate",
-      "status": 200,
+      "status": 503,
       "finalUrl": "https://educationusa.state.gov/your-5-steps-us-study/complete-your-application/undergraduate",
-      "etag": "W/\"1792577092-0\"",
-      "lastModified": "Wed, 21 Oct 2026 10:04:52 GMT",
-      "contentLength": "11250",
-      "disponivel": true,
+      "etag": "",
+      "lastModified": "",
+      "contentLength": "0",
+      "disponivel": false,
       "erro": "",
-      "assinatura": "df173ec531da8d75ca39",
+      "assinatura": "736c1c5f99bacdad58a2",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://educationusa.state.gov/your-5-steps-us-study/research-your-options/community-college",
-      "status": 200,
+      "status": 503,
       "finalUrl": "https://educationusa.state.gov/your-5-steps-us-study/research-your-options/community-college",
-      "etag": "W/\"1792577235-0\"",
-      "lastModified": "Wed, 21 Oct 2026 10:07:15 GMT",
-      "contentLength": "11268",
-      "disponivel": true,
+      "etag": "",
+      "lastModified": "",
+      "contentLength": "0",
+      "disponivel": false,
       "erro": "",
-      "assinatura": "abf8acfbd84788ae0b50",
+      "assinatura": "b4b451cf511b40fdbeff",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://emec.mec.gov.br/emec/nova-index/",
@@ -670,12 +670,12 @@
       "url": "https://escp.eu/programmes/bachelor-in-data-sciences-for-business",
       "status": 404,
       "finalUrl": "https://escp.eu/programmes/bachelor-in-data-sciences-for-business",
-      "etag": "\"1792593928\"",
-      "lastModified": "Wed, 21 Oct 2026 14:45:28 GMT",
+      "etag": "\"1792680322\"",
+      "lastModified": "Thu, 22 Oct 2026 14:45:22 GMT",
       "contentLength": "143042",
       "disponivel": false,
       "erro": "",
-      "assinatura": "1d98f7d6430eb88f99e2",
+      "assinatura": "a945447620562c5f3ec2",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -709,11 +709,11 @@
       "status": 200,
       "finalUrl": "https://fatecitaquera.cps.sp.gov.br/provao-paulista/",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 13:47:07 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:09:26 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "af59a67269bc1b22f9db",
+      "assinatura": "ec206a3b2a7bab7d567d",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
@@ -744,12 +744,12 @@
       "url": "https://future.utoronto.ca/requirements-international-high-schools/",
       "status": 200,
       "finalUrl": "https://future.utoronto.ca/requirements-international-high-schools",
-      "etag": "W/\"1792507687\"",
-      "lastModified": "Tue, 20 Oct 2026 14:48:07 GMT",
-      "contentLength": "17247",
+      "etag": "W/\"1792625906\"",
+      "lastModified": "Wed, 21 Oct 2026 23:38:26 GMT",
+      "contentLength": "17257",
       "disponivel": true,
       "erro": "",
-      "assinatura": "e57c008e2c4dfe19ad7f",
+      "assinatura": "2de351a2de6901417de6",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -799,12 +799,12 @@
       "url": "https://ingresso.ufms.br/processo/passe/",
       "status": 200,
       "finalUrl": "https://ingresso.ufms.br/processo/passe/",
-      "etag": "\"5439-65e597e9ae915\"",
-      "lastModified": "Wed, 21 Oct 2026 13:12:09 GMT",
-      "contentLength": "21561",
+      "etag": "\"543c-65e6dca0d3ce4\"",
+      "lastModified": "Thu, 22 Oct 2026 13:24:54 GMT",
+      "contentLength": "21564",
       "disponivel": true,
       "erro": "",
-      "assinatura": "272d909f2bf87a80deb7",
+      "assinatura": "34f303c9b87a2746830f",
       "arquivos": [
         "notas-vestibulares-seriados.js",
         "vestibulares-seriados.html"
@@ -818,12 +818,12 @@
       "url": "https://ingresso.ufms.br/sisu/",
       "status": 200,
       "finalUrl": "https://ingresso.ufms.br/sisu/",
-      "etag": "\"4fc0-65e5984186d58\"",
-      "lastModified": "Wed, 21 Oct 2026 13:13:41 GMT",
-      "contentLength": "20416",
+      "etag": "\"4fbf-65e6e834c4224\"",
+      "lastModified": "Thu, 22 Oct 2026 14:16:42 GMT",
+      "contentLength": "20415",
       "disponivel": true,
       "erro": "",
-      "assinatura": "80309c9e3e77fdec3c95",
+      "assinatura": "f4018e100ea10a953822",
       "arquivos": [
         "listas-espera-rj.html"
       ],
@@ -900,7 +900,7 @@
         "vestibulares-seriados.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -909,11 +909,11 @@
       "status": 200,
       "finalUrl": "https://noticias.unb.br/component/agenda/agenda/5691",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:40 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:45:30 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "53ea17bd3acda0481019",
+      "assinatura": "d730b09636609d78c789",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
@@ -936,7 +936,7 @@
         "notas-vestibulares-seriados.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -978,39 +978,39 @@
     },
     {
       "url": "https://portal.ufvjm.edu.br/a-universidade/formas-de-ingresso/sasi/2025",
-      "status": 200,
-      "finalUrl": "https://portal.ufvjm.edu.br/a-universidade/formas-de-ingresso/sasi/2025",
-      "etag": "\"||207663|pt-br|0|brasil_gov_facetada|0|1788532405.19\"",
+      "status": 0,
+      "finalUrl": "",
+      "etag": "",
       "lastModified": "",
-      "contentLength": "76227",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "2c518758fde631d31c6e",
+      "contentLength": "",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "vestibulares-seriados.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://portal.ufvjm.edu.br/noticias/2026-periodo-eleitoral/sasi-2026-inscricoes-abertas-para-vestibular-seriado-da-ufvjm",
-      "status": 200,
-      "finalUrl": "https://portal.ufvjm.edu.br/noticias/2026-periodo-eleitoral/sasi-2026-inscricoes-abertas-para-vestibular-seriado-da-ufvjm",
-      "etag": "\"||207663|pt-br|0|brasil_gov_facetada|0|0|1788532405.19\"",
+      "status": 0,
+      "finalUrl": "",
+      "etag": "",
       "lastModified": "",
-      "contentLength": "54820",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "2131b59867429f4e2567",
+      "contentLength": "",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "notas-vestibulares-seriados.js"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://processodeingresso.upe.pe.gov.br/",
@@ -1045,46 +1045,46 @@
         "listas-espera-rj.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://programmes.polytechnique.edu/en/bachelor/admissions/admissions-criteria-and-procedure",
-      "status": 404,
+      "status": 200,
       "finalUrl": "https://programmes.polytechnique.edu/en/bachelor/admissions/admissions-criteria-and-procedure",
-      "etag": "",
-      "lastModified": "",
+      "etag": "\"1792668436-gzip\"",
+      "lastModified": "Thu, 22 Oct 2026 11:27:16 GMT",
       "contentLength": "",
-      "disponivel": false,
+      "disponivel": true,
       "erro": "",
-      "assinatura": "8a9fe944233336d50fe3",
+      "assinatura": "71f183da65c3576f6e1a",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://proreitoria.uea.edu.br/proplan/?page_id=731",
-      "status": 200,
-      "finalUrl": "https://proreitoria.uea.edu.br/proplan/?page_id=731",
+      "status": 0,
+      "finalUrl": "",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "c5b771cc0516e8a2c6c6",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "notas-vestibulares-seriados.js",
         "vestibulares-seriados.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://provaopaulistaseriado.vunesp.com.br/",
@@ -1092,16 +1092,16 @@
       "finalUrl": "https://provaopaulistaseriado.vunesp.com.br/",
       "etag": "",
       "lastModified": "",
-      "contentLength": "393",
+      "contentLength": "391",
       "disponivel": false,
       "erro": "",
-      "assinatura": "b74cfbb3b38d9ccfd05d",
+      "assinatura": "827270d17d10ed257e3a",
       "arquivos": [
         "listas-espera-rj.html",
         "notas-vestibulares-seriados.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -1109,12 +1109,12 @@
       "url": "https://psl.eu/en/education/bachelors",
       "status": 404,
       "finalUrl": "https://psl.eu/en/education/bachelors",
-      "etag": "\"1792593942\"",
-      "lastModified": "Wed, 21 Oct 2026 14:45:42 GMT",
+      "etag": "\"1792680333\"",
+      "lastModified": "Thu, 22 Oct 2026 14:45:33 GMT",
       "contentLength": "25685",
       "disponivel": false,
       "erro": "",
-      "assinatura": "24c55096259c6ce6eaa3",
+      "assinatura": "b4b9c3c7479b5b85d0c5",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1191,7 +1191,7 @@
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -1199,12 +1199,12 @@
       "url": "https://sdk.scdn.co/spotify-player.js",
       "status": 200,
       "finalUrl": "https://sdk.scdn.co/spotify-player.js",
-      "etag": "\"10a695f05c984a03bc4411c8a7bb937b\"",
-      "lastModified": "Wed, 21 Oct 2026 06:16:34 GMT",
-      "contentLength": "7400",
+      "etag": "\"50c24aa713e9c3f6af5c4cef83bbbcf1\"",
+      "lastModified": "Thu, 22 Oct 2026 07:43:57 GMT",
+      "contentLength": "7402",
       "disponivel": true,
       "erro": "",
-      "assinatura": "c799e3ea0c36318330e1",
+      "assinatura": "c66bd47750be15c2f131",
       "arquivos": [
         "cronometro-estudos.html"
       ],
@@ -1439,21 +1439,21 @@
     },
     {
       "url": "https://study.ed.ac.uk/undergraduate/applying",
-      "status": 401,
+      "status": 200,
       "finalUrl": "https://study.ed.ac.uk/undergraduate/applying",
-      "etag": "\"6a38ef0b-c19\"",
-      "lastModified": "",
-      "contentLength": "3097",
-      "disponivel": false,
+      "etag": "W/\"1792680268\"",
+      "lastModified": "Thu, 22 Oct 2026 14:44:28 GMT",
+      "contentLength": "17607",
+      "disponivel": true,
       "erro": "",
-      "assinatura": "9c15ec65fabe979d27e3",
+      "assinatura": "170de941e4acee11ce40",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://tecnico.ulisboa.pt/pt/ensino/estudar-no-tecnico/concursos-de-acesso/estudantes-internacionais/",
@@ -1493,32 +1493,32 @@
     },
     {
       "url": "https://u-paris.fr/en/",
-      "status": 200,
-      "finalUrl": "https://u-paris.fr/language/en/",
-      "etag": "",
-      "lastModified": "",
-      "contentLength": "",
-      "disponivel": true,
+      "status": 404,
+      "finalUrl": "https://u-paris.fr/en/",
+      "etag": "\"2d0-65e68defc3034\"",
+      "lastModified": "Thu, 22 Oct 2026 07:32:50 GMT",
+      "contentLength": "720",
+      "disponivel": false,
       "erro": "",
-      "assinatura": "66c5a54c7dd9d58e32dd",
+      "assinatura": "865de103c53f626bcbd2",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://ufam.edu.br/noticias/7891-ufam-lanca-editais-das-etapas-1-2-e-3-do-processo-seletivo-continuo-psc.html",
       "status": 200,
       "finalUrl": "https://ufam.edu.br/noticias/7891-ufam-lanca-editais-das-etapas-1-2-e-3-do-processo-seletivo-continuo-psc.html",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:45 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:45:42 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "bab0ce1a85f19d59f074",
+      "assinatura": "a2146ab3f2c7f297defd",
       "arquivos": [
         "calendario-vestibulando.js",
         "notas-vestibulares-seriados.js",
@@ -1534,11 +1534,11 @@
       "status": 200,
       "finalUrl": "https://ufla.br/processo-de-avaliacao-seriada/",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:46 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:45:42 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "cff112672124913a07f2",
+      "assinatura": "82bc915ce936a029e9df",
       "arquivos": [
         "vestibulares-seriados.html"
       ],
@@ -1568,14 +1568,14 @@
     },
     {
       "url": "https://umanitoba.ca/explore/admissions/international-requirements",
-      "status": 0,
-      "finalUrl": "",
-      "etag": "",
-      "lastModified": "",
+      "status": 404,
+      "finalUrl": "https://umanitoba.ca/explore/admissions/international-requirements",
+      "etag": "\"1792680342\"",
+      "lastModified": "Thu, 22 Oct 2026 14:45:42 GMT",
       "contentLength": "",
       "disponivel": false,
-      "erro": "Falha de conexão",
-      "assinatura": "e937a26fdde33481f805",
+      "erro": "",
+      "assinatura": "b739e6375aab3719f484",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1626,10 +1626,10 @@
       "finalUrl": "https://univesp.br/vestibular",
       "etag": "",
       "lastModified": "",
-      "contentLength": "5463",
+      "contentLength": "5484",
       "disponivel": false,
       "erro": "",
-      "assinatura": "fe493553f17dc6764f2b",
+      "assinatura": "ff805ff4de517ebb92fc",
       "arquivos": [
         "listas-espera-rj.html"
       ],
@@ -1642,12 +1642,12 @@
       "url": "https://uwaterloo.ca/future-students/international-students",
       "status": 200,
       "finalUrl": "https://uwaterloo.ca/future-students/international-students",
-      "etag": "W/\"1792588157\"",
-      "lastModified": "Wed, 21 Oct 2026 13:09:17 GMT",
-      "contentLength": "27408",
+      "etag": "W/\"1792680342\"",
+      "lastModified": "Thu, 22 Oct 2026 14:45:42 GMT",
+      "contentLength": "27418",
       "disponivel": true,
       "erro": "",
-      "assinatura": "a66bd55566575d8bcde0",
+      "assinatura": "e201df4c577c3785796f",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1825,11 +1825,11 @@
       "status": 200,
       "finalUrl": "https://www.admissions.caltech.edu/apply/first-year-applicants",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:49 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:45:45 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "932f22979ef1f5521926",
+      "assinatura": "8e03bf05088180e18f2a",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1878,12 +1878,12 @@
       "url": "https://www.bresil.campusfrance.org/candidatura-via-campus-france",
       "status": 200,
       "finalUrl": "https://www.bresil.campusfrance.org/candidatura-via-etudes-en-france",
-      "etag": "W/\"1792578562\"",
-      "lastModified": "Wed, 21 Oct 2026 10:29:22 GMT",
-      "contentLength": "",
+      "etag": "W/\"1792673145\"",
+      "lastModified": "Thu, 22 Oct 2026 12:45:45 GMT",
+      "contentLength": "17624",
       "disponivel": true,
       "erro": "",
-      "assinatura": "88a5399fbad978ceed64",
+      "assinatura": "e0e1a1a078627d4d5883",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1896,12 +1896,12 @@
       "url": "https://www.bresil.campusfrance.org/graduacao-franca",
       "status": 200,
       "finalUrl": "https://www.bresil.campusfrance.org/graduacao-franca",
-      "etag": "W/\"1792593951\"",
-      "lastModified": "Wed, 21 Oct 2026 14:45:51 GMT",
+      "etag": "W/\"1792673698\"",
+      "lastModified": "Thu, 22 Oct 2026 12:54:58 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "63c66f89d5d904ec3d5f",
+      "assinatura": "78a25bd28898678c1d45",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1914,12 +1914,12 @@
       "url": "https://www.bresil.campusfrance.org/testes-diplomas-lingua-francesa",
       "status": 200,
       "finalUrl": "https://www.bresil.campusfrance.org/testes-diplomas-lingua-francesa",
-      "etag": "W/\"1792577628\"",
-      "lastModified": "Wed, 21 Oct 2026 10:13:48 GMT",
+      "etag": "W/\"1792675517\"",
+      "lastModified": "Thu, 22 Oct 2026 13:25:17 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "05768e244776d5ae94e8",
+      "assinatura": "4610206c1355140ae064",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1932,12 +1932,12 @@
       "url": "https://www.bresil.campusfrance.org/tipos-de-formacao",
       "status": 200,
       "finalUrl": "https://www.bresil.campusfrance.org/tipos-de-formacao",
-      "etag": "W/\"1792593951\"",
-      "lastModified": "Wed, 21 Oct 2026 14:45:51 GMT",
+      "etag": "W/\"1792675487\"",
+      "lastModified": "Thu, 22 Oct 2026 13:24:47 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "5f39393b30e2d8bd2a66",
+      "assinatura": "9bb26ff64b4f0bb8097e",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1967,13 +1967,13 @@
     {
       "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
       "status": 200,
-      "finalUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/get-documents.html",
+      "finalUrl": "https://www.canada.ca/errors/404.html",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 11:33:22 GMT",
-      "contentLength": "10631",
+      "lastModified": "Thu, 22 Oct 2026 13:07:11 GMT",
+      "contentLength": "3626",
       "disponivel": true,
       "erro": "",
-      "assinatura": "f8e76a8ff92df80c41b6",
+      "assinatura": "1443ccc062da743ff6f5",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -1987,11 +1987,11 @@
       "status": 200,
       "finalUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada/study-permit/prepare/designated-learning-institutions-list.html",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:54 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:45:35 GMT",
       "contentLength": "47425",
       "disponivel": true,
       "erro": "",
-      "assinatura": "b2ac8cf5472f4f7490c5",
+      "assinatura": "a32d09ecab5ceedba1c2",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2002,19 +2002,19 @@
     },
     {
       "url": "https://www.cardiff.ac.uk/study/undergraduate/applying",
-      "status": 403,
+      "status": 200,
       "finalUrl": "https://www.cardiff.ac.uk/study/undergraduate/applying",
       "etag": "",
       "lastModified": "",
-      "contentLength": "5651",
-      "disponivel": false,
+      "contentLength": "",
+      "disponivel": true,
       "erro": "",
-      "assinatura": "d070fa58829e7e151d72",
+      "assinatura": "0b5175ee8dd9db3f5277",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -2042,11 +2042,11 @@
       "status": 200,
       "finalUrl": "https://www.commonapp.org/apply/first-year-students/",
       "etag": "W/\"f83698f3c69f03bc5f091377e05d3c2f\"",
-      "lastModified": "Tue, 20 Oct 2026 15:16:44 GMT",
+      "lastModified": "Wed, 21 Oct 2026 17:27:41 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "2a3d2012e68a0d490558",
+      "assinatura": "36b8590b56c1b36c5f05",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2057,21 +2057,21 @@
     },
     {
       "url": "https://www.comuns.uerj.br/sala-de-imprensa/vestibular",
-      "status": 0,
-      "finalUrl": "",
-      "etag": "",
+      "status": 502,
+      "finalUrl": "https://www.comuns.uerj.br/sala-de-imprensa/vestibular",
+      "etag": "\"65791b41-4197\"",
       "lastModified": "",
-      "contentLength": "",
+      "contentLength": "16791",
       "disponivel": false,
-      "erro": "Falha de conexão",
-      "assinatura": "e937a26fdde33481f805",
+      "erro": "",
+      "assinatura": "434a96b8eaffa2c8c84d",
       "arquivos": [
         "plano-sisu.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://www.comvest.unicamp.br/",
@@ -2170,15 +2170,15 @@
       "finalUrl": "https://www.dal.ca/admissions/undergraduate/admission-requirements.html",
       "etag": "",
       "lastModified": "",
-      "contentLength": "10738",
+      "contentLength": "10749",
       "disponivel": false,
       "erro": "",
-      "assinatura": "5c8682a4362b50685120",
+      "assinatura": "12d55a85be2761cfe10d",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -2205,18 +2205,18 @@
     {
       "url": "https://www.dges.gov.pt/pt/faq/condicoes-de-acesso-e-ingresso-no-ensino-superior",
       "status": 200,
-      "finalUrl": "https://www.dges.gov.pt/pt/faq/condicoes-de-acesso-e-ingresso-no-ensino-superior",
-      "etag": "",
-      "lastModified": "",
-      "contentLength": "",
+      "finalUrl": "https://landing.dges.gov.pt/index_ies.html",
+      "etag": "\"0x8DF30210B5BAA58\"",
+      "lastModified": "Thu, 22 Oct 2026 09:44:19 GMT",
+      "contentLength": "2006",
       "disponivel": true,
       "erro": "",
-      "assinatura": "0e2564c834f2c4ac84a2",
+      "assinatura": "3f5f4b2eec4f179d0be0",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -2258,21 +2258,21 @@
     },
     {
       "url": "https://www.eng.uerj.br/cursos/eletrica.php",
-      "status": 200,
-      "finalUrl": "https://www.eng.uerj.br/cursos/eletrica.php",
+      "status": 0,
+      "finalUrl": "",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "5a2800e7b6ace7ea9199",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "plano-sisu.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://www.esa.eb.mil.br/",
@@ -2298,12 +2298,12 @@
       "url": "https://www.essec.edu/en/program/global-bba/",
       "status": 404,
       "finalUrl": "https://www.essec.edu/en/program/global-bba/",
-      "etag": "\"ql5vtwmf4a1f9c\"",
+      "etag": "\"12ffqgmcwej1f8m\"",
       "lastModified": "",
       "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "619535908b8c97f02936",
+      "assinatura": "481a711316579d05dc66",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2373,11 +2373,11 @@
       "status": 200,
       "finalUrl": "https://www.fct.unl.pt/internacional/admissao-de-estudantes-internacionais",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:20:38 +0000",
+      "lastModified": "Thu, 22 Oct 2026 14:45:54 +0000",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "7df821ec12ed4d930335",
+      "assinatura": "6cc901c9603c9fe1d3cc",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2400,7 +2400,7 @@
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -2516,12 +2516,12 @@
       "url": "https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/programas/bolsas-e-auxilios/eixos-de-atuacao/bolsa-permanencia",
       "status": 200,
       "finalUrl": "https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/programas/bolsas-e-auxilios/eixos-de-atuacao/bolsa-permanencia",
-      "etag": "W/\"5d5da-jUO1J0735Y63pcPEZJYBsPtFUR4:dtagent10345260810170330quTu\"",
+      "etag": "W/\"5d5e0-1hjed2wYBnrp++RDJCtVIjR+oRA:dtagent10345260810170330quTu\"",
       "lastModified": "",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "ff93ceefc5fa29c77f15",
+      "assinatura": "149e894cfa6180566c1e",
       "arquivos": [
         "painel-bolsas.html"
       ],
@@ -2662,24 +2662,6 @@
     },
     {
       "url": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/fundo-de-financiamento-estudantil-fies",
-      "status": 206,
-      "finalUrl": "https://www.gov.br/mec/pt-br/acesso-a-informacao/perguntas-frequentes/fundo-de-financiamento-estudantil-fies",
-      "etag": "",
-      "lastModified": "",
-      "contentLength": "1025",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "24d18be96573dbb27637",
-      "arquivos": [
-        "painel-bolsas.html"
-      ],
-      "categoria": "fonte_geral",
-      "mudou": false,
-      "nova": false,
-      "indisponibilidadeNova": false
-    },
-    {
-      "url": "https://www.gov.br/mec/pt-br/assuntos/es/sistema-de-selecao-unificada-sisu",
       "status": 0,
       "finalUrl": "",
       "etag": "",
@@ -2689,10 +2671,28 @@
       "erro": "Falha de conexão",
       "assinatura": "e937a26fdde33481f805",
       "arquivos": [
+        "painel-bolsas.html"
+      ],
+      "categoria": "fonte_geral",
+      "mudou": true,
+      "nova": false,
+      "indisponibilidadeNova": true
+    },
+    {
+      "url": "https://www.gov.br/mec/pt-br/assuntos/es/sistema-de-selecao-unificada-sisu",
+      "status": 404,
+      "finalUrl": "https://www.gov.br/mec/pt-br/assuntos/es/sistema-de-selecao-unificada-sisu",
+      "etag": "",
+      "lastModified": "",
+      "contentLength": "26",
+      "disponivel": false,
+      "erro": "",
+      "assinatura": "9aa920cce1214f193569",
+      "arquivos": [
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -2737,12 +2737,12 @@
       "url": "https://www.gov.br/ufcg/pt-br/assuntos/noticias/2026/fevereiro/ufcg-publica-lista-de-espera-do-sisu-2026",
       "status": 200,
       "finalUrl": "https://www.gov.br/ufcg/pt-br/assuntos/noticias/2026/fevereiro/ufcg-publica-lista-de-espera-do-sisu-2026",
-      "etag": "W/\"6bd6e-RPnWsVza812HT80QEQOIMH9uEnQ:dtagent10345260810170330quTu:dtagent10345260810170330quTu\"",
+      "etag": "W/\"6bfac-PBmTuXcpP6gUTs1FxhLp3J8echU:dtagent10345260810170330quTu:dtagent10345260810170330quTu\"",
       "lastModified": "",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "5efb6f1838097f597592",
+      "assinatura": "97e1fb059c00250c4405",
       "arquivos": [
         "listas-espera-rj.html"
       ],
@@ -2755,12 +2755,12 @@
       "url": "https://www.gov.uk/student-visa/documents-you-must-provide",
       "status": 200,
       "finalUrl": "https://www.gov.uk/student-visa/documents-you-must-provide",
-      "etag": "W/\"5682c1ca05a3efddc4c56d5a68bc0450\"",
+      "etag": "W/\"72eb90e5113ad2b3a2bf57491a431652\"",
       "lastModified": "",
-      "contentLength": "13621",
+      "contentLength": "13619",
       "disponivel": true,
       "erro": "",
-      "assinatura": "c9a2b0ca2aa5d9e31388",
+      "assinatura": "4358ccb3da1df39aacfc",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2773,12 +2773,12 @@
       "url": "https://www.gov.uk/student-visa/knowledge-of-english",
       "status": 200,
       "finalUrl": "https://www.gov.uk/student-visa/knowledge-of-english",
-      "etag": "W/\"2304811ca8aa70b247c04326fe24fdb7\"",
+      "etag": "W/\"e147ec7e4ca4f1b952ad505d92f1dffc\"",
       "lastModified": "",
-      "contentLength": "14662",
+      "contentLength": "14657",
       "disponivel": true,
       "erro": "",
-      "assinatura": "33400677fc15b87a6da2",
+      "assinatura": "6f18106c768ffeeb440d",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2791,12 +2791,12 @@
       "url": "https://www.hec.edu/en/bachelor-data-society-organizations",
       "status": 404,
       "finalUrl": "https://www.hec.edu/en/bachelor-data-society-organizations",
-      "etag": "\"1792593965\"",
-      "lastModified": "Wed, 21 Oct 2026 14:46:05 GMT",
-      "contentLength": "299032",
+      "etag": "\"1792680363\"",
+      "lastModified": "Thu, 22 Oct 2026 14:46:03 GMT",
+      "contentLength": "299038",
       "disponivel": false,
       "erro": "",
-      "assinatura": "674815f7bb6a4baad009",
+      "assinatura": "bf87c39cc041fd018eb2",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2807,19 +2807,19 @@
     },
     {
       "url": "https://www.ifsp.edu.br/sisu2026",
-      "status": 403,
+      "status": 200,
       "finalUrl": "https://www.ifsp.edu.br/sisu2026",
       "etag": "",
-      "lastModified": "",
-      "contentLength": "919",
-      "disponivel": false,
+      "lastModified": "Thu, 22 Oct 2026 14:46:03 GMT",
+      "contentLength": "",
+      "disponivel": true,
       "erro": "",
-      "assinatura": "a028479e8eef24065638",
+      "assinatura": "398e920449506d1ff9b2",
       "arquivos": [
         "listas-espera-rj.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -2849,10 +2849,10 @@
       "finalUrl": "https://www.imperial.ac.uk/study/apply/undergraduate/",
       "etag": "",
       "lastModified": "",
-      "contentLength": "18545",
+      "contentLength": "0",
       "disponivel": true,
       "erro": "",
-      "assinatura": "f54e971d75e7453b75a4",
+      "assinatura": "f7aab5e6f476bade5338",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2893,20 +2893,20 @@
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://www.kcl.ac.uk/study/undergraduate/how-to-apply",
       "status": 200,
       "finalUrl": "https://www.kcl.ac.uk/study/undergraduate/how-to-apply",
-      "etag": "W/\"154b07-Hdvvmp9/ptMKu/a+haNUKOre5W8\"",
+      "etag": "W/\"154abe-Y5+kUELYOrfNEG4hodoOnDyj9Ek\"",
       "lastModified": "",
-      "contentLength": "225494",
+      "contentLength": "225606",
       "disponivel": true,
       "erro": "",
-      "assinatura": "ef482e7ede52730e03f3",
+      "assinatura": "5d5d5bbe5b949f443456",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -2953,14 +2953,14 @@
     },
     {
       "url": "https://www.leeds.ac.uk/undergraduate-applying",
-      "status": 503,
+      "status": 404,
       "finalUrl": "https://www.leeds.ac.uk/undergraduate-applying",
       "etag": "",
       "lastModified": "",
-      "contentLength": "162",
+      "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "bda3634b79b3fa63edbc",
+      "assinatura": "244dece8cc6777d81b21",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3009,19 +3009,19 @@
       "url": "https://www.manchester.ac.uk/study/undergraduate/applications/",
       "status": 503,
       "finalUrl": "https://www.manchester.ac.uk/study/undergraduate/applications/",
-      "etag": "W/\"af112846762dacc0e2c01ba4b3bb6a0c\"",
-      "lastModified": "Wed, 21 Oct 2026 14:19:07 GMT",
+      "etag": "W/\"0f02deb2847043633a5220fb5ba83eb0\"",
+      "lastModified": "Thu, 22 Oct 2026 14:35:27 GMT",
       "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "06749ddce910f5086607",
+      "assinatura": "e0b68dae53b41e42fe5c",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://www.marinha.mil.br/ciaga/",
@@ -3046,12 +3046,12 @@
       "url": "https://www.mcgill.ca/undergraduate-admissions/apply/requirements",
       "status": 200,
       "finalUrl": "https://www.mcgill.ca/undergraduate-admissions/apply/requirements",
-      "etag": "\"1792559573-1\"",
-      "lastModified": "Wed, 21 Oct 2026 05:12:53 GMT",
-      "contentLength": "11867",
+      "etag": "\"1792667395-1\"",
+      "lastModified": "Thu, 22 Oct 2026 11:09:55 GMT",
+      "contentLength": "11868",
       "disponivel": true,
       "erro": "",
-      "assinatura": "6550a746938e0044df5e",
+      "assinatura": "1e4d873ca96e2b3370fc",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3120,10 +3120,10 @@
       "finalUrl": "https://www.ox.ac.uk/admissions/undergraduate/applying-to-oxford",
       "etag": "",
       "lastModified": "",
-      "contentLength": "5691",
+      "contentLength": "5713",
       "disponivel": false,
       "erro": "",
-      "assinatura": "40aa2f13d95b69f94da8",
+      "assinatura": "39a9af3f94812b968a77",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3152,22 +3152,22 @@
     },
     {
       "url": "https://www.pas.uem.br/faq.html",
-      "status": 200,
-      "finalUrl": "https://www.pas.uem.br/faq.html",
-      "etag": "W/\"69d40f24-13634\"",
-      "lastModified": "Mon, 06 Apr 2026 19:53:08 GMT",
+      "status": 0,
+      "finalUrl": "",
+      "etag": "",
+      "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "648e91565a93e2867dd3",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "notas-vestibulares-seriados.js",
         "vestibulares-seriados.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://www.prg.unicamp.br/wp-content/uploads/sites/42/2026/04/Boletim-PRG-03-2026.pdf",
@@ -3219,7 +3219,7 @@
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -3263,12 +3263,12 @@
       "url": "https://www.sciencespo.fr/admissions/en/undergraduate/foreign-secondary-schools/",
       "status": 200,
       "finalUrl": "https://www.sciencespo.fr/admissions/en/undergraduate/foreign-secondary-schools/",
-      "etag": "W/\"6ad781fb-7c57c\"",
-      "lastModified": "Tue, 20 Oct 2026 15:00:11 GMT",
+      "etag": "W/\"6ada16f3-7c63b\"",
+      "lastModified": "Thu, 22 Oct 2026 14:00:19 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "128a1eda7b69aad9506b",
+      "assinatura": "e987918cb9e7be679e28",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3281,12 +3281,12 @@
       "url": "https://www.sfu.ca/students/admission/apply.html",
       "status": 200,
       "finalUrl": "https://www.sfu.ca/students/admission/apply.html",
-      "etag": "\"fb9c-65e5954e614d9-gzip\"",
-      "lastModified": "Wed, 21 Oct 2026 13:00:29 GMT",
+      "etag": "\"fb9c-65e6de4b3a5b1-gzip\"",
+      "lastModified": "Thu, 22 Oct 2026 13:32:21 GMT",
       "contentLength": "12442",
       "disponivel": true,
       "erro": "",
-      "assinatura": "336eaf1ecd3aec8bddb2",
+      "assinatura": "8e94612892335d06454b",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3299,12 +3299,12 @@
       "url": "https://www.sheffield.ac.uk/undergraduate/apply",
       "status": 200,
       "finalUrl": "https://sheffield.ac.uk/undergraduate/apply",
-      "etag": "\"1792593970\"",
-      "lastModified": "Wed, 21 Oct 2026 14:46:10 GMT",
-      "contentLength": "83914",
+      "etag": "\"1792680321\"",
+      "lastModified": "Thu, 22 Oct 2026 14:45:21 GMT",
+      "contentLength": "83975",
       "disponivel": true,
       "erro": "",
-      "assinatura": "95088c7bdb8c93b61e4a",
+      "assinatura": "3574ae7d7740867dc42b",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3318,11 +3318,11 @@
       "status": 200,
       "finalUrl": "https://www.sisu.ufg.br/",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:10 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:10 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "265627a0c49402a89c76",
+      "assinatura": "3107f707c8e999a1bb95",
       "arquivos": [
         "listas-espera-rj.html"
       ],
@@ -3335,12 +3335,12 @@
       "url": "https://www.sorbonne-universite.fr/en/education/study-sorbonne-university/degree-seeking-students/international-application-and/campus",
       "status": 200,
       "finalUrl": "https://www.sorbonne-universite.fr/en/education/study-sorbonne-university/degree-seeking-students/international-application-and/campus",
-      "etag": "\"1792593970\"",
-      "lastModified": "Wed, 21 Oct 2026 14:46:10 GMT",
-      "contentLength": "19717",
+      "etag": "\"1792680370\"",
+      "lastModified": "Thu, 22 Oct 2026 14:46:10 GMT",
+      "contentLength": "19744",
       "disponivel": true,
       "erro": "",
-      "assinatura": "2caa569b6186f8134c4b",
+      "assinatura": "bbeb24e9e331de75b440",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3351,14 +3351,14 @@
     },
     {
       "url": "https://www.southampton.ac.uk/study/undergraduate/apply.page",
-      "status": 502,
+      "status": 404,
       "finalUrl": "https://www.southampton.ac.uk/study/undergraduate/apply.page",
-      "etag": "\"6ad0c9e8-3339\"",
+      "etag": "W/\"6ad9c2fa-3722\"",
       "lastModified": "",
-      "contentLength": "13113",
+      "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "b2cbd80c982a92b25bba",
+      "assinatura": "6ba65e44750811cad97e",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3425,12 +3425,12 @@
       "url": "https://www.ucalgary.ca/future-students/undergraduate/apply",
       "status": 200,
       "finalUrl": "https://www.ucalgary.ca/future-students/undergraduate/admissions/how-to-apply",
-      "etag": "W/\"1792562689-gzip\"",
-      "lastModified": "Wed, 21 Oct 2026 06:04:49 GMT",
+      "etag": "W/\"1792644377-gzip\"",
+      "lastModified": "Thu, 22 Oct 2026 04:46:17 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "d7289ca1c8bfa4d1a12e",
+      "assinatura": "36d9e5e8073be22587ec",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3444,11 +3444,11 @@
       "status": 200,
       "finalUrl": "https://www.ucas.com/applying/applying-to-university/filling-in-your-ucas-application",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:11 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:12 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "9b65271251c95b528faf",
+      "assinatura": "63b4cbccee8ffcbc98c0",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3462,11 +3462,11 @@
       "status": 200,
       "finalUrl": "https://www.ucas.com/applying/applying-to-university/writing-your-personal-statement/personal-statement-tips-for-international-students",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:11 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:12 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "52ae10f327a41df8b5ba",
+      "assinatura": "5b4731122c1f8e78cdf6",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3480,11 +3480,11 @@
       "status": 200,
       "finalUrl": "https://www.ucas.com/international/international-students/applying-to-university-as-an-international-student/entry-requirements-for-uk-courses",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:45:47 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:12 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "6021f9fb7c314f7f5f8a",
+      "assinatura": "6d2e884bb221039ddf62",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3495,14 +3495,14 @@
     },
     {
       "url": "https://www.ucl.ac.uk/prospective-students/undergraduate/applying-ucl",
-      "status": 403,
+      "status": 404,
       "finalUrl": "https://www.ucl.ac.uk/prospective-students/undergraduate/applying-ucl",
-      "etag": "",
-      "lastModified": "",
-      "contentLength": "2029",
+      "etag": "W/\"1792666350-1\"",
+      "lastModified": "Thu, 22 Oct 2026 10:52:30 GMT",
+      "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "cf6f025ce284e8e03e2b",
+      "assinatura": "75f13e3793505bd18bed",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3531,50 +3531,50 @@
     },
     {
       "url": "https://www.uerj.br/noticia/uerj-abre-inscricoes-para-o-2o-exame-de-qualificacao-do-vestibular-estadual-2027-prazo-termina-no-dia-7-de-agosto/",
-      "status": 200,
-      "finalUrl": "https://www.uerj.br/noticia/uerj-abre-inscricoes-para-o-2o-exame-de-qualificacao-do-vestibular-estadual-2027-prazo-termina-no-dia-7-de-agosto/",
+      "status": 0,
+      "finalUrl": "",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "8dd20b5e822439115c9d",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://www.uerj.br/noticia/vestibular-uerj-2027-inscricoes-para-1o-exame-de-qualificacao-vao-ate-7-5-prova-sera-aplicada-em-junho/",
-      "status": 200,
-      "finalUrl": "https://www.uerj.br/noticia/vestibular-uerj-2027-inscricoes-para-1o-exame-de-qualificacao-vao-ate-7-5-prova-sera-aplicada-em-junho/",
+      "status": 0,
+      "finalUrl": "",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "d9a2c3f974b60463bc29",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://www.ufam.edu.br/noticias/7529-proeg-divulga-calendario-de-matricula-da-2-chamada-da-lista-de-espera-do-sisu-2026.html",
       "status": 200,
       "finalUrl": "https://www.ufam.edu.br/noticias/7529-proeg-divulga-calendario-de-matricula-da-2-chamada-da-lista-de-espera-do-sisu-2026.html",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:13 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:14 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "dac273d3f9f51cbec7f6",
+      "assinatura": "bb30bccd9dece5edfc40",
       "arquivos": [
         "listas-espera-rj.html"
       ],
@@ -3585,14 +3585,14 @@
     },
     {
       "url": "https://www.ufmg.br/seriadoufmg/o-ciclo-2/",
-      "status": 0,
-      "finalUrl": "",
+      "status": 200,
+      "finalUrl": "https://www.ufmg.br/seriadoufmg/o-ciclo-2/",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": false,
-      "erro": "Falha de conexão",
-      "assinatura": "e937a26fdde33481f805",
+      "disponivel": true,
+      "erro": "",
+      "assinatura": "6bf7a1fa7c6f92df71dc",
       "arquivos": [
         "notas-vestibulares-seriados.js",
         "vestibulares-seriados.html"
@@ -3600,43 +3600,43 @@
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://www.ufmg.br/seriadoufmg/prova-2026/",
-      "status": 0,
-      "finalUrl": "",
+      "status": 200,
+      "finalUrl": "https://www.ufmg.br/seriadoufmg/prova-2026/",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": false,
-      "erro": "Falha de conexão",
-      "assinatura": "e937a26fdde33481f805",
+      "disponivel": true,
+      "erro": "",
+      "assinatura": "d58e351a883661760f3c",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://www.ufmg.br/sisu/lista-de-espera-sisu-ufmg-2026/",
-      "status": 0,
-      "finalUrl": "",
+      "status": 200,
+      "finalUrl": "https://www.ufmg.br/sisu/lista-de-espera-sisu-ufmg-2026/",
       "etag": "",
       "lastModified": "",
       "contentLength": "",
-      "disponivel": false,
-      "erro": "Falha de conexão",
-      "assinatura": "e937a26fdde33481f805",
+      "disponivel": true,
+      "erro": "",
+      "assinatura": "1d5eb1a25c90320d6e94",
       "arquivos": [
         "listas-espera-rj.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": true
+      "indisponibilidadeNova": false
     },
     {
       "url": "https://www.ufsm.br/pro-reitorias/prograd/editais/050-2025",
@@ -3652,7 +3652,7 @@
         "notas-vestibulares-seriados.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": true,
+      "mudou": false,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -3662,10 +3662,10 @@
       "finalUrl": "https://www.ulaval.ca/admission/candidats-etrangers",
       "etag": "",
       "lastModified": "",
-      "contentLength": "84973",
+      "contentLength": "84979",
       "disponivel": false,
       "erro": "",
-      "assinatura": "2bfd6ee7e6ba3a6f3645",
+      "assinatura": "3d182f6a21fe6fed551f",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3678,12 +3678,12 @@
       "url": "https://www.undergraduate.study.cam.ac.uk/apply",
       "status": 200,
       "finalUrl": "https://www.undergraduate.study.cam.ac.uk/apply",
-      "etag": "W/\"1792580145\"",
-      "lastModified": "Wed, 21 Oct 2026 10:55:45 GMT",
-      "contentLength": "18702",
+      "etag": "W/\"1792676791\"",
+      "lastModified": "Thu, 22 Oct 2026 13:46:31 GMT",
+      "contentLength": "18704",
       "disponivel": true,
       "erro": "",
-      "assinatura": "144511e8b2cbf58328e3",
+      "assinatura": "caa43ff9f54a1b23941d",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3697,11 +3697,11 @@
       "status": 200,
       "finalUrl": "https://www.unioeste.br/portal/publicacoes-do-ingresso/publicacoes-vestibular-2027",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:15 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:24 GMT",
       "contentLength": "0",
       "disponivel": true,
       "erro": "",
-      "assinatura": "29921735aca4b4eeceec",
+      "assinatura": "73fa02d28ea471e41090",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
@@ -3715,11 +3715,11 @@
       "status": 200,
       "finalUrl": "https://www.unioeste.br/portal/vestibular/publicacoes-seriado",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:19 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:17 GMT",
       "contentLength": "0",
       "disponivel": true,
       "erro": "",
-      "assinatura": "a5b8c95b4ba0b96f5094",
+      "assinatura": "6b5d6d3e29d001c09406",
       "arquivos": [
         "notas-vestibulares-seriados.js",
         "vestibulares-seriados.html"
@@ -3769,12 +3769,12 @@
       "url": "https://www.unistra.fr/en/study",
       "status": 404,
       "finalUrl": "https://www.unistra.fr/en/study",
-      "etag": "W/\"1792593975\"",
-      "lastModified": "Wed, 21 Oct 2026 14:46:15 GMT",
+      "etag": "W/\"1792680378\"",
+      "lastModified": "Thu, 22 Oct 2026 14:46:18 GMT",
       "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "662cc9f5e77374e7c8a5",
+      "assinatura": "12d3aa8638d0f6c62585",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3821,32 +3821,32 @@
     },
     {
       "url": "https://www.univ-lille.fr/international",
-      "status": 200,
+      "status": 403,
       "finalUrl": "https://international.univ-lille.fr/",
-      "etag": "W/\"524f605aeb9caa6d597c743d9decd50b\"",
-      "lastModified": "",
-      "contentLength": "",
-      "disponivel": true,
+      "etag": "\"90aa8-5d343ba063c9a\"",
+      "lastModified": "Thu, 16 Dec 2021 13:52:00 GMT",
+      "contentLength": "592552",
+      "disponivel": false,
       "erro": "",
-      "assinatura": "a579f917b8ef49d78284",
+      "assinatura": "b07fe488e6aad2838bb1",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     },
     {
       "url": "https://www.universite-paris-saclay.fr/en/admissions/applying-undergraduate-programmes",
       "status": 200,
       "finalUrl": "https://www.universite-paris-saclay.fr/en/admissions/applying-undergraduate-programmes",
-      "etag": "\"1792589973-gzip\"",
-      "lastModified": "Wed, 21 Oct 2026 13:39:33 GMT",
+      "etag": "\"1792673152-gzip\"",
+      "lastModified": "Thu, 22 Oct 2026 12:45:52 GMT",
       "contentLength": "13879",
       "disponivel": true,
       "erro": "",
-      "assinatura": "5ca220c5c9a55058c463",
+      "assinatura": "59eeea0d5747cb6485eb",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3860,11 +3860,11 @@
       "status": 404,
       "finalUrl": "https://www.uottawa.ca/study/undergraduate-studies/application",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:17 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:24 GMT",
       "contentLength": "",
       "disponivel": false,
       "erro": "",
-      "assinatura": "665cac834f6177a804df",
+      "assinatura": "187d60e31206225c7c52",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3878,11 +3878,11 @@
       "status": 200,
       "finalUrl": "https://www.up.pt/portal/pt/estudar/estudantes-internacionais/concurso-especial/",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 14:46:17 GMT",
+      "lastModified": "Thu, 22 Oct 2026 14:46:25 GMT",
       "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "92754be06fbe7db68a0a",
+      "assinatura": "f796d7fe39784e22a51b",
       "arquivos": [
         "estude-no-exterior.html"
       ],
@@ -3895,12 +3895,12 @@
       "url": "https://www.vestibular.ita.br/principal.htm",
       "status": 200,
       "finalUrl": "https://www.vestibular.ita.br/principal.htm",
-      "etag": "\"86aa-65e3b31fcdac0-gzip\"",
-      "lastModified": "Tue, 20 Oct 2026 01:03:15 GMT",
-      "contentLength": "5511",
+      "etag": "\"8723-65e3b336b10c0-gzip\"",
+      "lastModified": "Tue, 20 Oct 2026 01:03:39 GMT",
+      "contentLength": "5522",
       "disponivel": true,
       "erro": "",
-      "assinatura": "d7a7ee609a5733c5e113",
+      "assinatura": "15011b23081df78d5aa7",
       "arquivos": [
         "calendario-vestibulando.js",
         "listas-espera-rj.html",
@@ -3936,15 +3936,15 @@
       "finalUrl": "https://www.vunesp.com.br/FMMA2501",
       "etag": "",
       "lastModified": "",
-      "contentLength": "383",
+      "contentLength": "381",
       "disponivel": false,
       "erro": "",
-      "assinatura": "fe014eaaae6e829d3bc8",
+      "assinatura": "a7755f8a15118a9774a3",
       "arquivos": [
         "listas-espera-rj.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -3954,15 +3954,15 @@
       "finalUrl": "https://www.vunesp.com.br/fmrp2501",
       "etag": "",
       "lastModified": "",
-      "contentLength": "383",
+      "contentLength": "381",
       "disponivel": false,
       "erro": "",
-      "assinatura": "9e5d1bd8f2bf5293d8f2",
+      "assinatura": "e27746a951d4312881c6",
       "arquivos": [
         "listas-espera-rj.html"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -3972,15 +3972,15 @@
       "finalUrl": "https://www.vunesp.com.br/VNSP2514",
       "etag": "",
       "lastModified": "",
-      "contentLength": "383",
+      "contentLength": "381",
       "disponivel": false,
       "erro": "",
-      "assinatura": "565b8fff18af03c2bd42",
+      "assinatura": "39eefc4269fe3766f424",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
       "categoria": "fonte_geral",
-      "mudou": false,
+      "mudou": true,
       "nova": false,
       "indisponibilidadeNova": false
     },
@@ -4314,12 +4314,12 @@
       "url": "https://www2.ufjf.br/copese/vestibular-pism-2/pism-2027/",
       "status": 200,
       "finalUrl": "https://www2.ufjf.br/copese/vestibular-pism-2/pism-2027/",
-      "etag": "\"5889ef9b-39\"",
-      "lastModified": "Thu, 26 Jan 2017 12:46:19 GMT",
-      "contentLength": "57",
+      "etag": "",
+      "lastModified": "",
+      "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "511ba13c61f0d2b3f9bc",
+      "assinatura": "a9731276e33adacd5058",
       "arquivos": [
         "vestibulares-seriados.html"
       ],
@@ -4332,12 +4332,12 @@
       "url": "https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf",
       "status": 200,
       "finalUrl": "https://www2.ufjf.br/copese/wp-content/uploads/sites/42/2026/02/PISM-2026-M%C3%B3dulo-III-Pontua%C3%A7%C3%A3o-m%C3%A1xima-e-m%C3%ADnima.pdf",
-      "etag": "\"5889ef9b-39\"",
-      "lastModified": "Thu, 26 Jan 2017 12:46:19 GMT",
-      "contentLength": "57",
+      "etag": "\"6984c54d-75ade\"",
+      "lastModified": "Thu, 05 Feb 2026 16:29:01 GMT",
+      "contentLength": "482014",
       "disponivel": true,
       "erro": "",
-      "assinatura": "7eff52f17ea7af9831f4",
+      "assinatura": "78cbfbe0ea06e871f05f",
       "arquivos": [
         "notas-vestibulares-seriados.js"
       ],
@@ -4350,12 +4350,12 @@
       "url": "https://www2.ufjf.br/noticias/2026/06/10/ufjf-publica-edital-do-pism-2027/",
       "status": 200,
       "finalUrl": "https://www2.ufjf.br/noticias/2026/06/10/ufjf-publica-edital-do-pism-2027/",
-      "etag": "\"5889ef9b-39\"",
-      "lastModified": "Thu, 26 Jan 2017 12:46:19 GMT",
-      "contentLength": "57",
+      "etag": "",
+      "lastModified": "",
+      "contentLength": "",
       "disponivel": true,
       "erro": "",
-      "assinatura": "d3ece47d4d15a6638ef8",
+      "assinatura": "fd7555b822f27224c1a3",
       "arquivos": [
         "calendario-vestibulando.js"
       ],
@@ -4388,10 +4388,10 @@
       "finalUrl": "https://www3.unicentro.br/vestibular/category/destaques/destaques-pac/",
       "etag": "",
       "lastModified": "",
-      "contentLength": "28425",
+      "contentLength": "28423",
       "disponivel": true,
       "erro": "",
-      "assinatura": "f89054e4e15f1be50b68",
+      "assinatura": "385f14f273cc27fc8ba2",
       "arquivos": [
         "vestibulares-seriados-atualizacoes.js"
       ],
@@ -4420,21 +4420,21 @@
     },
     {
       "url": "https://you.ubc.ca/applying-ubc/requirements/international-high-schools/",
-      "status": 200,
-      "finalUrl": "https://you.ubc.ca/applying-ubc/requirements/international-high-schools/",
+      "status": 0,
+      "finalUrl": "",
       "etag": "",
-      "lastModified": "Wed, 21 Oct 2026 09:36:29 GMT",
+      "lastModified": "",
       "contentLength": "",
-      "disponivel": true,
-      "erro": "",
-      "assinatura": "1036f5d6d2d449914ef2",
+      "disponivel": false,
+      "erro": "Falha de conexão",
+      "assinatura": "e937a26fdde33481f805",
       "arquivos": [
         "estude-no-exterior.html"
       ],
       "categoria": "fonte_geral",
       "mudou": true,
       "nova": false,
-      "indisponibilidadeNova": false
+      "indisponibilidadeNova": true
     }
   ]
 }
