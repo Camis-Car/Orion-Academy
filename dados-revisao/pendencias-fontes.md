@@ -1,6 +1,6 @@
 # Pendências de fontes oficiais
 
-Verificação automática: 2026-10-23T14:32:43.821Z.
+Verificação automática: 2026-10-24T13:44:06.001Z.
 
 ## Itens para revisão editorial
 
@@ -12,21 +12,17 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://admissions.dartmouth.edu/apply/first-year-applicants (HTTP 404)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://alunos.uminho.pt/PT/candidatos/estudantesinternacionais/Paginas/ConcursoEspecialEI.aspx (HTTP 200)
+- Mudança detectada: https://admissions.umich.edu/apply/first-year-applicants (HTTP 403)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf (HTTP 503)
-  - Referência no projeto: alimentacao-e-estudos.html, menu-links.js
-- Mudança detectada: https://ciencias.ulisboa.pt/estudante-internacional/candidaturas-licenciaturas (HTTP 200)
+- Mudança detectada: https://alunos.uminho.pt/PT/candidatos/estudantesinternacionais/Paginas/ConcursoEspecialEI.aspx (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://college.harvard.edu/admissions/apply/first-year-applicants (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://concursos.marinha.mil.br/soldado-fuzileiro-naval.html (HTTP 200)
+- Mudança detectada: https://concursos.marinha.mil.br/soldado-fuzileiro-naval.html (HTTP 206)
   - Referência no projeto: calendario-vestibulando.js, plano-estudos-dados.js
-- Mudança detectada: https://cvu.uem.br/programacao.html (HTTP 200)
-  - Referência no projeto: calendario-vestibulando.js
 - Mudança detectada: https://developer.spotify.com/dashboard (HTTP 200)
   - Referência no projeto: spotify-config.js
-- Mudança detectada: https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(url)} (HTTP 204)
+- Mudança detectada: https://docs.google.com/gview?embedded=1&url=${encodeURIComponent(url)} (HTTP 200)
   - Referência no projeto: questoes-enem.html
 - Mudança detectada: https://educationusa.state.gov/ (HTTP 200)
   - Referência no projeto: menu-links.js
@@ -40,11 +36,13 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: calendario-vestibulando.js
 - Mudança detectada: https://future.utoronto.ca/requirements-international-high-schools/ (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
+- Mudança detectada: https://ingresso.eear.fab.mil.br/ (HTTP 200)
+  - Referência no projeto: calendario-vestibulando.js, plano-estudos-dados.js
 - Mudança detectada: https://ingresso.ufms.br/processo/passe/ (HTTP 200)
   - Referência no projeto: notas-vestibulares-seriados.js, vestibulares-seriados.html
 - Mudança detectada: https://ingresso.ufms.br/sisu/ (HTTP 200)
   - Referência no projeto: listas-espera-rj.html
-- Mudança detectada: https://nisa.ufsm.br/concursos
+- Mudança detectada: https://nisa.ufsm.br/concursos (HTTP 200)
   - Referência no projeto: vestibulares-seriados.html
 - Mudança detectada: https://noticias.unb.br/component/agenda/agenda/5691 (HTTP 200)
   - Referência no projeto: calendario-vestibulando.js
@@ -52,17 +50,17 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: vestibulares-seriados.html
 - Mudança detectada: https://portal.ufvjm.edu.br/noticias/2026-periodo-eleitoral/sasi-2026-inscricoes-abertas-para-vestibular-seriado-da-ufvjm (HTTP 200)
   - Referência no projeto: notas-vestibulares-seriados.js
+- Mudança detectada: https://processodeingresso.upe.pe.gov.br/ (HTTP 200)
+  - Referência no projeto: notas-vestibulares-seriados.js, vestibulares-seriados.html
 - Mudança detectada: https://programmes.polytechnique.edu/en/bachelor/admissions/admissions-criteria-and-procedure (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://proreitoria.uea.edu.br/proplan/?page_id=731 (HTTP 200)
-  - Referência no projeto: notas-vestibulares-seriados.js, vestibulares-seriados.html
-- Mudança detectada: https://psl.eu/en/education/bachelors (HTTP 404)
+- Mudança detectada: https://psl.eu/en/education/bachelors (HTTP 503)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://sdk.scdn.co/spotify-player.js (HTTP 200)
-  - Referência no projeto: cronometro-estudos.html
+- Mudança detectada: https://satsuite.collegeboard.org/sat/dates-deadlines (HTTP 200)
+  - Referência no projeto: calendario-vestibulando.js
 - Mudança detectada: https://study.ed.ac.uk/undergraduate/applying (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://u-paris.fr/en/ (HTTP 404)
+- Mudança detectada: https://travel.state.gov/content/travel/en/us-visas/study/student-visa.html (HTTP 403)
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://ufam.edu.br/noticias/7891-ufam-lanca-editais-das-etapas-1-2-e-3-do-processo-seletivo-continuo-psc.html (HTTP 200)
   - Referência no projeto: calendario-vestibulando.js, notas-vestibulares-seriados.js, vestibulares-seriados.html
@@ -70,8 +68,6 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: vestibulares-seriados.html
 - Mudança detectada: https://umanitoba.ca/explore/admissions/international-requirements (HTTP 404)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://univesp.br/vestibular (HTTP 403)
-  - Referência no projeto: listas-espera-rj.html
 - Mudança detectada: https://uwaterloo.ca/future-students/international-students (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://vestibular.fatec.sp.gov.br/ (HTTP 403)
@@ -92,23 +88,27 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.cardiff.ac.uk/study/undergraduate/applying (HTTP 403)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.cefet-rj.br/index.php/alunos-graduacao/10049-processo-seletivo-para-os-cursos-de-graduacao-edicao-unica-do-sisu-2026-para-preenchimento-das-vagas-de-2026-1-e-2026-2 (HTTP 404)
-  - Referência no projeto: listas-espera-rj.html, sisu-2026-ofertas-ufrj-cefet.js
-- Mudança detectada: https://www.commonapp.org/apply/first-year-students/ (HTTP 200)
+- Mudança detectada: https://www.concordia.ca/admissions/undergraduate/apply.html (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.comuns.uerj.br/sala-de-imprensa/vestibular
-  - Referência no projeto: plano-sisu.html
 - Mudança detectada: https://www.dges.gov.pt/pt/faq/condicoes-de-acesso-e-ingresso-no-ensino-superior (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.eng.uerj.br/cursos/eletrica.php (HTTP 200)
-  - Referência no projeto: plano-sisu.html
 - Mudança detectada: https://www.essec.edu/en/program/global-bba/ (HTTP 404)
+  - Referência no projeto: estude-no-exterior.html
+- Mudança detectada: https://www.exeter.ac.uk/study/undergraduate/applications/ (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.fct.unl.pt/internacional/admissao-de-estudantes-internacionais (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
+- Mudança detectada: https://www.fuvest.br/ (HTTP 200)
+  - Referência no projeto: listas-espera-rj.html
+- Mudança detectada: https://www.fuvest.br/fuvest-2027-fuvest-e-vunesp-definem-novas-datas-de-aplicacao-das-provas-da-usp-e-da-unesp/ (HTTP 503)
+  - Referência no projeto: calendario-vestibulando.js
+- Mudança detectada: https://www.fuvest.br/vestibular-da-usp/ (HTTP 503)
+  - Referência no projeto: calendario-vestibulando.js
 - Mudança detectada: https://www.gov.br/fnde/pt-br/acesso-a-informacao/acoes-e-programas/programas/bolsas-e-auxilios/eixos-de-atuacao/bolsa-permanencia (HTTP 200)
   - Referência no projeto: painel-bolsas.html
-- Mudança detectada: https://www.gov.br/mec/pt-br/assuntos/es/sistema-de-selecao-unificada-sisu
+- Possível chamada ou lista de espera: https://www.gov.br/mec/
+  - Referência no projeto: acompanhamentos-nacional.js
+- Mudança detectada: https://www.gov.br/mec/pt-br/assuntos/es/sistema-de-selecao-unificada-sisu (HTTP 404)
   - Referência no projeto: calendario-vestibulando.js
 - Mudança detectada: https://www.gov.br/ufcg/pt-br/assuntos/noticias/2026/fevereiro/ufcg-publica-lista-de-espera-do-sisu-2026 (HTTP 200)
   - Referência no projeto: listas-espera-rj.html
@@ -122,14 +122,10 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: listas-espera-rj.html
 - Mudança detectada: https://www.kcl.ac.uk/study/undergraduate/how-to-apply (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.manchester.ac.uk/study/undergraduate/applications/ (HTTP 200)
-  - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.mcgill.ca/undergraduate-admissions/apply/requirements (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.nottingham.ac.uk/ugstudy/applying (HTTP 200)
+- Mudança detectada: https://www.ox.ac.uk/admissions/undergraduate/applying-to-oxford (HTTP 403)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.pas.uem.br/faq.html (HTTP 200)
-  - Referência no projeto: notas-vestibulares-seriados.js, vestibulares-seriados.html
 - Mudança detectada: https://www.sfu.ca/students/admission/apply.html (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.sheffield.ac.uk/undergraduate/apply (HTTP 200)
@@ -146,21 +142,19 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.ucas.com/international/international-students/applying-university-international-student/entry-requirements-uk-courses (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.ucl.ac.uk/prospective-students/undergraduate/applying-ucl (HTTP 404)
-  - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.ufam.edu.br/noticias/7529-proeg-divulga-calendario-de-matricula-da-2-chamada-da-lista-de-espera-do-sisu-2026.html (HTTP 200)
   - Referência no projeto: listas-espera-rj.html
-- Mudança detectada: https://www.ufsm.br/pro-reitorias/prograd/editais/050-2025
+- Mudança detectada: https://www.ufsm.br/pro-reitorias/prograd/editais/050-2025 (HTTP 200)
   - Referência no projeto: notas-vestibulares-seriados.js
+- Mudança detectada: https://www.ulaval.ca/admission/candidats-etrangers (HTTP 404)
+  - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.undergraduate.study.cam.ac.uk/apply (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.unioeste.br/portal/publicacoes-do-ingresso/publicacoes-vestibular-2027
-  - Referência no projeto: calendario-vestibulando.js
-- Mudança detectada: https://www.unioeste.br/portal/vestibular/publicacoes-seriado
+- Mudança detectada: https://www.unioeste.br/portal/vestibular/publicacoes-seriado (HTTP 200)
   - Referência no projeto: notas-vestibulares-seriados.js, vestibulares-seriados.html
 - Mudança detectada: https://www.unistra.fr/en/study (HTTP 404)
   - Referência no projeto: estude-no-exterior.html
-- Mudança detectada: https://www.univ-lille.fr/international (HTTP 200)
+- Mudança detectada: https://www.univ-amu.fr/en/public/international-students (HTTP 404)
   - Referência no projeto: estude-no-exterior.html
 - Mudança detectada: https://www.universite-paris-saclay.fr/en/admissions/applying-undergraduate-programmes (HTTP 200)
   - Referência no projeto: estude-no-exterior.html
@@ -176,9 +170,11 @@ Verificação automática: 2026-10-23T14:32:43.821Z.
   - Referência no projeto: listas-espera-rj.html
 - Mudança detectada: https://www.vunesp.com.br/VNSP2514 (HTTP 403)
   - Referência no projeto: calendario-vestibulando.js
-- Mudança detectada: https://www3.unicentro.br/blog/2026/07/15/pac-2026-da-unicentro-esta-com-inscricoes-abertas-ate-20-de-julho/
+- Mudança detectada: https://www3.unicentro.br/blog/2026/07/15/pac-2026-da-unicentro-esta-com-inscricoes-abertas-ate-20-de-julho/ (HTTP 404)
   - Referência no projeto: notas-vestibulares-seriados.js
-- Mudança detectada: https://www3.unicentro.br/vestibular/category/destaques/destaques-pac/
+- Mudança detectada: https://www3.unicentro.br/vestibular/category/destaques/destaques-pac/ (HTTP 200)
   - Referência no projeto: vestibulares-seriados-atualizacoes.js
+- Mudança detectada: https://you.ubc.ca/applying-ubc/requirements/international-high-schools/ (HTTP 200)
+  - Referência no projeto: estude-no-exterior.html
 
 Confirme o documento na fonte oficial antes de publicar um aviso para estudantes. Alterações técnicas não são, por si só, uma nova chamada.
